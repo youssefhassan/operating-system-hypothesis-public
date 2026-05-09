@@ -1,0 +1,7 @@
+anthropic
+openai
+jupyter
+matplotlib
+pandas
+numpy
+python-dotenv
