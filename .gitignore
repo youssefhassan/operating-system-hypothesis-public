@@ -55,3 +55,6 @@ experiments/*/results/*
 # Top-level results
 results/*
 !results/.gitkeep
+
+# Generated experiment outputs served by the book site
+site/public/results/
