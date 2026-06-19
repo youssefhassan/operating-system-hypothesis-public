@@ -97,11 +97,61 @@ Outputs go to `results-local/<model>/` (git-ignored) as `g{guidance}_s{seed}.png
 Runs on CUDA (Vast.ai), Apple Silicon MPS (the Mac minis), or CPU; device and
 dtype auto-detect, override with `--device` / `--dtype`.
 
+## Pre-registration (confirmatory)
+
+The machine-readable pre-registration is in [`preregistration.json`](preregistration.json),
+committed *before* any analyzed run (methodology §4 — git-history pre-registration).
+Human-readable twin:
+
+- **Hypothesis.** Lowering guidance `g` over `[1.0, 15.0]` (prompt/seed/steps
+  fixed) on SDXL, replicated on SD 3.5, raises the blind form-constant score
+  `M`, because weakening top-down conditioning lets lower-layer geometry surface
+  (diffusion analogue of REBUS). Low-`g` outputs should also move toward the
+  unconditional baseline.
+- **Metric M.** Per image: mean `geometric_intensity` (0–3) across the two
+  judges, ÷3 → [0,1]. Per guidance: `M(g)` = mean over seeds.
+- **Confirm.** Spearman `rho(M,g) ≤ −0.6` (p ≤ .05), low-vs-high Cliff's delta
+  `≥ 0.33` with bootstrap CI excluding 0, replicated on ≥2 architectures.
+- **Null.** `|rho| < 0.3` or the effect CI includes 0 at full N. A null is a
+  first-class, publishable outcome.
+- **N.** 10 seeds per guidance value (methodology §5 default).
+
+Changing the prompt, metric, rubric, thresholds, or grid bounds after seeing
+data reclassifies the run as **exploratory** and requires a separate dated
+commit. The loop cannot make those changes.
+
+## The agentic loop
+
+`loop.py` closes the cycle **generate → blind-judge → aggregate → decide → stop**,
+under the pre-registration. Its objective is to *characterize the effect and
+stop on pre-registered rules*, not to iterate until a finding appears.
+
+- **Judge (`judge.py`)** is blind: it sees only pixels + a fixed rubric, scores
+  in shuffled order, with **two** vision models (Claude + GPT) for cross-judge
+  agreement. Un-blinding (filename → guidance) happens only at aggregation.
+- **Controller** may only take *measurement/coverage* actions: `add_seeds`
+  (shrink variance), `refine_grid` (insert a guidance value at a detected
+  transition, within bounds), `replicate_model` (next architecture), or `stop`.
+  It cannot touch the prompt/metric/rubric/thresholds.
+- **Stop** on confirm / null / budget. Every iteration is appended to
+  `results-local/iterations.jsonl` for audit.
+
+```bash
+python loop.py --dry-run                 # print the next planned step, no runs
+python loop.py --init-seeds 3 --max-iters 12   # full loop (generates + judges)
+```
+
+Judge models are pinned via `EXP01_CLAUDE_MODEL` / `EXP01_OPENAI_MODEL` (env);
+pin exact dated snapshots for confirmatory runs.
+
 ## Files
 
-- `sweep_local.py` — **primary.** Multi-model diffusers CFG sweep (this README).
-- `run.py` — original BFL FLUX.2-flex API sweep. Kept as a quick API baseline,
-  but its guidance floor is 1.5, so it can't reach the low / base-layer regime.
+- `sweep_local.py` — **generation.** Multi-model diffusers CFG sweep.
+- `judge.py` — **measurement.** Blind dual-VLM form-constant scorer (the form-constant judge).
+- `loop.py` — **orchestration.** Methodology-compliant agentic loop.
+- `preregistration.json` — confirmatory pre-registration (committed first).
+- `run.py` — original BFL FLUX.2-flex API sweep; quick API baseline only
+  (guidance floor 1.5, can't reach the low / base-layer regime).
 - `serve.py` — FastAPI wrapper around `run.py` for the live site.
-- `results-local/` — local sweep outputs (git-ignored).
+- `results-local/` — local sweep outputs, judgements, audit log (git-ignored).
 - `analysis.md` — written up after the sweeps complete.

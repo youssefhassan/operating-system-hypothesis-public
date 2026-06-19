@@ -1,0 +1,41 @@
+{
+  "experiment": "01_image_test",
+  "status": "confirmatory",
+  "committed_before_analyzed_runs": true,
+  "hypothesis": "When guidance g is lowered over [1.0, 15.0] holding prompt, seed, and steps fixed on SDXL (and replicated on SD 3.5), the blind form-constant score M increases as g decreases, because weakening top-down conditioning lets lower-layer geometric primitives surface (the diffusion analogue of REBUS precision relaxation). The low-g conditioned outputs should also move toward the unconditional (empty-prompt) baseline.",
+  "null_result": "M is flat or increasing in g (|Spearman rho| < 0.3), or any rise at low g is featureless noise indistinguishable from the unconditional baseline rather than structured geometry. A null means the framing fails for diffusion specifically.",
+  "model_matrix": {
+    "confirmatory": ["sdxl", "sd35"],
+    "contrast_only_exploratory": ["flux"],
+    "optional": ["sd15"]
+  },
+  "prompt": "a watermelon, a glass half-filled with water, and a set of keys on a wooden table",
+  "fixed": { "steps": 40, "width": 1024, "height": 1024 },
+  "guidance_grid": [1.0, 1.5, 2.0, 3.0, 4.5, 6.0, 8.0, 11.0, 15.0],
+  "unconditional_baseline": true,
+  "metric": {
+    "name": "geometric_structure_score",
+    "per_image": "mean over judges of geometric_intensity (0-3), divided by 3",
+    "per_guidance": "M(g) = mean over seeds of per-image score",
+    "range": [0, 1]
+  },
+  "direction": "M(g) increases as g decreases => negative Spearman rho(M, g)",
+  "bins": { "low_bin_guidance_max": 2.0, "high_bin_guidance_min": 8.0 },
+  "confirm": {
+    "spearman_rho_max": -0.6,
+    "spearman_p_max": 0.05,
+    "low_minus_high_cliffs_delta_min": 0.33,
+    "effect_ci_excludes_zero": true,
+    "replicated_architectures_min": 2
+  },
+  "null": {
+    "spearman_abs_max": 0.3,
+    "effect_ci_includes_zero": true
+  },
+  "samples_per_setting": 10,
+  "tests": ["spearman_trend", "cliffs_delta_low_vs_high", "bootstrap_ci"],
+  "budget": { "max_images": 600, "max_judge_calls": 1200 },
+  "judges": ["claude", "gpt"],
+  "forbidden_to_automate": ["prompt", "metric", "rubric", "thresholds", "guidance_grid_bounds"],
+  "notes": "Changing any 'forbidden_to_automate' field after seeing data reclassifies the run as exploratory (methodology Section 4) and requires a separate dated commit. The loop's controller may only add seeds, refine the grid inside the existing bounds, replicate on another listed architecture, or stop."
+}
