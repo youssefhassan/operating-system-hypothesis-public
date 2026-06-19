@@ -10,7 +10,7 @@
     "optional": ["sd15"]
   },
   "prompt": "a watermelon, a glass half-filled with water, and a set of keys on a wooden table",
-  "fixed": { "steps": 25, "width": 1024, "height": 1024, "scheduler": "DPM++ 2M Karras for UNet models (SDXL, SD1.5); SD 3.5 / FLUX keep their native flow-matching sampler" },
+  "fixed": { "steps": 25, "width": 1024, "height": 1024, "scheduler": "model-default on MPS/CPU; DPM++ 2M Karras on CUDA only; SD 3.5 / FLUX keep native flow-matching sampler", "vae_decode": "SDXL force_upcast (latent fp32 at decode); VAE weights stay in pipeline dtype" },
   "guidance_grid": [1.0, 1.5, 2.0, 3.0, 4.5, 6.0, 8.0, 11.0, 15.0],
   "unconditional_baseline": true,
   "metric": {
@@ -43,6 +43,18 @@
       "before_analyzed_runs": true,
       "change": "fixed.steps 40 -> 25 and scheduler -> DPM++ 2M Karras (UNet models)",
       "reason": "Speed: 25 steps with DPM++ 2M Karras is visually equivalent to 40 steps with the default sampler for SDXL. Committed before any analyzed run, so this is a clean pre-registration edit, not a post-hoc change. Holds prompt, metric, rubric, thresholds, and guidance grid fixed."
+    },
+    {
+      "date": "2026-06-19",
+      "before_analyzed_runs": true,
+      "change": "scheduler gated by device: DPM++ 2M Karras only on CUDA; model-default sampler on MPS/CPU. Step count stays 25.",
+      "reason": "DPM++ 2M Karras produced all-NaN images in bf16 on Apple MPS (the Karras sigma schedule overflows in low precision). The model-default sampler is stable there. Discovered before any analyzed run (the affected NaN images were discarded), so still a clean pre-registration edit."
+    },
+    {
+      "date": "2026-06-19",
+      "before_analyzed_runs": true,
+      "change": "VAE decode: revert manual pipe.vae.to(float32); use force_upcast only (latent upcast at decode). MPS defaults to attention slicing + VAE tiling on.",
+      "reason": "Moving VAE weights to float32 on MPS while the UNet stays bf16 broke decode entirely (all-NaN frames). SDXL's force_upcast is the correct diffusers-native fix for intermittent bf16 decode NaNs. NaN images discarded; no analyzed run yet."
     }
   ],
   "notes": "Changing any 'forbidden_to_automate' field after seeing data reclassifies the run as exploratory (methodology Section 4) and requires a separate dated commit. The loop's controller may only add seeds, refine the grid inside the existing bounds, replicate on another listed architecture, or stop. Step count / scheduler are generation-procedure settings, not forbidden fields; they were set before any analyzed run (see amendments)."

@@ -64,7 +64,7 @@ except ModuleNotFoundError:
 MODEL_REGISTRY: dict[str, dict] = {
     "sdxl": {
         "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
-        "default_steps": 25,  # 25 w/ DPM++ 2M Karras ~ 40 w/ default sampler
+        "default_steps": 25,  # default sampler on MPS; DPM++ 2M Karras on CUDA
         "arch": "UNet (latent)",
         "cfg_type": "true CFG",
         "gated": False,
@@ -153,20 +153,17 @@ def _load_pipeline(model_id: str, dtype, device, scheduler: str = "dpm", low_mem
         except Exception as e:
             print(f"[exp01] scheduler swap failed ({e}); keeping model default.")
 
-    # SDXL's VAE is numerically unstable in low precision and can emit NaNs
-    # during decode (most visibly on MPS): the "invalid value encountered in
-    # cast" warning and corrupted/black patches. Keep the VAE in float32 for a
-    # stable decode while the rest of the pipeline stays in the chosen dtype.
-    if dtype != torch.float32 and getattr(pipe, "vae", None) is not None:
-        try:
-            pipe.vae.to(dtype=torch.float32)
-            if hasattr(pipe.vae, "config") and hasattr(pipe.vae.config, "force_upcast"):
-                pipe.vae.config.force_upcast = True
-        except Exception:
-            pass
+    # SDXL VAE decode can NaN in bf16/fp16 on MPS (partial corruption or cast
+    # warnings). Do NOT move VAE weights to float32 — that breaks MPS decode
+    # entirely (all-NaN frames). Instead set force_upcast so the pipeline
+    # upcasts latents to fp32 only during the decode step (diffusers-native).
+    if getattr(pipe, "vae", None) is not None and hasattr(pipe.vae, "config"):
+        if hasattr(pipe.vae.config, "force_upcast"):
+            pipe.vae.config.force_upcast = True
 
-    # Attention slicing / VAE tiling trade speed for memory. They are OFF by
-    # default (faster); pass --low-memory to re-enable on tight unified memory.
+    # On MPS, attention slicing + VAE tiling are ON by default (stable decode,
+    # lower peak memory). --low-memory forces them on other devices too;
+    # --no-low-memory disables them even on MPS.
     if device != "cpu" and low_memory:
         try:
             pipe.enable_attention_slicing()
@@ -180,9 +177,7 @@ def _load_pipeline(model_id: str, dtype, device, scheduler: str = "dpm", low_mem
 
 
 def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int, h: int, device):
-    import numpy as np
     import torch
-    from PIL import Image
 
     generator = torch.Generator(device="cpu").manual_seed(seed)
     out = pipe(
@@ -192,17 +187,8 @@ def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int,
         width=w,
         height=h,
         generator=generator,
-        # Get the raw float array so we can sanitize before the uint8 cast,
-        # rather than letting any residual NaN/inf become garbage pixels.
-        output_type="np",
     )
-    arr = out.images[0]
-    n_bad = int(np.count_nonzero(~np.isfinite(arr)))
-    if n_bad:
-        print(f"[exp01] warning: {n_bad} non-finite pixels in g{guidance}_s{seed}; sanitized.")
-    arr = np.nan_to_num(arr, nan=0.0, posinf=1.0, neginf=0.0)
-    arr = (arr * 255).round().clip(0, 255).astype("uint8")
-    return Image.fromarray(arr)
+    return out.images[0]
 
 
 def run(args: argparse.Namespace) -> None:
@@ -237,18 +223,24 @@ def run(args: argparse.Namespace) -> None:
     if args.skip_existing:
         jobs = [j for j in jobs if not (out_dir / j["filename"]).exists()]
 
-    # DPM++ 2M Karras is for UNet (epsilon/v-prediction) models. SD 3.5 (MMDiT)
-    # and FLUX (DiT) use flow-matching samplers; swapping would silently degrade
-    # them, so they keep their native scheduler.
+    # Scheduler gating. DPM++ 2M Karras is fast but only safe in some setups:
+    #  - non-UNet models (SD 3.5 MMDiT, FLUX DiT) use flow-matching samplers, so
+    #    swapping would silently degrade them.
+    #  - on MPS/CPU in low precision (bf16/fp16) the Karras sigma schedule
+    #    overflows and produces all-NaN images; the model's default sampler is
+    #    stable there. DPM++ is kept only on CUDA, where it is reliable.
     scheduler = args.scheduler
+    fallback_reason = None
     if scheduler == "dpm" and not spec["arch"].startswith("UNet"):
-        scheduler = "keep"
+        scheduler, fallback_reason = "keep", f"{spec['arch']} uses its native sampler"
+    elif scheduler == "dpm" and device != "cuda":
+        scheduler, fallback_reason = "keep", f"DPM++ is NaN-unstable on {device} in {dtype}"
 
     print(f"[exp01] model={args.model} ({spec['model_id']})")
     print(f"[exp01] arch={spec['arch']} cfg={spec['cfg_type']} gated={spec['gated']}")
     print(f"[exp01] device={device} dtype={dtype} steps={steps} scheduler={scheduler}")
-    if scheduler != args.scheduler:
-        print(f"[exp01] ({spec['arch']} uses its native sampler; requested '{args.scheduler}' ignored)")
+    if fallback_reason:
+        print(f"[exp01] (requested scheduler '{args.scheduler}' -> 'keep': {fallback_reason})")
     if args.num_shards > 1:
         print(f"[exp01] shard {args.shard}/{args.num_shards}: {len(jobs)} jobs on this machine")
     if spec["gated"]:
@@ -259,7 +251,10 @@ def run(args: argparse.Namespace) -> None:
         print("[exp01] nothing to do (all jobs filtered out).")
         return
 
-    pipe = _load_pipeline(spec["model_id"], dtype, device, scheduler, args.low_memory)
+    pipe = _load_pipeline(
+        spec["model_id"], dtype, device, scheduler,
+        (args.low_memory or device == "mps") and not args.no_low_memory,
+    )
 
     runs: list[dict] = []
     total = len(jobs)
@@ -316,7 +311,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument(
         "--low-memory", action="store_true",
-        help="enable attention slicing + VAE tiling (slower, lower peak memory)",
+        help="enable attention slicing + VAE tiling (also the MPS default)",
+    )
+    p.add_argument(
+        "--no-low-memory", action="store_true",
+        help="disable attention slicing + VAE tiling even on MPS (faster, less stable)",
     )
     p.add_argument(
         "--num-shards", type=int, default=1,

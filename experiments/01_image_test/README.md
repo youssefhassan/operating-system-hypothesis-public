@@ -138,12 +138,15 @@ python sweep_local.py --model sdxl --unconditional
 python sweep_local.py --model sd35 --unconditional      # architecture contrast
 ```
 
-**Speed.** UNet models default to the **DPM++ 2M Karras** sampler at fewer steps
-(SDXL = 25, visually ~ 40 default-sampler steps; see `preregistration.json`
-amendments). SD 3.5 / FLUX keep their native flow-matching sampler. Attention
-slicing / VAE tiling are **off by default** (faster); add `--low-memory` if a
-24 GB Mac runs out of memory. The VAE always decodes in float32 to avoid the
-MPS NaN / "invalid value in cast" failure.
+**Speed.** SDXL runs at 25 steps (SD 1.5 at 30). The **DPM++ 2M Karras** sampler
+is used only on **CUDA**, where it is stable; on **MPS/CPU** it overflows to
+all-NaN images in bf16, so those devices use the model's default sampler (still
+fast at 25 steps). SD 3.5 / FLUX always keep their native flow-matching sampler.
+Attention slicing / VAE tiling are **on by default on MPS** (stable decode);
+add `--no-low-memory` to disable for speed. On CUDA, add `--low-memory` if
+needed. VAE decode uses SDXL's built-in **`force_upcast`** (latents upcast to
+fp32 at decode time only — do not move VAE weights to fp32 on MPS, that
+produces all-NaN frames).
 
 **Parallelism.** One MPS GPU can't usefully run parallel jobs, but the sweep is
 embarrassingly parallel across machines. Split it over the three Mac minis:
