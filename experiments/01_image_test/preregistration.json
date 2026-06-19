@@ -53,8 +53,8 @@
     {
       "date": "2026-06-19",
       "before_analyzed_runs": true,
-      "change": "VAE decode: revert manual pipe.vae.to(float32); use force_upcast only (latent upcast at decode). MPS defaults to attention slicing + VAE tiling on.",
-      "reason": "Moving VAE weights to float32 on MPS while the UNet stays bf16 broke decode entirely (all-NaN frames). SDXL's force_upcast is the correct diffusers-native fix for intermittent bf16 decode NaNs. NaN images discarded; no analyzed run yet."
+      "change": "MPS auto dtype: bfloat16 -> float32 (full pipeline)",
+      "reason": "bf16/fp16 on Apple MPS is stable at guidance<=1 (no CFG) but produces all-black images at guidance>1 once classifier-free guidance runs (two UNet passes). float32 is slower but stable across the full guidance grid. CUDA auto dtype unchanged (float16). No analyzed run yet."
     }
   ],
   "notes": "Changing any 'forbidden_to_automate' field after seeing data reclassifies the run as exploratory (methodology Section 4) and requires a separate dated commit. The loop's controller may only add seeds, refine the grid inside the existing bounds, replicate on another listed architecture, or stop. Step count / scheduler are generation-procedure settings, not forbidden fields; they were set before any analyzed run (see amendments)."

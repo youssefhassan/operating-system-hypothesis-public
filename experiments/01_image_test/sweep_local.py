@@ -117,12 +117,14 @@ def _pick_device_and_dtype(device_arg: str, dtype_arg: str):
         device = device_arg
 
     if dtype_arg == "auto":
-        # fp16 on MPS frequently produces all-black SDXL images (overflow ->
-        # NaN); bf16 avoids it. CUDA is fine on fp16; CPU needs fp32.
+        # MPS + SDXL: bf16/fp16 is stable at guidance<=1 (no CFG pass) but
+        # produces all-NaN / black images once guidance>1 enables classifier-
+        # free guidance (two UNet passes + scaled combination). float32 on MPS
+        # is slower but stable across the full guidance grid. CUDA is fine fp16.
         if device == "cpu":
             dtype = torch.float32
         elif device == "mps":
-            dtype = torch.bfloat16
+            dtype = torch.float32
         else:
             dtype = torch.float16
     else:
@@ -177,6 +179,7 @@ def _load_pipeline(model_id: str, dtype, device, scheduler: str = "dpm", low_mem
 
 
 def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int, h: int, device):
+    import numpy as np
     import torch
 
     generator = torch.Generator(device="cpu").manual_seed(seed)
@@ -188,7 +191,15 @@ def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int,
         height=h,
         generator=generator,
     )
-    return out.images[0]
+    img = out.images[0]
+    arr = np.asarray(img)
+    if arr.max() == 0:
+        raise RuntimeError(
+            f"all-black image at guidance={guidance} seed={seed} — "
+            "VAE/UNet produced NaNs (common on MPS in bf16/fp16 when CFG>1; "
+            "retry with --dtype float32 or use CUDA)"
+        )
+    return img
 
 
 def run(args: argparse.Namespace) -> None:
