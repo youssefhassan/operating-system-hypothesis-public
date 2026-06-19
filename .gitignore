@@ -48,6 +48,10 @@ Thumbs.db
 *.csv
 *.json.gz
 
+# Exception: editorial Substack images are versioned (not result artifacts)
+!the writing assets folder
+!the writing assets folder**
+
 # Per-experiment results directories (keep the folder, ignore contents)
 experiments/*/results/*
 !experiments/*/results/.gitkeep
