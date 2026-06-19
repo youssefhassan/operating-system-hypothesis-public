@@ -1,6 +1,28 @@
 # Experiment 01 — Image Test (guidance / CFG gradient)
 
-**Status:** scaffold ready, not yet run.
+**Status:** coarse SDXL sweep in progress (local, MPS float32); confirmatory
+analysis pending blind judge + SD 3.5 replication.
+
+## Goal (deny-friendly survey)
+
+This experiment is **not** trying to prove the Operating System / brain↔AI
+bridge. The preferred outcome is an **honest null** if the data supports it.
+
+The job is a **survey across models and substrates**: when you relax the top
+prior (guidance; later temperature / quantization), what **base vocabulary**
+surfaces — hexagons, pixels, watermelon tiles, checkerboard, whatever — and
+does any of it **relate to** the geometric families people report in altered
+brain states (lattice/hexagon, spiral, tunnel, cobweb)? Or is it always just
+that model's own ingredients, unrelated to V1 form constants?
+
+| Outcome | Verdict |
+|---|---|
+| Low-g = mush / no structure | Deny for diffusion |
+| Structure, but only model-specific junk (no cross-architecture rhyme) | Deny the universal bridge |
+| Structuredness on conv UNet (SDXL), absent on transformer (SD 3.5) | Narrower "local coupling" thread survives; content match to brains denied |
+| Structured low-g + weak form-constant-like scores on ≥2 architectures | Bridge stays testable (not proven) |
+
+See also § "What we do and don't expect" below and the project notes
 
 ## Hypothesis
 
