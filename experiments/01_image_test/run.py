@@ -8,6 +8,12 @@ predictive suppression.
 
 This module exposes `iter_sweep()` as a generator so both the CLI here and the
 FastAPI server (`serve.py`) can drive the same sweep — one source of truth.
+
+NOTE: This is the *API baseline* only. BFL's flux-2-flex guidance floor is 1.5,
+which can't reach the low / base-layer regime the experiment cares about, and
+FLUX guidance is distilled (not classic CFG). The plan-aligned primary run is
+`sweep_local.py` (open-weights diffusers, guidance down to 1.0 + an
+unconditional baseline, multi-model). See README.md.
 """
 
 from __future__ import annotations

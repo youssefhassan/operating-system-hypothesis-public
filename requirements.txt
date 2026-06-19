@@ -9,3 +9,13 @@ requests>=2.34.0
 Pillow>=12.2.0
 fastapi>=0.136.1
 uvicorn[standard]>=0.46.0
+
+# Experiment 01 local sweep (diffusers stack). Install the torch build that
+# matches your platform/CUDA; on Apple Silicon the default wheel uses MPS.
+torch>=2.4.0
+diffusers>=0.31.0
+transformers>=4.44.0
+accelerate>=0.34.0
+safetensors>=0.4.5
+sentencepiece>=0.2.0
+protobuf>=5.28.0

@@ -52,6 +52,9 @@ Thumbs.db
 experiments/*/results/*
 !experiments/*/results/.gitkeep
 
+# Local diffusers sweep outputs (Exp 01 sweep_local.py)
+experiments/*/results-local/
+
 # Top-level results
 results/*
 !results/.gitkeep
