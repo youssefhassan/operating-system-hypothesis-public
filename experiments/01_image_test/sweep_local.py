@@ -101,7 +101,14 @@ def _pick_device_and_dtype(device_arg: str, dtype_arg: str):
         device = device_arg
 
     if dtype_arg == "auto":
-        dtype = torch.float32 if device == "cpu" else torch.float16
+        # fp16 on MPS frequently produces all-black SDXL images (overflow ->
+        # NaN); bf16 avoids it. CUDA is fine on fp16; CPU needs fp32.
+        if device == "cpu":
+            dtype = torch.float32
+        elif device == "mps":
+            dtype = torch.bfloat16
+        else:
+            dtype = torch.float16
     else:
         dtype = {"float16": torch.float16, "bfloat16": torch.bfloat16, "float32": torch.float32}[
             dtype_arg
