@@ -11,6 +11,50 @@ brain, then weakening the model's confident "application-layer" inferences
 geometric perceptual content reported under sub-anaesthetic ketamine and the
 other altered states Klüver catalogued.
 
+## What we do and don't expect (and why)
+
+A diffusion model is **not** a brain, and the strong reading of this experiment
+("AI hallucinates Klüver's shapes") is probably wrong. It's worth saying that
+loudly before any data lands, so a likely null isn't dressed up as a surprise.
+
+**Why the naive expectation is *no* form constants.** Form constants in humans
+are not a generic "altered state" by-product, they are a fingerprint of one
+specific piece of hardware. The Bressloff/Cowan/Ermentrout (2001) account
+derives lattice/cobweb/tunnel/spiral from the **symmetry and lateral
+connectivity of primary visual cortex (V1)**: the retina→V1 coordinate map and
+the orientation-column layout, destabilized. A diffusion model has none of that:
+no retinotopic map, no cortical columns, no serotonin. Its unconditional "base
+layer" is a draw from its **training distribution of natural images and art**,
+so the honest prediction for an empty prompt is an arbitrary, vaguely coherent
+scene, not geometry. The pre-registered **null is a live, maybe even likely,
+outcome**, and a clean null ("the analogy fails for diffusion") is a real result.
+
+**The weaker claim actually worth testing.** Not "AI is secretly human" but:
+*do locally-coupled generative systems, when their prior is relaxed, drift toward
+periodic/geometric structure for reasons that rhyme with the brain's math rather
+than copy its biology?* V1 form constants are mathematically a **symmetry-breaking
+/ pattern-formation** phenomenon (Turing-like instability in a field with local,
+translation-invariant coupling). A Stable Diffusion **UNet is convolutional**,
+i.e. translation-equivariant with local coupling, the same structural ingredient.
+So the interesting hypothesis, if any structure appears, is *convergent pattern
+formation from shared symmetry*, not imitation. Two consequences:
+
+- Repeating texture (tiles, brick, foliage, mesh) is statistically cheap and
+  common in natural images; low-guidance sampling can collapse toward such
+  easy, high-probability modes. Mild structure is plausible even with no brain
+  analogy at all, so it must be measured against the unconditional baseline.
+- **SDXL (convolutional UNet) vs SD 3.5 (MMDiT transformer, far less
+  convolutional)** is itself a test: a geometric effect strong on SDXL and
+  absent on SD 3.5 would point at *convolutional locality as mechanism*, a more
+  interesting and more falsifiable story than "weird images appear."
+
+**What this means for the metric.** Scoring specifically for the four V1 shapes
+is over-specified, a non-V1 system has no reason to honor that taxonomy. So the
+load-bearing signal is the generic **`geometric_intensity` / structuredness vs
+formless-noise gradient** (this *is* what metric M is built on), with the four
+named classes kept only as a secondary "and when there's structure, does it
+happen to look form-constant-like?" lens. The design is already hedged this way.
+
 ## The knob and its direction
 
 The independent variable is **guidance / classifier-free guidance (CFG)**, the
@@ -75,17 +119,20 @@ swept data.
 ## Expected outcome
 
 As guidance drops toward 1 (and compared against the unconditional baseline),
-content should not simply become uniformly noisier, the prediction is a
-structured shift toward repeating geometric / lattice / texture-dominant content
-before full decoherence. A null result is uniform noise with no intermediate
-geometric regime, in which case the analogy fails for diffusion specifically and
-the writing pivots to "here is where it breaks."
+the prediction is a shift toward **more structure** (textures, contours,
+repetition) rather than a smooth fade into uniform noise, with the four V1
+shapes a bonus question, not the expectation (see "What we do and don't expect").
+A null result is uniform noise with no intermediate structured regime, or rises
+indistinguishable from the unconditional baseline, in which case the analogy
+fails for diffusion specifically and the writing pivots to "here is where it
+breaks." Both directions are reportable.
 
 ## Running it
 
 ```bash
 pip install -r ../../requirements.txt          # includes the diffusers stack
-# gated models (sd35, flux) need: huggingface-cli login  + accept the license
+# gated models (sd35, flux): set HF_TOKEN in the project-root .env (read automatically)
+#   + accept the model license once on the Hub. (huggingface-cli login also works.)
 
 python sweep_local.py --model sdxl --unconditional
 python sweep_local.py --model sd35 --unconditional      # architecture contrast

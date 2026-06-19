@@ -32,16 +32,32 @@ Usage:
         --seeds 42 43 44 --prompt "a coral reef teeming with fish"
 
 Requires the diffusers stack (see ../../requirements.txt). Some models are
-gated on the Hugging Face Hub (SD 3.5, FLUX); run `huggingface-cli login` and
-accept the model license first.
+gated on the Hugging Face Hub (SD 3.5, FLUX): set HF_TOKEN in the project-root
+.env (read automatically below) and accept the model license once on the Hub.
+`huggingface-cli login` also works if you prefer not to use .env.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
+
+# Load HF_TOKEN (and any other keys) from the project-root .env so gated
+# models download without a separate `huggingface-cli login`. huggingface_hub
+# reads HF_TOKEN from the environment automatically once it's set here.
+try:
+    from dotenv import load_dotenv
+
+    _PROJECT_ROOT = Path(__file__).resolve().parents[2]
+    load_dotenv(_PROJECT_ROOT / ".env")
+    # Older tooling expects HUGGING_FACE_HUB_TOKEN; mirror HF_TOKEN to it.
+    if os.environ.get("HF_TOKEN") and not os.environ.get("HUGGING_FACE_HUB_TOKEN"):
+        os.environ["HUGGING_FACE_HUB_TOKEN"] = os.environ["HF_TOKEN"]
+except ModuleNotFoundError:
+    pass
 
 # Architecture / CFG-type spans the matrix that distinguishes
 # architecture-general from model-specific. AutoPipeline picks the class.
@@ -164,7 +180,8 @@ def run(args: argparse.Namespace) -> None:
     print(f"[exp01] arch={spec['arch']} cfg={spec['cfg_type']} gated={spec['gated']}")
     print(f"[exp01] device={device} dtype={dtype} steps={steps}")
     if spec["gated"]:
-        print("[exp01] note: gated model — run `huggingface-cli login` and accept the license.")
+        tok = "set" if os.environ.get("HF_TOKEN") else "MISSING"
+        print(f"[exp01] note: gated model — HF_TOKEN {tok}; accept the model license on the Hub.")
 
     pipe = _load_pipeline(spec["model_id"], dtype, device)
 
