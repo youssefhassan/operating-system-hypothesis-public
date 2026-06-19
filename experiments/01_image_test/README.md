@@ -138,6 +138,26 @@ python sweep_local.py --model sdxl --unconditional
 python sweep_local.py --model sd35 --unconditional      # architecture contrast
 ```
 
+**Speed.** UNet models default to the **DPM++ 2M Karras** sampler at fewer steps
+(SDXL = 25, visually ~ 40 default-sampler steps; see `preregistration.json`
+amendments). SD 3.5 / FLUX keep their native flow-matching sampler. Attention
+slicing / VAE tiling are **off by default** (faster); add `--low-memory` if a
+24 GB Mac runs out of memory. The VAE always decodes in float32 to avoid the
+MPS NaN / "invalid value in cast" failure.
+
+**Parallelism.** One MPS GPU can't usefully run parallel jobs, but the sweep is
+embarrassingly parallel across machines. Split it over the three Mac minis:
+
+```bash
+python sweep_local.py --model sdxl --unconditional --num-shards 3 --shard 0   # Mac 1
+python sweep_local.py --model sdxl --unconditional --num-shards 3 --shard 1   # Mac 2
+python sweep_local.py --model sdxl --unconditional --num-shards 3 --shard 2   # Mac 3
+```
+
+Each machine generates a deterministic, disjoint third of the jobs; merge the
+three `results-local/sdxl/` folders on the primary, then run `judge.py` +
+`loop.py` there. `--skip-existing` makes any run safely resumable.
+
 Outputs go to `results-local/<model>/` (git-ignored) as `g{guidance}_s{seed}.png`,
 `uncond_s{seed}.png`, plus `metadata.json`.
 

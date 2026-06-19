@@ -64,14 +64,14 @@ except ModuleNotFoundError:
 MODEL_REGISTRY: dict[str, dict] = {
     "sdxl": {
         "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
-        "default_steps": 40,
+        "default_steps": 25,  # 25 w/ DPM++ 2M Karras ~ 40 w/ default sampler
         "arch": "UNet (latent)",
         "cfg_type": "true CFG",
         "gated": False,
     },
     "sd15": {
         "model_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
-        "default_steps": 50,
+        "default_steps": 30,  # DPM++ 2M Karras
         "arch": "UNet (latent, older)",
         "cfg_type": "true CFG",
         "gated": False,
@@ -132,26 +132,57 @@ def _pick_device_and_dtype(device_arg: str, dtype_arg: str):
     return device, dtype
 
 
-def _load_pipeline(model_id: str, dtype, device):
+def _load_pipeline(model_id: str, dtype, device, scheduler: str = "dpm", low_memory: bool = False):
+    import torch
     from diffusers import AutoPipelineForText2Image
 
     pipe = AutoPipelineForText2Image.from_pretrained(model_id, torch_dtype=dtype)
     pipe = pipe.to(device)
-    # Save memory on 24GB unified-memory Macs / smaller GPUs.
-    if device != "cpu":
+
+    # Faster sampler: DPM++ 2M with Karras sigmas reaches comparable quality in
+    # far fewer steps than the default scheduler. "keep" leaves the model default.
+    if scheduler == "dpm":
+        try:
+            from diffusers import DPMSolverMultistepScheduler
+
+            pipe.scheduler = DPMSolverMultistepScheduler.from_config(
+                pipe.scheduler.config,
+                algorithm_type="dpmsolver++",
+                use_karras_sigmas=True,
+            )
+        except Exception as e:
+            print(f"[exp01] scheduler swap failed ({e}); keeping model default.")
+
+    # SDXL's VAE is numerically unstable in low precision and can emit NaNs
+    # during decode (most visibly on MPS): the "invalid value encountered in
+    # cast" warning and corrupted/black patches. Keep the VAE in float32 for a
+    # stable decode while the rest of the pipeline stays in the chosen dtype.
+    if dtype != torch.float32 and getattr(pipe, "vae", None) is not None:
+        try:
+            pipe.vae.to(dtype=torch.float32)
+            if hasattr(pipe.vae, "config") and hasattr(pipe.vae.config, "force_upcast"):
+                pipe.vae.config.force_upcast = True
+        except Exception:
+            pass
+
+    # Attention slicing / VAE tiling trade speed for memory. They are OFF by
+    # default (faster); pass --low-memory to re-enable on tight unified memory.
+    if device != "cpu" and low_memory:
         try:
             pipe.enable_attention_slicing()
         except Exception:
             pass
         try:
-            pipe.enable_vae_tiling()
+            pipe.vae.enable_tiling()
         except Exception:
             pass
     return pipe
 
 
 def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int, h: int, device):
+    import numpy as np
     import torch
+    from PIL import Image
 
     generator = torch.Generator(device="cpu").manual_seed(seed)
     out = pipe(
@@ -161,8 +192,17 @@ def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int,
         width=w,
         height=h,
         generator=generator,
+        # Get the raw float array so we can sanitize before the uint8 cast,
+        # rather than letting any residual NaN/inf become garbage pixels.
+        output_type="np",
     )
-    return out.images[0]
+    arr = out.images[0]
+    n_bad = int(np.count_nonzero(~np.isfinite(arr)))
+    if n_bad:
+        print(f"[exp01] warning: {n_bad} non-finite pixels in g{guidance}_s{seed}; sanitized.")
+    arr = np.nan_to_num(arr, nan=0.0, posinf=1.0, neginf=0.0)
+    arr = (arr * 255).round().clip(0, 255).astype("uint8")
+    return Image.fromarray(arr)
 
 
 def run(args: argparse.Namespace) -> None:
@@ -176,36 +216,61 @@ def run(args: argparse.Namespace) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     device, dtype = _pick_device_and_dtype(args.device, args.dtype)
+
+    # Build the full job list first, then keep only this machine's shard. Shards
+    # partition deterministically (job index % num_shards == shard), so three
+    # Mac minis can each run a third with --num-shards 3 --shard 0|1|2, all
+    # writing gX_sY.png into a shared/merged results dir.
+    jobs: list[dict] = []
+    for g in args.guidance:
+        for s in args.seeds:
+            jobs.append({"kind": "conditioned", "guidance": g, "seed": s,
+                         "prompt": args.prompt, "filename": f"g{g:.1f}_s{s}.png"})
+    if args.unconditional:
+        for s in args.seeds:
+            jobs.append({"kind": "unconditional", "guidance": 1.0, "seed": s,
+                         "prompt": "", "filename": f"uncond_s{s}.png"})
+
+    if args.num_shards > 1:
+        jobs = [j for i, j in enumerate(jobs) if i % args.num_shards == args.shard]
+
+    if args.skip_existing:
+        jobs = [j for j in jobs if not (out_dir / j["filename"]).exists()]
+
+    # DPM++ 2M Karras is for UNet (epsilon/v-prediction) models. SD 3.5 (MMDiT)
+    # and FLUX (DiT) use flow-matching samplers; swapping would silently degrade
+    # them, so they keep their native scheduler.
+    scheduler = args.scheduler
+    if scheduler == "dpm" and not spec["arch"].startswith("UNet"):
+        scheduler = "keep"
+
     print(f"[exp01] model={args.model} ({spec['model_id']})")
     print(f"[exp01] arch={spec['arch']} cfg={spec['cfg_type']} gated={spec['gated']}")
-    print(f"[exp01] device={device} dtype={dtype} steps={steps}")
+    print(f"[exp01] device={device} dtype={dtype} steps={steps} scheduler={scheduler}")
+    if scheduler != args.scheduler:
+        print(f"[exp01] ({spec['arch']} uses its native sampler; requested '{args.scheduler}' ignored)")
+    if args.num_shards > 1:
+        print(f"[exp01] shard {args.shard}/{args.num_shards}: {len(jobs)} jobs on this machine")
     if spec["gated"]:
         tok = "set" if os.environ.get("HF_TOKEN") else "MISSING"
         print(f"[exp01] note: gated model — HF_TOKEN {tok}; accept the model license on the Hub.")
 
-    pipe = _load_pipeline(spec["model_id"], dtype, device)
+    if not jobs:
+        print("[exp01] nothing to do (all jobs filtered out).")
+        return
+
+    pipe = _load_pipeline(spec["model_id"], dtype, device, scheduler, args.low_memory)
 
     runs: list[dict] = []
-    pairs = [(g, s) for g in args.guidance for s in args.seeds]
-    total = len(pairs) + (len(args.seeds) if args.unconditional else 0)
-    done = 0
-
-    for guidance, seed in pairs:
-        done += 1
-        filename = f"g{guidance:.1f}_s{seed}.png"
-        print(f"[exp01] ({done}/{total}) guidance={guidance} seed={seed} -> {filename}")
-        image = _generate(pipe, args.prompt, guidance, seed, steps, args.width, args.height, device)
-        image.save(out_dir / filename)
-        runs.append({"kind": "conditioned", "guidance": guidance, "seed": seed, "filename": filename})
-
-    if args.unconditional:
-        for seed in args.seeds:
-            done += 1
-            filename = f"uncond_s{seed}.png"
-            print(f"[exp01] ({done}/{total}) UNCONDITIONAL (empty prompt) seed={seed} -> {filename}")
-            image = _generate(pipe, "", 1.0, seed, steps, args.width, args.height, device)
-            image.save(out_dir / filename)
-            runs.append({"kind": "unconditional", "guidance": 1.0, "seed": seed, "filename": filename})
+    total = len(jobs)
+    for done, job in enumerate(jobs, start=1):
+        label = "UNCONDITIONAL (empty prompt) " if job["kind"] == "unconditional" else ""
+        print(f"[exp01] ({done}/{total}) {label}guidance={job['guidance']} seed={job['seed']} -> {job['filename']}")
+        image = _generate(pipe, job["prompt"], job["guidance"], job["seed"],
+                          steps, args.width, args.height, device)
+        image.save(out_dir / job["filename"])
+        runs.append({"kind": job["kind"], "guidance": job["guidance"],
+                     "seed": job["seed"], "filename": job["filename"]})
 
     metadata = {
         "experiment": "01_image_test (local)",
@@ -215,10 +280,12 @@ def run(args: argparse.Namespace) -> None:
         "cfg_type": spec["cfg_type"],
         "device": device,
         "dtype": str(dtype),
+        "scheduler": scheduler,
         "finished_at": datetime.now(timezone.utc).isoformat(),
         "prompt": args.prompt,
         "fixed": {"steps": steps, "width": args.width, "height": args.height},
         "sweep": {"guidance": args.guidance, "seeds": args.seeds, "unconditional": args.unconditional},
+        "shard": {"index": args.shard, "num_shards": args.num_shards},
         "runs": runs,
     }
     (out_dir / "metadata.json").write_text(json.dumps(metadata, indent=2))
@@ -243,9 +310,32 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument(
         "--dtype", choices=["auto", "float16", "bfloat16", "float32"], default="auto"
     )
+    p.add_argument(
+        "--scheduler", choices=["dpm", "keep"], default="dpm",
+        help="dpm = DPM++ 2M Karras (fast, fewer steps look like more); keep = model default",
+    )
+    p.add_argument(
+        "--low-memory", action="store_true",
+        help="enable attention slicing + VAE tiling (slower, lower peak memory)",
+    )
+    p.add_argument(
+        "--num-shards", type=int, default=1,
+        help="split the job list across N machines (run one shard per Mac mini)",
+    )
+    p.add_argument(
+        "--shard", type=int, default=0, help="this machine's shard index in [0, num-shards)",
+    )
+    p.add_argument(
+        "--skip-existing", action="store_true",
+        help="skip jobs whose output PNG already exists (safe resume)",
+    )
     p.add_argument("--outdir", default=None)
     return p
 
 
 if __name__ == "__main__":
-    run(build_parser().parse_args())
+    _args = build_parser().parse_args()
+    if _args.num_shards < 1 or not (0 <= _args.shard < _args.num_shards):
+        raise SystemExit(f"invalid sharding: shard={_args.shard} num_shards={_args.num_shards} "
+                         f"(need num_shards>=1 and 0<=shard<num_shards)")
+    run(_args)
