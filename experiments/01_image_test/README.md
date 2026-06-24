@@ -160,11 +160,23 @@ python sweep_local.py --model sdxl --unconditional
 python sweep_local.py --model sd35 --unconditional      # architecture contrast
 ```
 
-**MPS stability.** On Apple Silicon, `--dtype auto` uses **float32** (not bf16):
-bf16/fp16 works at guidance ≤ 1 but produces **black images at guidance > 1**
-once classifier-free guidance activates (two UNet passes). float32 is slower
-but stable across the full guidance grid. CUDA `--dtype auto` stays float16.
-Attention slicing / VAE tiling are **on by default on MPS**.
+**MPS stability.** On Apple Silicon, `--dtype auto` uses **float32 for SDXL**
+(not bf16): bf16/fp16 works at guidance ≤ 1 but produces **black images at
+guidance > 1** once classifier-free guidance activates (two UNet passes).
+**SD 3.5 on MPS** uses **float16** automatically (~10 GB vs ~30 GB float32).
+The script tries a **full fp16 GPU load** first (DiT stays on Metal; much
+faster than shuffling all components via `enable_model_cpu_offload`). If that
+OOMs, it falls back to CPU offload. It also **caches prompt embeddings** once
+per run (T5-XXL encoding is expensive and your prompt is fixed across the grid).
+Attention slicing / VAE tiling are **on by default on MPS** for ≤32 GB machines.
+On **48 GB+ unified memory** (e.g. M5 64 GB laptop) the script auto-detects
+headroom and skips slicing/tiling and encoder parking for SD 3.5 — use that
+machine as the primary sweep host. CUDA `--dtype auto` stays float16.
+
+**Which Mac to use.** Run SD 3.5 on the **fastest / most RAM** box (M5 64 GB
+laptop >> M4 24 GB mini). Copy `results-local/sd35/` from the mini if you
+already started there, then resume with `--skip-existing`. No sharding needed
+on 64 GB unless you want parallel speed across multiple machines.
 
 **Parallelism.** One MPS GPU can't usefully run parallel jobs, but the sweep is
 embarrassingly parallel across machines. Split it over the three Mac minis:
@@ -215,8 +227,8 @@ under the pre-registration. Its objective is to *characterize the effect and
 stop on pre-registered rules*, not to iterate until a finding appears.
 
 - **Judge (`judge.py`)** is blind: it sees only pixels + a fixed rubric, scores
-  in shuffled order, with **two** vision models (Claude + GPT) for cross-judge
-  agreement. Un-blinding (filename → guidance) happens only at aggregation.
+  in shuffled order. Default judge: **Claude Sonnet 4.6** (`claude-sonnet-4-6`).
+  Un-blinding (filename → guidance) happens only at aggregation.
 - **Controller** may only take *measurement/coverage* actions: `add_seeds`
   (shrink variance), `refine_grid` (insert a guidance value at a detected
   transition, within bounds), `replicate_model` (next architecture), or `stop`.
@@ -229,13 +241,17 @@ python loop.py --dry-run                 # print the next planned step, no runs
 python loop.py --init-seeds 3 --max-iters 12   # full loop (generates + judges)
 ```
 
-Judge models are pinned via `EXP01_CLAUDE_MODEL` / `EXP01_OPENAI_MODEL` (env);
-pin exact dated snapshots for confirmatory runs.
+Judge model is pinned via `EXP01_CLAUDE_MODEL` (env); default: `claude-sonnet-4-6`.
+Set `preregistration.json` `"judges": ["claude", "gpt"]` and pass `--judges both`
+to restore dual-judge mode. Changing judge models does not change `rubric_version`
+— that labels the fixed scoring text.
 
 ## Files
 
 - `sweep_local.py` — **generation.** Multi-model diffusers CFG sweep.
 - `judge.py` — **measurement.** Blind dual-VLM form-constant scorer (the form-constant judge).
+- `analyze.py` — **stats + figures.** Confirmatory M(g), exploratory rubric fields, contact sheets.
+- `run_remaining.sh` — **batch finish:** SDXL N=10 → SD 3.5 sweep → judge → analyze.
 - `loop.py` — **orchestration.** Methodology-compliant agentic loop.
 - `preregistration.json` — confirmatory pre-registration (committed first).
 - `run.py` — original BFL FLUX.2-flex API sweep; quick API baseline only
