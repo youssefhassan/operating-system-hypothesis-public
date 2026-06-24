@@ -102,8 +102,31 @@ DEFAULT_SEEDS = [42, 43, 44]
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
+# Apple unified-memory headroom: below this, SD 3.5 defaults to attention
+# slicing + VAE tiling + parking text encoders after embed cache. At 48 GB+
+# (e.g. M5 64 GB laptop) keep the full pipeline on GPU for speed.
+HIGH_UNIFIED_RAM_GB = 48
 
-def _pick_device_and_dtype(device_arg: str, dtype_arg: str):
+
+def _system_ram_gb() -> float | None:
+    try:
+        pages = os.sysconf("SC_PHYS_PAGES")
+        size = os.sysconf("SC_PAGE_SIZE")
+        if pages > 0 and size > 0:
+            return pages * size / (1024**3)
+    except (ValueError, OSError, AttributeError):
+        pass
+    return None
+
+
+def _mps_has_headroom(device: str) -> bool:
+    if device != "mps":
+        return False
+    ram = _system_ram_gb()
+    return ram is not None and ram >= HIGH_UNIFIED_RAM_GB
+
+
+def _pick_device_and_dtype(device_arg: str, dtype_arg: str, model_key: str | None = None):
     import torch
 
     if device_arg == "auto":
@@ -117,12 +140,16 @@ def _pick_device_and_dtype(device_arg: str, dtype_arg: str):
         device = device_arg
 
     if dtype_arg == "auto":
-        # MPS + SDXL: bf16/fp16 is stable at guidance<=1 (no CFG pass) but
+        # MPS + SDXL UNet: bf16/fp16 is stable at guidance<=1 (no CFG pass) but
         # produces all-NaN / black images once guidance>1 enables classifier-
         # free guidance (two UNet passes + scaled combination). float32 on MPS
-        # is slower but stable across the full guidance grid. CUDA is fine fp16.
+        # is slower but stable across the full SDXL guidance grid.
+        # MPS + SD 3.5 MMDiT: float32 full load OOMs (~30 GiB); fp16 fits on
+        # 24 GB unified memory and is stable with CFG (different arch than UNet).
         if device == "cpu":
             dtype = torch.float32
+        elif device == "mps" and model_key == "sd35":
+            dtype = torch.float16
         elif device == "mps":
             dtype = torch.float32
         else:
@@ -134,12 +161,31 @@ def _pick_device_and_dtype(device_arg: str, dtype_arg: str):
     return device, dtype
 
 
-def _load_pipeline(model_id: str, dtype, device, scheduler: str = "dpm", low_memory: bool = False):
+def _load_pipeline(
+    model_id: str,
+    dtype,
+    device,
+    scheduler: str = "dpm",
+    low_memory: bool = False,
+    model_key: str | None = None,
+):
     import torch
     from diffusers import AutoPipelineForText2Image
 
     pipe = AutoPipelineForText2Image.from_pretrained(model_id, torch_dtype=dtype)
-    pipe = pipe.to(device)
+    # SD 3.5 on MPS: prefer fp16 full GPU (fast). float32 OOMs at ~30 GiB;
+    # enable_model_cpu_offload() on unified memory shuffles every component
+    # through the bus each step (~1 hr/image). Fall back to offload only if
+    # full load fails. SDXL UNet stays fully on-device in float32.
+    if device == "mps" and model_key == "sd35":
+        try:
+            pipe = pipe.to(device)
+            print("[exp01] SD 3.5 on MPS: full fp16 GPU load")
+        except RuntimeError as exc:
+            print(f"[exp01] SD 3.5 full MPS load failed ({exc}); using model CPU offload")
+            pipe.enable_model_cpu_offload()
+    else:
+        pipe = pipe.to(device)
 
     # Faster sampler: DPM++ 2M with Karras sigmas reaches comparable quality in
     # far fewer steps than the default scheduler. "keep" leaves the model default.
@@ -178,19 +224,113 @@ def _load_pipeline(model_id: str, dtype, device, scheduler: str = "dpm", low_mem
     return pipe
 
 
-def _generate(pipe, prompt: str, guidance: float, seed: int, steps: int, w: int, h: int, device):
+def _is_sd3_pipeline(pipe) -> bool:
+    return pipe.__class__.__name__ == "StableDiffusion3Pipeline"
+
+
+def _build_sd3_embed_cache(pipe, prompt: str, device: str) -> dict:
+    """Encode fixed prompts once; T5-XXL dominates per-image time if re-run."""
+    import torch
+
+    dev = torch.device(device)
+    with torch.no_grad():
+        cond = pipe.encode_prompt(
+            prompt=prompt,
+            prompt_2=prompt,
+            prompt_3=prompt,
+            negative_prompt="",
+            negative_prompt_2="",
+            negative_prompt_3="",
+            device=dev,
+            do_classifier_free_guidance=True,
+        )
+        empty = pipe.encode_prompt(
+            prompt="",
+            prompt_2="",
+            prompt_3="",
+            negative_prompt="",
+            negative_prompt_2="",
+            negative_prompt_3="",
+            device=dev,
+            do_classifier_free_guidance=True,
+        )
+    return {"cond": cond, "empty": empty}
+
+
+def _sd3_exec_device(pipe):
+    import torch
+
+    if getattr(pipe, "_execution_device", None) is not None:
+        return pipe._execution_device
+    return next(pipe.transformer.parameters()).device
+
+
+def _move_sd3_embeds(embeds, device):
+    import torch
+
+    dev = torch.device(device)
+
+    def _one(t):
+        return t.to(dev) if t is not None else None
+
+    return tuple(_one(t) for t in embeds)
+
+
+def _drop_sd3_text_encoders(pipe) -> None:
+    """Drop encoders after caching embeds — frees RAM without breaking MPS device routing."""
+    import gc
+
+    import torch
+
+    for name in ("text_encoder", "text_encoder_2", "text_encoder_3"):
+        enc = getattr(pipe, name, None)
+        if enc is not None:
+            del enc
+            setattr(pipe, name, None)
+    gc.collect()
+    if getattr(torch.backends, "mps", None) and torch.backends.mps.is_available():
+        torch.mps.empty_cache()
+
+
+def _generate(
+    pipe,
+    prompt: str,
+    guidance: float,
+    seed: int,
+    steps: int,
+    w: int,
+    h: int,
+    device,
+    *,
+    kind: str = "conditioned",
+    embed_cache: dict | None = None,
+):
     import numpy as np
     import torch
 
     generator = torch.Generator(device="cpu").manual_seed(seed)
-    out = pipe(
-        prompt=prompt,
+    common = dict(
         guidance_scale=guidance,
         num_inference_steps=steps,
         width=w,
         height=h,
         generator=generator,
     )
+    if embed_cache and _is_sd3_pipeline(pipe):
+        exec_dev = _sd3_exec_device(pipe)
+        pe, npe, ppe, nppe = _move_sd3_embeds(
+            embed_cache["empty" if kind == "unconditional" else "cond"],
+            exec_dev,
+        )
+        out = pipe(
+            prompt_embeds=pe,
+            negative_prompt_embeds=npe,
+            pooled_prompt_embeds=ppe,
+            negative_pooled_prompt_embeds=nppe,
+            **common,
+        )
+    else:
+        out = pipe(prompt=prompt, **common)
     img = out.images[0]
     arr = np.asarray(img)
     if arr.max() == 0:
@@ -212,7 +352,7 @@ def run(args: argparse.Namespace) -> None:
     )
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    device, dtype = _pick_device_and_dtype(args.device, args.dtype)
+    device, dtype = _pick_device_and_dtype(args.device, args.dtype, args.model)
 
     # Build the full job list first, then keep only this machine's shard. Shards
     # partition deterministically (job index % num_shards == shard), so three
@@ -250,6 +390,10 @@ def run(args: argparse.Namespace) -> None:
     print(f"[exp01] model={args.model} ({spec['model_id']})")
     print(f"[exp01] arch={spec['arch']} cfg={spec['cfg_type']} gated={spec['gated']}")
     print(f"[exp01] device={device} dtype={dtype} steps={steps} scheduler={scheduler}")
+    high_mem_mac = _mps_has_headroom(device)
+    ram_gb = _system_ram_gb()
+    if high_mem_mac and ram_gb is not None:
+        print(f"[exp01] unified RAM {ram_gb:.0f} GB — SD 3.5 fast path (no slicing/park)")
     if fallback_reason:
         print(f"[exp01] (requested scheduler '{args.scheduler}' -> 'keep': {fallback_reason})")
     if args.num_shards > 1:
@@ -262,19 +406,36 @@ def run(args: argparse.Namespace) -> None:
         print("[exp01] nothing to do (all jobs filtered out).")
         return
 
+    low_mem = (args.low_memory or (device == "mps" and not high_mem_mac)) and not args.no_low_memory
     pipe = _load_pipeline(
         spec["model_id"], dtype, device, scheduler,
-        (args.low_memory or device == "mps") and not args.no_low_memory,
+        low_mem,
+        model_key=args.model,
     )
+
+    embed_cache = None
+    if args.model == "sd35" and _is_sd3_pipeline(pipe):
+        print("[exp01] caching SD 3.5 prompt embeddings (fixed prompt + empty baseline)")
+        embed_cache = _build_sd3_embed_cache(pipe, args.prompt, device)
+        if not getattr(pipe, "_hf_hook", None) and not high_mem_mac:
+            _drop_sd3_text_encoders(pipe)
+            print("[exp01] text encoders dropped after embed cache; DiT+VAE stay on GPU")
 
     runs: list[dict] = []
     total = len(jobs)
     for done, job in enumerate(jobs, start=1):
         label = "UNCONDITIONAL (empty prompt) " if job["kind"] == "unconditional" else ""
         print(f"[exp01] ({done}/{total}) {label}guidance={job['guidance']} seed={job['seed']} -> {job['filename']}")
-        image = _generate(pipe, job["prompt"], job["guidance"], job["seed"],
-                          steps, args.width, args.height, device)
+        image = _generate(
+            pipe, job["prompt"], job["guidance"], job["seed"],
+            steps, args.width, args.height, device,
+            kind=job["kind"], embed_cache=embed_cache,
+        )
         image.save(out_dir / job["filename"])
+        import torch
+
+        if device == "mps" and torch.backends.mps.is_available():
+            torch.mps.empty_cache()
         runs.append({"kind": job["kind"], "guidance": job["guidance"],
                      "seed": job["seed"], "filename": job["filename"]})
 
