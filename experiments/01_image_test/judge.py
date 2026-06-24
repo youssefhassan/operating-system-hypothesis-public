@@ -16,8 +16,8 @@ Output: writes `judgements.json` into the target dir, one record per image with
 each judge's raw scores and a derived per-image metric `m_img` in [0, 1].
 
 Usage:
-    python judge.py --dir results-local/sdxl                 # both judges
-    python judge.py --dir results-local/sdxl --judges claude # single judge
+    python judge.py --dir results-local/sdxl                 # claude (default)
+    python judge.py --dir results-local/sdxl --judges both     # claude + gpt
 """
 
 from __future__ import annotations
@@ -32,11 +32,14 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+load_dotenv(_PROJECT_ROOT / ".env")
 
-# Pin to exact dated snapshots for confirmatory runs (override via env).
-CLAUDE_MODEL = os.environ.get("EXP01_CLAUDE_MODEL", "claude-3-5-sonnet-latest")
-OPENAI_MODEL = os.environ.get("EXP01_OPENAI_MODEL", "gpt-4o")
+# Pin judge models for confirmatory runs (override via env). As of 2026-06:
+#   Claude Sonnet 4.6 — claude-sonnet-4-6 (dateless ID = pinned snapshot per Anthropic)
+#   GPT-5.5 — gpt-5.5-2026-04-23 (dated snapshot; alias gpt-5.5 also works)
+CLAUDE_MODEL = os.environ.get("EXP01_CLAUDE_MODEL", "claude-sonnet-4-6")
+OPENAI_MODEL = os.environ.get("EXP01_OPENAI_MODEL", "gpt-5.5-2026-04-23")
 RUBRIC_VERSION = "exp01-formconstant-v1"
 
 RUBRIC = """You are scoring a SINGLE image for geometric "form constants" — the \
@@ -144,6 +147,18 @@ def judge_gpt(path: Path) -> dict:
 JUDGES = {"claude": judge_claude, "gpt": judge_gpt}
 
 
+def _require_keys(which: list[str]) -> None:
+    missing = []
+    if "claude" in which and not os.environ.get("ANTHROPIC_API_KEY"):
+        missing.append("ANTHROPIC_API_KEY")
+    if "gpt" in which and not os.environ.get("OPENAI_API_KEY"):
+        missing.append("OPENAI_API_KEY")
+    if missing:
+        raise SystemExit(
+            f"Missing API keys in {_PROJECT_ROOT / '.env'}: {', '.join(missing)}"
+        )
+
+
 def m_img(records: list[dict]) -> float | None:
     """Per-image metric: mean geometric_intensity across judges, normalized 0..1."""
     vals = [r["geometric_intensity"] for r in records if r]
@@ -161,6 +176,7 @@ def run(args: argparse.Namespace) -> None:
         raise SystemExit(f"no PNGs in {model_dir}")
 
     which = list(JUDGES) if args.judges == "both" else [args.judges]
+    _require_keys(which)
     out_path = model_dir / "judgements.json"
     existing = {}
     if out_path.exists() and not args.overwrite:
@@ -174,7 +190,12 @@ def run(args: argparse.Namespace) -> None:
         fn = path.name
         rec = results.get(fn, {})
         for judge_name in which:
-            if judge_name in rec and not args.overwrite:
+            prev = rec.get(judge_name)
+            if (
+                prev is not None
+                and not args.overwrite
+                and "error" not in prev
+            ):
                 continue
             try:
                 rec[judge_name] = JUDGES[judge_name](path)
@@ -212,7 +233,7 @@ def run(args: argparse.Namespace) -> None:
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Exp 01 blind dual-VLM form-constant judge.")
     p.add_argument("--dir", required=True, help="results-local/<model> directory")
-    p.add_argument("--judges", choices=["both", "claude", "gpt"], default="both")
+    p.add_argument("--judges", choices=["both", "claude", "gpt"], default="claude")
     p.add_argument("--overwrite", action="store_true", help="re-judge already-scored images")
     p.add_argument("--shuffle-seed", type=int, default=0)
     return p

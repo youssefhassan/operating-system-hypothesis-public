@@ -202,8 +202,10 @@ def gen(model: str, guidance: list[float], seeds: list[int], uncond: bool, dry: 
         subprocess.run(cmd, cwd=HERE, check=True)
 
 
-def judge(model: str, dry: bool) -> None:
-    cmd = [sys.executable, "judge.py", "--dir", f"results-local/{model}", "--judges", "both"]
+def judge(model: str, prereg: dict, dry: bool) -> None:
+    judges = prereg["judges"]
+    flag = "both" if len(judges) > 1 else judges[0]
+    cmd = [sys.executable, "judge.py", "--dir", f"results-local/{model}", "--judges", flag]
     print(f"[loop] JUDGE: {' '.join(cmd)}")
     if not dry:
         subprocess.run(cmd, cwd=HERE, check=True)
@@ -282,7 +284,7 @@ def main(args: argparse.Namespace) -> None:
             log_iter({"event": "stop", **plan})
             return
         gen(plan["model"], plan["guidance"], plan["seeds"], plan["uncond"], args.dry_run)
-        judge(plan["model"], args.dry_run)
+        judge(plan["model"], prereg, args.dry_run)
         agg = aggregate(plan["model"], prereg)
         print(f"[loop] {plan['model']} -> {json.dumps({k: agg.get(k) for k in ('spearman_rho','spearman_p','low_vs_high_cliffs_delta','delta_ci95','n')})}")
         log_iter({"event": "aggregate", "iteration": it, **agg})
