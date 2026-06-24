@@ -59,6 +59,9 @@ experiments/*/results/*
 # Local diffusers sweep outputs (Exp 01 sweep_local.py)
 experiments/*/results-local/
 
+# Matplotlib cache from analyze.py
+experiments/*/.mplcache/
+
 # Top-level results
 results/*
 !results/.gitkeep
