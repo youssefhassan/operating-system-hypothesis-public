@@ -197,6 +197,24 @@ Outputs go to `results-local/<model>/` (git-ignored) as `g{guidance}_s{seed}.png
 Runs on CUDA (Vast.ai), Apple Silicon MPS (the Mac minis), or CPU; device and
 dtype auto-detect, override with `--device` / `--dtype`.
 
+## Publish to Hugging Face
+
+Raw PNGs (~400 MB) stay out of git. After sweep + judge + analyze, publish the
+full artifact bundle as a public dataset on the Hub:
+
+```bash
+pip install huggingface_hub   # or pip install -r ../../requirements.txt
+python publish_hf.py --dry-run
+python publish_hf.py --repo-id youssefhassan/exp01-guidance-sweep
+```
+
+Uses `HF_TOKEN` from the project-root `.env` (write token with dataset create
+permission). Upload includes both models' PNGs, `judgements.json`,
+`analysis_report.json`, figures, dose GIFs, `preregistration.json`, and a
+generated dataset card README.
+
+Add the dataset URL to the Substack post and `analysis.md` once live.
+
 ## Pre-registration (confirmatory)
 
 The machine-readable pre-registration is in [`preregistration.json`](preregistration.json),
@@ -258,4 +276,5 @@ to restore dual-judge mode. Changing judge models does not change `rubric_versio
   (guidance floor 1.5, can't reach the low / base-layer regime).
 - `serve.py` — FastAPI wrapper around `run.py` for the live site.
 - `results-local/` — local sweep outputs, judgements, audit log (git-ignored).
+- `publish_hf.py` — upload `results-local/` to Hugging Face Hub as a public dataset.
 - `analysis.md` — written up after the sweeps complete.
