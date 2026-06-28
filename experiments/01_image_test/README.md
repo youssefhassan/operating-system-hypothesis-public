@@ -1,7 +1,9 @@
 # Experiment 01 — Image Test (guidance / CFG gradient)
 
-**Status:** coarse SDXL sweep in progress (local, MPS float32); confirmatory
-analysis pending blind judge + SD 3.5 replication.
+**Status:** **confirmatory complete** (2026-06-28). SDXL + SD 3.5 sweeps judged;
+pre-registered metric M = **null** on both. Exploratory Klüver level-2/3 re-judge
+(post-hoc) shows dose–response. Published in Substack post #3; dataset on
+[Hugging Face](https://huggingface.co/datasets/youssefhassan13/exp01-guidance-sweep).
 
 ## Goal (deny-friendly survey)
 
@@ -267,7 +269,9 @@ to restore dual-judge mode. Changing judge models does not change `rubric_versio
 ## Files
 
 - `sweep_local.py` — **generation.** Multi-model diffusers CFG sweep.
-- `judge.py` — **measurement.** Blind dual-VLM form-constant scorer (the form-constant judge).
+- `judge.py` — **measurement.** Blind VLM form-constant scorer (the form-constant judge).
+- `judge_kluver2.py` — **exploratory.** Blind Klüver level-2/3 re-judge (post-hoc).
+- `texture_metrics.py` — **exploratory.** FFT periodicity; refuted as tiling proxy.
 - `analyze.py` — **stats + figures.** Confirmatory M(g), exploratory rubric fields, contact sheets.
 - `run_remaining.sh` — **batch finish:** SDXL N=10 → SD 3.5 sweep → judge → analyze.
 - `loop.py` — **orchestration.** Methodology-compliant agentic loop.
