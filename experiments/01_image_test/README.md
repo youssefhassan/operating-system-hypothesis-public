@@ -205,7 +205,7 @@ full artifact bundle as a public dataset on the Hub:
 ```bash
 pip install huggingface_hub   # or pip install -r ../../requirements.txt
 python publish_hf.py --dry-run
-python publish_hf.py --repo-id youssefhassan/exp01-guidance-sweep
+python publish_hf.py --repo-id youssefhassan13/exp01-guidance-sweep
 ```
 
 Uses `HF_TOKEN` from the project-root `.env` (write token with dataset create

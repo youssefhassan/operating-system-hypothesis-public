@@ -6,8 +6,8 @@ dose-sweep GIFs. Skips logs, macOS junk, and symlink browse folders.
 
 Usage:
     python publish_hf.py --dry-run
-    python publish_hf.py --repo-id youssefhassan/exp01-guidance-sweep
-    python publish_hf.py --repo-id youssefhassan/exp01-guidance-sweep --private
+    python publish_hf.py --repo-id youssefhassan13/exp01-guidance-sweep
+    python publish_hf.py --repo-id youssefhassan13/exp01-guidance-sweep --private
 
 Requires HF_TOKEN in the project-root .env (same token used for gated models).
 """
@@ -228,6 +228,26 @@ def run(args: argparse.Namespace) -> None:
         from huggingface_hub import HfApi, create_repo
 
         api = HfApi(token=token)
+        who = api.whoami()
+        user = who.get("name", "")
+        expected_ns = args.repo_id.split("/")[0]
+        if user and user != expected_ns:
+            raise SystemExit(
+                f"HF_TOKEN is for user {user!r} but --repo-id namespace is {expected_ns!r}. "
+                f"Use --repo-id {user}/exp01-guidance-sweep"
+            )
+        scoped = who.get("auth", {}).get("accessToken", {}).get("fineGrained", {}).get("scoped", [])
+        perms: set[str] = set()
+        for s in scoped:
+            perms.update(s.get("permissions", []))
+        if not any("write" in p for p in perms):
+            raise SystemExit(
+                "HF_TOKEN is read-only (repo.content.read only). "
+                "Create a new token at https://huggingface.co/settings/tokens with "
+                "'Write access to contents/settings of all repos under your personal namespace', "
+                "update HF_TOKEN in .env, then re-run."
+            )
+
         create_repo(
             args.repo_id,
             repo_type="dataset",
@@ -248,8 +268,8 @@ def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Publish Exp 01 results to Hugging Face Hub.")
     p.add_argument(
         "--repo-id",
-        default="youssefhassan/exp01-guidance-sweep",
-        help="HF dataset repo (default: youssefhassan/exp01-guidance-sweep)",
+        default="youssefhassan13/exp01-guidance-sweep",
+        help="HF dataset repo (default: youssefhassan13/exp01-guidance-sweep)",
     )
     p.add_argument("--private", action="store_true", help="create/upload as private dataset")
     p.add_argument("--dry-run", action="store_true", help="build export and print manifest only")
