@@ -1,0 +1,126 @@
+{
+  "experiment": "03_l23_hardening",
+  "status": "confirmatory",
+  "kind": "hardening_study",
+  "committed_before_analyzed_runs": true,
+  "derives_from": {
+    "experiment": "01_image_test",
+    "finding_being_hardened": "Exploratory Kluver Level-2/3 dose-response (reduplication, fragmentation, condensation, distortion rise as guidance falls; SDXL distortion rho=-0.64, SD3.5 weaker). Currently fragile: single fixed prompt, single VLM judge, no inter-rater reliability, low-g confounded with under-conditioning, no multiple-comparison correction.",
+    "what_this_adds": "Turns that post-hoc exploratory signal into a pre-registered confirmatory result along four axes: (1) multi-prompt generality, (2) two independent judges + human-rated subset with inter-rater reliability, (3) quality-controlled guidance-matching to de-confound low-g breakdown from under-conditioning, (4) multiple-comparison correction."
+  },
+  "anchor_papers": [
+    "Kluver (1966), Mechanisms of Hallucinations -- Level-2 (polyopia/dysmegalopsia/dysmorphopsia) and Level-3 (spatio-temporal) constants; the taxonomy scored here.",
+    "Carhart-Harris & Friston (2019), REBUS and the Anarchic Brain -- precision-relaxation framing the guidance knob is the diffusion analogue of."
+  ],
+  "subquestions_addressed": {
+    "Q1_existence": "Does object-level breakdown (Kluver L2/3) appear as guidance falls, across a prompt set rather than one still life -- vs merely degrading to low-quality noise?",
+    "Q3_dose_response": "Is the L2/3 dose-response a graded curve that survives (a) prompt variation, (b) a second independent judge, and (c) controlling for image quality, so it is not just under-conditioning artifact?"
+  },
+  "hypothesis": "When guidance g is lowered on SDXL and SD 3.5, holding prompt/seed/steps fixed, a composite objecthood-dissolution score (mean of z-scored Kluver Level-2/3 fields: reduplication, fragmentation, condensation, distortion) rises as g falls, and this rise (a) generalizes across a 6-prompt set spanning object count and objecthood, (b) survives correction for image quality -- i.e. is present after partialling out a no-reference quality score, so it is not merely under-conditioning -- and (c) is agreed on by two independent judges (Claude Sonnet 5 + open-weight Qwen2.5-VL-7B) at adequate inter-rater reliability.",
+  "null_result": "Any of: (i) the composite guidance slope is flat (standardized LMM slope CI includes 0) on at least one model once pooled across prompts with random prompt/seed intercepts; (ii) the slope vanishes after partialling out image quality (quality-controlled partial Spearman |rho| < 0.1) -- meaning the Exp 01 signal was under-conditioning, not objecthood dissolution; (iii) the two judges do not agree (quadratic-weighted Cohen's kappa on the composite fields < 0.4), rendering the metric uninterpretable (inconclusive-null). Each is a first-class reportable outcome: it would say the hardened finding does not hold.",
+  "models": { "confirmatory": ["sdxl", "sd35"] },
+  "prompts": [
+    { "id": "p1_stilllife", "text": "a watermelon, a glass half-filled with water, and a set of keys on a wooden table", "role": "anchor (verbatim Exp 01 -- replication continuity)", "intended_inventory": { "distinct_objects": 3, "note": "one watermelon, one glass, one set of keys on a tabletop" }, "stresses": ["condensation", "fragmentation"] },
+    { "id": "p2_portrait", "text": "a close-up portrait photograph of an elderly man's face", "role": "single organic object; acute distortion detector; clean reduplication-zero baseline", "intended_inventory": { "distinct_objects": 1, "note": "one human face" }, "stresses": ["distortion"] },
+    { "id": "p3_bicycle", "text": "a red bicycle leaning against a brick wall", "role": "single rigid manufactured object; hard-edge geometry", "intended_inventory": { "distinct_objects": 1, "note": "one bicycle against a wall" }, "stresses": ["fragmentation", "distortion"] },
+    { "id": "p4_oranges", "text": "a bowl of oranges on a kitchen counter", "role": "high natural multiplicity; tests reduplication BEYOND intended count and condensation", "intended_inventory": { "distinct_objects": "one bowl containing a plausible ~5-10 oranges", "note": "reduplication scored only as multiplication implausibly beyond a normal bowl, or oranges appearing outside the bowl / tiling the frame" }, "stresses": ["condensation", "reduplication"] },
+    { "id": "p5_livingroom", "text": "an empty living room with a sofa, a lamp, and a window", "role": "architectural interior; scene-level spatial-layout fragmentation", "intended_inventory": { "distinct_objects": 3, "note": "one sofa, one lamp, one window in a coherent room" }, "stresses": ["fragmentation"] },
+    { "id": "p6_forest", "text": "a forest of pine trees on a misty mountainside", "role": "low-objecthood control; should show tiling but LOW reduplication/condensation if the effect is object-bound", "intended_inventory": { "distinct_objects": "many trees (inherently multiple)", "note": "reduplication baseline is high by design; score condensation/distortion of tree forms and tiling, not raw tree count" }, "stresses": ["tiling"], "is_control": true }
+  ],
+  "guidance_grid": [1.0, 2.0, 3.0, 5.0, 7.0, 11.0, 15.0],
+  "guidance_grid_rationale": "7-value subset spanning the inverted-U quality curve: low/under-conditioned arm (1,2,3), comfort-zone peak region for SDXL ~5-8 (5,7), and over-conditioned/oversaturated high arm (11,15). Both arms are required for the quality-matched two-arm contrast.",
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+  "unconditional_baseline": { "enabled": true, "note": "empty-prompt baseline, prompt-independent, 10 seeds per model; anchors the true base layer as in Exp 01." },
+  "fixed": { "steps": 25, "width": 1024, "height": 1024, "scheduler": "model-default on MPS/CPU; DPM++ 2M Karras on CUDA only; SD 3.5 native flow-matching sampler", "dtype": "MPS: float32 for SDXL, float16 for SD 3.5; CUDA float16 (identical to Exp 01)", "vae_decode": "SDXL force_upcast (latent fp32 at decode)" },
+  "metric": {
+    "name": "composite_objecthood_dissolution",
+    "fields": ["reduplication", "fragmentation", "condensation", "distortion"],
+    "binary_secondary_field": "tiling",
+    "per_image_per_field": "mean over the two judges (Claude Sonnet 5, Qwen2.5-VL-7B) of the 0-3 ordinal score",
+    "standardization": "each field z-scored across all conditioned images WITHIN a model",
+    "composite": "per image, mean over the 4 z-scored fields",
+    "primary_endpoint": "the single composite per model (keeps the confirmatory family at 2 tests); the 4 individual fields are secondary.",
+    "judge_gate": "if quadratic-weighted Cohen's kappa between the two judges on the composite fields < 0.4, the metric is deemed unreliable and the confirmatory claim is withheld (inconclusive-null)."
+  },
+  "primary_statistical_model": {
+    "type": "linear_mixed_model",
+    "formula": "composite ~ guidance_std + (1|prompt) + (1|seed)",
+    "fit": "per model (sdxl, sd35), on Judge-A+B mean composite",
+    "guidance_std": "z-scored guidance value (interval treatment, as Exp 01 treated the ordinal metric M)",
+    "effect_of_interest": "the guidance_std fixed-effect slope; negative slope = L2/3 rises as g falls",
+    "why_lmm": "random prompt intercept removes prompt-level baseline differences so the slope is the WITHIN-prompt guidance effect -- this correctly handles the high-baseline-multiplicity prompts (p4, p6). Random seed intercept absorbs per-seed variance.",
+    "effect_size": "standardized slope beta reported alongside p; effect estimation is primary per Methodology Section 5."
+  },
+  "guidance_matching": {
+    "purpose": "De-confound the low-g effect from under-conditioning (SDXL g=1.0 is out of its comfort zone ~5-8, so breakdown there may be low-quality artifact rather than objecthood dissolution).",
+    "quality_metric": {
+      "name": "no_reference_image_quality",
+      "components": ["CLIP-IQA (quality prompt-pair)", "LAION aesthetic predictor"],
+      "runs": "local on M4, per image; no reference distribution needed; stable at per-bin N",
+      "curve": "Q(model, g) = mean quality over prompts x seeds; g_star = argmax_g Q (per-model comfort-zone peak)",
+      "why_not_fid_or_clipscore": "FID needs a reference set and hundreds of samples per bin to be unbiased (noisy at N~10); CLIP-score rises ~monotonically with g (measures prompt adherence, not quality) so its peak is just high-g -- wrong shape for a comfort zone."
+    },
+    "primary_deconfound": {
+      "test": "partial Spearman correlation of composite vs guidance, controlling for Q",
+      "confirm_if": "remains negative with |rho| >= 0.2 and bootstrap CI excludes 0",
+      "null_if": "|rho| < 0.1 after controlling Q (the effect WAS under-conditioning)"
+    },
+    "secondary_contrast": {
+      "test": "matched-quality two-arm: quality is inverted-U, so a given Q level occurs at both a low-g and a high-g point. Compare composite at the low-g arm vs the quality-matched high-g arm.",
+      "interpretation": "if low-g breakdown were generic quality loss, the oversaturated high-g point at matched Q would show similar composite. More L2/3 at the low arm = effect specific to the under-conditioning direction.",
+      "reported": "Cliff's delta (low-arm vs quality-matched high-arm) with bootstrap CI",
+      "caveat": "requires the two arms' quality ranges to overlap; if not, the partial correlation stands as primary and this is reported as not-computable."
+    }
+  },
+  "inter_rater_reliability": {
+    "judges": ["claude", "qwen"],
+    "full_set": {
+      "measure": ["quadratic_weighted_cohens_kappa", "gwet_ac2", "percent_agreement"],
+      "note": "reported per field (ordinal 0-3) and for the composite; because several fields are 0-heavy (skewed marginals -> the kappa paradox), kappa is interpreted ALONGSIDE Gwet AC2 and percent agreement, not alone. Tiling (binary) uses unweighted kappa.",
+      "confirm_threshold": { "composite_weighted_kappa_min": 0.4 }
+    },
+    "human_subset": {
+      "n_images": "25-30",
+      "sampling": "stratified across (model x guidance-bin x prompt) so the subset spans the range",
+      "rater": "single human (author), blind, shuffled order, guidance hidden, identical rubric",
+      "measures": "human-vs-Claude and human-vs-Qwen quadratic-weighted kappa per field",
+      "limitation_noted": "single human rater -> reported as a limitation in analysis.md; no human-human reliability available."
+    }
+  },
+  "calibration_cross_check": {
+    "purpose": "Judge A is Sonnet 5, not Exp 01's Sonnet 4.6 -- confirm the metric stays comparable to Exp 01.",
+    "procedure": "re-judge a fixed sample of existing Exp 01 images with Sonnet 5 on the (generalized) rubric; confirm the L2/3 field scores track the archived Sonnet 4.6 numbers (Spearman across images).",
+    "reported_in": "analysis.md; not a confirm/null gate."
+  },
+  "multiple_comparison_correction": {
+    "primary_family": "2 tests (composite LMM slope, one per model) -- kept deliberately small so the headline claim is not multiplicity-inflated.",
+    "secondary_family": "4 fields x 2 models = 8 field-level dose-response tests, corrected by Benjamini-Hochberg FDR; reported as q-values with standardized effect sizes (Methodology Section 5).",
+    "enumerated_up_front": true
+  },
+  "confirm": {
+    "lmm_composite_slope_standardized_max": -0.2,
+    "lmm_composite_slope_bh_p_max": 0.05,
+    "both_models_required": true,
+    "quality_controlled_partial_rho_max": -0.2,
+    "quality_controlled_ci_excludes_zero": true,
+    "inter_judge_composite_weighted_kappa_min": 0.4,
+    "prompt_generality": "guidance-slope sign consistent (negative) in at least 5 of 6 prompts per model in a per-prompt descriptive breakdown"
+  },
+  "null": {
+    "lmm_composite_slope_ci_includes_zero_on_any_model": true,
+    "quality_controlled_partial_abs_rho_below": 0.1,
+    "inter_judge_composite_weighted_kappa_below": 0.4
+  },
+  "samples": { "images_per_model": "6 prompts x 7 guidance x 10 seeds + 10 uncond = 430", "total_images": 860, "judge_calls": "860 x 2 judges = 1720 (860 Claude ~ $7; 860 Qwen local $0)", "human_ratings": "25-30" },
+  "tests": ["linear_mixed_model_slope", "partial_spearman_quality_controlled", "cliffs_delta_matched_quality_arms", "bootstrap_ci", "benjamini_hochberg_fdr", "quadratic_weighted_cohens_kappa", "gwet_ac2"],
+  "budget": { "max_images": 900, "max_claude_judge_calls": 1000, "usd_soft_cap": 15, "gpu": "Apple M5 Pro 64GB (single primary host). 64GB unified memory runs SD 3.5 without cpu-offload/slicing and both judges locally; no sharding required (the 3x M4 24GB sharded path from Exp 01 remains available but is unnecessary here)." },
+  "judges": {
+    "claude": { "model": "claude-sonnet-5", "pinned_via": "EXP03_CLAUDE_MODEL env var (default claude-sonnet-5)" },
+    "qwen": { "model": "Qwen2.5-VL-7B", "runtime": "MLX on Apple Silicon (M5 Pro 64GB)", "note": "7B is the pre-registered default (reproducible on modest hardware). On the 64GB host Qwen2.5-VL-32B (4-bit, ~20GB) runs without friction and is the drop-in fallback if 7B's human-subset kappa is poor; swapping the judge model does not change rubric_version." }
+  },
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "forbidden_to_automate": ["prompts", "intended_inventories", "rubric_text", "metric_definition", "guidance_grid_bounds", "confirm_thresholds", "null_thresholds", "primary_endpoint_definition"],
+  "swappable_without_reclassifying": ["judge_models (rubric_version fixed; changing judge model does not change the scoring text)", "seed_count (add seeds only)", "device/dtype/scheduler generation-procedure settings (set before any analyzed run)"],
+  "amendments": [],
+  "notes": "Changing any 'forbidden_to_automate' field after seeing data reclassifies the run as exploratory (Methodology Section 4) and requires a separate dated commit. This file must be git-committed BEFORE any analyzed generation run (git-history pre-registration). The analysis plan (analysis_plan.md) is committed in the same commit, before results, per the user's pre-registration discipline."
+}
