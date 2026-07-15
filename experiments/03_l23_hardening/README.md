@@ -81,30 +81,59 @@ Each is a first-class reportable outcome — see `analysis_plan.md` §8.
 
 | File | Purpose | Status |
 |---|---|---|
-| `preregistration.json` | Machine-readable confirmatory pre-registration | ✅ written |
-| `analysis_plan.md` | Pre-committed statistics plan (LMM, κ, partial-corr, BH) | ✅ written |
-| `README.md` | This human-readable twin | ✅ written |
-| `sweep_local.py` | Generation, generalized to the 6-prompt set (adapted from Exp 01) | ⬜ after approval |
-| `judge.py` | Claude Sonnet 5 L2/3 judge (per-prompt intended inventories) | ⬜ |
-| `judge_qwen.py` | Qwen2.5-VL-7B MLX judge, identical rubric | ⬜ |
-| `quality.py` | CLIP-IQA + LAION-aesthetic, per image | ⬜ |
-| `human_rate.py` | Blind local rating tool for the 25–30 subset | ⬜ |
-| `analyze.py` | LMM, κ/AC2, partial-corr, matched-quality, BH, figures | ⬜ |
-| `log.md` / `analysis.md` | Daily log / written up after the run | ⬜ |
+| `preregistration.json` | Machine-readable confirmatory pre-registration | ✅ committed |
+| `analysis_plan.md` | Pre-committed statistics plan (LMM, κ, partial-corr, BH) | ✅ committed |
+| `README.md` | This human-readable twin | ✅ |
+| `sweep_local.py` | Generation, generalized to the 6-prompt set (adapted from Exp 01) | ✅ written |
+| `rubric.py` | Shared per-prompt L2/3 rubric (both judges use it) | ✅ written |
+| `judge.py` | Claude Sonnet 5 L2/3 judge (per-prompt intended inventories) | ✅ written |
+| `judge_qwen.py` | Qwen2.5-VL-7B MLX judge, identical rubric | ✅ written |
+| `quality.py` | CLIP-IQA + LAION-aesthetic, per image | ✅ written |
+| `human_rate.py` | Blind local rating tool for the 25–30 subset | ✅ written |
+| `statlib.py` | numpy stats (Spearman/partial, Cliff's δ, BH, κ, Gwet AC2) | ✅ written |
+| `analyze.py` | LMM, κ/AC2, partial-corr, matched-quality, BH, figures | ✅ written |
+| `log.md` / `analysis.md` | Daily log / written up after the run | log ✅ / analysis ⬜ |
 
-## Running it (after code is written)
+> **Status of the code:** all scripts compile and the pure-logic modules
+> (`rubric`, filename parsing) are unit-checked. The numeric paths
+> (numpy/statsmodels LMM, torchmetrics CLIP-IQA, MLX Qwen) run on the M5 venv,
+> not in the authoring environment, so a first smoke-run on a tiny subset is the
+> recommended next step before the full sweep (see below).
+
+## Running it
 
 ```bash
+pip install -r ../../requirements.txt          # adds statsmodels, torchmetrics, mlx-vlm
+
+# 0) SMOKE TEST first — validate the whole pipeline on ~4 images before the full sweep
+python sweep_local.py --model sdxl --prompts p2_portrait --guidance 1 15 --seeds 42 --skip-existing
+EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/sdxl
+python judge_qwen.py --dir results-local/sdxl
+python quality.py --dir results-local/sdxl
+python analyze.py --model sdxl              # confirms metric/LMM/κ/plot wiring end to end
+# if that clean-runs, wipe results-local/sdxl and do the real sweep:
+
 # generation (single M5 Pro 64GB host — no sharding needed; --skip-existing makes it resumable)
 python sweep_local.py --model sdxl --prompts all --unconditional --skip-existing
 python sweep_local.py --model sd35 --prompts all --unconditional --skip-existing
-# judging (blind, shuffled)
-EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/sdxl
-python judge_qwen.py --dir results-local/sdxl        # local MLX
-# quality + analysis
-python quality.py --dir results-local/sdxl
-python analyze.py --model sdxl --plot
+# judging (blind, shuffled) + quality — run per model dir
+for m in sdxl sd35; do
+  EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/$m
+  python judge_qwen.py --dir results-local/$m          # local MLX
+  python quality.py --dir results-local/$m
+done
+
+# human subset (25–30 blind ratings for inter-rater κ)
+python human_rate.py --sample        # build the stratified subset once
+python human_rate.py                 # rate (resumable; opens each image, guidance hidden)
+
+# analysis: LMM · quality de-confound · κ/AC2 · matched-quality · BH · figures + verdict
+python analyze.py --both --plot
 ```
+
+Outputs per model: `results-local/<model>/l23_report.json` (all statistics +
+verdict) and `figures/` (dose-response, per-field, reliability). Publish the
+bundle to Hugging Face after the run, as in Exp 01.
 
 ## Pre-registration discipline
 

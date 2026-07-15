@@ -20,3 +20,9 @@ safetensors>=0.4.5
 sentencepiece>=0.2.0
 protobuf>=5.28.0
 huggingface_hub>=0.26.0
+
+# Experiment 03 (Klüver L2/3 hardening). Adds the primary LMM, no-reference
+# quality, and the local open-weight second judge.
+statsmodels>=0.14.0        # primary LMM: composite ~ g_std + (1|prompt)+(1|seed)
+torchmetrics>=1.4.0        # CLIP-IQA (no-reference quality curve)
+mlx-vlm>=0.1.0 ; platform_system == "Darwin" and platform_machine == "arm64"  # Qwen2.5-VL judge (Apple Silicon)
