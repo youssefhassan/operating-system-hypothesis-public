@@ -50,8 +50,10 @@ def _device():
 def _clip_iqa_metric(device):
     from torchmetrics.multimodal import CLIPImageQualityAssessment
 
-    # single "quality" antonym prompt -> scalar in [0,1], higher = better
-    m = CLIPImageQualityAssessment(model_name_or_path="clip_iqa", prompts=("quality",))
+    # single "quality" antonym prompt -> scalar in [0,1], higher = better.
+    # data_range=255: we feed [0,255] float tensors (torchmetrics normalizes by this).
+    m = CLIPImageQualityAssessment(model_name_or_path="clip_iqa", prompts=("quality",),
+                                   data_range=255.0)
     return m.to(device)
 
 
