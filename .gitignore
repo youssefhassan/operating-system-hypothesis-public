@@ -59,6 +59,9 @@ experiments/*/results/*
 # Local diffusers sweep outputs (Exp 01 sweep_local.py)
 experiments/*/results-local/
 
+# Locally-downloaded model weights (never commit — multi-GB)
+experiments/*/sdxl_local/
+
 # Matplotlib cache from analyze.py
 experiments/*/.mplcache/
 

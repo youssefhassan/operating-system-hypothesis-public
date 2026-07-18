@@ -127,10 +127,15 @@ def _pick_device_and_dtype(device_arg: str, dtype_arg: str, model_key: str):
     return device, dtype
 
 
-def _load_pipeline(model_id, dtype, device, scheduler, low_memory, model_key):
+def _load_pipeline(model_id, dtype, device, scheduler, low_memory, model_key, variant=None):
     from diffusers import AutoPipelineForText2Image
 
-    pipe = AutoPipelineForText2Image.from_pretrained(model_id, torch_dtype=dtype)
+    # variant="fp16" loads the fp16-precision weight files; torch_dtype casts them
+    # (e.g. up to float32 for MPS-stable SDXL). Halves the download vs fp32 files.
+    kw = {"torch_dtype": dtype}
+    if variant:
+        kw["variant"] = variant
+    pipe = AutoPipelineForText2Image.from_pretrained(model_id, **kw)
     if device == "mps" and model_key == "sd35":
         try:
             pipe = pipe.to(device)
@@ -237,6 +242,7 @@ def run(args: argparse.Namespace) -> None:
         prompt_ids = args.prompts
 
     spec = MODEL_REGISTRY[args.model]
+    model_id = args.model_path or spec["model_id"]  # local dir override (flaky-download workaround)
     out_dir = Path(args.outdir) if args.outdir else HERE / "results-local" / args.model
     out_dir.mkdir(parents=True, exist_ok=True)
     device, dtype = _pick_device_and_dtype(args.device, args.dtype, args.model)
@@ -265,7 +271,7 @@ def run(args: argparse.Namespace) -> None:
     elif scheduler == "dpm" and device != "cuda":
         scheduler = "keep"  # DPM++ Karras is NaN-unstable on MPS/CPU in low precision
 
-    print(f"[exp03] model={args.model} ({spec['model_id']}) arch={spec['arch']}")
+    print(f"[exp03] model={args.model} ({model_id}) arch={spec['arch']}")
     print(f"[exp03] device={device} dtype={dtype} steps={steps} scheduler={scheduler}")
     print(f"[exp03] prompts={prompt_ids}")
     print(f"[exp03] guidance={guidance} seeds={seeds}")
@@ -281,7 +287,7 @@ def run(args: argparse.Namespace) -> None:
     print(f"[exp03] {len(jobs)} images to generate -> {out_dir}")
 
     low_mem = (args.low_memory or (device == "mps" and not high_mem)) and not args.no_low_memory
-    pipe = _load_pipeline(spec["model_id"], dtype, device, scheduler, low_mem, args.model)
+    pipe = _load_pipeline(model_id, dtype, device, scheduler, low_mem, args.model, args.variant)
 
     is_sd3 = args.model == "sd35" and _is_sd3_pipeline(pipe)
     embed_cache: dict[str, tuple] = {}
@@ -310,7 +316,7 @@ def run(args: argparse.Namespace) -> None:
 
     metadata = {
         "experiment": "03_l23_hardening (local)",
-        "model_key": args.model, "model_id": spec["model_id"], "arch": spec["arch"],
+        "model_key": args.model, "model_id": model_id, "arch": spec["arch"],
         "cfg_type": spec["cfg_type"], "device": device, "dtype": str(dtype),
         "scheduler": scheduler, "rubric_version": prereg["rubric_version"],
         "finished_at": datetime.now(timezone.utc).isoformat(),
@@ -358,6 +364,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--shard", type=int, default=0)
     p.add_argument("--skip-existing", action="store_true", help="safe resume")
     p.add_argument("--outdir", default=None)
+    p.add_argument("--model-path", default=None,
+                   help="local directory to load weights from (overrides the hub id; "
+                        "use with a pre-downloaded `hf download --local-dir` snapshot)")
+    p.add_argument("--variant", default=None,
+                   help="weight variant to load, e.g. 'fp16' (loaded then cast by --dtype)")
     return p
 
 

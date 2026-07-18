@@ -1,0 +1,99 @@
+[00:22:00] fp16 snapshot (no kill) -> /Users/youssefhassan/Development/operating-system-hypothesis/experiments/03_l23_hardening/sdxl_local
+[00:22:00] snapshot attempt 1
+Fetching 22 files:   0%|          | 0/22 [00:00<?, ?it/s]Fetching 22 files:  18%|█▊        | 4/22 [01:10<05:17, 17.65s/it]Fetching 22 files:  27%|██▋       | 6/22 [09:21<30:00, 112.55s/it]Fetching 22 files:  32%|███▏      | 7/22 [09:22<21:43, 86.92s/it] Fetching 22 files:  36%|███▋      | 8/22 [09:22<15:18, 65.59s/it]Fetching 22 files:  41%|████      | 9/22 [09:23<10:31, 48.59s/it]Fetching 22 files:  45%|████▌     | 10/22 [09:23<07:06, 35.52s/it]Fetching 22 files:  50%|█████     | 11/22 [09:23<04:42, 25.73s/it]Fetching 22 files:  55%|█████▍    | 12/22 [09:24<03:05, 18.51s/it]Fetching 22 files:  59%|█████▉    | 13/22 [09:25<02:00, 13.39s/it]Fetching 22 files:  64%|██████▎   | 14/22 [09:25<01:16,  9.60s/it]Fetching 22 files:  68%|██████▊   | 15/22 [09:26<00:48,  7.00s/it]Fetching 22 files:  68%|██████▊   | 15/22 [6:08:43<2:52:04, 1474.93s/it]
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+    snapshot_download("stabilityai/stable-diffusion-xl-base-1.0",
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        local_dir=os.environ["LOCAL"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        allow_patterns=["*.json","*.txt","*.fp16.safetensors"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        max_workers=1)          # serial: one file at a time, gentler on a flaky link
+        ^^^^^^^^^^^^^^
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/_snapshot_download.py", line 513, in snapshot_download
+    thread_map(
+    ~~~~~~~~~~^
+        _inner_hf_hub_download,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/tqdm/contrib/concurrent.py", line 69, in thread_map
+    return _executor_map(ThreadPoolExecutor, fn, *iterables, **tqdm_kwargs)
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/tqdm/contrib/concurrent.py", line 51, in _executor_map
+    return list(tqdm_class(ex.map(fn, *iterables, chunksize=chunksize), **kwargs))
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/tqdm/std.py", line 1187, in __iter__
+    for obj in iterable:
+               ^^^^^^^^
+  File "/Users/youssefhassan/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/concurrent/futures/_base.py", line 645, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/youssefhassan/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/concurrent/futures/_base.py", line 312, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/Users/youssefhassan/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Users/youssefhassan/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    raise self._exception
+  File "/Users/youssefhassan/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Users/youssefhassan/.local/share/uv/python/cpython-3.14.6-macos-aarch64-none/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/_snapshot_download.py", line 493, in _inner_hf_hub_download
+    hf_hub_download(  # type: ignore
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        repo_id,
+        ^^^^^^^^
+    ...<14 lines>...
+        dry_run=dry_run,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 992, in hf_hub_download
+    return _hf_hub_download_to_local_dir(
+        # Destination
+    ...<16 lines>...
+        dry_run=dry_run,
+    )
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 1451, in _hf_hub_download_to_local_dir
+    _download_to_tmp_and_move(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        incomplete_path=paths.incomplete_path(etag),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 1920, in _download_to_tmp_and_move
+    xet_get(
+    ~~~~~~~^
+        incomplete_path=tmp_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        tqdm_class=tqdm_class,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/youssefhassan/Development/operating-system-hypothesis/.venv/lib/python3.14/site-packages/huggingface_hub/file_download.py", line 563, in xet_get
+    with session.new_file_download_group(
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        token_refresh_url=xet_file_data.refresh_route,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        progress_callback=progress.update_progress,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as group:
+    ^
+RuntimeError: Task error: File reconstruction error: CAS Client Error: Request middleware error: CAS Client Error: Request error: HTTP status client error (401 Unauthorized), domain: https://cas-server.xethub.hf.co/v2/reconstructions/9d7f42ce006fbf21a77799c28c6aa75fa411f4f8934b78f9b3aac51d737d6b29
+[06:30:45] snapshot exited nonzero -> resume in 5s (dir=1562MB)
+[06:48:04] snapshot attempt 2
+Fetching 22 files:   0%|          | 0/22 [00:00<?, ?it/s]
