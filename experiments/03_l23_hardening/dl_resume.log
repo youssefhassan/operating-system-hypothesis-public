@@ -1,0 +1,4 @@
+[resume] xet disabled; fetching missing SDXL fp16 files...
+Fetching 22 files:   0%|          | 0/22 [00:00<?, ?it/s]Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Fetching 22 files:  73%|███████▎  | 16/22 [07:32<02:49, 28.28s/it]Fetching 22 files: 100%|██████████| 22/22 [07:32<00:00, 20.57s/it]
+[resume] SNAPSHOT_OK in 452s -> /Users/youssefhassan/Development/operating-system-hypothesis/experiments/03_l23_hardening/sdxl_local
