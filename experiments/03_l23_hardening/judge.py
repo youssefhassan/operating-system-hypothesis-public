@@ -86,60 +86,49 @@ def _text_of(message) -> str:
 
 
 def _run_batch(client, model_dir, todo, prereg, results, out_path) -> None:
+    """Submit in CHUNKS. Each base64 PNG is ~1-2 MB, and the Batches API caps a
+    request at 256 MB — all ~430 images in one batch is ~640 MB and 413s. Chunk
+    to stay well under the cap; results save after every chunk, so a re-run
+    resumes via the todo/skip-existing logic (no explicit batch-id state needed)."""
     from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
     from anthropic.types.messages.batch_create_params import Request
 
-    # custom_id must be a safe token; map it back to the filename.
-    cid_to_fn = {f"img{i}": p.name for i, p in enumerate(todo)}
-    fn_to_path = {p.name: p for p in todo}
+    CHUNK = 60  # ~60 base64 PNGs ≈ 90-120 MB, comfortably under the 256 MB cap
+    chunks = [todo[i:i + CHUNK] for i in range(0, len(todo), CHUNK)]
+    print(f"[j-claude] {len(todo)} images in {len(chunks)} batch(es) of <= {CHUNK} "
+          f"(50% batch pricing)", flush=True)
 
-    state_path = model_dir / BATCH_STATE
-    batch_id = None
-    if state_path.exists():
-        prev = json.loads(state_path.read_text())
-        if prev.get("model") == CLAUDE_MODEL and prev.get("cid_to_fn"):
-            batch_id = prev.get("batch_id")
-            cid_to_fn = prev["cid_to_fn"]  # resume the exact submitted set
-            print(f"[j-claude] resuming cached batch {batch_id}", flush=True)
-
-    if batch_id is None:
+    ok = err = 0
+    for ci, chunk in enumerate(chunks, 1):
+        cid_to_fn = {f"b{ci}i{j}": p.name for j, p in enumerate(chunk)}
+        fn_to_path = {p.name: p for p in chunk}
         requests = [
             Request(custom_id=cid,
                     params=MessageCreateParamsNonStreaming(**_message_params(fn_to_path[fn], prereg)))
             for cid, fn in cid_to_fn.items()
         ]
         batch = client.messages.batches.create(requests=requests)
-        batch_id = batch.id
-        state_path.write_text(json.dumps(
-            {"batch_id": batch_id, "model": CLAUDE_MODEL, "cid_to_fn": cid_to_fn}))
-        print(f"[j-claude] submitted batch {batch_id} ({len(requests)} requests, 50% batch pricing)",
+        print(f"[j-claude] batch {ci}/{len(chunks)} submitted {batch.id} "
+              f"({len(requests)} reqs)", flush=True)
+        while True:
+            b = client.messages.batches.retrieve(batch.id)
+            if b.processing_status == "ended":
+                break
+            time.sleep(20)
+        for result in client.messages.batches.results(batch.id):
+            fn = cid_to_fn.get(result.custom_id)
+            if fn is None:
+                continue
+            if result.result.type == "succeeded":
+                results[fn] = R.coerce(R.extract_json(_text_of(result.result.message)))
+                ok += 1
+            else:
+                results[fn] = {"error": f"batch:{result.result.type}"}
+                err += 1
+        _save(out_path, results)  # persist after each chunk (resumable)
+        print(f"[j-claude] batch {ci}/{len(chunks)} done ({ok} ok, {err} err cumulative)",
               flush=True)
-
-    # poll (most batches finish < 1h; max 24h)
-    while True:
-        b = client.messages.batches.retrieve(batch_id)
-        if b.processing_status == "ended":
-            break
-        c = b.request_counts
-        print(f"[j-claude] batch {b.processing_status}: "
-              f"{c.processing} processing, {c.succeeded} ok, {c.errored} err", flush=True)
-        time.sleep(30)
-
-    ok = err = 0
-    for result in client.messages.batches.results(batch_id):
-        fn = cid_to_fn.get(result.custom_id)
-        if fn is None:
-            continue
-        if result.result.type == "succeeded":
-            results[fn] = R.coerce(R.extract_json(_text_of(result.result.message)))
-            ok += 1
-        else:
-            results[fn] = {"error": f"batch:{result.result.type}"}
-            err += 1
-    _save(out_path, results)
-    if state_path.exists():
-        state_path.unlink()
-    print(f"[j-claude] batch done: {ok} scored, {err} errored -> {out_path}", flush=True)
+    print(f"[j-claude] all batches done: {ok} scored, {err} errored -> {out_path}", flush=True)
 
 
 # ---------------------------------- sync path ----------------------------------
