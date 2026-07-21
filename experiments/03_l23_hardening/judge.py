@@ -127,8 +127,15 @@ def _run_batch(client, model_dir, todo, prereg, results, out_path) -> None:
             if fn is None:
                 continue
             if result.result.type == "succeeded":
-                results[fn] = R.coerce(R.extract_json(_text_of(result.result.message)))
-                ok += 1
+                # A per-image refusal / empty reply must NOT crash the whole run:
+                # mark it an error (dropped at analysis; re-judged on a later run).
+                try:
+                    results[fn] = R.coerce(R.extract_json(_text_of(result.result.message)))
+                    ok += 1
+                except Exception as e:  # noqa: BLE001
+                    stop = getattr(result.result.message, "stop_reason", None)
+                    results[fn] = {"error": f"parse:{stop or e}"}
+                    err += 1
             else:
                 results[fn] = {"error": f"batch:{result.result.type}"}
                 err += 1
