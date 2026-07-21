@@ -98,7 +98,9 @@ def _run_batch(client, model_dir, todo, prereg, results, out_path) -> None:
     print(f"[j-claude] {len(todo)} images in {len(chunks)} batch(es) of <= {CHUNK} "
           f"(50% batch pricing)", flush=True)
 
-    ok = err = 0
+    # Submit ALL chunk-batches first — the Batches API processes them in parallel
+    # server-side, so total wall-time ≈ one batch's latency instead of the sum.
+    submitted = []  # list of (batch_id, cid_to_fn)
     for ci, chunk in enumerate(chunks, 1):
         cid_to_fn = {f"b{ci}i{j}": p.name for j, p in enumerate(chunk)}
         fn_to_path = {p.name: p for p in chunk}
@@ -108,14 +110,19 @@ def _run_batch(client, model_dir, todo, prereg, results, out_path) -> None:
             for cid, fn in cid_to_fn.items()
         ]
         batch = client.messages.batches.create(requests=requests)
-        print(f"[j-claude] batch {ci}/{len(chunks)} submitted {batch.id} "
-              f"({len(requests)} reqs)", flush=True)
+        submitted.append((batch.id, cid_to_fn))
+        print(f"[j-claude] batch {ci}/{len(chunks)} submitted {batch.id} ({len(requests)} reqs)",
+              flush=True)
+
+    # Now poll + collect each (later ones are usually already ended by the time we reach them).
+    ok = err = 0
+    for bi, (batch_id, cid_to_fn) in enumerate(submitted, 1):
         while True:
-            b = client.messages.batches.retrieve(batch.id)
+            b = client.messages.batches.retrieve(batch_id)
             if b.processing_status == "ended":
                 break
             time.sleep(20)
-        for result in client.messages.batches.results(batch.id):
+        for result in client.messages.batches.results(batch_id):
             fn = cid_to_fn.get(result.custom_id)
             if fn is None:
                 continue
@@ -125,8 +132,8 @@ def _run_batch(client, model_dir, todo, prereg, results, out_path) -> None:
             else:
                 results[fn] = {"error": f"batch:{result.result.type}"}
                 err += 1
-        _save(out_path, results)  # persist after each chunk (resumable)
-        print(f"[j-claude] batch {ci}/{len(chunks)} done ({ok} ok, {err} err cumulative)",
+        _save(out_path, results)  # persist after each collected batch (resumable)
+        print(f"[j-claude] batch {bi}/{len(submitted)} collected ({ok} ok, {err} err cumulative)",
               flush=True)
     print(f"[j-claude] all batches done: {ok} scored, {err} errored -> {out_path}", flush=True)
 
