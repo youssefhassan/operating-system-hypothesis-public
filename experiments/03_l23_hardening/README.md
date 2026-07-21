@@ -28,9 +28,9 @@ a citable, pre-registered result** (target: NeurIPS 2026 workshop, ~late Aug).
    amendment), deliberately *not* three Claudes, to break judge-circularity:
    Judge A = **Claude Sonnet 5** (`claude-sonnet-5`, pinned via
    `EXP03_CLAUDE_MODEL`, run through the **Message Batches API** — 50% cheaper);
-   Judge B = **Qwen2.5-VL-7B** (MLX, local, $0); Judge C = **Llama 4 Scout Vision**
-   (MLX, local, $0; `EXP03_LLAMA_MODEL`, fallback Llama-3.2-11B-Vision if it OOMs
-   on 64 GB). Plus a 25–30 image human-rated subset. Reliability = **mean of the
+   Judge B = **Qwen2.5-VL-7B** (MLX, local, $0); Judge C = **Llama-3.2-11B-Vision**
+   (MLX, local, $0; safe dense default — opt into the newer Llama 4 Scout via
+   `EXP03_LLAMA_MODEL` if you have the RAM). Plus a 25–30 image human-rated subset. Reliability = **mean of the
    pairwise** quadratic-weighted **Cohen's κ** across the three judges (with Gwet
    AC2 + percent agreement alongside, because the fields are 0-heavy). The
    composite-κ ≥ 0.4 gate is unchanged.
@@ -57,7 +57,7 @@ a citable, pre-registered result** (target: NeurIPS 2026 workshop, ~late Aug).
 | Seeds | 10 (42–51) |
 | Images | 430/model (+ empty-prompt baselines) = **860** |
 | Host | Apple **M5 Pro 64GB** (single box; no sharding, SD 3.5 runs without cpu-offload) |
-| Judges | **3 families** (2026-07-21): Claude Sonnet 5 (API via **Batches**, ~$3.50) + Qwen2.5-VL-7B (local, $0) + **Llama 4 Scout Vision** (local, $0; fallback Llama-3.2-11B-Vision) |
+| Judges | **3 families** (2026-07-21): Claude Sonnet 5 (API via **Batches**, ~$3.50) + Qwen2.5-VL-7B (local, $0) + **Llama-3.2-11B-Vision** (local, $0; opt-in Llama 4 Scout via `EXP03_LLAMA_MODEL`) |
 | Primary stat | Linear mixed model: `composite ~ guidance_std + (1\|prompt) + (1\|seed)`, per model |
 | De-confound | partial Spearman controlling for quality; matched-quality two-arm contrast |
 | Human subset | 25–30 stratified images, author-rated, blind |
@@ -96,7 +96,7 @@ Each is a first-class reportable outcome — see `analysis_plan.md` §8.
 | `rubric.py` | Shared per-prompt L2/3 rubric (both judges use it) | ✅ written |
 | `judge.py` | Claude Sonnet 5 L2/3 judge — **Batches API** (`--sync` escape hatch) | ✅ written |
 | `judge_qwen.py` | Qwen2.5-VL-7B MLX judge, identical rubric | ✅ written |
-| `judge_llama.py` | **Llama 4 Scout Vision** MLX judge (judge C), identical rubric | ✅ written (2026-07-21) |
+| `judge_llama.py` | **Llama-3.2-11B-Vision** MLX judge (judge C; opt-in Llama 4 Scout), identical rubric | ✅ written (2026-07-21) |
 | `quality.py` | CLIP-IQA + LAION-aesthetic, per image | ✅ written |
 | `human_rate.py` | Blind local rating tool for the 25–30 subset | ✅ written |
 | `statlib.py` | numpy stats (Spearman/partial, Cliff's δ, BH, κ, Gwet AC2) | ✅ written |

@@ -1,5 +1,5 @@
 """
-Experiment 03 — Judge C: Llama 4 Scout Vision (local, MLX), blind Klüver L2/3 scorer.
+Experiment 03 — Judge C: Llama-3.2-11B-Vision (local, MLX), blind Klüver L2/3 scorer.
 
 The *third* independent judge (added 2026-07-21). Three model families now score
 every image — Anthropic (Claude, judge A), Alibaba/Qwen (judge B), Meta/Llama
@@ -11,20 +11,18 @@ rubric (rubric.py) as the other judges. Writes `judgements_llama.json`.
 Blinding: same as A/B — image pixels + fixed rubric, shuffled order, guidance
 never shown, un-blinded only at analysis. Deterministic decoding (temp=0).
 
-MODEL — latest Llama vision, with a hardware caveat:
-  Default is **Llama 4 Scout Instruct 4-bit** (`mlx-community/Llama-4-Scout-17B-16E-Instruct-4bit`)
-  — the latest Meta multimodal model (17B active / 109B total MoE). Requires
-  **mlx-vlm >= 0.1.21** (older versions raise "Model type llama4 not supported").
-  ⚠️ At 4-bit the weights are ~55 GB — borderline on a 64 GB M5 once macOS + the
-  image encoder load; it may swap or OOM. **Smoke-test it on a few images first.**
-  If it OOMs (or mlx-vlm is too old), fall back to the small, robust dense model:
-      EXP03_LLAMA_MODEL=mlx-community/Llama-3.2-11B-Vision-Instruct-4bit python judge_llama.py ...
-  A fixed-rubric ordinal judge does not need a frontier-size model, so the 11B
-  fallback is a fully legitimate judge C — the point is a *third family*, not size.
+MODEL — safe dense default (chosen 2026-07-21):
+  Default is **Llama-3.2-11B-Vision-Instruct 4-bit** (~7 GB) — small, robust, and
+  entirely adequate for a fixed-rubric ordinal judge (the point of judge C is a
+  *third model family*, not size). It leaves ample headroom on a 64 GB M5.
+  OPTIONAL "latest" upgrade — Llama 4 Scout (17B active / 109B total MoE), the
+  newest Meta vision model, needs mlx-vlm>=0.1.21 and its 4-bit weights are
+  ~55 GB (borderline on 64 GB — smoke-test first, may OOM):
+      EXP03_LLAMA_MODEL=mlx-community/Llama-4-Scout-17B-16E-Instruct-4bit python judge_llama.py ...
 
 Setup (on the M5 Pro 64GB host):
-    pip install -U mlx-vlm       # >= 0.1.21 for Llama 4
-    # first run downloads the weights (Scout 4-bit ~55 GB; 11B fallback ~7 GB)
+    pip install -U mlx-vlm       # >= 0.1.21 if you opt into Llama 4 Scout
+    # first run downloads the weights (11B default ~7 GB; Scout ~55 GB)
 Model is pinned via EXP03_LLAMA_MODEL.
 
 Usage:
@@ -47,7 +45,7 @@ from pathlib import Path
 import rubric as R
 
 LLAMA_MODEL = os.environ.get(
-    "EXP03_LLAMA_MODEL", "mlx-community/Llama-4-Scout-17B-16E-Instruct-4bit"
+    "EXP03_LLAMA_MODEL", "mlx-community/Llama-3.2-11B-Vision-Instruct-4bit"
 )
 JUDGE_NAME = "llama"
 OUT_FILE = "judgements_llama.json"
