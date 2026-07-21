@@ -110,6 +110,11 @@ class _AestheticMLP:
         inputs = self.proc(images=pil_img, return_tensors="pt").to(self.device)
         with torch.no_grad():
             emb = self.clip.get_image_features(**inputs)
+            # transformers >=5 returns a BaseModelOutputWithPooling whose
+            # pooler_output IS the 768-d projected image embedding; <5 returns
+            # the tensor directly. Unwrap for both.
+            if not isinstance(emb, torch.Tensor):
+                emb = emb.pooler_output
             emb = F.normalize(emb, dim=-1)  # repo L2-normalizes before the head
             return float(self.mlp(emb).squeeze().detach().cpu().item())
 

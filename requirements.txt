@@ -25,4 +25,10 @@ huggingface_hub>=0.26.0
 # quality, and the local open-weight second judge.
 statsmodels>=0.14.0        # primary LMM: composite ~ g_std + (1|prompt)+(1|seed)
 torchmetrics>=1.4.0        # CLIP-IQA (no-reference quality curve)
+piq>=0.8.0                 # required by torchmetrics clip_iqa (else ValueError at init); pulls torchvision
+torchvision>=0.19.0        # piq dependency
 mlx-vlm>=0.1.0 ; platform_system == "Darwin" and platform_machine == "arm64"  # Qwen2.5-VL judge (Apple Silicon)
+
+# NOTE (2026-07-21): downloads use huggingface_hub's Xet backend by default,
+# which 401s on some public repos. If a model download fails on
+# cas-server.xethub.hf.co, set HF_HUB_DISABLE_XET=1 to use the classic path.
