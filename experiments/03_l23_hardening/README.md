@@ -1,8 +1,12 @@
 # Experiment 03 — Hardening the Klüver Level-2/3 finding
 
-**Status:** **pre-registered, not yet run** (drafted 2026-07-15). Generation
-begins only after the pre-registration + analysis plan are reviewed and the
-commit lands.
+**Status:** **pre-registered + smoke-validated; ready for the full run.**
+Pre-registration drafted 2026-07-15; the whole pipeline was validated
+end-to-end on the M5 on 2026-07-21 (a 2-image smoke run: generate → Claude +
+Qwen judge → quality → analyze, all green). The only issues found were
+environment/download plumbing, now fixed and documented under
+[Environment notes](#environment-notes-from-the-2026-07-21-smoke-run). The
+science code is unchanged. Next action is the full sweep below.
 
 **Derives from** [Exp 01](../01_image_test/). Exp 01's *confirmatory* metric
 (Klüver level-1 geometry) was a clean null. Its *exploratory, post-hoc* Klüver
@@ -94,27 +98,54 @@ Each is a first-class reportable outcome — see `analysis_plan.md` §8.
 | `analyze.py` | LMM, κ/AC2, partial-corr, matched-quality, BH, figures | ✅ written |
 | `log.md` / `analysis.md` | Daily log / written up after the run | log ✅ / analysis ⬜ |
 
-> **Status of the code:** all scripts compile and the pure-logic modules
-> (`rubric`, filename parsing) are unit-checked. The numeric paths
-> (numpy/statsmodels LMM, torchmetrics CLIP-IQA, MLX Qwen) run on the M5 venv,
-> not in the authoring environment, so a first smoke-run on a tiny subset is the
-> recommended next step before the full sweep (see below).
+> **Status of the code (updated 2026-07-21):** all eight scripts now run green
+> end-to-end on the M5. The 2-image smoke run validated: SDXL fp16 generation on
+> MPS, the Claude judge, the Qwen2.5-VL judge, CLIP-IQA + LAION-aesthetic
+> quality, and `analyze.py`'s full LMM / κ / partial-correlation / report path
+> (deconfound computable). N=2 makes the *statistics* degenerate (NaN CIs) but
+> proves the *wiring*. Every failure hit was environment/download, not logic —
+> see [Environment notes](#environment-notes-from-the-2026-07-21-smoke-run).
+
+## Environment notes (from the 2026-07-21 smoke run)
+
+Prerequisites the smoke run surfaced — apply these before the full sweep so it
+runs unattended:
+
+1. **Disable Hugging Face Xet.** `huggingface_hub` 1.23 defaults to the Xet CAS
+   backend, which 401s on public repos (SDXL, Qwen). Export
+   **`HF_HUB_DISABLE_XET=1`** for every download/run to use the classic path.
+2. **Extra quality deps.** `torchmetrics` CLIP-IQA needs **`piq`** (+
+   `torchvision`), now in `requirements.txt`. Without it `quality.py` raises a
+   `ValueError` at init.
+3. **piq's CLIP snapshot can stall.** `quality.py`'s aesthetic head pulls
+   `RN50.pt` (~244 MB) from a GitHub release via piq's no-retry downloader,
+   which can hang/corrupt. If `quality.py` stalls or throws a
+   `PytorchStreamReader` error, fetch it directly and re-run:
+   `curl -L --retry 5 -C - -o ~/.cache/clip/RN50.pt https://github.com/photosynthesis-team/piq/releases/download/v0.7.1/RN50.pt`
+4. **SDXL runs off local weights.** The fp16 snapshot lives in `sdxl_local/`
+   (gitignored, ~6.8 GB); pass `--model-path sdxl_local --variant fp16` to
+   avoid re-downloading. **SD 3.5 is not downloaded yet** and may be HF-gated
+   (needs `HF_TOKEN` + license acceptance) — resolve before its generation leg.
+5. `quality.py` was patched for **transformers ≥ 5** (`get_image_features` now
+   returns an output object; we unwrap `pooler_output`).
 
 ## Running it
 
 ```bash
-pip install -r ../../requirements.txt          # adds statsmodels, torchmetrics, mlx-vlm
+pip install -r ../../requirements.txt          # statsmodels, torchmetrics, piq, mlx-vlm
+export HF_HUB_DISABLE_XET=1                     # required — see Environment notes
 
-# 0) SMOKE TEST first — validate the whole pipeline on ~4 images before the full sweep
-python sweep_local.py --model sdxl --prompts p2_portrait --guidance 1 15 --seeds 42 --skip-existing
-EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/sdxl
-python judge_qwen.py --dir results-local/sdxl
-python quality.py --dir results-local/sdxl
-python analyze.py --model sdxl              # confirms metric/LMM/κ/plot wiring end to end
-# if that clean-runs, wipe results-local/sdxl and do the real sweep:
+# 0) SMOKE TEST — DONE 2026-07-21 (all green). To repeat on a tiny subset:
+#   python sweep_local.py --model sdxl --model-path sdxl_local --variant fp16 \
+#       --prompts p2_portrait --guidance 1 15 --seeds 42 --skip-existing
+#   EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/sdxl
+#   python judge_qwen.py --dir results-local/sdxl && python quality.py --dir results-local/sdxl
+#   python analyze.py --model sdxl
 
-# generation (single M5 Pro 64GB host — no sharding needed; --skip-existing makes it resumable)
-python sweep_local.py --model sdxl --prompts all --unconditional --skip-existing
+# 1) generation (single M5 Pro 64GB host; --skip-existing makes it resumable)
+#    SDXL runs off the local fp16 weights (no re-download):
+python sweep_local.py --model sdxl --model-path sdxl_local --variant fp16 --prompts all --unconditional --skip-existing
+#    SD 3.5: download first (may need HF_TOKEN + license); then:
 python sweep_local.py --model sd35 --prompts all --unconditional --skip-existing
 # judging (blind, shuffled) + quality — run per model dir
 for m in sdxl sd35; do
