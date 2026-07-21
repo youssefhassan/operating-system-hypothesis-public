@@ -3,7 +3,8 @@ Experiment 03 — analysis (executes analysis_plan.md end to end).
 
 Builds the pre-registered composite metric, fits the primary LMM dose-response,
 runs the guidance-matching de-confound (partial correlation + matched-quality
-two-arm contrast), computes inter-rater reliability (Claude vs Qwen; human vs
+two-arm contrast), computes inter-rater reliability (mean pairwise weighted κ
+across all present judges — Claude / Qwen / Llama; human vs
 each), applies Benjamini-Hochberg to the secondary per-field family, and emits a
 verdict against the decision table. Every number is regenerated from the judge /
 quality / human JSON in results-local (Methodology Section 6: no trust-me plots).
@@ -42,29 +43,56 @@ def _load_judge(model_dir: Path, fname: str) -> dict:
     return json.loads(p.read_text()).get("images", {})
 
 
+# Judge registry — every judgements_*.json present in the model dir is a rater.
+# claude (A) + qwen (B) are the baseline pair; llama (C) added 2026-07-21 so
+# reliability triangulates across three model families (Anthropic / Qwen / Meta).
+# Analysis degrades gracefully to whatever judges are present (>=2 required), so
+# 2-judge smoke data still analyzes.
+JUDGES = [
+    ("a", "judgements_claude.json", "claude"),
+    ("b", "judgements_qwen.json", "qwen"),
+    ("c", "judgements_llama.json", "llama"),
+]
+
+
+def _present_judges(model_dir: Path) -> list[tuple[str, str, str]]:
+    present = [(s, fn, n) for (s, fn, n) in JUDGES if (model_dir / fn).exists()]
+    if len(present) < 2:
+        raise SystemExit(
+            f"need >=2 judge files in {model_dir}; found {[n for _, _, n in present]}")
+    return present
+
+
 def _load_records(model: str) -> tuple[list[dict], list[dict], dict]:
     """Return (conditioned records, uncond records, notes). Each record has
-    per-field judge-mean scores + quality components, for images scored by BOTH
-    judges without error."""
+    per-field judge-mean scores (mean over all present judges) + per-judge scores
+    + quality components, for images scored by ALL present judges without error."""
     d = RESULTS / model
-    A = _load_judge(d, "judgements_claude.json")
-    B = _load_judge(d, "judgements_qwen.json")
+    judges = _present_judges(d)
+    suffixes = [s for (s, _fn, _n) in judges]
+    scored = {s: _load_judge(d, fn) for (s, fn, _n) in judges}
     qpath = d / "quality.json"
     Q = json.loads(qpath.read_text()).get("per_image", {}) if qpath.exists() else {}
 
-    notes = {"quality_present": bool(Q)}
+    notes = {"quality_present": bool(Q),
+             "judges": [(s, n) for (s, _fn, n) in judges],
+             "judge_names": [n for (_s, _fn, n) in judges]}
     cond, uncond = [], []
     dropped = 0
-    for fn, ra in A.items():
-        rb = B.get(fn)
+    for fn in scored[suffixes[0]]:
+        recs = {s: scored[s].get(fn) for s in suffixes}
         meta = R.parse_filename(fn)
-        if meta is None or rb is None or "error" in ra or "error" in rb:
+        if meta is None or any(r is None or "error" in r for r in recs.values()):
             dropped += 1
             continue
         rec = {"filename": fn, **{k: meta[k] for k in ("prompt_id", "guidance", "seed", "kind")}}
         for f in ALL:
-            rec[f + "_a"], rec[f + "_b"] = float(ra[f]), float(rb[f])
-            rec[f] = (float(ra[f]) + float(rb[f])) / 2.0  # judge-mean
+            vals = []
+            for s in suffixes:
+                v = float(recs[s][f])
+                rec[f + "_" + s] = v
+                vals.append(v)
+            rec[f] = sum(vals) / len(vals)  # judge-mean over present judges
         q = Q.get(fn, {})
         rec["clip_iqa"] = q.get("clip_iqa")
         rec["aesthetic"] = q.get("aesthetic")
@@ -208,27 +236,47 @@ def _matched_quality_arms(cond: list[dict], notes: dict) -> dict:
 # ------------------------------ inter-rater ------------------------------------
 
 
-def _reliability(cond: list[dict], uncond: list[dict]) -> dict:
+def _reliability(cond: list[dict], uncond: list[dict], judges: list[tuple[str, str]]) -> dict:
+    """Inter-rater reliability across ALL present judges. Per field, weighted κ is
+    the mean of the pairwise weighted κ (n_judges==2 → identical to the old
+    two-judge number). composite_weighted_kappa (the pre-registered endpoint) is
+    the mean of that over the 4 intensity fields."""
+    from itertools import combinations
+
     imgs = cond + uncond
-    out = {"n_images": len(imgs), "per_field": {}}
+    suffixes = [s for (s, _n) in judges]
+    names = {s: n for (s, n) in judges}
+    pairs = list(combinations(suffixes, 2))
+    out = {"n_images": len(imgs), "n_judges": len(suffixes),
+           "judges": [n for (_s, n) in judges],
+           "pairs": ["+".join(names[s] for s in pr) for pr in pairs],
+           "per_field": {}}
     field_kappas = []
     for f in ALL:
         q = 2 if f == "tiling" else 4
-        a = [int(round(r[f + "_a"])) for r in imgs]
-        b = [int(round(r[f + "_b"])) for r in imgs]
-        k = S.weighted_cohens_kappa(a, b, q)
+        cols = {s: [int(round(r[f + "_" + s])) for r in imgs] for s in suffixes}
+        pk, pg, ppa, pairwise = [], [], [], {}
+        for (s1, s2) in pairs:
+            k = S.weighted_cohens_kappa(cols[s1], cols[s2], q)
+            pairwise[f"{names[s1]}+{names[s2]}"] = round(k, 4)
+            pk.append(k)
+            pg.append(S.gwet_ac2(cols[s1], cols[s2], q))
+            ppa.append(S.percent_agreement(cols[s1], cols[s2]))
+        mean_k = float(np.nanmean(pk))
         out["per_field"][f] = {
-            "weighted_kappa": round(k, 4),
-            "gwet_ac2": round(S.gwet_ac2(a, b, q), 4),
-            "percent_agreement": round(S.percent_agreement(a, b), 4),
+            "weighted_kappa": round(mean_k, 4),  # mean of pairwise weighted κ
+            "pairwise_weighted_kappa": pairwise,
+            "gwet_ac2": round(float(np.nanmean(pg)), 4),
+            "percent_agreement": round(float(np.nanmean(ppa)), 4),
         }
         if f in INT:
-            field_kappas.append(k)
+            field_kappas.append(mean_k)
     out["composite_weighted_kappa"] = round(float(np.nanmean(field_kappas)), 4)
     return out
 
 
-def _human_reliability(model_records: dict[str, list[dict]]) -> dict:
+def _human_reliability(model_records: dict[str, list[dict]],
+                       judges: list[tuple[str, str]]) -> dict:
     sub_p, rat_p = HERE / "human_subset.json", HERE / "human_ratings.json"
     if not (sub_p.exists() and rat_p.exists()):
         return {"available": False}
@@ -236,8 +284,9 @@ def _human_reliability(model_records: dict[str, list[dict]]) -> dict:
     ratings = json.loads(rat_p.read_text())
     # index VLM judge-mean scores by (model, filename)
     idx = {(m, r["filename"]): r for m, recs in model_records.items() for r in recs}
-    pairs_h_a = {f: ([], []) for f in ALL}  # human vs claude
-    pairs_h_b = {f: ([], []) for f in ALL}  # human vs qwen
+    suffixes = [s for (s, _n) in judges]
+    names = {s: n for (s, n) in judges}
+    pairs_h = {s: {f: ([], []) for f in ALL} for s in suffixes}  # human vs each judge
     used = 0
     for bid, hrec in ratings.items():
         s = subset.get(bid)
@@ -248,15 +297,16 @@ def _human_reliability(model_records: dict[str, list[dict]]) -> dict:
             continue
         used += 1
         for f in ALL:
-            pairs_h_a[f][0].append(int(hrec[f]))
-            pairs_h_a[f][1].append(int(round(vrec[f + "_a"])))
-            pairs_h_b[f][0].append(int(hrec[f]))
-            pairs_h_b[f][1].append(int(round(vrec[f + "_b"])))
-    out = {"available": True, "n_rated_used": used, "human_vs_claude": {}, "human_vs_qwen": {}}
-    for f in ALL:
-        q = 2 if f == "tiling" else 4
-        out["human_vs_claude"][f] = round(S.weighted_cohens_kappa(*pairs_h_a[f], q), 4)
-        out["human_vs_qwen"][f] = round(S.weighted_cohens_kappa(*pairs_h_b[f], q), 4)
+            for sfx in suffixes:
+                key = f + "_" + sfx
+                if key in vrec:
+                    pairs_h[sfx][f][0].append(int(hrec[f]))
+                    pairs_h[sfx][f][1].append(int(round(vrec[key])))
+    out = {"available": True, "n_rated_used": used}
+    for sfx in suffixes:
+        out["human_vs_" + names[sfx]] = {
+            f: round(S.weighted_cohens_kappa(*pairs_h[sfx][f], (2 if f == "tiling" else 4)), 4)
+            for f in ALL}
     return out
 
 
@@ -339,7 +389,7 @@ def analyze_model(model: str, prereg: dict) -> dict:
         "primary_lmm": _lmm_slope(cond),
         "deconfound": _deconfound(cond, notes),
         "matched_quality_arms": _matched_quality_arms(cond, notes),
-        "reliability": _reliability(cond, uncond),
+        "reliability": _reliability(cond, uncond, notes["judges"]),
         "per_prompt": _per_prompt_slopes(cond),
         "per_field_dose_response": fields,
         "_field_pvals": pvals,
@@ -423,7 +473,7 @@ def _plots(model: str, out: dict) -> None:
     ax.bar(x + 0.2, [rel[f]["gwet_ac2"] for f in ALL], 0.4, label="Gwet AC2", color="#f59e0b")
     ax.axhline(0.4, color="#64748b", ls="--", lw=1)
     ax.set_xticks(x); ax.set_xticklabels(ALL, rotation=20, ha="right")
-    ax.set_title(f"Exp 03 — {model}: Claude vs Qwen agreement"); ax.legend()
+    ax.set_title(f"Exp 03 — {model}: inter-judge agreement (mean pairwise κ)"); ax.legend()
     fig.tight_layout(); fig.savefig(fig_dir / "reliability.png", dpi=150,
                                     bbox_inches="tight"); plt.close(fig)
     print(f"[analyze] figures -> {fig_dir}")
@@ -434,7 +484,8 @@ def main(args: argparse.Namespace) -> None:
     models = ["sdxl", "sd35"] if args.both else [args.model]
     outs = {m: analyze_model(m, prereg) for m in models}
     # human reliability uses records from all analyzed models
-    human = _human_reliability({m: o["_records"] for m, o in outs.items()})
+    _judges = next(iter(outs.values()))["notes"]["judges"]
+    human = _human_reliability({m: o["_records"] for m, o in outs.items()}, _judges)
     _apply_bh_and_verdict(outs, prereg)
 
     for m, o in outs.items():

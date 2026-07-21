@@ -3,6 +3,15 @@
   "status": "confirmatory",
   "kind": "hardening_study",
   "committed_before_analyzed_runs": true,
+  "amendments": [
+    {
+      "date": "2026-07-21",
+      "before_any_analyzed_run": true,
+      "change": "(a) Judge A (Claude) now runs via the Message Batches API (50% cheaper; non-latency-sensitive batch job) — identical prompts/rubric/model, no scoring change. (b) Added a THIRD independent judge, Judge C = Meta Llama 4 Scout Vision (local MLX; fallback Llama-3.2-11B-Vision), so reliability triangulates across three model families (Anthropic/Qwen/Meta) instead of two. (c) Inter-rater reliability generalized from a single Cohen's weighted kappa to the MEAN of pairwise weighted kappa across present judges; the pre-registered endpoint (composite_weighted_kappa, threshold 0.4) is unchanged in name/meaning and reduces to the old two-judge number when only two judges are present.",
+      "why_still_confirmatory": "Committed before any analyzed generation run (only a 2-image pipeline smoke test had been executed). Methodology §4: a pre-data methods change stays confirmatory; documented here as a dated amendment rather than a silent rewrite. Fields below still read 'two judges' in places — this amendment is authoritative where they differ.",
+      "unchanged": ["rubric_version", "prompts", "guidance_grid", "seeds", "primary_endpoint_definition", "confirm/null thresholds", "quality de-confound"]
+    }
+  ],
   "derives_from": {
     "experiment": "01_image_test",
     "finding_being_hardened": "Exploratory Kluver Level-2/3 dose-response (reduplication, fragmentation, condensation, distortion rise as guidance falls; SDXL distortion rho=-0.64, SD3.5 weaker). Currently fragile: single fixed prompt, single VLM judge, no inter-rater reliability, low-g confounded with under-conditioning, no multiple-comparison correction.",
@@ -73,9 +82,10 @@
     }
   },
   "inter_rater_reliability": {
-    "judges": ["claude", "qwen"],
+    "judges": ["claude", "qwen", "llama"],
     "full_set": {
       "measure": ["quadratic_weighted_cohens_kappa", "gwet_ac2", "percent_agreement"],
+      "multi_judge_method": "per field, the reported weighted kappa is the MEAN of the pairwise weighted kappa across present judges (claude+qwen, claude+llama, qwen+llama); Gwet AC2 and percent agreement are likewise mean-of-pairwise. Reduces to the single pairwise value when only two judges are present (2026-07-21 amendment).",
       "note": "reported per field (ordinal 0-3) and for the composite; because several fields are 0-heavy (skewed marginals -> the kappa paradox), kappa is interpreted ALONGSIDE Gwet AC2 and percent agreement, not alone. Tiling (binary) uses unweighted kappa.",
       "confirm_threshold": { "composite_weighted_kappa_min": 0.4 }
     },
@@ -116,11 +126,11 @@
   "budget": { "max_images": 900, "max_claude_judge_calls": 1000, "usd_soft_cap": 15, "gpu": "Apple M5 Pro 64GB (single primary host). 64GB unified memory runs SD 3.5 without cpu-offload/slicing and both judges locally; no sharding required (the 3x M4 24GB sharded path from Exp 01 remains available but is unnecessary here)." },
   "judges": {
     "claude": { "model": "claude-sonnet-5", "pinned_via": "EXP03_CLAUDE_MODEL env var (default claude-sonnet-5)" },
-    "qwen": { "model": "Qwen2.5-VL-7B", "runtime": "MLX on Apple Silicon (M5 Pro 64GB)", "note": "7B is the pre-registered default (reproducible on modest hardware). On the 64GB host Qwen2.5-VL-32B (4-bit, ~20GB) runs without friction and is the drop-in fallback if 7B's human-subset kappa is poor; swapping the judge model does not change rubric_version." }
+    "qwen": { "model": "Qwen2.5-VL-7B", "runtime": "MLX on Apple Silicon (M5 Pro 64GB)", "note": "7B is the pre-registered default (reproducible on modest hardware). On the 64GB host Qwen2.5-VL-32B (4-bit, ~20GB) runs without friction and is the drop-in fallback if 7B's human-subset kappa is poor; swapping the judge model does not change rubric_version." },
+    "llama": { "model": "Llama-4-Scout-17B-16E-Instruct (4-bit)", "runtime": "MLX on Apple Silicon (M5 Pro 64GB), mlx-vlm>=0.1.21", "added": "2026-07-21 amendment", "note": "Third judge / third model family (Meta). Latest Llama vision (17B active / 109B total MoE); 4-bit weights ~55GB are borderline on 64GB -- smoke-test load first. Drop-in fallback if it OOMs or mlx-vlm is too old: Llama-3.2-11B-Vision-Instruct-4bit (~7GB, dense). Pinned via EXP03_LLAMA_MODEL; swapping does not change rubric_version." }
   },
   "rubric_version": "exp03-kluver-l2l3-v1",
   "forbidden_to_automate": ["prompts", "intended_inventories", "rubric_text", "metric_definition", "guidance_grid_bounds", "confirm_thresholds", "null_thresholds", "primary_endpoint_definition"],
   "swappable_without_reclassifying": ["judge_models (rubric_version fixed; changing judge model does not change the scoring text)", "seed_count (add seeds only)", "device/dtype/scheduler generation-procedure settings (set before any analyzed run)"],
-  "amendments": [],
   "notes": "Changing any 'forbidden_to_automate' field after seeing data reclassifies the run as exploratory (Methodology Section 4) and requires a separate dated commit. This file must be git-committed BEFORE any analyzed generation run (git-history pre-registration). The analysis plan (analysis_plan.md) is committed in the same commit, before results, per the user's pre-registration discipline."
 }

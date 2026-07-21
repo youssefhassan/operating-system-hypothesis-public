@@ -24,12 +24,16 @@ a citable, pre-registered result** (target: NeurIPS 2026 workshop, ~late Aug).
    low-objecthood control (pine forest) that should *dissociate* the fields if
    the effect is object-bound. See `preregistration.json` → `prompts`, each with
    a pre-registered *intended inventory* so reduplication is well-defined.
-2. **Second judge + human subset.** Judge A = **Claude Sonnet 5**
-   (`claude-sonnet-5`, pinned via `EXP03_CLAUDE_MODEL`); Judge B = **Qwen2.5-VL-7B**
-   via MLX (open-weight, local, $0) — deliberately *not* a second Claude, to
-   break judge-circularity. Plus a 25–30 image human-rated subset. Report
-   quadratic-weighted **Cohen's κ** (with Gwet AC2 + percent agreement alongside,
-   because the fields are 0-heavy) across judges.
+2. **Independent judges + human subset.** **Three model families** (2026-07-21
+   amendment), deliberately *not* three Claudes, to break judge-circularity:
+   Judge A = **Claude Sonnet 5** (`claude-sonnet-5`, pinned via
+   `EXP03_CLAUDE_MODEL`, run through the **Message Batches API** — 50% cheaper);
+   Judge B = **Qwen2.5-VL-7B** (MLX, local, $0); Judge C = **Llama 4 Scout Vision**
+   (MLX, local, $0; `EXP03_LLAMA_MODEL`, fallback Llama-3.2-11B-Vision if it OOMs
+   on 64 GB). Plus a 25–30 image human-rated subset. Reliability = **mean of the
+   pairwise** quadratic-weighted **Cohen's κ** across the three judges (with Gwet
+   AC2 + percent agreement alongside, because the fields are 0-heavy). The
+   composite-κ ≥ 0.4 gate is unchanged.
 3. **Guidance-matching.** The low-g breakdown is confounded with
    under-conditioning (SDXL's comfort zone is g ≈ 5–8; g = 1.0 is out of
    distribution). Build a per-model **no-reference quality curve** (CLIP-IQA +
@@ -53,7 +57,7 @@ a citable, pre-registered result** (target: NeurIPS 2026 workshop, ~late Aug).
 | Seeds | 10 (42–51) |
 | Images | 430/model (+ empty-prompt baselines) = **860** |
 | Host | Apple **M5 Pro 64GB** (single box; no sharding, SD 3.5 runs without cpu-offload) |
-| Judges | Claude Sonnet 5 (API, ~$7) + Qwen2.5-VL-7B (local, $0; 32B available on 64GB as fallback) |
+| Judges | **3 families** (2026-07-21): Claude Sonnet 5 (API via **Batches**, ~$3.50) + Qwen2.5-VL-7B (local, $0) + **Llama 4 Scout Vision** (local, $0; fallback Llama-3.2-11B-Vision) |
 | Primary stat | Linear mixed model: `composite ~ guidance_std + (1\|prompt) + (1\|seed)`, per model |
 | De-confound | partial Spearman controlling for quality; matched-quality two-arm contrast |
 | Human subset | 25–30 stratified images, author-rated, blind |
@@ -90,8 +94,9 @@ Each is a first-class reportable outcome — see `analysis_plan.md` §8.
 | `README.md` | This human-readable twin | ✅ |
 | `sweep_local.py` | Generation, generalized to the 6-prompt set (adapted from Exp 01) | ✅ written |
 | `rubric.py` | Shared per-prompt L2/3 rubric (both judges use it) | ✅ written |
-| `judge.py` | Claude Sonnet 5 L2/3 judge (per-prompt intended inventories) | ✅ written |
+| `judge.py` | Claude Sonnet 5 L2/3 judge — **Batches API** (`--sync` escape hatch) | ✅ written |
 | `judge_qwen.py` | Qwen2.5-VL-7B MLX judge, identical rubric | ✅ written |
+| `judge_llama.py` | **Llama 4 Scout Vision** MLX judge (judge C), identical rubric | ✅ written (2026-07-21) |
 | `quality.py` | CLIP-IQA + LAION-aesthetic, per image | ✅ written |
 | `human_rate.py` | Blind local rating tool for the 25–30 subset | ✅ written |
 | `statlib.py` | numpy stats (Spearman/partial, Cliff's δ, BH, κ, Gwet AC2) | ✅ written |
@@ -148,10 +153,13 @@ python sweep_local.py --model sdxl --model-path sdxl_local --variant fp16 --prom
 #    SD 3.5: download first (may need HF_TOKEN + license); then:
 python sweep_local.py --model sd35 --prompts all --unconditional --skip-existing
 # judging (blind, shuffled) + quality — run per model dir
+# Judge A (Claude) uses the Batches API by default (~50% cheaper); resumes from
+# .batch_claude.json if a poll is interrupted. Judges B/C are local MLX ($0).
 for m in sdxl sd35; do
-  EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/$m
-  python judge_qwen.py --dir results-local/$m          # local MLX
-  python quality.py --dir results-local/$m
+  EXP03_CLAUDE_MODEL=claude-sonnet-5 python judge.py --dir results-local/$m   # batches
+  python judge_qwen.py  --dir results-local/$m         # Qwen2.5-VL-7B (local)
+  python judge_llama.py --dir results-local/$m         # Llama 4 Scout (local; see EXP03_LLAMA_MODEL)
+  python quality.py     --dir results-local/$m
 done
 
 # human subset (25–30 blind ratings for inter-rater κ)
