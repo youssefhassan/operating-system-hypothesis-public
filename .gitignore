@@ -75,3 +75,9 @@ site/public/results/
 # Exp 03 smoke-test scratch logs
 experiments/03_l23_hardening/smoke_*.log
 experiments/03_l23_hardening/dl_resume.log
+
+# Exp 03 run logs (byproducts of gen/judge/quality/analyze — like results-local/)
+experiments/03_l23_hardening/gen_*.log
+experiments/03_l23_hardening/judge_*.log
+experiments/03_l23_hardening/quality_*.log
+experiments/03_l23_hardening/analyze_*.log
