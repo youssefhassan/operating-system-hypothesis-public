@@ -1,0 +1,176 @@
+{
+  "model": "sd35",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "notes": {
+    "quality_present": true,
+    "judges": [
+      [
+        "a",
+        "claude"
+      ],
+      [
+        "b",
+        "qwen"
+      ]
+    ],
+    "judge_names": [
+      "claude",
+      "qwen"
+    ],
+    "dropped_missing_or_error": 3,
+    "n_conditioned": 417,
+    "n_uncond": 10,
+    "quality_uses_aesthetic": true,
+    "quality_available": true
+  },
+  "primary_lmm": {
+    "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+    "slope_standardized": -0.16661404307855104,
+    "ci95": [
+      -0.2295978936143132,
+      -0.10363019254278888
+    ],
+    "p": 2.162678814804179e-07
+  },
+  "deconfound": {
+    "computable": true,
+    "raw_spearman_composite_vs_g": -0.2354,
+    "partial_spearman_controlling_Q": -0.2451,
+    "ci95": [
+      -0.3399,
+      -0.147
+    ],
+    "ci_excludes_zero": true
+  },
+  "matched_quality_arms": {
+    "computable": true,
+    "overlap_Q_band": [
+      -2.441,
+      0.914
+    ],
+    "n_low": 178,
+    "n_high": 94,
+    "cliffs_delta_low_vs_high": 0.2036,
+    "ci95": [
+      0.0672,
+      0.3345
+    ],
+    "interpretation": "positive = more L2/3 at the low-g arm at matched quality (effect specific to under-conditioning, not generic quality loss)"
+  },
+  "reliability": {
+    "n_images": 427,
+    "n_judges": 2,
+    "judges": [
+      "claude",
+      "qwen"
+    ],
+    "pairs": [
+      "claude+qwen"
+    ],
+    "per_field": {
+      "reduplication": {
+        "weighted_kappa": 0.0986,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.0986
+        },
+        "gwet_ac2": 0.8895,
+        "percent_agreement": 0.5293
+      },
+      "fragmentation": {
+        "weighted_kappa": 0.2455,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.2455
+        },
+        "gwet_ac2": 0.965,
+        "percent_agreement": 0.8337
+      },
+      "condensation": {
+        "weighted_kappa": 0.0891,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.0891
+        },
+        "gwet_ac2": 0.9117,
+        "percent_agreement": 0.6651
+      },
+      "distortion": {
+        "weighted_kappa": 0.198,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.198
+        },
+        "gwet_ac2": 0.7924,
+        "percent_agreement": 0.3794
+      },
+      "tiling": {
+        "weighted_kappa": 0.5408,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.5408
+        },
+        "gwet_ac2": 0.988,
+        "percent_agreement": 0.9883
+      }
+    },
+    "composite_weighted_kappa": 0.1578
+  },
+  "per_prompt": {
+    "per_prompt_spearman_composite_vs_g": {
+      "p1_stilllife": -0.2664,
+      "p2_portrait": 0.2766,
+      "p3_bicycle": -0.4332,
+      "p5_livingroom": -0.5215,
+      "p4_oranges": -0.4086,
+      "p6_forest": -0.0453
+    },
+    "n_negative": 5,
+    "n_prompts": 6
+  },
+  "per_field_dose_response": {
+    "reduplication": {
+      "spearman_rho_vs_g": -0.1853,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "fragmentation": {
+      "spearman_rho_vs_g": -0.3685,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "condensation": {
+      "spearman_rho_vs_g": -0.2306,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "distortion": {
+      "spearman_rho_vs_g": -0.0872,
+      "perm_p": 0.0724,
+      "bh_q": 0.0724
+    }
+  },
+  "baseline_composite_uncond": 2.4504,
+  "composite_mean_by_guidance": {
+    "1.0": 0.8519,
+    "2.0": -0.0122,
+    "3.0": -0.1485,
+    "5.0": -0.2099,
+    "7.0": -0.2483,
+    "11.0": -0.1231,
+    "15.0": -0.1145
+  },
+  "quality_mean_by_guidance": {
+    "1.0": -0.5909,
+    "2.0": -0.1526,
+    "3.0": -0.0079,
+    "5.0": 0.1179,
+    "7.0": 0.3125,
+    "11.0": 0.364,
+    "15.0": -0.043
+  },
+  "verdict": "inconclusive-null (judges disagree: composite weighted kappa < 0.4)",
+  "human_reliability": {
+    "available": false
+  },
+  "judge_panel": [
+    "claude",
+    "qwen"
+  ],
+  "is_prereg_primary_panel": false
+}

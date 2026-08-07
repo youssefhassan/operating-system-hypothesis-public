@@ -1,0 +1,176 @@
+{
+  "model": "sdxl",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "notes": {
+    "quality_present": true,
+    "judges": [
+      [
+        "a",
+        "claude"
+      ],
+      [
+        "b",
+        "qwen"
+      ]
+    ],
+    "judge_names": [
+      "claude",
+      "qwen"
+    ],
+    "dropped_missing_or_error": 2,
+    "n_conditioned": 418,
+    "n_uncond": 10,
+    "quality_uses_aesthetic": true,
+    "quality_available": true
+  },
+  "primary_lmm": {
+    "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+    "slope_standardized": -0.3182882703959302,
+    "ci95": [
+      -0.376490719374363,
+      -0.2600858214174974
+    ],
+    "p": 8.34896596730883e-27
+  },
+  "deconfound": {
+    "computable": true,
+    "raw_spearman_composite_vs_g": -0.4739,
+    "partial_spearman_controlling_Q": -0.4197,
+    "ci95": [
+      -0.4989,
+      -0.3315
+    ],
+    "ci_excludes_zero": true
+  },
+  "matched_quality_arms": {
+    "computable": true,
+    "overlap_Q_band": [
+      -0.633,
+      1.353
+    ],
+    "n_low": 126,
+    "n_high": 120,
+    "cliffs_delta_low_vs_high": 0.5065,
+    "ci95": [
+      0.3788,
+      0.6245
+    ],
+    "interpretation": "positive = more L2/3 at the low-g arm at matched quality (effect specific to under-conditioning, not generic quality loss)"
+  },
+  "reliability": {
+    "n_images": 428,
+    "n_judges": 2,
+    "judges": [
+      "claude",
+      "qwen"
+    ],
+    "pairs": [
+      "claude+qwen"
+    ],
+    "per_field": {
+      "reduplication": {
+        "weighted_kappa": 0.1834,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.1834
+        },
+        "gwet_ac2": 0.7866,
+        "percent_agreement": 0.3972
+      },
+      "fragmentation": {
+        "weighted_kappa": 0.5572,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.5572
+        },
+        "gwet_ac2": 0.9198,
+        "percent_agreement": 0.6893
+      },
+      "condensation": {
+        "weighted_kappa": 0.1557,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.1557
+        },
+        "gwet_ac2": 0.8285,
+        "percent_agreement": 0.5654
+      },
+      "distortion": {
+        "weighted_kappa": 0.2658,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.2658
+        },
+        "gwet_ac2": 0.6864,
+        "percent_agreement": 0.3014
+      },
+      "tiling": {
+        "weighted_kappa": 0.689,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.689
+        },
+        "gwet_ac2": 0.9605,
+        "percent_agreement": 0.965
+      }
+    },
+    "composite_weighted_kappa": 0.2905
+  },
+  "per_prompt": {
+    "per_prompt_spearman_composite_vs_g": {
+      "p2_portrait": -0.2803,
+      "p5_livingroom": -0.525,
+      "p4_oranges": -0.5318,
+      "p1_stilllife": -0.5619,
+      "p6_forest": -0.533,
+      "p3_bicycle": -0.7055
+    },
+    "n_negative": 6,
+    "n_prompts": 6
+  },
+  "per_field_dose_response": {
+    "reduplication": {
+      "spearman_rho_vs_g": -0.1267,
+      "perm_p": 0.0086,
+      "bh_q": 0.0098
+    },
+    "fragmentation": {
+      "spearman_rho_vs_g": -0.5992,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "condensation": {
+      "spearman_rho_vs_g": -0.4211,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "distortion": {
+      "spearman_rho_vs_g": -0.453,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    }
+  },
+  "baseline_composite_uncond": 1.6804,
+  "composite_mean_by_guidance": {
+    "1.0": 1.0599,
+    "2.0": 0.1939,
+    "3.0": -0.0545,
+    "5.0": -0.2105,
+    "7.0": -0.3607,
+    "11.0": -0.3152,
+    "15.0": -0.3224
+  },
+  "quality_mean_by_guidance": {
+    "1.0": -0.6911,
+    "2.0": -0.1272,
+    "3.0": -0.1119,
+    "5.0": 0.0487,
+    "7.0": 0.1563,
+    "11.0": 0.2909,
+    "15.0": 0.4377
+  },
+  "verdict": "inconclusive-null (judges disagree: composite weighted kappa < 0.4)",
+  "human_reliability": {
+    "available": false
+  },
+  "judge_panel": [
+    "claude",
+    "qwen"
+  ],
+  "is_prereg_primary_panel": false
+}

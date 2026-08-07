@@ -55,20 +55,36 @@ JUDGES = [
 ]
 
 
-def _present_judges(model_dir: Path) -> list[tuple[str, str, str]]:
+def _present_judges(model_dir: Path, only: list[str] | None = None) -> list[tuple[str, str, str]]:
+    """Judges whose judgement file exists, optionally restricted to `only`.
+
+    `only` exists so the pre-registered escape hatch (drop a judge that turns
+    out to be unusable, re-run reliability) can be exercised without moving
+    files around on disk. That is how the first 2-judge run was done, and why
+    its output was silently overwritten by the next full run."""
     present = [(s, fn, n) for (s, fn, n) in JUDGES if (model_dir / fn).exists()]
+    if only is not None:
+        known = {n for (_s, _fn, n) in JUDGES}
+        unknown = [n for n in only if n not in known]
+        if unknown:
+            raise SystemExit(f"unknown judge(s) {unknown}; known: {sorted(known)}")
+        have = {n for (_s, _fn, n) in present}
+        missing = [n for n in only if n not in have]
+        if missing:
+            raise SystemExit(f"requested judge(s) {missing} have no judgement file in {model_dir}")
+        present = [(s, fn, n) for (s, fn, n) in present if n in set(only)]
     if len(present) < 2:
         raise SystemExit(
             f"need >=2 judge files in {model_dir}; found {[n for _, _, n in present]}")
     return present
 
 
-def _load_records(model: str) -> tuple[list[dict], list[dict], dict]:
+def _load_records(model: str, only: list[str] | None = None) -> tuple[list[dict], list[dict], dict]:
     """Return (conditioned records, uncond records, notes). Each record has
     per-field judge-mean scores (mean over all present judges) + per-judge scores
     + quality components, for images scored by ALL present judges without error."""
     d = RESULTS / model
-    judges = _present_judges(d)
+    judges = _present_judges(d, only)
     suffixes = [s for (s, _fn, _n) in judges]
     scored = {s: _load_judge(d, fn) for (s, fn, _n) in judges}
     qpath = d / "quality.json"
@@ -377,8 +393,8 @@ def _verdict(model_out: dict, prereg: dict) -> str:
 # ----------------------------------- run ---------------------------------------
 
 
-def analyze_model(model: str, prereg: dict) -> dict:
-    cond, uncond, notes = _load_records(model)
+def analyze_model(model: str, prereg: dict, only: list[str] | None = None) -> dict:
+    cond, uncond, notes = _load_records(model, only)
     if not cond:
         raise SystemExit(f"no dual-judged conditioned images for {model}")
     _build_metric(cond, uncond, notes)
@@ -420,13 +436,13 @@ def _apply_bh_and_verdict(outs: dict[str, dict], prereg: dict) -> None:
         o["verdict"] = _verdict(o, prereg)
 
 
-def _plots(model: str, out: dict) -> None:
+def _plots(model: str, out: dict, tag: str = "") -> None:
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
     recs = out["_records"]
-    fig_dir = RESULTS / model / "figures"
+    fig_dir = RESULTS / model / (f"figures{tag}" if tag else "figures")
     fig_dir.mkdir(parents=True, exist_ok=True)
     gs = sorted({r["guidance"] for r in recs})
 
@@ -482,7 +498,11 @@ def _plots(model: str, out: dict) -> None:
 def main(args: argparse.Namespace) -> None:
     prereg = R.load_prereg()
     models = ["sdxl", "sd35"] if args.both else [args.model]
-    outs = {m: analyze_model(m, prereg) for m in models}
+    only = [j.strip() for j in args.judges.split(",")] if args.judges else None
+    # A judge subset writes to its own filenames; the full-panel result is the
+    # pre-registered primary and must never be silently overwritten by it.
+    tag = "" if only is None else "_" + "-".join(sorted(only))
+    outs = {m: analyze_model(m, prereg, only) for m in models}
     # human reliability uses records from all analyzed models
     _judges = next(iter(outs.values()))["notes"]["judges"]
     human = _human_reliability({m: o["_records"] for m, o in outs.items()}, _judges)
@@ -490,18 +510,21 @@ def main(args: argparse.Namespace) -> None:
 
     for m, o in outs.items():
         if args.plot:
-            _plots(m, o)
+            _plots(m, o, tag)
         o.pop("_records", None)
         o["human_reliability"] = human if human.get("available") else {"available": False}
-        (RESULTS / m / "l23_report.json").write_text(json.dumps(o, indent=2))
-        print(f"\n=== {m} ===")
+        report_path = RESULTS / m / f"l23_report{tag}.json"
+        o["judge_panel"] = [n for (_s, n) in o["notes"]["judges"]]
+        o["is_prereg_primary_panel"] = only is None
+        report_path.write_text(json.dumps(o, indent=2))
+        print(f"\n=== {m}  judges={o['judge_panel']} ===")
         print(json.dumps({"verdict": o["verdict"],
                           "lmm": o["primary_lmm"],
                           "deconfound": o["deconfound"],
                           "composite_kappa": o["reliability"]["composite_weighted_kappa"],
                           "per_prompt_negative": f"{o['per_prompt']['n_negative']}/{o['per_prompt']['n_prompts']}"},
                          indent=2))
-        print(f"[analyze] wrote {RESULTS / m / 'l23_report.json'}")
+        print(f"[analyze] wrote {report_path}")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -509,6 +532,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--model", default="sdxl", choices=["sdxl", "sd35"])
     p.add_argument("--both", action="store_true", help="analyze both models")
     p.add_argument("--plot", action="store_true")
+    p.add_argument("--judges", default=None, metavar="A,B",
+                   help="comma-separated judge subset (claude,qwen,llama). Default: every "
+                        "judge with a judgement file on disk, i.e. the pre-registered panel. "
+                        "A subset writes l23_report_<judges>.json and figures_<judges>/ so it "
+                        "cannot overwrite the primary record.")
     return p
 
 
