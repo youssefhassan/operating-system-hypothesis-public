@@ -1,0 +1,3209 @@
+{
+  "judge": "llama",
+  "model": "mlx-community/Llama-3.2-11B-Vision-Instruct-4bit",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "fields": [
+    "reduplication",
+    "fragmentation",
+    "condensation",
+    "distortion",
+    "tiling"
+  ],
+  "images": {
+    "p2_portrait_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up of an elderly man's face, with no visible signs of reduplication, fragmentation, condensation, o"
+    },
+    "p2_portrait_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a realistic portrait of an elderly man's face with no unusual features or distortions."
+    },
+    "p4_oranges_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p1_stilllife_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a table with a watermelon, a glass of water, and a set of keys"
+    },
+    "uncond_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "A repeating pattern of flowers and leaves"
+    },
+    "p4_oranges_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p1_stilllife_g1_s49.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a still life painting of a watermelon, a glass of water, and a set of keys on a wooden table. The painting is rendered in a realistic style, with the watermelon and glass of water ap'"
+    },
+    "p4_oranges_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p1_stilllife_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life painting of a watermelon, a glass, and a set of keys on a table, with no reduplication, fragme"
+    },
+    "p3_bicycle_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, a simple image o"
+    },
+    "p1_stilllife_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple still life with no repeating patterns or distorted shapes."
+    },
+    "p3_bicycle_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p6_forest_g1_s47.png": {
+      "error": "no JSON object in judge reply: 'The image presents a forest of pine trees on a misty mountainside, with the trees appearing to be repeated and distorted. The image is characterized by:\\n\\n* **Reduplication**: The trees are repeated an'"
+    },
+    "p4_oranges_g5_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and around the counter"
+    },
+    "p5_livingroom_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g1_s48.png": {
+      "error": "no JSON object in judge reply: 'The image is a grayscale depiction of a forest of pine trees on a misty mountainside. The image is characterized by the presence of many trees, with some trees appearing to be closer to the viewer tha'"
+    },
+    "p1_stilllife_g1_s51.png": {
+      "error": "no JSON object in judge reply: 'The image is a still life painting of a watermelon, a glass, and a set of keys on a wooden table. The painting is rendered in a realistic style, with the objects depicted in a detailed and accurate ma'"
+    },
+    "p3_bicycle_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single bicycle against a brick wall"
+    },
+    "p1_stilllife_g7_s44.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p2_portrait_g1_s50.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no reduplication, no fragmentation, no distortion, no tiling, no condensation, no distortion, no til'"
+    },
+    "p3_bicycle_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p1_stilllife_g5_s45.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p3_bicycle_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image is a single, cohesive scene with no repeating patterns or textures."
+    },
+    "p6_forest_g7_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p2_portrait_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single face, not a collection of faces."
+    },
+    "p4_oranges_g1_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "many oranges, many shelves, many books"
+    },
+    "p6_forest_g1_s49.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a misty mountain with a house on it, surrounded by trees. The image is a painting of a mountainous landscape with a house on it, surrounded by trees. The sky is gray and cloudy, and '"
+    },
+    "p3_bicycle_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p5_livingroom_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in size, shape, or form"
+    },
+    "p2_portrait_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p2_portrait_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in appearance"
+    },
+    "p5_livingroom_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, coherent scene with no reduplication, fragmentation, condensation, distortion, or tiling."
+    },
+    "p3_bicycle_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p4_oranges_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "a bowl of oranges"
+    },
+    "p5_livingroom_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g1_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "uncond_s46.png": {
+      "error": "no JSON object in judge reply: 'The image is a digital artwork created by the AI model, with no intended scene or content. The artwork features a mix of abstract shapes and forms, with no clear boundaries or edges. The colors are mu'"
+    },
+    "p5_livingroom_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of a living room with a sofa, a lamp, and a window."
+    },
+    "p2_portrait_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, or distortion"
+    },
+    "p1_stilllife_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The watermelon is cut into two pieces, and the glass is half full."
+    },
+    "p1_stilllife_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form, no fragmentation, no distortion, no reduplication, no condensation, no tiling, no changes i"
+    },
+    "p6_forest_g5_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, or distortion, but a single watermelon cut into two pieces"
+    },
+    "p3_bicycle_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p1_stilllife_g5_s48.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in shape or form, no fragmentation, no distortion, no reduplication, no condensation, no '"
+    },
+    "p1_stilllife_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p3_bicycle_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    },
+    "p2_portrait_g1_s45.png": {
+      "error": "no JSON object in judge reply: \"The image is a close-up portrait of an elderly man's face, with a neutral background. The image is distorted and fragmented, with the face appearing to be broken into pieces and merged with the backgr\""
+    },
+    "p5_livingroom_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p4_oranges_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional notes"
+    },
+    "p2_portrait_g7_s46.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no reduplication, no fragmentation, no distortion, no tiling, no condensation, no melting, no warpin'"
+    },
+    "p1_stilllife_g15_s47.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p3_bicycle_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A red bicycle leaning against a brick wall."
+    },
+    "uncond_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a monochromatic painting of a mountain range, with no visible repetition, fragmentation, or distortion. The"
+    },
+    "p6_forest_g2_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated trees"
+    },
+    "p2_portrait_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p3_bicycle_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple composition of a red bicycle against a brick wall, with no repetition, fragmentation, or distortio"
+    },
+    "p5_livingroom_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, coherent scene with no reduplication, fragmentation, condensation, distortion, or tiling."
+    },
+    "uncond_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "A chaotic, abstract landscape with no clear boundaries or features, like a puzzle with missing pieces."
+    },
+    "p6_forest_g11_s48.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, only their arrangement"
+    },
+    "p5_livingroom_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in form or shape"
+    },
+    "p3_bicycle_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple composition of a red bicycle against a wall, with no repetition, fragmentation, or distortion of t"
+    },
+    "p6_forest_g1_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "trees are everywhere"
+    },
+    "p2_portrait_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "excellent texture"
+    },
+    "p3_bicycle_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle"
+    },
+    "p1_stilllife_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no changes"
+    },
+    "p5_livingroom_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in size or shape, no merging, no warping"
+    },
+    "p4_oranges_g7_s42.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"same objects, same size, same shape, same color, same position, same orientation, same texture, same'"
+    },
+    "p4_oranges_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p4_oranges_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The oranges are scattered around the kitchen counter."
+    },
+    "p6_forest_g3_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p6_forest_g3_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p6_forest_g11_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p2_portrait_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p1_stilllife_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life of a watermelon, a glass of water, and a set of keys on a wooden table."
+    },
+    "p5_livingroom_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g5_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p2_portrait_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p5_livingroom_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken objects, no merged objects, no distorted objects, no repeating patterns, one simple sce"
+    },
+    "p1_stilllife_g1_s44.png": {
+      "error": "no JSON object in judge reply: 'The image is a painting of a watermelon, a glass half-filled with water, and a set of keys on a wooden table. The painting is a still life, depicting the objects in a realistic and detailed manner.\\n\\n*'"
+    },
+    "p1_stilllife_g7_s50.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p6_forest_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p6_forest_g11_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p2_portrait_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in appearance"
+    },
+    "p1_stilllife_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, one short phrase"
+    },
+    "p2_portrait_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single portrait of an elderly man's face, with no repetition, fragmentation, or distortion."
+    },
+    "p4_oranges_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p2_portrait_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The face is a single, cohesive unit, with no repeated patterns or fragments, and no distortion or condensation of featur"
+    },
+    "p6_forest_g5_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p6_forest_g3_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p6_forest_g15_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p6_forest_g5_s48.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p3_bicycle_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p2_portrait_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face, with no reduplication, fragmentation, condensation, distortio"
+    },
+    "p5_livingroom_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p4_oranges_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p1_stilllife_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "a beautiful and realistic depiction of a still life"
+    },
+    "p5_livingroom_g1_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of a living room with a sofa, a lamp, and a window, and there is no repetition of objects,"
+    },
+    "p1_stilllife_g11_s47.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in shape or form, no fragmentation, no distortion, no reduplication, no condensation, no '"
+    },
+    "p2_portrait_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, or distortion, but a lot of wrinkles"
+    },
+    "p2_portrait_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The face is intact and recognizable."
+    },
+    "p5_livingroom_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g7_s48.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges"
+    },
+    "p2_portrait_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled skin"
+    },
+    "p5_livingroom_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in size, no broken objects, no merged objects, no distorted shapes, no repeating patterns, a simple and coher"
+    },
+    "p6_forest_g2_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms and fog"
+    },
+    "p3_bicycle_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p6_forest_g11_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form"
+    },
+    "p6_forest_g15_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p5_livingroom_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, coherent scene with no reduplication, fragmentation, condensation, distortion, or tiling."
+    },
+    "p4_oranges_g1_s46.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 3, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 1, \"notes\": \"many oranges, some in the air, some on the counter, some in the sink, some in the plant, some on the'"
+    },
+    "p2_portrait_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The face is the only object in the image."
+    },
+    "p3_bicycle_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p5_livingroom_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p4_oranges_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p1_stilllife_g11_s44.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p4_oranges_g3_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and on the counter"
+    },
+    "p2_portrait_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p2_portrait_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no visible changes to the face"
+    },
+    "p2_portrait_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in appearance"
+    },
+    "p2_portrait_g2_s51.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no reduplication, no fragmentation, no distortion, no tiling, no condensation, no distortion, no til'"
+    },
+    "p1_stilllife_g7_s42.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. The image is a still life composition, with the objects arranged in a way that creates a sense of d'"
+    },
+    "p3_bicycle_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle"
+    },
+    "p6_forest_g3_s48.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p2_portrait_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face, with no repetition, fragmentation, or distortion."
+    },
+    "p2_portrait_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A face with many wrinkles"
+    },
+    "p5_livingroom_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no condensation, no distortion, no tiling, simple and coherent image"
+    },
+    "p2_portrait_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in appearance"
+    },
+    "p6_forest_g5_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, only a few more than the bowl"
+    },
+    "p6_forest_g7_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p5_livingroom_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one sofa, one lamp, one window"
+    },
+    "p2_portrait_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p3_bicycle_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g5_s46.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p3_bicycle_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p3_bicycle_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a realistic painting of a red bicycle against a wall, with no repetition, fragmentation, or distortion."
+    },
+    "p3_bicycle_g1_s47.png": {
+      "error": "no JSON object in judge reply: \"The image depicts a red brick wall with a bicycle leaning against it. The image is a painting of a bicycle, with the bike's frame and wheels visible. The bike is leaning against the wall, with its fro\""
+    },
+    "p3_bicycle_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A simple composition with a single object"
+    },
+    "p3_bicycle_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p1_stilllife_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life painting of a watermelon, a glass, and a set of keys on a wooden table, with no reduplication,"
+    },
+    "p5_livingroom_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the room"
+    },
+    "p6_forest_g7_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p3_bicycle_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p1_stilllife_g15_s44.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p2_portrait_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no significant changes in the face"
+    },
+    "p3_bicycle_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A simple and straightforward photograph of a red bicycle leaning against a brick wall."
+    },
+    "p2_portrait_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face, with no apparent reduplication, fragmentation, condensation, "
+    },
+    "p2_portrait_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p1_stilllife_g11_s51.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in shape or form, no fragmentation, no distortion, no reduplication, no condensation, no '"
+    },
+    "p4_oranges_g1_s50.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 3, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 1, \"notes\": \"many oranges, some red, some orange, some green, some white, some brown, some in a bowl, some on a b'"
+    },
+    "uncond_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "A jumbled mess of houses and trees"
+    },
+    "p5_livingroom_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in size or shape"
+    },
+    "p5_livingroom_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, a simple and coh"
+    },
+    "p3_bicycle_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image is a mosaic of the same brick wall, with the bike and window appearing as a single, repetitive pattern."
+    },
+    "p5_livingroom_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one sofa, one lamp, one window"
+    },
+    "uncond_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no notes"
+    },
+    "p5_livingroom_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional notes"
+    },
+    "p6_forest_g3_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p5_livingroom_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of a room with a sofa, a lamp, and a window."
+    },
+    "p3_bicycle_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    },
+    "p4_oranges_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The oranges are in a bowl."
+    },
+    "p4_oranges_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p2_portrait_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up of an elderly man's face, with no repeating patterns, broken pieces, or merged objects."
+    },
+    "p6_forest_g7_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p6_forest_g3_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, a simple image o"
+    },
+    "p5_livingroom_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in form or shape"
+    },
+    "p2_portrait_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single face, not a collection of faces."
+    },
+    "p6_forest_g11_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g5_s49.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p3_bicycle_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A red bicycle leaning against a brick wall."
+    },
+    "p4_oranges_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional notes"
+    },
+    "p4_oranges_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a realistic depiction of a kitchen counter with a bowl of oranges."
+    },
+    "p1_stilllife_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life of a watermelon, a glass of water, and a set of keys on a wooden table, with no reduplication,"
+    },
+    "p4_oranges_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, just a lot of them"
+    },
+    "p6_forest_g1_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "trees are distorted and condensed into a single, repeating pattern"
+    },
+    "p3_bicycle_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple composition with a single object, the red bicycle, and a plain background."
+    },
+    "p4_oranges_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p2_portrait_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single face, not a collection of faces."
+    },
+    "p4_oranges_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p6_forest_g3_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p6_forest_g7_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p1_stilllife_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is simple and straightforward, with no apparent distortions or fragmentation."
+    },
+    "p6_forest_g5_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p5_livingroom_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p3_bicycle_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, a simple image o"
+    },
+    "p4_oranges_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional notes"
+    },
+    "p4_oranges_g1_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "excessive fruit"
+    },
+    "p2_portrait_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p3_bicycle_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    },
+    "p5_livingroom_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one sofa, one lamp, one window"
+    },
+    "p5_livingroom_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no condensation, no distortion, no tiling, one sofa, one lamp, one window"
+    },
+    "p1_stilllife_g2_s46.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p6_forest_g7_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated rows of trees"
+    },
+    "p2_portrait_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no visible changes to the face"
+    },
+    "p6_forest_g5_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p3_bicycle_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form, no unusual patterns"
+    },
+    "p2_portrait_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled skin"
+    },
+    "uncond_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image is a repeating pattern of a woman's face"
+    },
+    "p4_oranges_g7_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and a few more on the counter"
+    },
+    "p2_portrait_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p4_oranges_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "same oranges, different arrangement"
+    },
+    "p3_bicycle_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple composition of a red bicycle against a brick wall, with no repetition, fragmentation, or distortio"
+    },
+    "p3_bicycle_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p1_stilllife_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life painting of a watermelon, a glass, and a set of keys on a wooden table, with no reduplication,"
+    },
+    "p6_forest_g7_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated trees"
+    },
+    "p3_bicycle_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple painting of a bicycle against a wall, with no repetition, fragmentation, or distortion of the obje"
+    },
+    "p5_livingroom_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p4_oranges_g2_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "excessive oranges"
+    },
+    "p5_livingroom_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p2_portrait_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled skin"
+    },
+    "p2_portrait_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no distortion, no tiling, no condensation, no notes"
+    },
+    "p4_oranges_g2_s42.png": {
+      "error": "no JSON object in judge reply: 'The image presents a visually striking pattern of oranges and leaves, with the oranges appearing to be repeated and scattered throughout the image. The overall effect is one of abundance and plenty, w'"
+    },
+    "p5_livingroom_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p3_bicycle_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple scene of a red bicycle against a brick wall, with no repetition, fragmentation, or distortion."
+    },
+    "p6_forest_g2_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form, no fragmentation, no reduplication, no distortion, no tiling, just a simple image of a wate"
+    },
+    "p1_stilllife_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The watermelon is cut into three pieces, but the keys are not distorted or fragmented."
+    },
+    "p5_livingroom_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p4_oranges_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The oranges are in a bowl."
+    },
+    "p4_oranges_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p1_stilllife_g2_s42.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a watermelon, a glass, and a set of keys on a wooden table. The watermelon is cut into a glass, and the keys are placed next to it. The image is a still life composition, with the ob'"
+    },
+    "p1_stilllife_g7_s46.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p2_portrait_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face, with no repetition, fragmentation, or distortion."
+    },
+    "p5_livingroom_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in size, shape, or form"
+    },
+    "p5_livingroom_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, or distortion, but a single lamp"
+    },
+    "p4_oranges_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p1_stilllife_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image does not show any repeated patterns or anomalies."
+    },
+    "p3_bicycle_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, one bicycle"
+    },
+    "p3_bicycle_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple composition of a red bicycle against a brick wall, with no repetition, fragmentation, or distortio"
+    },
+    "p1_stilllife_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form"
+    },
+    "p3_bicycle_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p1_stilllife_g5_s44.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in ob'"
+    },
+    "p3_bicycle_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    },
+    "p3_bicycle_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple photograph of a red bicycle against a wall, with no repetition, fragmentation, or distortion."
+    },
+    "p1_stilllife_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p3_bicycle_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A red bicycle is leaning against a brick wall."
+    },
+    "p4_oranges_g1_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "a kitchen counter with a bowl of oranges and a plant"
+    },
+    "p5_livingroom_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g3_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated trees"
+    },
+    "p5_livingroom_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of a living room with a couch, a lamp, and a window."
+    },
+    "p3_bicycle_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p4_oranges_g1_s43.png": {
+      "error": "no JSON object in judge reply: 'The image is a painting of a kitchen counter with a bowl of oranges on it. The painting is done in a style that is reminiscent of Impressionist art, with soft brushstrokes and muted colors.\\n\\nHere are '"
+    },
+    "p2_portrait_g1_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The face is distorted, but the rest of the image is intact."
+    },
+    "p5_livingroom_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no condensation, no distortion, no tiling, simple and coherent image"
+    },
+    "p4_oranges_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken objects, no merged objects, no distorted objects, no repeating patterns, a simple image"
+    },
+    "p2_portrait_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face, with no visible signs of reduplication, fragmentation, conden"
+    },
+    "p4_oranges_g3_s51.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a kitchen counter with a bowl of oranges, accompanied by various other objects. The counter is made of a light-colored material, possibly marble or granite, and features a smooth sur'"
+    },
+    "p1_stilllife_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The watermelon is cut into two pieces, and the glass is filled with water."
+    },
+    "p3_bicycle_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form, no unusual patterns"
+    },
+    "p1_stilllife_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional notes"
+    },
+    "p4_oranges_g1_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life of a bowl of oranges on a kitchen counter, with no signs of reduplication, fragmentation, cond"
+    },
+    "p5_livingroom_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p2_portrait_g1_s44.png": {
+      "error": "no JSON object in judge reply: \"The image is a grayscale painting of a man's face, with a cracked and worn texture. The face is the only object in the image, and it appears to be a close-up portrait of an elderly man.\\n\\n*   **Redupli\""
+    },
+    "p4_oranges_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p3_bicycle_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p6_forest_g11_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life of a watermelon, a glass, and a set of keys, with no apparent reduplication, fragmentation, co"
+    },
+    "p6_forest_g15_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p5_livingroom_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, empty living room with a couch, a lamp, and a window."
+    },
+    "p5_livingroom_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p5_livingroom_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p4_oranges_g11_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and one on the counter"
+    },
+    "p4_oranges_g7_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges on the counter and floor"
+    },
+    "p6_forest_g15_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p2_portrait_g2_s49.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no reduplication, no fragmentation, no distortion, no tiling, no condensation, no distortion, no til'"
+    },
+    "p4_oranges_g2_s47.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 3, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"many oranges, some cut in half, some whole, some in a bowl, some on the counter, some in a vase, som'"
+    },
+    "p6_forest_g11_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p5_livingroom_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no condensation, no distortion, no tiling, one sofa, one lamp, one window"
+    },
+    "p2_portrait_g1_s51.png": {
+      "error": "no JSON object in judge reply: \"The image is a close-up portrait of an elderly man's face, with the face being the primary focus. The face is covered in a thick, white substance that resembles a mixture of hair and skin, with the te\""
+    },
+    "p1_stilllife_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in objects, no fragmentation, no distortion, no condensation, no tiling, no changes in objects, no fragmentat"
+    },
+    "p1_stilllife_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes"
+    },
+    "p5_livingroom_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no extra objects, no broken items, no merged items, no distorted items, no repeating patterns"
+    },
+    "p3_bicycle_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is straightforward and does not contain any unusual elements"
+    },
+    "p5_livingroom_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a single sofa, a single lamp, and a single window"
+    },
+    "p5_livingroom_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication of the sofa, lamp, or window, but a few plants and a table are visible"
+    },
+    "p1_stilllife_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The watermelon is cut into a single slice, the glass is half-filled, and the keys are neatly arranged on the table, with"
+    },
+    "p5_livingroom_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g3_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no watermelon, no keys, no glass"
+    },
+    "p6_forest_g5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g7_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The oranges are piled high in the bowl, creating a sense of abundance and plenty."
+    },
+    "p1_stilllife_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The watermelon is cut into a single piece, the glass is whole, and the keys are not visible."
+    },
+    "p5_livingroom_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form"
+    },
+    "p2_portrait_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The face is intact."
+    },
+    "p6_forest_g3_s47.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a forest of pine trees on a misty mountainside, with the mist creating a sense of depth and mystery. The trees are densely packed, with some appearing to be closer to the viewer than'"
+    },
+    "p6_forest_g2_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p4_oranges_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p5_livingroom_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p2_portrait_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, or distortion"
+    },
+    "p3_bicycle_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p2_portrait_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up of an elderly man's face, with no repeating patterns, broken pieces, or merged objects."
+    },
+    "p5_livingroom_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, coherent scene with no reduplication, fragmentation, condensation, distortion, or tiling."
+    },
+    "p2_portrait_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in appearance"
+    },
+    "p1_stilllife_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form, no fragmentation, no distortion, no reduplication, no condensation, no tiling, no changes i"
+    },
+    "p6_forest_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image is a repeating pattern of trees"
+    },
+    "p6_forest_g15_s48.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated rows of trees"
+    },
+    "p3_bicycle_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p5_livingroom_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in form or shape"
+    },
+    "p4_oranges_g2_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges on the counter and floor"
+    },
+    "p1_stilllife_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a still life of a watermelon, a glass of water, and a set of keys on a wooden table, with no reduplication,"
+    },
+    "p6_forest_g15_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g3_s44.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no changes in shape or form, no fragmentation, no reduplication, no distortion, no tiling, no conden'"
+    },
+    "p3_bicycle_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p6_forest_g1_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees and snow"
+    },
+    "p4_oranges_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "many oranges, many leaves"
+    },
+    "p3_bicycle_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle"
+    },
+    "p5_livingroom_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes, just an empty room"
+    },
+    "p4_oranges_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges' appearance"
+    },
+    "p5_livingroom_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of a living room with a couch, a lamp, and a window."
+    },
+    "p2_portrait_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face, with no visible repetition, fragmentation, or distortion."
+    },
+    "p2_portrait_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a close-up portrait of an elderly man's face."
+    },
+    "p4_oranges_g5_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and a few on the counter"
+    },
+    "p3_bicycle_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, a simple scene o"
+    },
+    "p4_oranges_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p3_bicycle_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle"
+    },
+    "p5_livingroom_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in form or shape"
+    },
+    "p6_forest_g11_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p2_portrait_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p1_stilllife_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form"
+    },
+    "p1_stilllife_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes"
+    },
+    "p1_stilllife_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple still life of a watermelon, a glass of water, and a set of keys on a wooden table, with no signs o"
+    },
+    "p4_oranges_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges, no fragmentation, no condensation, no distortion, no tiling"
+    },
+    "p6_forest_g2_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "trees are very tall"
+    },
+    "uncond_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a beautiful, dreamy portrait of a woman with flowers in her hair, surrounded by butterflies and other natur"
+    },
+    "p1_stilllife_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes"
+    },
+    "p2_portrait_g1_s47.png": {
+      "error": "no JSON object in judge reply: \"The image is a close-up portrait of an elderly man's face, with a neutral expression. The background is a light gray color, and the overall atmosphere is somber and contemplative.\\n\\n*   **Reduplication\""
+    },
+    "p2_portrait_g1_s48.png": {
+      "error": "no JSON object in judge reply: \"The image is a grayscale portrait of an elderly man's face, with a torn and damaged appearance. The face is the only object visible in the image.\\n\\n**Score:**\\n\\n*   Reduplication: 0\\n*   Fragmentation: 0\""
+    },
+    "p2_portrait_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single portrait, with no repetition, fragmentation, or distortion."
+    },
+    "p3_bicycle_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a single bicycle"
+    },
+    "p2_portrait_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single portrait of an elderly man, with no repetition, fragmentation, or distortion. The image is not a r"
+    },
+    "p5_livingroom_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p3_bicycle_g1_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple still life of a red bicycle against a brick wall, with no apparent distortions or fragmentation. T"
+    },
+    "uncond_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a serene landscape with no signs of reduplication, fragmentation, condensation, or distortion. The only thi"
+    },
+    "p5_livingroom_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, empty living room with a sofa, a lamp, and a window. There are no repeating patterns or textures,"
+    },
+    "p6_forest_g11_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p3_bicycle_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    },
+    "p5_livingroom_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of an empty room with a sofa, a lamp, and a window. There is no repetition of objects, no "
+    },
+    "p5_livingroom_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p6_forest_g5_s47.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a forest of pine trees on a misty mountainside, with the mist creating a sense of depth and mystery. The trees are densely packed, with some appearing to be closer to the viewer than'"
+    },
+    "p6_forest_g2_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p4_oranges_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p6_forest_g1_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "trees are everywhere"
+    },
+    "p6_forest_g2_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated trees and mist"
+    },
+    "p1_stilllife_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in shape or form"
+    },
+    "p3_bicycle_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    },
+    "uncond_s50.png": {
+      "error": "no JSON object in judge reply: 'The image presents a collection of 16 distinct scenes, each showcasing various objects and elements. The scenes are arranged in a grid-like pattern, with some scenes overlapping or blending into one a'"
+    },
+    "p3_bicycle_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p1_stilllife_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p4_oranges_g3_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and on the counter"
+    },
+    "p4_oranges_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "same, but more"
+    },
+    "p3_bicycle_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p1_stilllife_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image is a still life of a watermelon, a glass of water, and a set of keys on a wooden table."
+    },
+    "p1_stilllife_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple still life with no unusual features."
+    },
+    "p4_oranges_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p4_oranges_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p2_portrait_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled skin"
+    },
+    "p2_portrait_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled face"
+    },
+    "p2_portrait_g3_s45.png": {
+      "error": "no JSON object in judge reply: 'The image is a black-and-white portrait of an elderly man with a long white beard and mustache, wearing a light-colored shirt. The background is a plain wall.\\n\\n**Reduplication:** 0\\n**Fragmentation:** '"
+    },
+    "p5_livingroom_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the room"
+    },
+    "p2_portrait_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a realistic portrait of an elderly man's face, with no apparent reduplication, fragmentation, condensation,"
+    },
+    "p1_stilllife_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image does not have any of the characteristics mentioned in the criteria."
+    },
+    "p6_forest_g15_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree forms"
+    },
+    "p3_bicycle_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single, intact bicycle, with no repetition, fragmentation, or distortion."
+    },
+    "p2_portrait_g5_s46.png": {
+      "error": "no JSON object in judge reply: '{\"reduplication\": 0, \"fragmentation\": 0, \"condensation\": 0, \"distortion\": 0, \"tiling\": 0, \"notes\": \"no reduplication, no fragmentation, no distortion, no tiling, no condensation, no melting, no warpin'"
+    },
+    "p3_bicycle_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple composition of a red bicycle against a brick wall, with no repetition, fragmentation, or distortio"
+    },
+    "p4_oranges_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p5_livingroom_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, coherent scene with no reduplication, fragmentation, condensation, distortion, or tiling."
+    },
+    "p1_stilllife_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional details"
+    },
+    "p5_livingroom_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no condensation, no distortion, no tiling, one sofa, one lamp, one window"
+    },
+    "p5_livingroom_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one sofa, one lamp, one window"
+    },
+    "p6_forest_g15_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p3_bicycle_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p6_forest_g15_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p1_stilllife_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, condensation, distortion, or tiling, just a single watermelon, a glass, and a set of ke"
+    },
+    "p1_stilllife_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p5_livingroom_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken objects, no merged objects, no distorted objects, no repeating patterns, one simple phr"
+    },
+    "p1_stilllife_g2_s43.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a still life composition featuring a watermelon, a glass of water, a set of keys, and a piece of paper on a wooden table. The scene is characterized by a warm and inviting atmosphere'"
+    },
+    "p2_portrait_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single, intact face."
+    },
+    "p4_oranges_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p4_oranges_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges"
+    },
+    "p6_forest_g7_s51.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p5_livingroom_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, no fragmentation, no condensation, no distortion, no tiling, no changes in the image"
+    },
+    "p2_portrait_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single face, not a collection of faces."
+    },
+    "p5_livingroom_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p5_livingroom_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple drawing of a living room with a couch, a lamp, and a window."
+    },
+    "p3_bicycle_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple still life of a red bicycle against a brick wall, with no apparent distortions or fragmentation, a"
+    },
+    "p4_oranges_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no distortion, no condensation, no tiling"
+    },
+    "p3_bicycle_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a brick wall."
+    },
+    "p1_stilllife_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The watermelon is cut into two pieces, and the glass is half full."
+    },
+    "p5_livingroom_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p4_oranges_g2_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a kitchen counter with a bowl of oranges and a sink"
+    },
+    "p3_bicycle_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle is leaning against a wall, with no other objects or patterns in the image."
+    },
+    "p6_forest_g11_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated trees"
+    },
+    "p1_stilllife_g2_s49.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a still life of a watermelon, a glass of water, and a set of keys on a wooden table. The watermelon is cut in half, with the larger half leaning against the smaller half. The glass o'"
+    },
+    "p6_forest_g1_s45.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated patterns of trees"
+    },
+    "p1_stilllife_g5_s42.png": {
+      "error": "no JSON object in judge reply: 'The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. The image is a still life composition, with the objects arranged in a way that creates a sense of d'"
+    },
+    "p3_bicycle_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p2_portrait_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled skin"
+    },
+    "p5_livingroom_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a simple, realistic depiction of an empty living room with a sofa, a lamp, and a window."
+    },
+    "p6_forest_g15_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated trees"
+    },
+    "p4_oranges_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges"
+    },
+    "p2_portrait_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in appearance"
+    },
+    "p5_livingroom_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes"
+    },
+    "p1_stilllife_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no reduplication, fragmentation, or distortion, but a single watermelon, a glass, and a set of keys on a table"
+    },
+    "p6_forest_g2_s48.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "trees are indistinguishable"
+    },
+    "p6_forest_g7_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p3_bicycle_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects"
+    },
+    "p2_portrait_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the face"
+    },
+    "p4_oranges_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in the oranges"
+    },
+    "p2_portrait_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image is a single face, no reduplication or fragmentation is present."
+    },
+    "p5_livingroom_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no changes in the image"
+    },
+    "p3_bicycle_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional objects, no broken pieces, no merged objects, no distorted shapes, no repeating patterns, one bicycle"
+    },
+    "p4_oranges_g2_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "many oranges on the counter and on the floor"
+    },
+    "p3_bicycle_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle"
+    },
+    "p6_forest_g5_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "repeated tree forms"
+    },
+    "p3_bicycle_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A red bicycle is leaning against a brick wall."
+    },
+    "p4_oranges_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no additional notes"
+    },
+    "p4_oranges_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "no change in oranges, no fragmentation, no condensation, no distortion, no tiling"
+    },
+    "p2_portrait_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "wrinkled face"
+    },
+    "p1_stilllife_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "a repeating pattern of a table with a watermelon, a glass, and a set of keys"
+    },
+    "p4_oranges_g11_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "many oranges in a bowl and on a cutting board"
+    },
+    "p6_forest_g2_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated tree silhouettes"
+    },
+    "p3_bicycle_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single red bicycle against a brick wall"
+    }
+  }
+}

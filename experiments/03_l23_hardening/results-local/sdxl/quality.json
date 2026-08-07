@@ -1,0 +1,1729 @@
+{
+  "components": [
+    "clip_iqa",
+    "aesthetic"
+  ],
+  "device": "mps",
+  "per_image": {
+    "p2_portrait_g15_s42.png": {
+      "clip_iqa": 0.809781551361084,
+      "aesthetic": 5.804727077484131
+    },
+    "p2_portrait_g1_s42.png": {
+      "clip_iqa": 0.19713032245635986,
+      "aesthetic": 5.138614654541016
+    },
+    "p1_stilllife_g11_s42.png": {
+      "clip_iqa": 0.9227223992347717,
+      "aesthetic": 5.215798377990723
+    },
+    "p1_stilllife_g11_s43.png": {
+      "clip_iqa": 0.9559755325317383,
+      "aesthetic": 5.591221809387207
+    },
+    "p1_stilllife_g11_s44.png": {
+      "clip_iqa": 0.9495846629142761,
+      "aesthetic": 5.878161430358887
+    },
+    "p1_stilllife_g11_s45.png": {
+      "clip_iqa": 0.9381080269813538,
+      "aesthetic": 5.371883869171143
+    },
+    "p1_stilllife_g11_s46.png": {
+      "clip_iqa": 0.9422386288642883,
+      "aesthetic": 5.684103965759277
+    },
+    "p1_stilllife_g11_s47.png": {
+      "clip_iqa": 0.9608024954795837,
+      "aesthetic": 5.455086708068848
+    },
+    "p1_stilllife_g11_s48.png": {
+      "clip_iqa": 0.9630612134933472,
+      "aesthetic": 5.496144771575928
+    },
+    "p1_stilllife_g11_s49.png": {
+      "clip_iqa": 0.9635936617851257,
+      "aesthetic": 5.414653301239014
+    },
+    "p1_stilllife_g11_s50.png": {
+      "clip_iqa": 0.940177321434021,
+      "aesthetic": 5.46842622756958
+    },
+    "p1_stilllife_g11_s51.png": {
+      "clip_iqa": 0.9061097502708435,
+      "aesthetic": 5.682188510894775
+    },
+    "p1_stilllife_g15_s42.png": {
+      "clip_iqa": 0.9308703541755676,
+      "aesthetic": 5.38535737991333
+    },
+    "p1_stilllife_g15_s43.png": {
+      "clip_iqa": 0.9752316474914551,
+      "aesthetic": 5.711167812347412
+    },
+    "p1_stilllife_g15_s44.png": {
+      "clip_iqa": 0.9635467529296875,
+      "aesthetic": 5.57705545425415
+    },
+    "p1_stilllife_g15_s45.png": {
+      "clip_iqa": 0.9345779418945312,
+      "aesthetic": 5.464141845703125
+    },
+    "p1_stilllife_g15_s46.png": {
+      "clip_iqa": 0.9627952575683594,
+      "aesthetic": 5.504499435424805
+    },
+    "p1_stilllife_g15_s47.png": {
+      "clip_iqa": 0.9666101336479187,
+      "aesthetic": 5.474193096160889
+    },
+    "p1_stilllife_g15_s48.png": {
+      "clip_iqa": 0.9823071956634521,
+      "aesthetic": 5.461814880371094
+    },
+    "p1_stilllife_g15_s49.png": {
+      "clip_iqa": 0.9670941829681396,
+      "aesthetic": 5.435057163238525
+    },
+    "p1_stilllife_g15_s50.png": {
+      "clip_iqa": 0.9436900615692139,
+      "aesthetic": 5.640587329864502
+    },
+    "p1_stilllife_g15_s51.png": {
+      "clip_iqa": 0.9518631100654602,
+      "aesthetic": 5.935879230499268
+    },
+    "p1_stilllife_g1_s42.png": {
+      "clip_iqa": 0.5298528671264648,
+      "aesthetic": 4.900795936584473
+    },
+    "p1_stilllife_g1_s43.png": {
+      "clip_iqa": 0.4083861708641052,
+      "aesthetic": 6.002516269683838
+    },
+    "p1_stilllife_g1_s44.png": {
+      "clip_iqa": 0.821238100528717,
+      "aesthetic": 5.2845964431762695
+    },
+    "p1_stilllife_g1_s45.png": {
+      "clip_iqa": 0.43537700176239014,
+      "aesthetic": 5.861242771148682
+    },
+    "p1_stilllife_g1_s46.png": {
+      "clip_iqa": 0.5325554609298706,
+      "aesthetic": 6.2834320068359375
+    },
+    "p1_stilllife_g1_s47.png": {
+      "clip_iqa": 0.6213803291320801,
+      "aesthetic": 5.821420669555664
+    },
+    "p1_stilllife_g1_s48.png": {
+      "clip_iqa": 0.4155696928501129,
+      "aesthetic": 5.533016681671143
+    },
+    "p1_stilllife_g1_s49.png": {
+      "clip_iqa": 0.36538416147232056,
+      "aesthetic": 5.9384355545043945
+    },
+    "p1_stilllife_g1_s50.png": {
+      "clip_iqa": 0.1852666586637497,
+      "aesthetic": 6.080394268035889
+    },
+    "p1_stilllife_g1_s51.png": {
+      "clip_iqa": 0.8395134210586548,
+      "aesthetic": 5.85246467590332
+    },
+    "p1_stilllife_g2_s42.png": {
+      "clip_iqa": 0.8648384809494019,
+      "aesthetic": 5.3108367919921875
+    },
+    "p1_stilllife_g2_s43.png": {
+      "clip_iqa": 0.4600285291671753,
+      "aesthetic": 5.986715316772461
+    },
+    "p1_stilllife_g2_s44.png": {
+      "clip_iqa": 0.908513069152832,
+      "aesthetic": 5.240871429443359
+    },
+    "p1_stilllife_g2_s45.png": {
+      "clip_iqa": 0.8088251352310181,
+      "aesthetic": 5.18281364440918
+    },
+    "p1_stilllife_g2_s46.png": {
+      "clip_iqa": 0.6841502785682678,
+      "aesthetic": 6.220914840698242
+    },
+    "p1_stilllife_g2_s47.png": {
+      "clip_iqa": 0.9099777340888977,
+      "aesthetic": 5.450836658477783
+    },
+    "p1_stilllife_g2_s48.png": {
+      "clip_iqa": 0.6220199465751648,
+      "aesthetic": 5.932247638702393
+    },
+    "p1_stilllife_g2_s49.png": {
+      "clip_iqa": 0.7646591067314148,
+      "aesthetic": 6.115298271179199
+    },
+    "p1_stilllife_g2_s50.png": {
+      "clip_iqa": 0.3971618711948395,
+      "aesthetic": 5.949101448059082
+    },
+    "p1_stilllife_g2_s51.png": {
+      "clip_iqa": 0.6659025549888611,
+      "aesthetic": 6.1294074058532715
+    },
+    "p1_stilllife_g3_s42.png": {
+      "clip_iqa": 0.9309448599815369,
+      "aesthetic": 5.33244514465332
+    },
+    "p1_stilllife_g3_s43.png": {
+      "clip_iqa": 0.5925217866897583,
+      "aesthetic": 6.064319610595703
+    },
+    "p1_stilllife_g3_s44.png": {
+      "clip_iqa": 0.9142418503761292,
+      "aesthetic": 6.0529584884643555
+    },
+    "p1_stilllife_g3_s45.png": {
+      "clip_iqa": 0.8677137494087219,
+      "aesthetic": 5.177127838134766
+    },
+    "p1_stilllife_g3_s46.png": {
+      "clip_iqa": 0.7104557156562805,
+      "aesthetic": 6.284432411193848
+    },
+    "p1_stilllife_g3_s47.png": {
+      "clip_iqa": 0.9133002758026123,
+      "aesthetic": 5.439937591552734
+    },
+    "p1_stilllife_g3_s48.png": {
+      "clip_iqa": 0.9296619892120361,
+      "aesthetic": 5.528278350830078
+    },
+    "p1_stilllife_g3_s49.png": {
+      "clip_iqa": 0.8799489736557007,
+      "aesthetic": 5.568286418914795
+    },
+    "p1_stilllife_g3_s50.png": {
+      "clip_iqa": 0.7745162844657898,
+      "aesthetic": 5.494335174560547
+    },
+    "p1_stilllife_g3_s51.png": {
+      "clip_iqa": 0.6904983520507812,
+      "aesthetic": 6.229562759399414
+    },
+    "p1_stilllife_g5_s42.png": {
+      "clip_iqa": 0.9346271753311157,
+      "aesthetic": 5.647433280944824
+    },
+    "p1_stilllife_g5_s43.png": {
+      "clip_iqa": 0.7755938768386841,
+      "aesthetic": 6.329183101654053
+    },
+    "p1_stilllife_g5_s44.png": {
+      "clip_iqa": 0.9165376424789429,
+      "aesthetic": 5.7383575439453125
+    },
+    "p1_stilllife_g5_s45.png": {
+      "clip_iqa": 0.8681345582008362,
+      "aesthetic": 5.3246049880981445
+    },
+    "p1_stilllife_g5_s46.png": {
+      "clip_iqa": 0.9096664190292358,
+      "aesthetic": 5.45374870300293
+    },
+    "p1_stilllife_g5_s47.png": {
+      "clip_iqa": 0.9216673374176025,
+      "aesthetic": 5.538456439971924
+    },
+    "p1_stilllife_g5_s48.png": {
+      "clip_iqa": 0.9655165672302246,
+      "aesthetic": 5.528920650482178
+    },
+    "p1_stilllife_g5_s49.png": {
+      "clip_iqa": 0.9320383667945862,
+      "aesthetic": 5.326075077056885
+    },
+    "p1_stilllife_g5_s50.png": {
+      "clip_iqa": 0.9189057350158691,
+      "aesthetic": 5.634590148925781
+    },
+    "p1_stilllife_g5_s51.png": {
+      "clip_iqa": 0.9374393820762634,
+      "aesthetic": 6.1904497146606445
+    },
+    "p1_stilllife_g7_s42.png": {
+      "clip_iqa": 0.9336249232292175,
+      "aesthetic": 5.815051078796387
+    },
+    "p1_stilllife_g7_s43.png": {
+      "clip_iqa": 0.9267053008079529,
+      "aesthetic": 5.744197845458984
+    },
+    "p1_stilllife_g7_s44.png": {
+      "clip_iqa": 0.9587603211402893,
+      "aesthetic": 5.64254903793335
+    },
+    "p1_stilllife_g7_s45.png": {
+      "clip_iqa": 0.9296414852142334,
+      "aesthetic": 5.341472148895264
+    },
+    "p1_stilllife_g7_s46.png": {
+      "clip_iqa": 0.9442496299743652,
+      "aesthetic": 5.834377765655518
+    },
+    "p1_stilllife_g7_s47.png": {
+      "clip_iqa": 0.9496713876724243,
+      "aesthetic": 5.686225891113281
+    },
+    "p1_stilllife_g7_s48.png": {
+      "clip_iqa": 0.9716086983680725,
+      "aesthetic": 5.550838470458984
+    },
+    "p1_stilllife_g7_s49.png": {
+      "clip_iqa": 0.9531746506690979,
+      "aesthetic": 5.317602157592773
+    },
+    "p1_stilllife_g7_s50.png": {
+      "clip_iqa": 0.9590590000152588,
+      "aesthetic": 5.6211137771606445
+    },
+    "p1_stilllife_g7_s51.png": {
+      "clip_iqa": 0.9352876543998718,
+      "aesthetic": 5.939248085021973
+    },
+    "p2_portrait_g11_s42.png": {
+      "clip_iqa": 0.795884370803833,
+      "aesthetic": 5.849308967590332
+    },
+    "p2_portrait_g11_s43.png": {
+      "clip_iqa": 0.8303424715995789,
+      "aesthetic": 6.052818298339844
+    },
+    "p2_portrait_g11_s44.png": {
+      "clip_iqa": 0.807354748249054,
+      "aesthetic": 6.0876851081848145
+    },
+    "p2_portrait_g11_s45.png": {
+      "clip_iqa": 0.7358413338661194,
+      "aesthetic": 6.130202293395996
+    },
+    "p2_portrait_g11_s46.png": {
+      "clip_iqa": 0.8767858147621155,
+      "aesthetic": 6.0349884033203125
+    },
+    "p2_portrait_g11_s47.png": {
+      "clip_iqa": 0.8079347014427185,
+      "aesthetic": 6.451611518859863
+    },
+    "p2_portrait_g11_s48.png": {
+      "clip_iqa": 0.869377613067627,
+      "aesthetic": 6.40460205078125
+    },
+    "p2_portrait_g11_s49.png": {
+      "clip_iqa": 0.8630147576332092,
+      "aesthetic": 6.062204360961914
+    },
+    "p2_portrait_g11_s50.png": {
+      "clip_iqa": 0.8652719259262085,
+      "aesthetic": 6.115601062774658
+    },
+    "p2_portrait_g11_s51.png": {
+      "clip_iqa": 0.8682280778884888,
+      "aesthetic": 5.966519832611084
+    },
+    "p2_portrait_g15_s43.png": {
+      "clip_iqa": 0.8907792568206787,
+      "aesthetic": 6.159894943237305
+    },
+    "p2_portrait_g15_s44.png": {
+      "clip_iqa": 0.9032647609710693,
+      "aesthetic": 6.162460803985596
+    },
+    "p2_portrait_g15_s45.png": {
+      "clip_iqa": 0.7940307855606079,
+      "aesthetic": 6.051435470581055
+    },
+    "p2_portrait_g15_s46.png": {
+      "clip_iqa": 0.8690537214279175,
+      "aesthetic": 6.14908504486084
+    },
+    "p2_portrait_g15_s47.png": {
+      "clip_iqa": 0.8993995785713196,
+      "aesthetic": 6.332823753356934
+    },
+    "p2_portrait_g15_s48.png": {
+      "clip_iqa": 0.9235348105430603,
+      "aesthetic": 6.437750816345215
+    },
+    "p2_portrait_g15_s49.png": {
+      "clip_iqa": 0.9012924432754517,
+      "aesthetic": 6.118300437927246
+    },
+    "p2_portrait_g15_s50.png": {
+      "clip_iqa": 0.9379912614822388,
+      "aesthetic": 6.132114410400391
+    },
+    "p2_portrait_g15_s51.png": {
+      "clip_iqa": 0.9162962436676025,
+      "aesthetic": 6.01145601272583
+    },
+    "p2_portrait_g1_s43.png": {
+      "clip_iqa": 0.3161846995353699,
+      "aesthetic": 5.6817626953125
+    },
+    "p2_portrait_g1_s44.png": {
+      "clip_iqa": 0.2604553997516632,
+      "aesthetic": 5.07488489151001
+    },
+    "p2_portrait_g1_s45.png": {
+      "clip_iqa": 0.31217890977859497,
+      "aesthetic": 5.165760517120361
+    },
+    "p2_portrait_g1_s46.png": {
+      "clip_iqa": 0.4908802807331085,
+      "aesthetic": 5.8989667892456055
+    },
+    "p2_portrait_g1_s47.png": {
+      "clip_iqa": 0.35625070333480835,
+      "aesthetic": 5.711513519287109
+    },
+    "p2_portrait_g1_s48.png": {
+      "clip_iqa": 0.3891132175922394,
+      "aesthetic": 5.042631149291992
+    },
+    "p2_portrait_g1_s49.png": {
+      "clip_iqa": 0.4348050653934479,
+      "aesthetic": 6.225563049316406
+    },
+    "p2_portrait_g1_s50.png": {
+      "clip_iqa": 0.4544054865837097,
+      "aesthetic": 6.667607307434082
+    },
+    "p2_portrait_g1_s51.png": {
+      "clip_iqa": 0.7622255086898804,
+      "aesthetic": 5.036643028259277
+    },
+    "p2_portrait_g2_s42.png": {
+      "clip_iqa": 0.4857523739337921,
+      "aesthetic": 5.705446243286133
+    },
+    "p2_portrait_g2_s43.png": {
+      "clip_iqa": 0.3899334967136383,
+      "aesthetic": 5.832852840423584
+    },
+    "p2_portrait_g2_s44.png": {
+      "clip_iqa": 0.5352106690406799,
+      "aesthetic": 5.052208423614502
+    },
+    "p2_portrait_g2_s45.png": {
+      "clip_iqa": 0.4106106758117676,
+      "aesthetic": 6.344822883605957
+    },
+    "p2_portrait_g2_s46.png": {
+      "clip_iqa": 0.7136440873146057,
+      "aesthetic": 5.806711673736572
+    },
+    "p2_portrait_g2_s47.png": {
+      "clip_iqa": 0.5282025933265686,
+      "aesthetic": 6.72438383102417
+    },
+    "p2_portrait_g2_s48.png": {
+      "clip_iqa": 0.7063433527946472,
+      "aesthetic": 6.004734039306641
+    },
+    "p2_portrait_g2_s49.png": {
+      "clip_iqa": 0.6467618346214294,
+      "aesthetic": 5.935835838317871
+    },
+    "p2_portrait_g2_s50.png": {
+      "clip_iqa": 0.7922691702842712,
+      "aesthetic": 6.2816619873046875
+    },
+    "p2_portrait_g2_s51.png": {
+      "clip_iqa": 0.8334522843360901,
+      "aesthetic": 5.647672653198242
+    },
+    "p2_portrait_g3_s42.png": {
+      "clip_iqa": 0.5567163825035095,
+      "aesthetic": 5.657984733581543
+    },
+    "p2_portrait_g3_s43.png": {
+      "clip_iqa": 0.5786058306694031,
+      "aesthetic": 6.003376483917236
+    },
+    "p2_portrait_g3_s44.png": {
+      "clip_iqa": 0.7191161513328552,
+      "aesthetic": 5.419301509857178
+    },
+    "p2_portrait_g3_s45.png": {
+      "clip_iqa": 0.5703528523445129,
+      "aesthetic": 6.036434173583984
+    },
+    "p2_portrait_g3_s46.png": {
+      "clip_iqa": 0.7141604423522949,
+      "aesthetic": 5.841167449951172
+    },
+    "p2_portrait_g3_s47.png": {
+      "clip_iqa": 0.5988799929618835,
+      "aesthetic": 6.586073398590088
+    },
+    "p2_portrait_g3_s48.png": {
+      "clip_iqa": 0.7889243364334106,
+      "aesthetic": 5.915108680725098
+    },
+    "p2_portrait_g3_s49.png": {
+      "clip_iqa": 0.7605754733085632,
+      "aesthetic": 5.854277610778809
+    },
+    "p2_portrait_g3_s50.png": {
+      "clip_iqa": 0.8497128486633301,
+      "aesthetic": 6.220180511474609
+    },
+    "p2_portrait_g3_s51.png": {
+      "clip_iqa": 0.7445799708366394,
+      "aesthetic": 5.662615776062012
+    },
+    "p2_portrait_g5_s42.png": {
+      "clip_iqa": 0.6695140600204468,
+      "aesthetic": 5.827177047729492
+    },
+    "p2_portrait_g5_s43.png": {
+      "clip_iqa": 0.6964775323867798,
+      "aesthetic": 5.9979424476623535
+    },
+    "p2_portrait_g5_s44.png": {
+      "clip_iqa": 0.8161590695381165,
+      "aesthetic": 5.937958717346191
+    },
+    "p2_portrait_g5_s45.png": {
+      "clip_iqa": 0.6641570925712585,
+      "aesthetic": 6.466910362243652
+    },
+    "p2_portrait_g5_s46.png": {
+      "clip_iqa": 0.7622993588447571,
+      "aesthetic": 6.048201560974121
+    },
+    "p2_portrait_g5_s47.png": {
+      "clip_iqa": 0.6909047961235046,
+      "aesthetic": 6.4268083572387695
+    },
+    "p2_portrait_g5_s48.png": {
+      "clip_iqa": 0.8501937985420227,
+      "aesthetic": 5.9366912841796875
+    },
+    "p2_portrait_g5_s49.png": {
+      "clip_iqa": 0.7731198668479919,
+      "aesthetic": 5.794029235839844
+    },
+    "p2_portrait_g5_s50.png": {
+      "clip_iqa": 0.805417537689209,
+      "aesthetic": 6.2615180015563965
+    },
+    "p2_portrait_g5_s51.png": {
+      "clip_iqa": 0.8463448286056519,
+      "aesthetic": 5.697380065917969
+    },
+    "p2_portrait_g7_s42.png": {
+      "clip_iqa": 0.738715410232544,
+      "aesthetic": 5.680886268615723
+    },
+    "p2_portrait_g7_s43.png": {
+      "clip_iqa": 0.8015100955963135,
+      "aesthetic": 6.076312065124512
+    },
+    "p2_portrait_g7_s44.png": {
+      "clip_iqa": 0.7761461138725281,
+      "aesthetic": 6.044565200805664
+    },
+    "p2_portrait_g7_s45.png": {
+      "clip_iqa": 0.6755077838897705,
+      "aesthetic": 6.087264537811279
+    },
+    "p2_portrait_g7_s46.png": {
+      "clip_iqa": 0.8366157412528992,
+      "aesthetic": 6.133049964904785
+    },
+    "p2_portrait_g7_s47.png": {
+      "clip_iqa": 0.7875990271568298,
+      "aesthetic": 6.434972286224365
+    },
+    "p2_portrait_g7_s48.png": {
+      "clip_iqa": 0.8783397078514099,
+      "aesthetic": 6.253760814666748
+    },
+    "p2_portrait_g7_s49.png": {
+      "clip_iqa": 0.8562768697738647,
+      "aesthetic": 5.938860893249512
+    },
+    "p2_portrait_g7_s50.png": {
+      "clip_iqa": 0.8527685403823853,
+      "aesthetic": 6.221458435058594
+    },
+    "p2_portrait_g7_s51.png": {
+      "clip_iqa": 0.8298381567001343,
+      "aesthetic": 5.838771820068359
+    },
+    "p3_bicycle_g11_s42.png": {
+      "clip_iqa": 0.94545978307724,
+      "aesthetic": 5.663191795349121
+    },
+    "p3_bicycle_g11_s43.png": {
+      "clip_iqa": 0.988405704498291,
+      "aesthetic": 5.591981887817383
+    },
+    "p3_bicycle_g11_s44.png": {
+      "clip_iqa": 0.9907478094100952,
+      "aesthetic": 5.716644287109375
+    },
+    "p3_bicycle_g11_s45.png": {
+      "clip_iqa": 0.9825397729873657,
+      "aesthetic": 5.537759780883789
+    },
+    "p3_bicycle_g11_s46.png": {
+      "clip_iqa": 0.9790022373199463,
+      "aesthetic": 5.80088472366333
+    },
+    "p3_bicycle_g11_s47.png": {
+      "clip_iqa": 0.9645761251449585,
+      "aesthetic": 5.741174697875977
+    },
+    "p3_bicycle_g11_s48.png": {
+      "clip_iqa": 0.9378600716590881,
+      "aesthetic": 5.776708126068115
+    },
+    "p3_bicycle_g11_s49.png": {
+      "clip_iqa": 0.93635493516922,
+      "aesthetic": 5.587764739990234
+    },
+    "p3_bicycle_g11_s50.png": {
+      "clip_iqa": 0.9891753792762756,
+      "aesthetic": 5.710655689239502
+    },
+    "p3_bicycle_g11_s51.png": {
+      "clip_iqa": 0.9760932922363281,
+      "aesthetic": 5.514801025390625
+    },
+    "p3_bicycle_g15_s42.png": {
+      "clip_iqa": 0.9763035178184509,
+      "aesthetic": 5.654736042022705
+    },
+    "p3_bicycle_g15_s43.png": {
+      "clip_iqa": 0.989507257938385,
+      "aesthetic": 5.922206401824951
+    },
+    "p3_bicycle_g15_s44.png": {
+      "clip_iqa": 0.9857656955718994,
+      "aesthetic": 5.73976469039917
+    },
+    "p3_bicycle_g15_s45.png": {
+      "clip_iqa": 0.9873092770576477,
+      "aesthetic": 5.80316162109375
+    },
+    "p3_bicycle_g15_s46.png": {
+      "clip_iqa": 0.9785075187683105,
+      "aesthetic": 5.9865288734436035
+    },
+    "p3_bicycle_g15_s47.png": {
+      "clip_iqa": 0.9556929469108582,
+      "aesthetic": 5.714094638824463
+    },
+    "p3_bicycle_g15_s48.png": {
+      "clip_iqa": 0.9463068246841431,
+      "aesthetic": 5.698034763336182
+    },
+    "p3_bicycle_g15_s49.png": {
+      "clip_iqa": 0.9624695181846619,
+      "aesthetic": 5.738885879516602
+    },
+    "p3_bicycle_g15_s50.png": {
+      "clip_iqa": 0.9884940981864929,
+      "aesthetic": 5.797145366668701
+    },
+    "p3_bicycle_g15_s51.png": {
+      "clip_iqa": 0.9739537239074707,
+      "aesthetic": 5.634926795959473
+    },
+    "p3_bicycle_g1_s42.png": {
+      "clip_iqa": 0.1371632069349289,
+      "aesthetic": 5.305004119873047
+    },
+    "p3_bicycle_g1_s43.png": {
+      "clip_iqa": 0.1740862876176834,
+      "aesthetic": 5.392976760864258
+    },
+    "p3_bicycle_g1_s44.png": {
+      "clip_iqa": 0.6200147271156311,
+      "aesthetic": 5.54403018951416
+    },
+    "p3_bicycle_g1_s45.png": {
+      "clip_iqa": 0.8589219450950623,
+      "aesthetic": 5.682886123657227
+    },
+    "p3_bicycle_g1_s46.png": {
+      "clip_iqa": 0.6696993112564087,
+      "aesthetic": 6.5944037437438965
+    },
+    "p3_bicycle_g1_s47.png": {
+      "clip_iqa": 0.6134240031242371,
+      "aesthetic": 6.170718669891357
+    },
+    "p3_bicycle_g1_s48.png": {
+      "clip_iqa": 0.43175429105758667,
+      "aesthetic": 5.646646499633789
+    },
+    "p3_bicycle_g1_s49.png": {
+      "clip_iqa": 0.6805366277694702,
+      "aesthetic": 6.051395893096924
+    },
+    "p3_bicycle_g1_s50.png": {
+      "clip_iqa": 0.5277752876281738,
+      "aesthetic": 6.054409027099609
+    },
+    "p3_bicycle_g1_s51.png": {
+      "clip_iqa": 0.6990490555763245,
+      "aesthetic": 5.407466888427734
+    },
+    "p3_bicycle_g2_s42.png": {
+      "clip_iqa": 0.48051750659942627,
+      "aesthetic": 5.692045211791992
+    },
+    "p3_bicycle_g2_s43.png": {
+      "clip_iqa": 0.6939408183097839,
+      "aesthetic": 5.51731014251709
+    },
+    "p3_bicycle_g2_s44.png": {
+      "clip_iqa": 0.8753355741500854,
+      "aesthetic": 5.315896034240723
+    },
+    "p3_bicycle_g2_s45.png": {
+      "clip_iqa": 0.9376182556152344,
+      "aesthetic": 5.479343414306641
+    },
+    "p3_bicycle_g2_s46.png": {
+      "clip_iqa": 0.8349345922470093,
+      "aesthetic": 6.064877033233643
+    },
+    "p3_bicycle_g2_s47.png": {
+      "clip_iqa": 0.7841907739639282,
+      "aesthetic": 5.35793399810791
+    },
+    "p3_bicycle_g2_s48.png": {
+      "clip_iqa": 0.7246543169021606,
+      "aesthetic": 5.725672245025635
+    },
+    "p3_bicycle_g2_s49.png": {
+      "clip_iqa": 0.7881233096122742,
+      "aesthetic": 5.401348114013672
+    },
+    "p3_bicycle_g2_s50.png": {
+      "clip_iqa": 0.8320782780647278,
+      "aesthetic": 5.42988395690918
+    },
+    "p3_bicycle_g2_s51.png": {
+      "clip_iqa": 0.8107358813285828,
+      "aesthetic": 5.528337001800537
+    },
+    "p3_bicycle_g3_s42.png": {
+      "clip_iqa": 0.7483698725700378,
+      "aesthetic": 5.096258163452148
+    },
+    "p3_bicycle_g3_s43.png": {
+      "clip_iqa": 0.8602462410926819,
+      "aesthetic": 5.605981349945068
+    },
+    "p3_bicycle_g3_s44.png": {
+      "clip_iqa": 0.9375360012054443,
+      "aesthetic": 5.682455062866211
+    },
+    "p3_bicycle_g3_s45.png": {
+      "clip_iqa": 0.9422286748886108,
+      "aesthetic": 5.474524021148682
+    },
+    "p3_bicycle_g3_s46.png": {
+      "clip_iqa": 0.9080632925033569,
+      "aesthetic": 5.951897621154785
+    },
+    "p3_bicycle_g3_s47.png": {
+      "clip_iqa": 0.7848248481750488,
+      "aesthetic": 5.392923831939697
+    },
+    "p3_bicycle_g3_s48.png": {
+      "clip_iqa": 0.8432846665382385,
+      "aesthetic": 5.743396282196045
+    },
+    "p3_bicycle_g3_s49.png": {
+      "clip_iqa": 0.882594883441925,
+      "aesthetic": 5.401796340942383
+    },
+    "p3_bicycle_g3_s50.png": {
+      "clip_iqa": 0.8617989420890808,
+      "aesthetic": 5.373780727386475
+    },
+    "p3_bicycle_g3_s51.png": {
+      "clip_iqa": 0.9076756834983826,
+      "aesthetic": 5.4863739013671875
+    },
+    "p3_bicycle_g5_s42.png": {
+      "clip_iqa": 0.8457783460617065,
+      "aesthetic": 5.43757438659668
+    },
+    "p3_bicycle_g5_s43.png": {
+      "clip_iqa": 0.90788334608078,
+      "aesthetic": 5.560283660888672
+    },
+    "p3_bicycle_g5_s44.png": {
+      "clip_iqa": 0.9862053990364075,
+      "aesthetic": 5.831075668334961
+    },
+    "p3_bicycle_g5_s45.png": {
+      "clip_iqa": 0.9749118089675903,
+      "aesthetic": 5.525156497955322
+    },
+    "p3_bicycle_g5_s46.png": {
+      "clip_iqa": 0.9561993479728699,
+      "aesthetic": 5.820563316345215
+    },
+    "p3_bicycle_g5_s47.png": {
+      "clip_iqa": 0.8482397794723511,
+      "aesthetic": 5.440806865692139
+    },
+    "p3_bicycle_g5_s48.png": {
+      "clip_iqa": 0.907463788986206,
+      "aesthetic": 5.859131336212158
+    },
+    "p3_bicycle_g5_s49.png": {
+      "clip_iqa": 0.8963680863380432,
+      "aesthetic": 5.127213478088379
+    },
+    "p3_bicycle_g5_s50.png": {
+      "clip_iqa": 0.9306784868240356,
+      "aesthetic": 5.445309162139893
+    },
+    "p3_bicycle_g5_s51.png": {
+      "clip_iqa": 0.9649137854576111,
+      "aesthetic": 5.366677284240723
+    },
+    "p3_bicycle_g7_s42.png": {
+      "clip_iqa": 0.9166681170463562,
+      "aesthetic": 5.365481376647949
+    },
+    "p3_bicycle_g7_s43.png": {
+      "clip_iqa": 0.9390337467193604,
+      "aesthetic": 5.5274457931518555
+    },
+    "p3_bicycle_g7_s44.png": {
+      "clip_iqa": 0.9887486696243286,
+      "aesthetic": 5.85529899597168
+    },
+    "p3_bicycle_g7_s45.png": {
+      "clip_iqa": 0.9722435474395752,
+      "aesthetic": 5.552585601806641
+    },
+    "p3_bicycle_g7_s46.png": {
+      "clip_iqa": 0.9729281663894653,
+      "aesthetic": 5.913403511047363
+    },
+    "p3_bicycle_g7_s47.png": {
+      "clip_iqa": 0.9362256526947021,
+      "aesthetic": 5.497153282165527
+    },
+    "p3_bicycle_g7_s48.png": {
+      "clip_iqa": 0.9384326338768005,
+      "aesthetic": 5.716413497924805
+    },
+    "p3_bicycle_g7_s49.png": {
+      "clip_iqa": 0.938347578048706,
+      "aesthetic": 5.586878776550293
+    },
+    "p3_bicycle_g7_s50.png": {
+      "clip_iqa": 0.9707208871841431,
+      "aesthetic": 5.8056640625
+    },
+    "p3_bicycle_g7_s51.png": {
+      "clip_iqa": 0.9826977849006653,
+      "aesthetic": 5.520051956176758
+    },
+    "p4_oranges_g11_s42.png": {
+      "clip_iqa": 0.9215445518493652,
+      "aesthetic": 5.441173553466797
+    },
+    "p4_oranges_g11_s43.png": {
+      "clip_iqa": 0.8707499504089355,
+      "aesthetic": 5.368072032928467
+    },
+    "p4_oranges_g11_s44.png": {
+      "clip_iqa": 0.9012113809585571,
+      "aesthetic": 5.36735725402832
+    },
+    "p4_oranges_g11_s45.png": {
+      "clip_iqa": 0.8293384313583374,
+      "aesthetic": 5.3105573654174805
+    },
+    "p4_oranges_g11_s46.png": {
+      "clip_iqa": 0.9505024552345276,
+      "aesthetic": 5.429333209991455
+    },
+    "p4_oranges_g11_s47.png": {
+      "clip_iqa": 0.9509638547897339,
+      "aesthetic": 5.733926773071289
+    },
+    "p4_oranges_g11_s48.png": {
+      "clip_iqa": 0.8843073844909668,
+      "aesthetic": 5.416626930236816
+    },
+    "p4_oranges_g11_s49.png": {
+      "clip_iqa": 0.9104751348495483,
+      "aesthetic": 5.433163642883301
+    },
+    "p4_oranges_g11_s50.png": {
+      "clip_iqa": 0.9081118702888489,
+      "aesthetic": 5.576789855957031
+    },
+    "p4_oranges_g11_s51.png": {
+      "clip_iqa": 0.9278987050056458,
+      "aesthetic": 5.494790554046631
+    },
+    "p4_oranges_g15_s42.png": {
+      "clip_iqa": 0.9330330491065979,
+      "aesthetic": 5.356416702270508
+    },
+    "p4_oranges_g15_s43.png": {
+      "clip_iqa": 0.945279061794281,
+      "aesthetic": 5.346062660217285
+    },
+    "p4_oranges_g15_s44.png": {
+      "clip_iqa": 0.9206329584121704,
+      "aesthetic": 5.602557182312012
+    },
+    "p4_oranges_g15_s45.png": {
+      "clip_iqa": 0.8669776916503906,
+      "aesthetic": 5.369385719299316
+    },
+    "p4_oranges_g15_s46.png": {
+      "clip_iqa": 0.9704218506813049,
+      "aesthetic": 5.521928787231445
+    },
+    "p4_oranges_g15_s47.png": {
+      "clip_iqa": 0.9727920889854431,
+      "aesthetic": 5.690080165863037
+    },
+    "p4_oranges_g15_s48.png": {
+      "clip_iqa": 0.9190140962600708,
+      "aesthetic": 5.382757186889648
+    },
+    "p4_oranges_g15_s49.png": {
+      "clip_iqa": 0.9009808301925659,
+      "aesthetic": 5.474464416503906
+    },
+    "p4_oranges_g15_s50.png": {
+      "clip_iqa": 0.9376203417778015,
+      "aesthetic": 5.643777847290039
+    },
+    "p4_oranges_g15_s51.png": {
+      "clip_iqa": 0.957588255405426,
+      "aesthetic": 5.568211555480957
+    },
+    "p4_oranges_g1_s42.png": {
+      "clip_iqa": 0.9058722257614136,
+      "aesthetic": 5.188662528991699
+    },
+    "p4_oranges_g1_s43.png": {
+      "clip_iqa": 0.07501405477523804,
+      "aesthetic": 6.353804588317871
+    },
+    "p4_oranges_g1_s44.png": {
+      "clip_iqa": 0.8059048652648926,
+      "aesthetic": 5.27172327041626
+    },
+    "p4_oranges_g1_s45.png": {
+      "clip_iqa": 0.27449721097946167,
+      "aesthetic": 6.261927604675293
+    },
+    "p4_oranges_g1_s46.png": {
+      "clip_iqa": 0.6740468740463257,
+      "aesthetic": 6.444907188415527
+    },
+    "p4_oranges_g1_s47.png": {
+      "clip_iqa": 0.2586063742637634,
+      "aesthetic": 6.413560390472412
+    },
+    "p4_oranges_g1_s48.png": {
+      "clip_iqa": 0.30466681718826294,
+      "aesthetic": 5.51021671295166
+    },
+    "p4_oranges_g1_s49.png": {
+      "clip_iqa": 0.1977892369031906,
+      "aesthetic": 6.460417747497559
+    },
+    "p4_oranges_g1_s50.png": {
+      "clip_iqa": 0.657820999622345,
+      "aesthetic": 5.696804523468018
+    },
+    "p4_oranges_g1_s51.png": {
+      "clip_iqa": 0.5205446481704712,
+      "aesthetic": 5.913144111633301
+    },
+    "p4_oranges_g2_s42.png": {
+      "clip_iqa": 0.7025230526924133,
+      "aesthetic": 4.8907599449157715
+    },
+    "p4_oranges_g2_s43.png": {
+      "clip_iqa": 0.1873425394296646,
+      "aesthetic": 6.252301216125488
+    },
+    "p4_oranges_g2_s44.png": {
+      "clip_iqa": 0.6234153509140015,
+      "aesthetic": 5.587707996368408
+    },
+    "p4_oranges_g2_s45.png": {
+      "clip_iqa": 0.7519750595092773,
+      "aesthetic": 5.545878887176514
+    },
+    "p4_oranges_g2_s46.png": {
+      "clip_iqa": 0.8688029646873474,
+      "aesthetic": 6.44992208480835
+    },
+    "p4_oranges_g2_s47.png": {
+      "clip_iqa": 0.47998952865600586,
+      "aesthetic": 7.092045783996582
+    },
+    "p4_oranges_g2_s48.png": {
+      "clip_iqa": 0.4542763829231262,
+      "aesthetic": 5.569580078125
+    },
+    "p4_oranges_g2_s49.png": {
+      "clip_iqa": 0.3520891070365906,
+      "aesthetic": 6.843042373657227
+    },
+    "p4_oranges_g2_s50.png": {
+      "clip_iqa": 0.6698787808418274,
+      "aesthetic": 5.7723307609558105
+    },
+    "p4_oranges_g2_s51.png": {
+      "clip_iqa": 0.5836228728294373,
+      "aesthetic": 6.428216934204102
+    },
+    "p4_oranges_g3_s42.png": {
+      "clip_iqa": 0.6768070459365845,
+      "aesthetic": 5.656553268432617
+    },
+    "p4_oranges_g3_s43.png": {
+      "clip_iqa": 0.5847864747047424,
+      "aesthetic": 5.420332908630371
+    },
+    "p4_oranges_g3_s44.png": {
+      "clip_iqa": 0.8961244225502014,
+      "aesthetic": 5.688753128051758
+    },
+    "p4_oranges_g3_s45.png": {
+      "clip_iqa": 0.8310060501098633,
+      "aesthetic": 5.502701759338379
+    },
+    "p4_oranges_g3_s46.png": {
+      "clip_iqa": 0.8804848194122314,
+      "aesthetic": 5.829290390014648
+    },
+    "p4_oranges_g3_s47.png": {
+      "clip_iqa": 0.8192936182022095,
+      "aesthetic": 5.743749141693115
+    },
+    "p4_oranges_g3_s48.png": {
+      "clip_iqa": 0.5415987372398376,
+      "aesthetic": 5.4699602127075195
+    },
+    "p4_oranges_g3_s49.png": {
+      "clip_iqa": 0.6767719984054565,
+      "aesthetic": 5.1919660568237305
+    },
+    "p4_oranges_g3_s50.png": {
+      "clip_iqa": 0.7591619491577148,
+      "aesthetic": 5.594906806945801
+    },
+    "p4_oranges_g3_s51.png": {
+      "clip_iqa": 0.7296597957611084,
+      "aesthetic": 5.623581886291504
+    },
+    "p4_oranges_g5_s42.png": {
+      "clip_iqa": 0.7560541033744812,
+      "aesthetic": 5.43898868560791
+    },
+    "p4_oranges_g5_s43.png": {
+      "clip_iqa": 0.724081814289093,
+      "aesthetic": 5.471949577331543
+    },
+    "p4_oranges_g5_s44.png": {
+      "clip_iqa": 0.7619674205780029,
+      "aesthetic": 5.327200889587402
+    },
+    "p4_oranges_g5_s45.png": {
+      "clip_iqa": 0.8114689588546753,
+      "aesthetic": 5.484010696411133
+    },
+    "p4_oranges_g5_s46.png": {
+      "clip_iqa": 0.9053308963775635,
+      "aesthetic": 5.391322612762451
+    },
+    "p4_oranges_g5_s47.png": {
+      "clip_iqa": 0.9109028577804565,
+      "aesthetic": 5.4544477462768555
+    },
+    "p4_oranges_g5_s48.png": {
+      "clip_iqa": 0.7173260450363159,
+      "aesthetic": 5.503497123718262
+    },
+    "p4_oranges_g5_s49.png": {
+      "clip_iqa": 0.884540855884552,
+      "aesthetic": 5.466869354248047
+    },
+    "p4_oranges_g5_s50.png": {
+      "clip_iqa": 0.8582993149757385,
+      "aesthetic": 5.5091681480407715
+    },
+    "p4_oranges_g5_s51.png": {
+      "clip_iqa": 0.6956769227981567,
+      "aesthetic": 5.49527645111084
+    },
+    "p4_oranges_g7_s42.png": {
+      "clip_iqa": 0.7523535490036011,
+      "aesthetic": 5.255700588226318
+    },
+    "p4_oranges_g7_s43.png": {
+      "clip_iqa": 0.8175294995307922,
+      "aesthetic": 5.403707027435303
+    },
+    "p4_oranges_g7_s44.png": {
+      "clip_iqa": 0.8454306125640869,
+      "aesthetic": 5.270192623138428
+    },
+    "p4_oranges_g7_s45.png": {
+      "clip_iqa": 0.8345946073532104,
+      "aesthetic": 5.300046920776367
+    },
+    "p4_oranges_g7_s46.png": {
+      "clip_iqa": 0.9219009280204773,
+      "aesthetic": 5.391166687011719
+    },
+    "p4_oranges_g7_s47.png": {
+      "clip_iqa": 0.9557675123214722,
+      "aesthetic": 5.580399513244629
+    },
+    "p4_oranges_g7_s48.png": {
+      "clip_iqa": 0.796566903591156,
+      "aesthetic": 5.47803258895874
+    },
+    "p4_oranges_g7_s49.png": {
+      "clip_iqa": 0.9102658033370972,
+      "aesthetic": 5.37422513961792
+    },
+    "p4_oranges_g7_s50.png": {
+      "clip_iqa": 0.9323421716690063,
+      "aesthetic": 5.644906044006348
+    },
+    "p4_oranges_g7_s51.png": {
+      "clip_iqa": 0.7009215950965881,
+      "aesthetic": 5.43446159362793
+    },
+    "p5_livingroom_g11_s42.png": {
+      "clip_iqa": 0.877887487411499,
+      "aesthetic": 5.737460136413574
+    },
+    "p5_livingroom_g11_s43.png": {
+      "clip_iqa": 0.8553218245506287,
+      "aesthetic": 5.701805114746094
+    },
+    "p5_livingroom_g11_s44.png": {
+      "clip_iqa": 0.8969845175743103,
+      "aesthetic": 6.4531402587890625
+    },
+    "p5_livingroom_g11_s45.png": {
+      "clip_iqa": 0.8096498250961304,
+      "aesthetic": 5.6916608810424805
+    },
+    "p5_livingroom_g11_s46.png": {
+      "clip_iqa": 0.8452429175376892,
+      "aesthetic": 6.616587162017822
+    },
+    "p5_livingroom_g11_s47.png": {
+      "clip_iqa": 0.9164940714836121,
+      "aesthetic": 6.184021949768066
+    },
+    "p5_livingroom_g11_s48.png": {
+      "clip_iqa": 0.6976167559623718,
+      "aesthetic": 5.4838151931762695
+    },
+    "p5_livingroom_g11_s49.png": {
+      "clip_iqa": 0.8665372133255005,
+      "aesthetic": 5.58997106552124
+    },
+    "p5_livingroom_g11_s50.png": {
+      "clip_iqa": 0.8920902013778687,
+      "aesthetic": 5.533933639526367
+    },
+    "p5_livingroom_g11_s51.png": {
+      "clip_iqa": 0.891730785369873,
+      "aesthetic": 5.622290134429932
+    },
+    "p5_livingroom_g15_s42.png": {
+      "clip_iqa": 0.8511646389961243,
+      "aesthetic": 5.429938793182373
+    },
+    "p5_livingroom_g15_s43.png": {
+      "clip_iqa": 0.932909369468689,
+      "aesthetic": 5.813005447387695
+    },
+    "p5_livingroom_g15_s44.png": {
+      "clip_iqa": 0.8696230053901672,
+      "aesthetic": 6.013491153717041
+    },
+    "p5_livingroom_g15_s45.png": {
+      "clip_iqa": 0.834637463092804,
+      "aesthetic": 5.690420627593994
+    },
+    "p5_livingroom_g15_s46.png": {
+      "clip_iqa": 0.8918785452842712,
+      "aesthetic": 6.4430460929870605
+    },
+    "p5_livingroom_g15_s47.png": {
+      "clip_iqa": 0.8908652067184448,
+      "aesthetic": 6.262279510498047
+    },
+    "p5_livingroom_g15_s48.png": {
+      "clip_iqa": 0.6923743486404419,
+      "aesthetic": 5.536097526550293
+    },
+    "p5_livingroom_g15_s49.png": {
+      "clip_iqa": 0.8502495288848877,
+      "aesthetic": 5.502333164215088
+    },
+    "p5_livingroom_g15_s50.png": {
+      "clip_iqa": 0.9304835796356201,
+      "aesthetic": 6.312074661254883
+    },
+    "p5_livingroom_g15_s51.png": {
+      "clip_iqa": 0.8853649497032166,
+      "aesthetic": 5.650181770324707
+    },
+    "p5_livingroom_g1_s42.png": {
+      "clip_iqa": 0.2521224915981293,
+      "aesthetic": 5.7049407958984375
+    },
+    "p5_livingroom_g1_s43.png": {
+      "clip_iqa": 0.3447355329990387,
+      "aesthetic": 5.881281852722168
+    },
+    "p5_livingroom_g1_s44.png": {
+      "clip_iqa": 0.4738212823867798,
+      "aesthetic": 5.940324783325195
+    },
+    "p5_livingroom_g1_s45.png": {
+      "clip_iqa": 0.5633648037910461,
+      "aesthetic": 6.333950042724609
+    },
+    "p5_livingroom_g1_s46.png": {
+      "clip_iqa": 0.5440449714660645,
+      "aesthetic": 6.539578914642334
+    },
+    "p5_livingroom_g1_s47.png": {
+      "clip_iqa": 0.44838282465934753,
+      "aesthetic": 6.536567687988281
+    },
+    "p5_livingroom_g1_s48.png": {
+      "clip_iqa": 0.5032708048820496,
+      "aesthetic": 6.009278297424316
+    },
+    "p5_livingroom_g1_s49.png": {
+      "clip_iqa": 0.7455134391784668,
+      "aesthetic": 5.785693168640137
+    },
+    "p5_livingroom_g1_s50.png": {
+      "clip_iqa": 0.43734848499298096,
+      "aesthetic": 6.61756706237793
+    },
+    "p5_livingroom_g1_s51.png": {
+      "clip_iqa": 0.7222297787666321,
+      "aesthetic": 5.808847427368164
+    },
+    "p5_livingroom_g2_s42.png": {
+      "clip_iqa": 0.6429060101509094,
+      "aesthetic": 5.79219913482666
+    },
+    "p5_livingroom_g2_s43.png": {
+      "clip_iqa": 0.5468416810035706,
+      "aesthetic": 5.532283782958984
+    },
+    "p5_livingroom_g2_s44.png": {
+      "clip_iqa": 0.6951563954353333,
+      "aesthetic": 6.452113151550293
+    },
+    "p5_livingroom_g2_s45.png": {
+      "clip_iqa": 0.7664790153503418,
+      "aesthetic": 5.8754425048828125
+    },
+    "p5_livingroom_g2_s46.png": {
+      "clip_iqa": 0.8422666788101196,
+      "aesthetic": 6.648714065551758
+    },
+    "p5_livingroom_g2_s47.png": {
+      "clip_iqa": 0.6917902231216431,
+      "aesthetic": 6.4182000160217285
+    },
+    "p5_livingroom_g2_s48.png": {
+      "clip_iqa": 0.6948738098144531,
+      "aesthetic": 6.335387229919434
+    },
+    "p5_livingroom_g2_s49.png": {
+      "clip_iqa": 0.6977332234382629,
+      "aesthetic": 5.588493347167969
+    },
+    "p5_livingroom_g2_s50.png": {
+      "clip_iqa": 0.8054967522621155,
+      "aesthetic": 6.558716773986816
+    },
+    "p5_livingroom_g2_s51.png": {
+      "clip_iqa": 0.8997505307197571,
+      "aesthetic": 5.973654747009277
+    },
+    "p5_livingroom_g3_s42.png": {
+      "clip_iqa": 0.7243772149085999,
+      "aesthetic": 5.689243316650391
+    },
+    "p5_livingroom_g3_s43.png": {
+      "clip_iqa": 0.5199700593948364,
+      "aesthetic": 5.826345443725586
+    },
+    "p5_livingroom_g3_s44.png": {
+      "clip_iqa": 0.8257563710212708,
+      "aesthetic": 6.029324531555176
+    },
+    "p5_livingroom_g3_s45.png": {
+      "clip_iqa": 0.7704423666000366,
+      "aesthetic": 5.8152570724487305
+    },
+    "p5_livingroom_g3_s46.png": {
+      "clip_iqa": 0.8685241341590881,
+      "aesthetic": 6.261302947998047
+    },
+    "p5_livingroom_g3_s47.png": {
+      "clip_iqa": 0.7295658588409424,
+      "aesthetic": 6.256683826446533
+    },
+    "p5_livingroom_g3_s48.png": {
+      "clip_iqa": 0.7232783436775208,
+      "aesthetic": 5.881044387817383
+    },
+    "p5_livingroom_g3_s49.png": {
+      "clip_iqa": 0.6849573254585266,
+      "aesthetic": 5.463830947875977
+    },
+    "p5_livingroom_g3_s50.png": {
+      "clip_iqa": 0.8537498712539673,
+      "aesthetic": 6.106165409088135
+    },
+    "p5_livingroom_g3_s51.png": {
+      "clip_iqa": 0.9172715544700623,
+      "aesthetic": 6.207099914550781
+    },
+    "p5_livingroom_g5_s42.png": {
+      "clip_iqa": 0.6896771788597107,
+      "aesthetic": 5.823841094970703
+    },
+    "p5_livingroom_g5_s43.png": {
+      "clip_iqa": 0.6179983615875244,
+      "aesthetic": 5.5536723136901855
+    },
+    "p5_livingroom_g5_s44.png": {
+      "clip_iqa": 0.8397347331047058,
+      "aesthetic": 6.008103370666504
+    },
+    "p5_livingroom_g5_s45.png": {
+      "clip_iqa": 0.8161041736602783,
+      "aesthetic": 5.659995079040527
+    },
+    "p5_livingroom_g5_s46.png": {
+      "clip_iqa": 0.8906396627426147,
+      "aesthetic": 5.9232282638549805
+    },
+    "p5_livingroom_g5_s47.png": {
+      "clip_iqa": 0.7574383020401001,
+      "aesthetic": 6.450552463531494
+    },
+    "p5_livingroom_g5_s48.png": {
+      "clip_iqa": 0.7055814266204834,
+      "aesthetic": 5.9538679122924805
+    },
+    "p5_livingroom_g5_s49.png": {
+      "clip_iqa": 0.7167132496833801,
+      "aesthetic": 5.438470363616943
+    },
+    "p5_livingroom_g5_s50.png": {
+      "clip_iqa": 0.8467622995376587,
+      "aesthetic": 5.974543571472168
+    },
+    "p5_livingroom_g5_s51.png": {
+      "clip_iqa": 0.8975628614425659,
+      "aesthetic": 5.988527774810791
+    },
+    "p5_livingroom_g7_s42.png": {
+      "clip_iqa": 0.7613757848739624,
+      "aesthetic": 5.78172492980957
+    },
+    "p5_livingroom_g7_s43.png": {
+      "clip_iqa": 0.7956730723381042,
+      "aesthetic": 5.806801795959473
+    },
+    "p5_livingroom_g7_s44.png": {
+      "clip_iqa": 0.8561503291130066,
+      "aesthetic": 5.9366350173950195
+    },
+    "p5_livingroom_g7_s45.png": {
+      "clip_iqa": 0.8001089692115784,
+      "aesthetic": 5.648408889770508
+    },
+    "p5_livingroom_g7_s46.png": {
+      "clip_iqa": 0.8662304878234863,
+      "aesthetic": 6.3826093673706055
+    },
+    "p5_livingroom_g7_s47.png": {
+      "clip_iqa": 0.7856994867324829,
+      "aesthetic": 6.30196475982666
+    },
+    "p5_livingroom_g7_s48.png": {
+      "clip_iqa": 0.6481937170028687,
+      "aesthetic": 5.768123626708984
+    },
+    "p5_livingroom_g7_s49.png": {
+      "clip_iqa": 0.7862366437911987,
+      "aesthetic": 5.360983848571777
+    },
+    "p5_livingroom_g7_s50.png": {
+      "clip_iqa": 0.8616974353790283,
+      "aesthetic": 5.744662284851074
+    },
+    "p5_livingroom_g7_s51.png": {
+      "clip_iqa": 0.8950414657592773,
+      "aesthetic": 5.820949554443359
+    },
+    "p6_forest_g11_s42.png": {
+      "clip_iqa": 0.952380359172821,
+      "aesthetic": 6.006862163543701
+    },
+    "p6_forest_g11_s43.png": {
+      "clip_iqa": 0.8615909218788147,
+      "aesthetic": 5.796128273010254
+    },
+    "p6_forest_g11_s44.png": {
+      "clip_iqa": 0.9625710844993591,
+      "aesthetic": 5.841183662414551
+    },
+    "p6_forest_g11_s45.png": {
+      "clip_iqa": 0.9071944952011108,
+      "aesthetic": 5.730593204498291
+    },
+    "p6_forest_g11_s46.png": {
+      "clip_iqa": 0.8664354681968689,
+      "aesthetic": 5.968273162841797
+    },
+    "p6_forest_g11_s47.png": {
+      "clip_iqa": 0.8012763857841492,
+      "aesthetic": 5.980461597442627
+    },
+    "p6_forest_g11_s48.png": {
+      "clip_iqa": 0.8606325387954712,
+      "aesthetic": 5.893194198608398
+    },
+    "p6_forest_g11_s49.png": {
+      "clip_iqa": 0.8269343376159668,
+      "aesthetic": 5.691823959350586
+    },
+    "p6_forest_g11_s50.png": {
+      "clip_iqa": 0.8848426938056946,
+      "aesthetic": 5.922265529632568
+    },
+    "p6_forest_g11_s51.png": {
+      "clip_iqa": 0.9184097051620483,
+      "aesthetic": 5.993338584899902
+    },
+    "p6_forest_g15_s42.png": {
+      "clip_iqa": 0.970996618270874,
+      "aesthetic": 6.223129749298096
+    },
+    "p6_forest_g15_s43.png": {
+      "clip_iqa": 0.9061726927757263,
+      "aesthetic": 5.853382587432861
+    },
+    "p6_forest_g15_s44.png": {
+      "clip_iqa": 0.9633594155311584,
+      "aesthetic": 6.011957168579102
+    },
+    "p6_forest_g15_s45.png": {
+      "clip_iqa": 0.9155727028846741,
+      "aesthetic": 5.808732032775879
+    },
+    "p6_forest_g15_s46.png": {
+      "clip_iqa": 0.8802508115768433,
+      "aesthetic": 6.141749858856201
+    },
+    "p6_forest_g15_s47.png": {
+      "clip_iqa": 0.9266306757926941,
+      "aesthetic": 6.078876495361328
+    },
+    "p6_forest_g15_s48.png": {
+      "clip_iqa": 0.9205186367034912,
+      "aesthetic": 6.054051399230957
+    },
+    "p6_forest_g15_s49.png": {
+      "clip_iqa": 0.8876295685768127,
+      "aesthetic": 5.839423179626465
+    },
+    "p6_forest_g15_s50.png": {
+      "clip_iqa": 0.9220924377441406,
+      "aesthetic": 6.173163890838623
+    },
+    "p6_forest_g15_s51.png": {
+      "clip_iqa": 0.929319441318512,
+      "aesthetic": 6.101994037628174
+    },
+    "p6_forest_g1_s42.png": {
+      "clip_iqa": 0.6464312076568604,
+      "aesthetic": 5.319809913635254
+    },
+    "p6_forest_g1_s43.png": {
+      "clip_iqa": 0.7371956706047058,
+      "aesthetic": 5.745416164398193
+    },
+    "p6_forest_g1_s44.png": {
+      "clip_iqa": 0.8596538305282593,
+      "aesthetic": 5.434356689453125
+    },
+    "p6_forest_g1_s45.png": {
+      "clip_iqa": 0.49907827377319336,
+      "aesthetic": 5.379243850708008
+    },
+    "p6_forest_g1_s46.png": {
+      "clip_iqa": 0.5016086101531982,
+      "aesthetic": 5.993793487548828
+    },
+    "p6_forest_g1_s47.png": {
+      "clip_iqa": 0.7155629992485046,
+      "aesthetic": 5.629364967346191
+    },
+    "p6_forest_g1_s48.png": {
+      "clip_iqa": 0.6763468980789185,
+      "aesthetic": 5.721846580505371
+    },
+    "p6_forest_g1_s49.png": {
+      "clip_iqa": 0.5991578698158264,
+      "aesthetic": 5.331173419952393
+    },
+    "p6_forest_g1_s50.png": {
+      "clip_iqa": 0.7309053540229797,
+      "aesthetic": 5.72227668762207
+    },
+    "p6_forest_g1_s51.png": {
+      "clip_iqa": 0.961760938167572,
+      "aesthetic": 5.511080741882324
+    },
+    "p6_forest_g2_s42.png": {
+      "clip_iqa": 0.7510603666305542,
+      "aesthetic": 4.9570817947387695
+    },
+    "p6_forest_g2_s43.png": {
+      "clip_iqa": 0.7927414178848267,
+      "aesthetic": 5.470491886138916
+    },
+    "p6_forest_g2_s44.png": {
+      "clip_iqa": 0.9765676856040955,
+      "aesthetic": 5.6945414543151855
+    },
+    "p6_forest_g2_s45.png": {
+      "clip_iqa": 0.7306588292121887,
+      "aesthetic": 5.341228485107422
+    },
+    "p6_forest_g2_s46.png": {
+      "clip_iqa": 0.9432153105735779,
+      "aesthetic": 5.608630180358887
+    },
+    "p6_forest_g2_s47.png": {
+      "clip_iqa": 0.8723489046096802,
+      "aesthetic": 6.325925827026367
+    },
+    "p6_forest_g2_s48.png": {
+      "clip_iqa": 0.5443898439407349,
+      "aesthetic": 5.565044403076172
+    },
+    "p6_forest_g2_s49.png": {
+      "clip_iqa": 0.7746862769126892,
+      "aesthetic": 5.594050884246826
+    },
+    "p6_forest_g2_s50.png": {
+      "clip_iqa": 0.9761126637458801,
+      "aesthetic": 5.946197986602783
+    },
+    "p6_forest_g2_s51.png": {
+      "clip_iqa": 0.943516731262207,
+      "aesthetic": 5.703052043914795
+    },
+    "p6_forest_g3_s42.png": {
+      "clip_iqa": 0.8330904245376587,
+      "aesthetic": 4.984549045562744
+    },
+    "p6_forest_g3_s43.png": {
+      "clip_iqa": 0.7357527017593384,
+      "aesthetic": 5.441556930541992
+    },
+    "p6_forest_g3_s44.png": {
+      "clip_iqa": 0.9824167490005493,
+      "aesthetic": 5.854745864868164
+    },
+    "p6_forest_g3_s45.png": {
+      "clip_iqa": 0.7557459473609924,
+      "aesthetic": 5.341879844665527
+    },
+    "p6_forest_g3_s46.png": {
+      "clip_iqa": 0.9360551238059998,
+      "aesthetic": 5.540253639221191
+    },
+    "p6_forest_g3_s47.png": {
+      "clip_iqa": 0.42224055528640747,
+      "aesthetic": 5.504277229309082
+    },
+    "p6_forest_g3_s48.png": {
+      "clip_iqa": 0.584221601486206,
+      "aesthetic": 5.6044440269470215
+    },
+    "p6_forest_g3_s49.png": {
+      "clip_iqa": 0.7673638463020325,
+      "aesthetic": 5.500786304473877
+    },
+    "p6_forest_g3_s50.png": {
+      "clip_iqa": 0.8801851272583008,
+      "aesthetic": 5.787741661071777
+    },
+    "p6_forest_g3_s51.png": {
+      "clip_iqa": 0.9082930684089661,
+      "aesthetic": 5.7368035316467285
+    },
+    "p6_forest_g5_s42.png": {
+      "clip_iqa": 0.9073168635368347,
+      "aesthetic": 5.767622470855713
+    },
+    "p6_forest_g5_s43.png": {
+      "clip_iqa": 0.7470135688781738,
+      "aesthetic": 5.586701393127441
+    },
+    "p6_forest_g5_s44.png": {
+      "clip_iqa": 0.9545260667800903,
+      "aesthetic": 5.645203590393066
+    },
+    "p6_forest_g5_s45.png": {
+      "clip_iqa": 0.8503419756889343,
+      "aesthetic": 5.584213733673096
+    },
+    "p6_forest_g5_s46.png": {
+      "clip_iqa": 0.9336982369422913,
+      "aesthetic": 5.642162799835205
+    },
+    "p6_forest_g5_s47.png": {
+      "clip_iqa": 0.5837878584861755,
+      "aesthetic": 5.695694923400879
+    },
+    "p6_forest_g5_s48.png": {
+      "clip_iqa": 0.7232472896575928,
+      "aesthetic": 5.660392761230469
+    },
+    "p6_forest_g5_s49.png": {
+      "clip_iqa": 0.7604392766952515,
+      "aesthetic": 5.494716644287109
+    },
+    "p6_forest_g5_s50.png": {
+      "clip_iqa": 0.8396523594856262,
+      "aesthetic": 5.900519371032715
+    },
+    "p6_forest_g5_s51.png": {
+      "clip_iqa": 0.8989930152893066,
+      "aesthetic": 5.753232002258301
+    },
+    "p6_forest_g7_s42.png": {
+      "clip_iqa": 0.8351110816001892,
+      "aesthetic": 5.770363807678223
+    },
+    "p6_forest_g7_s43.png": {
+      "clip_iqa": 0.7679445147514343,
+      "aesthetic": 5.675363540649414
+    },
+    "p6_forest_g7_s44.png": {
+      "clip_iqa": 0.958064615726471,
+      "aesthetic": 5.553555965423584
+    },
+    "p6_forest_g7_s45.png": {
+      "clip_iqa": 0.8539257645606995,
+      "aesthetic": 5.53972864151001
+    },
+    "p6_forest_g7_s46.png": {
+      "clip_iqa": 0.9106847643852234,
+      "aesthetic": 5.727019309997559
+    },
+    "p6_forest_g7_s47.png": {
+      "clip_iqa": 0.7052900791168213,
+      "aesthetic": 5.879181861877441
+    },
+    "p6_forest_g7_s48.png": {
+      "clip_iqa": 0.8737688064575195,
+      "aesthetic": 5.679636001586914
+    },
+    "p6_forest_g7_s49.png": {
+      "clip_iqa": 0.7768816947937012,
+      "aesthetic": 5.49159049987793
+    },
+    "p6_forest_g7_s50.png": {
+      "clip_iqa": 0.8246520161628723,
+      "aesthetic": 5.883419513702393
+    },
+    "p6_forest_g7_s51.png": {
+      "clip_iqa": 0.8930906057357788,
+      "aesthetic": 5.904667854309082
+    },
+    "uncond_s42.png": {
+      "clip_iqa": 0.9073770046234131,
+      "aesthetic": 5.446229934692383
+    },
+    "uncond_s43.png": {
+      "clip_iqa": 0.4580589234828949,
+      "aesthetic": 6.368971824645996
+    },
+    "uncond_s44.png": {
+      "clip_iqa": 0.7785593271255493,
+      "aesthetic": 5.619210243225098
+    },
+    "uncond_s45.png": {
+      "clip_iqa": 0.4358370304107666,
+      "aesthetic": 5.176846027374268
+    },
+    "uncond_s46.png": {
+      "clip_iqa": 0.6867212057113647,
+      "aesthetic": 6.196686267852783
+    },
+    "uncond_s47.png": {
+      "clip_iqa": 0.2603072226047516,
+      "aesthetic": 6.231533050537109
+    },
+    "uncond_s48.png": {
+      "clip_iqa": 0.32554149627685547,
+      "aesthetic": 5.410533428192139
+    },
+    "uncond_s49.png": {
+      "clip_iqa": 0.4293566942214966,
+      "aesthetic": 5.946774005889893
+    },
+    "uncond_s50.png": {
+      "clip_iqa": 0.6931219100952148,
+      "aesthetic": 5.976282119750977
+    },
+    "uncond_s51.png": {
+      "clip_iqa": 0.6559341549873352,
+      "aesthetic": 6.248685359954834
+    }
+  }
+}

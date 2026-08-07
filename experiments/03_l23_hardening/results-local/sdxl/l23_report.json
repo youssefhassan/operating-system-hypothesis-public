@@ -1,0 +1,189 @@
+{
+  "model": "sdxl",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "notes": {
+    "quality_present": true,
+    "judges": [
+      [
+        "a",
+        "claude"
+      ],
+      [
+        "b",
+        "qwen"
+      ],
+      [
+        "c",
+        "llama"
+      ]
+    ],
+    "judge_names": [
+      "claude",
+      "qwen",
+      "llama"
+    ],
+    "dropped_missing_or_error": 50,
+    "n_conditioned": 372,
+    "n_uncond": 8,
+    "quality_uses_aesthetic": true,
+    "quality_available": true
+  },
+  "primary_lmm": {
+    "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+    "slope_standardized": -0.29744424044928713,
+    "ci95": [
+      -0.35682089819457546,
+      -0.23806758270399883
+    ],
+    "p": 9.387999258593058e-23
+  },
+  "deconfound": {
+    "computable": true,
+    "raw_spearman_composite_vs_g": -0.4588,
+    "partial_spearman_controlling_Q": -0.4328,
+    "ci95": [
+      -0.5125,
+      -0.348
+    ],
+    "ci_excludes_zero": true
+  },
+  "matched_quality_arms": {
+    "computable": true,
+    "overlap_Q_band": [
+      -0.692,
+      1.364
+    ],
+    "n_low": 108,
+    "n_high": 115,
+    "cliffs_delta_low_vs_high": 0.5291,
+    "ci95": [
+      0.3995,
+      0.652
+    ],
+    "interpretation": "positive = more L2/3 at the low-g arm at matched quality (effect specific to under-conditioning, not generic quality loss)"
+  },
+  "reliability": {
+    "n_images": 380,
+    "n_judges": 3,
+    "judges": [
+      "claude",
+      "qwen",
+      "llama"
+    ],
+    "pairs": [
+      "claude+qwen",
+      "claude+llama",
+      "qwen+llama"
+    ],
+    "per_field": {
+      "reduplication": {
+        "weighted_kappa": 0.2078,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.1707,
+          "claude+llama": 0.3183,
+          "qwen+llama": 0.1344
+        },
+        "gwet_ac2": 0.7183,
+        "percent_agreement": 0.5281
+      },
+      "fragmentation": {
+        "weighted_kappa": 0.1811,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.5433,
+          "claude+llama": 0.0,
+          "qwen+llama": 0.0
+        },
+        "gwet_ac2": 0.9264,
+        "percent_agreement": 0.7851
+      },
+      "condensation": {
+        "weighted_kappa": 0.052,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.156,
+          "claude+llama": 0.0,
+          "qwen+llama": 0.0
+        },
+        "gwet_ac2": 0.8943,
+        "percent_agreement": 0.7105
+      },
+      "distortion": {
+        "weighted_kappa": 0.0647,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.1941,
+          "claude+llama": 0.0,
+          "qwen+llama": 0.0
+        },
+        "gwet_ac2": 0.7796,
+        "percent_agreement": 0.5105
+      },
+      "tiling": {
+        "weighted_kappa": 0.5743,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.704,
+          "claude+llama": 0.4347,
+          "qwen+llama": 0.5843
+        },
+        "gwet_ac2": 0.9279,
+        "percent_agreement": 0.9386
+      }
+    },
+    "composite_weighted_kappa": 0.1264
+  },
+  "per_prompt": {
+    "per_prompt_spearman_composite_vs_g": {
+      "p2_portrait": -0.0463,
+      "p5_livingroom": -0.5976,
+      "p4_oranges": -0.4899,
+      "p1_stilllife": -0.6187,
+      "p6_forest": -0.5083,
+      "p3_bicycle": -0.7203
+    },
+    "n_negative": 6,
+    "n_prompts": 6
+  },
+  "per_field_dose_response": {
+    "reduplication": {
+      "spearman_rho_vs_g": -0.1349,
+      "perm_p": 0.0088,
+      "bh_q": 0.0117
+    },
+    "fragmentation": {
+      "spearman_rho_vs_g": -0.5973,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "condensation": {
+      "spearman_rho_vs_g": -0.3918,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    },
+    "distortion": {
+      "spearman_rho_vs_g": -0.427,
+      "perm_p": 0.0002,
+      "bh_q": 0.0003
+    }
+  },
+  "baseline_composite_uncond": 1.6853,
+  "composite_mean_by_guidance": {
+    "1.0": 1.1045,
+    "2.0": 0.2613,
+    "3.0": -0.0033,
+    "5.0": -0.2108,
+    "7.0": -0.3216,
+    "11.0": -0.2859,
+    "15.0": -0.3032
+  },
+  "quality_mean_by_guidance": {
+    "1.0": -0.726,
+    "2.0": -0.1742,
+    "3.0": -0.1379,
+    "5.0": 0.0297,
+    "7.0": 0.1265,
+    "11.0": 0.2692,
+    "15.0": 0.4317
+  },
+  "verdict": "inconclusive-null (judges disagree: composite weighted kappa < 0.4)",
+  "human_reliability": {
+    "available": false
+  }
+}
