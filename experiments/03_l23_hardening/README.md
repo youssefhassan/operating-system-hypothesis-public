@@ -1,6 +1,10 @@
 # Experiment 03 — Hardening the Klüver Level-2/3 finding
 
-**Status:** **pre-registered + smoke-validated; ready for the full run.**
+**Status:** **run complete on both models (2026-07-22); analysed; write-up outstanding.**
+Generation, three judges and quality are done for SDXL and SD 3.5 (430 images each).
+`l23_report.json` (pre-registered 3-judge panel) and `l23_report_claude-qwen.json`
+(2-judge sensitivity analysis) are committed per model. **Outstanding: the blind
+human subset (`human_rate.py`, never run) and `analysis.md`.**
 Pre-registration drafted 2026-07-15; the whole pipeline was validated
 end-to-end on the M5 on 2026-07-21 (a 2-image smoke run: generate → Claude +
 Qwen judge → quality → analyze, all green). The only issues found were
