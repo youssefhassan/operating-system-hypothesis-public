@@ -127,7 +127,7 @@
     "reduplication": {
       "spearman_rho_vs_g": -0.1161,
       "perm_p": 0.0172,
-      "bh_q": 0.0172
+      "bh_q": 0.0178
     },
     "fragmentation": {
       "spearman_rho_vs_g": -0.6179,
@@ -169,8 +169,8 @@
     "available": true,
     "n_subset": 28,
     "n_rated": 28,
-    "n_rated_used": 13,
-    "n_rated_outside_panel": 15,
+    "n_rated_used": 28,
+    "n_rated_outside_panel": 0,
     "degenerate_on_subset": {
       "human": [
         "tiling"
@@ -179,67 +179,66 @@
         "tiling"
       ],
       "qwen": [
-        "fragmentation",
         "tiling"
       ]
     },
     "human_vs_claude": {
-      "reduplication": 0.3636,
-      "fragmentation": 0.6061,
-      "condensation": 0.3858,
-      "distortion": 0.3478,
+      "reduplication": 0.3376,
+      "fragmentation": 0.4167,
+      "condensation": 0.3824,
+      "distortion": 0.2119,
       "tiling": NaN,
       "gwet_ac2": {
-        "reduplication": 0.7083,
-        "fragmentation": 0.9462,
-        "condensation": 0.75,
-        "distortion": 0.625,
+        "reduplication": 0.841,
+        "fragmentation": 0.9274,
+        "condensation": 0.8129,
+        "distortion": 0.5687,
         "tiling": 1.0
       },
       "percent_agreement": {
-        "reduplication": 0.3846,
-        "fragmentation": 0.6923,
-        "condensation": 0.5385,
-        "distortion": 0.3077,
+        "reduplication": 0.5357,
+        "fragmentation": 0.6786,
+        "condensation": 0.5714,
+        "distortion": 0.2857,
         "tiling": 1.0
       },
-      "composite_weighted_kappa": 0.4258,
+      "composite_weighted_kappa": 0.3372,
       "composite_bootstrap": {
-        "point": 0.4258,
+        "point": 0.3371,
         "ci95": [
-          0.0897,
-          0.5997
+          0.106,
+          0.4954
         ],
         "n_valid": 4000,
         "n_bootstrap": 4000
       }
     },
     "human_vs_qwen": {
-      "reduplication": -0.0067,
-      "fragmentation": 0.0,
-      "condensation": -0.1519,
-      "distortion": -0.0629,
+      "reduplication": 0.0063,
+      "fragmentation": 0.2821,
+      "condensation": -0.0021,
+      "distortion": 0.2108,
       "tiling": NaN,
       "gwet_ac2": {
-        "reduplication": 0.6584,
-        "fragmentation": 0.8842,
-        "condensation": 0.6912,
-        "distortion": 0.1522,
+        "reduplication": 0.7439,
+        "fragmentation": 0.9128,
+        "condensation": 0.7698,
+        "distortion": 0.5694,
         "tiling": 1.0
       },
       "percent_agreement": {
-        "reduplication": 0.5385,
-        "fragmentation": 0.6923,
-        "condensation": 0.4615,
-        "distortion": 0.1538,
+        "reduplication": 0.6786,
+        "fragmentation": 0.75,
+        "condensation": 0.5,
+        "distortion": 0.4286,
         "tiling": 1.0
       },
-      "composite_weighted_kappa": -0.0554,
+      "composite_weighted_kappa": 0.1243,
       "composite_bootstrap": {
-        "point": -0.0554,
+        "point": 0.1243,
         "ci95": [
-          -0.2006,
-          0.113
+          -0.0585,
+          0.3133
         ],
         "n_valid": 4000,
         "n_bootstrap": 4000

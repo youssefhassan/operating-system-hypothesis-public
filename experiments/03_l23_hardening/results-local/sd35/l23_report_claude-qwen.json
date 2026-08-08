@@ -25,20 +25,20 @@
   },
   "primary_lmm": {
     "method": "statsmodels MixedLM (crossed prompt+seed RE)",
-    "slope_standardized": -0.16661404307855104,
+    "slope_standardized": -0.18156087634152,
     "ci95": [
-      -0.2295978936143132,
-      -0.10363019254278888
+      -0.24752079840833832,
+      -0.11560095427470166
     ],
-    "p": 2.162678814804179e-07
+    "p": 6.852934390794349e-08
   },
   "deconfound": {
     "computable": true,
-    "raw_spearman_composite_vs_g": -0.2354,
-    "partial_spearman_controlling_Q": -0.2451,
+    "raw_spearman_composite_vs_g": -0.216,
+    "partial_spearman_controlling_Q": -0.2455,
     "ci95": [
-      -0.3399,
-      -0.147
+      -0.3377,
+      -0.1462
     ],
     "ci_excludes_zero": true
   },
@@ -50,10 +50,10 @@
     ],
     "n_low": 178,
     "n_high": 94,
-    "cliffs_delta_low_vs_high": 0.2036,
+    "cliffs_delta_low_vs_high": 0.1881,
     "ci95": [
-      0.0672,
-      0.3345
+      0.0496,
+      0.3199
     ],
     "interpretation": "positive = more L2/3 at the low-g arm at matched quality (effect specific to under-conditioning, not generic quality loss)"
   },
@@ -69,91 +69,91 @@
     ],
     "per_field": {
       "reduplication": {
-        "weighted_kappa": 0.0986,
+        "weighted_kappa": 0.4393,
         "pairwise_weighted_kappa": {
-          "claude+qwen": 0.0986
+          "claude+qwen": 0.4393
         },
-        "gwet_ac2": 0.8895,
-        "percent_agreement": 0.5293
+        "gwet_ac2": 0.8657,
+        "percent_agreement": 0.5808
       },
       "fragmentation": {
-        "weighted_kappa": 0.2455,
+        "weighted_kappa": 0.5128,
         "pairwise_weighted_kappa": {
-          "claude+qwen": 0.2455
+          "claude+qwen": 0.5128
         },
-        "gwet_ac2": 0.965,
-        "percent_agreement": 0.8337
+        "gwet_ac2": 0.9528,
+        "percent_agreement": 0.8244
       },
       "condensation": {
-        "weighted_kappa": 0.0891,
+        "weighted_kappa": 0.3912,
         "pairwise_weighted_kappa": {
-          "claude+qwen": 0.0891
+          "claude+qwen": 0.3912
         },
-        "gwet_ac2": 0.9117,
-        "percent_agreement": 0.6651
+        "gwet_ac2": 0.9246,
+        "percent_agreement": 0.6885
       },
       "distortion": {
-        "weighted_kappa": 0.198,
+        "weighted_kappa": 0.4177,
         "pairwise_weighted_kappa": {
-          "claude+qwen": 0.198
+          "claude+qwen": 0.4177
         },
-        "gwet_ac2": 0.7924,
-        "percent_agreement": 0.3794
+        "gwet_ac2": 0.8031,
+        "percent_agreement": 0.377
       },
       "tiling": {
-        "weighted_kappa": 0.5408,
+        "weighted_kappa": 0.4557,
         "pairwise_weighted_kappa": {
-          "claude+qwen": 0.5408
+          "claude+qwen": 0.4557
         },
-        "gwet_ac2": 0.988,
-        "percent_agreement": 0.9883
+        "gwet_ac2": 0.9831,
+        "percent_agreement": 0.9836
       }
     },
-    "composite_weighted_kappa": 0.1578
+    "composite_weighted_kappa": 0.4402
   },
   "per_prompt": {
     "per_prompt_spearman_composite_vs_g": {
-      "p1_stilllife": -0.2664,
-      "p2_portrait": 0.2766,
-      "p3_bicycle": -0.4332,
-      "p5_livingroom": -0.5215,
-      "p4_oranges": -0.4086,
-      "p6_forest": -0.0453
+      "p1_stilllife": -0.2387,
+      "p2_portrait": 0.3043,
+      "p3_bicycle": -0.4593,
+      "p5_livingroom": -0.4881,
+      "p4_oranges": -0.4028,
+      "p6_forest": -0.0234
     },
     "n_negative": 5,
     "n_prompts": 6
   },
   "per_field_dose_response": {
     "reduplication": {
-      "spearman_rho_vs_g": -0.1853,
-      "perm_p": 0.0002,
-      "bh_q": 0.0003
+      "spearman_rho_vs_g": -0.1393,
+      "perm_p": 0.004,
+      "bh_q": 0.0053
     },
     "fragmentation": {
-      "spearman_rho_vs_g": -0.3685,
+      "spearman_rho_vs_g": -0.4531,
       "perm_p": 0.0002,
       "bh_q": 0.0003
     },
     "condensation": {
-      "spearman_rho_vs_g": -0.2306,
+      "spearman_rho_vs_g": -0.2432,
       "perm_p": 0.0002,
       "bh_q": 0.0003
     },
     "distortion": {
-      "spearman_rho_vs_g": -0.0872,
-      "perm_p": 0.0724,
-      "bh_q": 0.0724
+      "spearman_rho_vs_g": -0.1143,
+      "perm_p": 0.0178,
+      "bh_q": 0.0178
     }
   },
-  "baseline_composite_uncond": 2.4504,
+  "baseline_composite_uncond": 2.1725,
   "composite_mean_by_guidance": {
-    "1.0": 0.8519,
-    "2.0": -0.0122,
-    "3.0": -0.1485,
-    "5.0": -0.2099,
-    "7.0": -0.2483,
-    "11.0": -0.1231,
-    "15.0": -0.1145
+    "1.0": 1.0941,
+    "2.0": -0.1513,
+    "3.0": -0.166,
+    "5.0": -0.2603,
+    "7.0": -0.2803,
+    "11.0": -0.1645,
+    "15.0": -0.0815
   },
   "quality_mean_by_guidance": {
     "1.0": -0.5909,
@@ -164,7 +164,7 @@
     "11.0": 0.364,
     "15.0": -0.043
   },
-  "verdict": "inconclusive-null (judges disagree: composite weighted kappa < 0.4)",
+  "verdict": "null (LMM composite slope not sufficiently negative)",
   "human_reliability": {
     "available": true,
     "n_subset": 28,
@@ -179,10 +179,6 @@
         "tiling"
       ],
       "qwen": [
-        "reduplication",
-        "fragmentation",
-        "condensation",
-        "distortion",
         "tiling"
       ]
     },
@@ -218,31 +214,31 @@
       }
     },
     "human_vs_qwen": {
-      "reduplication": 0.0,
-      "fragmentation": 0.0,
-      "condensation": 0.0,
-      "distortion": 0.0,
+      "reduplication": 0.0063,
+      "fragmentation": 0.2821,
+      "condensation": -0.0021,
+      "distortion": 0.2108,
       "tiling": NaN,
       "gwet_ac2": {
-        "reduplication": 0.9516,
-        "fragmentation": 0.8948,
-        "condensation": 0.7865,
-        "distortion": 0.5429,
+        "reduplication": 0.7439,
+        "fragmentation": 0.9128,
+        "condensation": 0.7698,
+        "distortion": 0.5694,
         "tiling": 1.0
       },
       "percent_agreement": {
-        "reduplication": 0.8929,
-        "fragmentation": 0.7143,
-        "condensation": 0.5714,
-        "distortion": 0.5,
+        "reduplication": 0.6786,
+        "fragmentation": 0.75,
+        "condensation": 0.5,
+        "distortion": 0.4286,
         "tiling": 1.0
       },
-      "composite_weighted_kappa": 0.0,
+      "composite_weighted_kappa": 0.1243,
       "composite_bootstrap": {
-        "point": 0.0,
+        "point": 0.1243,
         "ci95": [
-          -0.0,
-          0.0
+          -0.0585,
+          0.3133
         ],
         "n_valid": 4000,
         "n_bootstrap": 4000

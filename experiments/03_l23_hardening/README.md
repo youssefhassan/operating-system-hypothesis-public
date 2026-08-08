@@ -1,17 +1,14 @@
 # Experiment 03 — Hardening the Klüver Level-2/3 finding
 
-**Status:** **run complete on both models (2026-07-22); analysed; write-up outstanding.**
-Generation, three judges and quality are done for SDXL and SD 3.5 (430 images each).
-`l23_report.json` (pre-registered 3-judge panel) and `l23_report_claude-qwen.json`
-(2-judge sensitivity analysis) are committed per model. The blind human subset is
-**drawn and committed** (`human_subset.json`, 28 images, seed 0) — **outstanding:
-the ratings themselves (`python human_rate.py`) and `analysis.md`.**
-Pre-registration drafted 2026-07-15; the whole pipeline was validated
-end-to-end on the M5 on 2026-07-21 (a 2-image smoke run: generate → Claude +
-Qwen judge → quality → analyze, all green). The only issues found were
-environment/download plumbing, now fixed and documented under
-[Environment notes](#environment-notes-from-the-2026-07-21-smoke-run). The
-science code is unchanged. Next action is the full sweep below.
+**Status:** **complete (2026-08-08), amended judge panel.** Generation, quality,
+Claude, human subset, open-weight judge diagnosis/repair, and confirmatory
+analysis are done. Amended panel = Claude + **Qwen3-VL-32B** (dated swap after
+Qwen-7B and Llama flatlined). **Overall confirmatory claim not confirmed**
+(`both_models_required`): SDXL confirms on every gate (κ 0.56); SD 3.5 clears
+κ/de-confound/generality but misses the slope threshold (−0.182 vs −0.2).
+Write-up: [`analysis.md`](analysis.md). Pre-registration drafted 2026-07-15;
+pipeline validated end-to-end on the M5 on 2026-07-21 (see
+[Environment notes](#environment-notes-from-the-2026-07-21-smoke-run)).
 
 **Derives from** [Exp 01](../01_image_test/). Exp 01's *confirmatory* metric
 (Klüver level-1 geometry) was a clean null. Its *exploratory, post-hoc* Klüver

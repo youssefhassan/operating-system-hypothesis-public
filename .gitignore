@@ -66,6 +66,8 @@ experiments/*/results-local/**
 !experiments/*/results-local/*/*.json
 !experiments/*/results-local/*/figures/
 !experiments/*/results-local/*/figures/*.png
+!experiments/*/results-local/*/figures_*/
+!experiments/*/results-local/*/figures_*/*.png
 
 # Locally-downloaded model weights (never commit — multi-GB)
 experiments/*/sdxl_local/
