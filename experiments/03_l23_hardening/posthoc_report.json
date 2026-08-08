@@ -1,0 +1,545 @@
+{
+  "status": "POST-HOC / EXPLORATORY \u2014 does not affect the confirmatory verdict",
+  "judges": [
+    "claude",
+    "qwen"
+  ],
+  "models": {
+    "sdxl": {
+      "n_conditioned": 418,
+      "shape": {
+        "composite_mean_by_guidance": {
+          "1.0": 1.1084,
+          "2.0": 0.2239,
+          "3.0": -0.0512,
+          "5.0": -0.2418,
+          "7.0": -0.3599,
+          "11.0": -0.3395,
+          "15.0": -0.3499
+        },
+        "total_drop_top_to_min": 1.4683,
+        "first_step_drop": 0.8845,
+        "share_of_drop_in_first_step": 0.6024,
+        "excluding_g_le_1": {
+          "n": 358,
+          "guidance_values": [
+            2.0,
+            3.0,
+            5.0,
+            7.0,
+            11.0,
+            15.0
+          ],
+          "spearman_composite_vs_g": -0.2443,
+          "perm_p": 0.0002,
+          "lmm_slope_standardized": -0.162,
+          "lmm_ci95": [
+            -0.2091,
+            -0.1149
+          ]
+        },
+        "excluding_g_le_2": {
+          "n": 298,
+          "guidance_values": [
+            3.0,
+            5.0,
+            7.0,
+            11.0,
+            15.0
+          ],
+          "spearman_composite_vs_g": -0.1205,
+          "perm_p": 0.0344,
+          "lmm_slope_standardized": -0.0877,
+          "lmm_ci95": [
+            -0.1267,
+            -0.0487
+          ]
+        }
+      },
+      "matched_quality_without_g1": {
+        "low_arm_g<=3 (pre-registered)": {
+          "n_low": 126,
+          "n_high": 120,
+          "cliffs_delta_low_vs_high": 0.4885,
+          "ci95": [
+            0.362,
+            0.6058
+          ]
+        },
+        "low_arm_g in {2,3} (g=1 removed)": {
+          "n_low": 93,
+          "n_high": 120,
+          "cliffs_delta_low_vs_high": 0.3546,
+          "ci95": [
+            0.1987,
+            0.4995
+          ]
+        }
+      },
+      "per_prompt_per_field": {
+        "p1_stilllife": {
+          "reduplication": {
+            "rho": -0.3536,
+            "mean": 0.7794,
+            "mean_at_lowest_g": 1.45
+          },
+          "fragmentation": {
+            "rho": -0.684,
+            "mean": 0.6324,
+            "mean_at_lowest_g": 1.9
+          },
+          "condensation": {
+            "rho": -0.3546,
+            "mean": 0.9779,
+            "mean_at_lowest_g": 1.6
+          },
+          "distortion": {
+            "rho": -0.5469,
+            "mean": 1.0735,
+            "mean_at_lowest_g": 2.15
+          },
+          "tiling": {
+            "rho": -0.2598,
+            "mean": 0.0221,
+            "mean_at_lowest_g": 0.15
+          },
+          "composite_rho": -0.5706
+        },
+        "p2_portrait": {
+          "reduplication": {
+            "rho": -0.2462,
+            "mean": 0.0286,
+            "mean_at_lowest_g": 0.1
+          },
+          "fragmentation": {
+            "rho": -0.5377,
+            "mean": 0.2071,
+            "mean_at_lowest_g": 1.45
+          },
+          "condensation": {
+            "rho": -0.5543,
+            "mean": 0.15,
+            "mean_at_lowest_g": 0.9
+          },
+          "distortion": {
+            "rho": -0.2312,
+            "mean": 0.7071,
+            "mean_at_lowest_g": 2.4
+          },
+          "tiling": {
+            "rho": -0.1806,
+            "mean": 0.0143,
+            "mean_at_lowest_g": 0.1
+          },
+          "composite_rho": -0.2823
+        },
+        "p3_bicycle": {
+          "reduplication": {
+            "rho": -0.1481,
+            "mean": 0.1714,
+            "mean_at_lowest_g": 0.35
+          },
+          "fragmentation": {
+            "rho": -0.8096,
+            "mean": 0.75,
+            "mean_at_lowest_g": 2.15
+          },
+          "condensation": {
+            "rho": -0.5323,
+            "mean": 0.4571,
+            "mean_at_lowest_g": 1.1
+          },
+          "distortion": {
+            "rho": -0.7338,
+            "mean": 1.0786,
+            "mean_at_lowest_g": 2.3
+          },
+          "tiling": {
+            "rho": -0.1806,
+            "mean": 0.0071,
+            "mean_at_lowest_g": 0.05
+          },
+          "composite_rho": -0.7439
+        },
+        "p4_oranges": {
+          "reduplication": {
+            "rho": -0.0574,
+            "mean": 0.9,
+            "mean_at_lowest_g": 1.25
+          },
+          "fragmentation": {
+            "rho": -0.5464,
+            "mean": 0.25,
+            "mean_at_lowest_g": 1.25
+          },
+          "condensation": {
+            "rho": -0.6667,
+            "mean": 0.2643,
+            "mean_at_lowest_g": 1.45
+          },
+          "distortion": {
+            "rho": -0.7015,
+            "mean": 0.3857,
+            "mean_at_lowest_g": 1.75
+          },
+          "tiling": {
+            "rho": -0.3872,
+            "mean": 0.0571,
+            "mean_at_lowest_g": 0.3
+          },
+          "composite_rho": -0.4872
+        },
+        "p5_livingroom": {
+          "reduplication": {
+            "rho": -0.2459,
+            "mean": 0.5786,
+            "mean_at_lowest_g": 1.1
+          },
+          "fragmentation": {
+            "rho": -0.6962,
+            "mean": 0.35,
+            "mean_at_lowest_g": 1.4
+          },
+          "condensation": {
+            "rho": -0.5547,
+            "mean": 0.25,
+            "mean_at_lowest_g": 1.0
+          },
+          "distortion": {
+            "rho": -0.5301,
+            "mean": 0.6286,
+            "mean_at_lowest_g": 1.65
+          },
+          "tiling": {
+            "rho": -0.2821,
+            "mean": 0.0214,
+            "mean_at_lowest_g": 0.1
+          },
+          "composite_rho": -0.5749
+        },
+        "p6_forest": {
+          "reduplication": {
+            "rho": 0.0498,
+            "mean": 1.8286,
+            "mean_at_lowest_g": 2.0
+          },
+          "fragmentation": {
+            "rho": -0.6109,
+            "mean": 0.2,
+            "mean_at_lowest_g": 0.8
+          },
+          "condensation": {
+            "rho": -0.5836,
+            "mean": 0.7786,
+            "mean_at_lowest_g": 1.4
+          },
+          "distortion": {
+            "rho": -0.5029,
+            "mean": 0.7286,
+            "mean_at_lowest_g": 1.25
+          },
+          "tiling": {
+            "rho": -0.2612,
+            "mean": 0.2357,
+            "mean_at_lowest_g": 0.5
+          },
+          "composite_rho": -0.62
+        }
+      },
+      "tiling_rate": {
+        "p1_stilllife": {
+          "overall": 0.0147,
+          "at_lowest_g": 0.1
+        },
+        "p2_portrait": {
+          "overall": 0.0143,
+          "at_lowest_g": 0.1
+        },
+        "p3_bicycle": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p4_oranges": {
+          "overall": 0.0429,
+          "at_lowest_g": 0.2
+        },
+        "p5_livingroom": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p6_forest": {
+          "overall": 0.1429,
+          "at_lowest_g": 0.4
+        }
+      }
+    },
+    "sd35": {
+      "n_conditioned": 417,
+      "shape": {
+        "composite_mean_by_guidance": {
+          "1.0": 1.0941,
+          "2.0": -0.1513,
+          "3.0": -0.166,
+          "5.0": -0.2603,
+          "7.0": -0.2803,
+          "11.0": -0.1645,
+          "15.0": -0.0815
+        },
+        "total_drop_top_to_min": 1.3744,
+        "first_step_drop": 1.2454,
+        "share_of_drop_in_first_step": 0.9062,
+        "excluding_g_le_1": {
+          "n": 357,
+          "guidance_values": [
+            2.0,
+            3.0,
+            5.0,
+            7.0,
+            11.0,
+            15.0
+          ],
+          "spearman_composite_vs_g": 0.0476,
+          "perm_p": 0.3757,
+          "lmm_slope_standardized": 0.0292,
+          "lmm_ci95": [
+            -0.0066,
+            0.065
+          ]
+        },
+        "excluding_g_le_2": {
+          "n": 299,
+          "guidance_values": [
+            3.0,
+            5.0,
+            7.0,
+            11.0,
+            15.0
+          ],
+          "spearman_composite_vs_g": 0.1022,
+          "perm_p": 0.0802,
+          "lmm_slope_standardized": 0.0474,
+          "lmm_ci95": [
+            0.0102,
+            0.0845
+          ]
+        }
+      },
+      "matched_quality_without_g1": {
+        "low_arm_g<=3 (pre-registered)": {
+          "n_low": 178,
+          "n_high": 94,
+          "cliffs_delta_low_vs_high": 0.1881,
+          "ci95": [
+            0.0496,
+            0.3199
+          ]
+        },
+        "low_arm_g in {2,3} (g=1 removed)": {
+          "n_low": 118,
+          "n_high": 90,
+          "cliffs_delta_low_vs_high": -0.0433,
+          "ci95": [
+            -0.1986,
+            0.1134
+          ]
+        }
+      },
+      "per_prompt_per_field": {
+        "p1_stilllife": {
+          "reduplication": {
+            "rho": -0.0599,
+            "mean": 0.4853,
+            "mean_at_lowest_g": 0.75
+          },
+          "fragmentation": {
+            "rho": -0.5481,
+            "mean": 0.3309,
+            "mean_at_lowest_g": 1.5
+          },
+          "condensation": {
+            "rho": -0.2766,
+            "mean": 0.4559,
+            "mean_at_lowest_g": 1.1
+          },
+          "distortion": {
+            "rho": -0.2173,
+            "mean": 0.6838,
+            "mean_at_lowest_g": 2.0
+          },
+          "tiling": {
+            "rho": -0.1824,
+            "mean": 0.0074,
+            "mean_at_lowest_g": 0.05
+          },
+          "composite_rho": -0.2387
+        },
+        "p2_portrait": {
+          "reduplication": {
+            "rho": 0.0,
+            "mean": 0.0,
+            "mean_at_lowest_g": 0.0
+          },
+          "fragmentation": {
+            "rho": -0.3173,
+            "mean": 0.0643,
+            "mean_at_lowest_g": 0.45
+          },
+          "condensation": {
+            "rho": -0.4157,
+            "mean": 0.0571,
+            "mean_at_lowest_g": 0.4
+          },
+          "distortion": {
+            "rho": 0.3253,
+            "mean": 0.6429,
+            "mean_at_lowest_g": 1.25
+          },
+          "tiling": {
+            "rho": 0.0,
+            "mean": 0.0,
+            "mean_at_lowest_g": 0.0
+          },
+          "composite_rho": 0.3043
+        },
+        "p3_bicycle": {
+          "reduplication": {
+            "rho": -0.2505,
+            "mean": 0.0435,
+            "mean_at_lowest_g": 0.2
+          },
+          "fragmentation": {
+            "rho": -0.6564,
+            "mean": 0.3333,
+            "mean_at_lowest_g": 1.65
+          },
+          "condensation": {
+            "rho": -0.2265,
+            "mean": 0.2609,
+            "mean_at_lowest_g": 0.85
+          },
+          "distortion": {
+            "rho": -0.4999,
+            "mean": 0.8043,
+            "mean_at_lowest_g": 2.2
+          },
+          "tiling": {
+            "rho": 0.1815,
+            "mean": 0.0072,
+            "mean_at_lowest_g": 0.0
+          },
+          "composite_rho": -0.4593
+        },
+        "p4_oranges": {
+          "reduplication": {
+            "rho": -0.3361,
+            "mean": 0.3786,
+            "mean_at_lowest_g": 0.5
+          },
+          "fragmentation": {
+            "rho": -0.4338,
+            "mean": 0.0429,
+            "mean_at_lowest_g": 0.25
+          },
+          "condensation": {
+            "rho": -0.1613,
+            "mean": 0.0786,
+            "mean_at_lowest_g": 0.3
+          },
+          "distortion": {
+            "rho": -0.2657,
+            "mean": 0.1643,
+            "mean_at_lowest_g": 0.6
+          },
+          "tiling": {
+            "rho": 0.0,
+            "mean": 0.0,
+            "mean_at_lowest_g": 0.0
+          },
+          "composite_rho": -0.4028
+        },
+        "p5_livingroom": {
+          "reduplication": {
+            "rho": -0.6014,
+            "mean": 0.3857,
+            "mean_at_lowest_g": 1.45
+          },
+          "fragmentation": {
+            "rho": -0.5066,
+            "mean": 0.2286,
+            "mean_at_lowest_g": 1.2
+          },
+          "condensation": {
+            "rho": -0.4398,
+            "mean": 0.2929,
+            "mean_at_lowest_g": 1.2
+          },
+          "distortion": {
+            "rho": -0.3887,
+            "mean": 0.5643,
+            "mean_at_lowest_g": 1.65
+          },
+          "tiling": {
+            "rho": -0.1806,
+            "mean": 0.0071,
+            "mean_at_lowest_g": 0.05
+          },
+          "composite_rho": -0.4881
+        },
+        "p6_forest": {
+          "reduplication": {
+            "rho": 0.5228,
+            "mean": 1.4214,
+            "mean_at_lowest_g": 1.2
+          },
+          "fragmentation": {
+            "rho": -0.381,
+            "mean": 0.05,
+            "mean_at_lowest_g": 0.3
+          },
+          "condensation": {
+            "rho": -0.2282,
+            "mean": 0.4357,
+            "mean_at_lowest_g": 0.75
+          },
+          "distortion": {
+            "rho": 0.1044,
+            "mean": 0.4571,
+            "mean_at_lowest_g": 0.65
+          },
+          "tiling": {
+            "rho": 0.1679,
+            "mean": 0.0429,
+            "mean_at_lowest_g": 0.0
+          },
+          "composite_rho": -0.0234
+        }
+      },
+      "tiling_rate": {
+        "p1_stilllife": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p2_portrait": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p3_bicycle": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p4_oranges": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p5_livingroom": {
+          "overall": 0.0,
+          "at_lowest_g": 0.0
+        },
+        "p6_forest": {
+          "overall": 0.0143,
+          "at_lowest_g": 0.0
+        }
+      }
+    }
+  }
+}
