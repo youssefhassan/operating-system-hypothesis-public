@@ -47,8 +47,12 @@ import rubric as R
 LLAMA_MODEL = os.environ.get(
     "EXP03_LLAMA_MODEL", "mlx-community/Llama-3.2-11B-Vision-Instruct-4bit"
 )
+# 400 truncated ~90 replies mid-JSON in the 2026-07-22 run, and those images were
+# then dropped listwise, taking their Claude and Qwen scores with them.
+MAX_TOKENS = int(os.environ.get("EXP03_JUDGE_MAX_TOKENS", "700"))
 JUDGE_NAME = "llama"
 OUT_FILE = "judgements_llama.json"
+RAW_FILE = "judgements_llama_raw.json"
 
 
 def _to_text(result) -> str:
@@ -74,16 +78,20 @@ class LlamaJudge:
         except Exception:
             self.config = getattr(self.model, "config", None)
 
-    def score_image(self, path: Path, prompt_text: str) -> dict:
+    def score_image(self, path: Path, prompt_text: str) -> tuple[dict, str]:
+        """-> (coerced record, raw reply). The raw reply is kept as an audit
+        trail: without it, a field defaulted to 0 by `coerce` is indistinguishable
+        from a judge that genuinely scored 0."""
         from mlx_vlm import generate
         from mlx_vlm.prompt_utils import apply_chat_template
 
         formatted = apply_chat_template(self.processor, self.config, prompt_text, num_images=1)
         result = generate(
             self.model, self.processor, formatted, [str(path)],
-            max_tokens=400, temperature=0.0, verbose=False,
+            max_tokens=MAX_TOKENS, temperature=0.0, verbose=False,
         )
-        return R.coerce(R.extract_json(_to_text(result)))
+        raw = _to_text(result)
+        return R.coerce(R.extract_json(raw)), raw
 
 
 def score(args: argparse.Namespace) -> None:
@@ -95,10 +103,13 @@ def score(args: argparse.Namespace) -> None:
         raise SystemExit(f"no PNGs in {model_dir}")
 
     prereg = R.load_prereg()
-    out_path = model_dir / OUT_FILE
+    out_path, raw_path = model_dir / OUT_FILE, model_dir / RAW_FILE
     results: dict[str, dict] = {}
     if out_path.exists() and not args.overwrite:
         results = json.loads(out_path.read_text()).get("images", {})
+    raws: dict[str, str] = {}
+    if raw_path.exists() and not args.overwrite:
+        raws = json.loads(raw_path.read_text()).get("images", {})
 
     order = list(images)
     random.Random(args.shuffle_seed).shuffle(order)  # blind: shuffled order
@@ -108,6 +119,10 @@ def score(args: argparse.Namespace) -> None:
             "judge": JUDGE_NAME, "model": LLAMA_MODEL,
             "rubric_version": R.rubric_version(),
             "fields": list(R.ALL_FIELDS), "images": results,
+        }, indent=2))
+        raw_path.write_text(json.dumps({
+            "judge": JUDGE_NAME, "model": LLAMA_MODEL,
+            "max_tokens": MAX_TOKENS, "images": raws,
         }, indent=2))
 
     todo = [p for p in order
@@ -123,11 +138,13 @@ def score(args: argparse.Namespace) -> None:
         if pid is None:
             results[path.name] = {"error": f"unrecognized filename: {path.name}"}
             continue
+        raw = ""
         try:
-            rec = judge.score_image(path, R.build_rubric(pid, prereg))
+            rec, raw = judge.score_image(path, R.build_rubric(pid, prereg))
         except Exception as e:  # noqa: BLE001
             rec = {"error": str(e)}
         results[path.name] = rec
+        raws[path.name] = raw[:600]
         shown = {k: rec.get(k) for k in R.ALL_FIELDS} if "error" not in rec else rec
         print(f"[j-llama] ({i}/{len(todo)}) {path.name} {shown}", flush=True)
         if i % 10 == 0:

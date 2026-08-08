@@ -303,26 +303,47 @@ def _human_reliability(model_records: dict[str, list[dict]],
     suffixes = [s for (s, _n) in judges]
     names = {s: n for (s, n) in judges}
     pairs_h = {s: {f: ([], []) for f in ALL} for s in suffixes}  # human vs each judge
-    used = 0
+    used = unmatched = 0
     for bid, hrec in ratings.items():
         s = subset.get(bid)
         if not s:
             continue
         vrec = idx.get((s["model"], s["filename"]))
         if not vrec:
+            # rated image is outside this panel's listwise-complete set
+            unmatched += 1
             continue
         used += 1
         for f in ALL:
+            if f not in hrec:
+                continue
             for sfx in suffixes:
                 key = f + "_" + sfx
                 if key in vrec:
                     pairs_h[sfx][f][0].append(int(hrec[f]))
                     pairs_h[sfx][f][1].append(int(round(vrec[key])))
-    out = {"available": True, "n_rated_used": used}
+    out = {"available": True, "n_subset": len(subset), "n_rated": len(ratings),
+           "n_rated_used": used, "n_rated_outside_panel": unmatched}
+    # A rater with one unique value on the subset makes kappa 0 or undefined by
+    # construction, not by disagreement. Record it so the number is readable.
+    def _flat(vals: list[int]) -> bool:
+        return len(set(vals)) < 2
+
+    out["degenerate_on_subset"] = {
+        "human": [f for f in ALL if _flat(pairs_h[suffixes[0]][f][0])],
+        **{names[s]: [f for f in ALL if _flat(pairs_h[s][f][1])] for s in suffixes},
+    }
     for sfx in suffixes:
-        out["human_vs_" + names[sfx]] = {
-            f: round(S.weighted_cohens_kappa(*pairs_h[sfx][f], (2 if f == "tiling" else 4)), 4)
-            for f in ALL}
+        block = {f: round(S.weighted_cohens_kappa(*pairs_h[sfx][f], (2 if f == "tiling" else 4)), 4)
+                 for f in ALL}
+        block["gwet_ac2"] = {
+            f: round(S.gwet_ac2(*pairs_h[sfx][f], (2 if f == "tiling" else 4)), 4) for f in ALL}
+        block["percent_agreement"] = {
+            f: round(S.percent_agreement(*pairs_h[sfx][f]), 4) for f in ALL}
+        block["composite_weighted_kappa"] = round(float(np.nanmean([block[f] for f in INT])), 4)
+        block["composite_bootstrap"] = S.composite_kappa_ci(
+            [pairs_h[sfx][f] for f in INT], 4)
+        out["human_vs_" + names[sfx]] = block
     return out
 
 

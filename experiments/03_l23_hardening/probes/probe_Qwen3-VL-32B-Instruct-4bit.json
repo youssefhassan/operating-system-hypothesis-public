@@ -1,0 +1,261 @@
+{
+  "model": "mlx-community/Qwen3-VL-32B-Instruct-4bit",
+  "max_tokens": 700,
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "n": 28,
+  "seconds": 264.3,
+  "records": {
+    "h00": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single bicycle on black platform against red background, no visible hallucinatory constants",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single bicycle on black platform against red background, no visible hallucinatory constants\"\n}"
+    },
+    "h01": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Coherent living room with sofa, windows, and plants; no hallucinatory constants evident.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Coherent living room with sofa, windows, and plants; no hallucinatory constants evident.\"\n}"
+    },
+    "h02": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single, coherent human face with natural aging features, no hallucinatory constants present\"\n}"
+    },
+    "h03": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Dense, uniform repetition of tree forms creates a field-like pattern, exceeding natural variation.",
+      "_raw": "{\n  \"reduplication\": 3,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Dense, uniform repetition of tree forms creates a field-like pattern, exceeding natural variation.\"\n}"
+    },
+    "h04": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single, coherent human face with natural aging features, no hallucinatory constants present\"\n}"
+    },
+    "h05": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Slight warping in forms, especially in the glass and watermelon, but no major distortions or fusions",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Slight warping in forms, especially in the glass and watermelon, but no major distortions or fusions\"\n}"
+    },
+    "h06": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"All intended objects are present and clearly distinct without hallucinatory alterations.\"\n}"
+    },
+    "h07": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Coherent living room with one sofa, one lamp, one window; no hallucinatory constants visible.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Coherent living room with one sofa, one lamp, one window; no hallucinatory constants visible.\"\n}"
+    },
+    "h08": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single, coherent human face with natural aging features; no hallucinatory constants present.\"\n}"
+    },
+    "h09": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single red bicycle against brick wall, no hallucinatory constants visible\"\n}"
+    },
+    "h10": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single bowl with multiple oranges, no visible hallucinatory constants",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single bowl with multiple oranges, no visible hallucinatory constants\"\n}"
+    },
+    "h11": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"All intended objects are present and clearly rendered without hallucinatory distortions.\"\n}"
+    },
+    "h12": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with slight warping, no fusion or shattering",
+      "_raw": "{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Repetitive tree forms with slight warping, no fusion or shattering\"\n}"
+    },
+    "h13": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Multiple sofas, lamps, and chairs appear in ghostly repetition; objects are semi-transparent and fragmented; some furnit",
+      "_raw": "{\n  \"reduplication\": 3,\n  \"fragmentation\": 2,\n  \"condensation\": 1,\n  \"distortion\": 2,\n  \"tiling\": 0,\n  \"notes\": \"Multiple sofas, lamps, and chairs appear in ghostly repetition; objects are semi-transparent and fragmented; some furniture blends into background; shapes are warped by light and transparency.\"\n}"
+    },
+    "h14": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Slight warping and smudging of facial features, especially around beard and hair, but overall recognizable as one face.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Slight warping and smudging of facial features, especially around beard and hair, but overall recognizable as one face.\"\n}"
+    },
+    "h15": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A single bowl of oranges on a kitchen counter, no hallucinatory constants visible.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"A single bowl of oranges on a kitchen counter, no hallucinatory constants visible.\"\n}"
+    },
+    "h16": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Multiple bowls of oranges are present, beyond one intended bowl, but not excessively tiled or repeated.",
+      "_raw": "{\n  \"reduplication\": 1,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Multiple bowls of oranges are present, beyond one intended bowl, but not excessively tiled or repeated.\"\n}"
+    },
+    "h17": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Repetitive tree forms create a dense, uniform forest pattern consistent with intended content; no visible fragmentation,",
+      "_raw": "{\n  \"reduplication\": 3,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Repetitive tree forms create a dense, uniform forest pattern consistent with intended content; no visible fragmentation, condensation, or distortion.\"\n}"
+    },
+    "h18": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single red bicycle against brick wall, no hallucinatory constants visible\"\n}"
+    },
+    "h19": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with slight warping and fusion in mist, but no full tiling or shattering",
+      "_raw": "{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 1,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Repetitive tree forms with slight warping and fusion in mist, but no full tiling or shattering\"\n}"
+    },
+    "h20": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Coherent living room with one sofa, one lamp, and multiple windows; no hallucinatory constants present.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Coherent living room with one sofa, one lamp, and multiple windows; no hallucinatory constants present.\"\n}"
+    },
+    "h21": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"All intended objects are present and clearly rendered without hallucinatory distortions.\"\n}"
+    },
+    "h22": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Face shows exaggerated, surreal color shifts and warping, especially around eyes and nose, but remains a single, coheren",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 2,\n  \"tiling\": 0,\n  \"notes\": \"Face shows exaggerated, surreal color shifts and warping, especially around eyes and nose, but remains a single, coherent human face.\"\n}"
+    },
+    "h23": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"All intended objects are present and coherent with no hallucinatory distortions.\"\n}"
+    },
+    "h24": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with slight warping and fusion in misty areas",
+      "_raw": "{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 1,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Repetitive tree forms with slight warping and fusion in misty areas\"\n}"
+    },
+    "h25": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single red bicycle against brick wall, no hallucinatory constants visible\"\n}"
+    },
+    "h26": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Normal depiction of a bowl of oranges on a counter; no hallucinatory constants visible.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Normal depiction of a bowl of oranges on a counter; no hallucinatory constants visible.\"\n}"
+    },
+    "h27": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions.",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"All intended objects are present and clearly rendered without hallucinatory distortions.\"\n}"
+    }
+  }
+}

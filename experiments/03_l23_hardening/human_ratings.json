@@ -1,0 +1,198 @@
+{
+  "h00": {
+    "reduplication": 0,
+    "fragmentation": 1,
+    "condensation": 0,
+    "distortion": 1,
+    "tiling": 0
+  },
+  "h01": {
+    "reduplication": 0,
+    "fragmentation": 1,
+    "condensation": 1,
+    "distortion": 3,
+    "tiling": 0
+  },
+  "h02": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 1,
+    "tiling": 0
+  },
+  "h03": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h04": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 1,
+    "tiling": 0
+  },
+  "h05": {
+    "reduplication": 1,
+    "fragmentation": 2,
+    "condensation": 3,
+    "distortion": 3,
+    "tiling": 0
+  },
+  "h06": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 1,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h07": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h08": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 2,
+    "tiling": 0
+  },
+  "h09": {
+    "reduplication": 0,
+    "fragmentation": 2,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h10": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 1,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h11": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 1,
+    "distortion": 1,
+    "tiling": 0
+  },
+  "h12": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h13": {
+    "reduplication": 0,
+    "fragmentation": 2,
+    "condensation": 2,
+    "distortion": 3,
+    "tiling": 0
+  },
+  "h14": {
+    "reduplication": 0,
+    "fragmentation": 1,
+    "condensation": 1,
+    "distortion": 3,
+    "tiling": 0
+  },
+  "h15": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h16": {
+    "reduplication": 3,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h17": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h18": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 2,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h19": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h20": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 2,
+    "tiling": 0
+  },
+  "h21": {
+    "reduplication": 1,
+    "fragmentation": 2,
+    "condensation": 2,
+    "distortion": 3,
+    "tiling": 0
+  },
+  "h22": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 2,
+    "tiling": 0
+  },
+  "h23": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h24": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 0,
+    "distortion": 0,
+    "tiling": 0
+  },
+  "h25": {
+    "reduplication": 0,
+    "fragmentation": 1,
+    "condensation": 2,
+    "distortion": 2,
+    "tiling": 0
+  },
+  "h26": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 1,
+    "distortion": 2,
+    "tiling": 0
+  },
+  "h27": {
+    "reduplication": 0,
+    "fragmentation": 0,
+    "condensation": 2,
+    "distortion": 0,
+    "tiling": 0
+  }
+}

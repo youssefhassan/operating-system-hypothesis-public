@@ -1,0 +1,232 @@
+{
+  "n": 28,
+  "seed": 0,
+  "frame": 750,
+  "frame_note": "conditioned images scored without error by all present judges",
+  "items": [
+    {
+      "blind_id": "h00",
+      "model": "sd35",
+      "filename": "p3_bicycle_g15_s42.png",
+      "prompt_id": "p3_bicycle",
+      "guidance": 15.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h01",
+      "model": "sdxl",
+      "filename": "p5_livingroom_g2_s50.png",
+      "prompt_id": "p5_livingroom",
+      "guidance": 2.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h02",
+      "model": "sdxl",
+      "filename": "p2_portrait_g15_s43.png",
+      "prompt_id": "p2_portrait",
+      "guidance": 15.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h03",
+      "model": "sd35",
+      "filename": "p6_forest_g3_s48.png",
+      "prompt_id": "p6_forest",
+      "guidance": 3.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h04",
+      "model": "sdxl",
+      "filename": "p2_portrait_g5_s45.png",
+      "prompt_id": "p2_portrait",
+      "guidance": 5.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h05",
+      "model": "sdxl",
+      "filename": "p1_stilllife_g1_s50.png",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h06",
+      "model": "sd35",
+      "filename": "p1_stilllife_g5_s47.png",
+      "prompt_id": "p1_stilllife",
+      "guidance": 5.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h07",
+      "model": "sd35",
+      "filename": "p5_livingroom_g11_s42.png",
+      "prompt_id": "p5_livingroom",
+      "guidance": 11.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h08",
+      "model": "sdxl",
+      "filename": "p2_portrait_g2_s46.png",
+      "prompt_id": "p2_portrait",
+      "guidance": 2.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h09",
+      "model": "sd35",
+      "filename": "p3_bicycle_g3_s42.png",
+      "prompt_id": "p3_bicycle",
+      "guidance": 3.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h10",
+      "model": "sd35",
+      "filename": "p4_oranges_g15_s46.png",
+      "prompt_id": "p4_oranges",
+      "guidance": 15.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h11",
+      "model": "sdxl",
+      "filename": "p1_stilllife_g11_s43.png",
+      "prompt_id": "p1_stilllife",
+      "guidance": 11.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h12",
+      "model": "sd35",
+      "filename": "p6_forest_g7_s46.png",
+      "prompt_id": "p6_forest",
+      "guidance": 7.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h13",
+      "model": "sd35",
+      "filename": "p5_livingroom_g1_s47.png",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h14",
+      "model": "sd35",
+      "filename": "p2_portrait_g1_s45.png",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h15",
+      "model": "sd35",
+      "filename": "p4_oranges_g5_s45.png",
+      "prompt_id": "p4_oranges",
+      "guidance": 5.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h16",
+      "model": "sdxl",
+      "filename": "p4_oranges_g11_s42.png",
+      "prompt_id": "p4_oranges",
+      "guidance": 11.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h17",
+      "model": "sdxl",
+      "filename": "p6_forest_g5_s42.png",
+      "prompt_id": "p6_forest",
+      "guidance": 5.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h18",
+      "model": "sd35",
+      "filename": "p3_bicycle_g7_s47.png",
+      "prompt_id": "p3_bicycle",
+      "guidance": 7.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h19",
+      "model": "sdxl",
+      "filename": "p6_forest_g11_s51.png",
+      "prompt_id": "p6_forest",
+      "guidance": 11.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h20",
+      "model": "sdxl",
+      "filename": "p5_livingroom_g15_s46.png",
+      "prompt_id": "p5_livingroom",
+      "guidance": 15.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h21",
+      "model": "sdxl",
+      "filename": "p1_stilllife_g7_s47.png",
+      "prompt_id": "p1_stilllife",
+      "guidance": 7.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h22",
+      "model": "sd35",
+      "filename": "p2_portrait_g11_s43.png",
+      "prompt_id": "p2_portrait",
+      "guidance": 11.0,
+      "gbin": "high"
+    },
+    {
+      "blind_id": "h23",
+      "model": "sd35",
+      "filename": "p5_livingroom_g7_s44.png",
+      "prompt_id": "p5_livingroom",
+      "guidance": 7.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h24",
+      "model": "sdxl",
+      "filename": "p6_forest_g3_s46.png",
+      "prompt_id": "p6_forest",
+      "guidance": 3.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h25",
+      "model": "sdxl",
+      "filename": "p3_bicycle_g5_s45.png",
+      "prompt_id": "p3_bicycle",
+      "guidance": 5.0,
+      "gbin": "mid"
+    },
+    {
+      "blind_id": "h26",
+      "model": "sd35",
+      "filename": "p4_oranges_g2_s45.png",
+      "prompt_id": "p4_oranges",
+      "guidance": 2.0,
+      "gbin": "low"
+    },
+    {
+      "blind_id": "h27",
+      "model": "sd35",
+      "filename": "p1_stilllife_g15_s42.png",
+      "prompt_id": "p1_stilllife",
+      "guidance": 15.0,
+      "gbin": "high"
+    }
+  ]
+}

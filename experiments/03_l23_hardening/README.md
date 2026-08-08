@@ -3,8 +3,9 @@
 **Status:** **run complete on both models (2026-07-22); analysed; write-up outstanding.**
 Generation, three judges and quality are done for SDXL and SD 3.5 (430 images each).
 `l23_report.json` (pre-registered 3-judge panel) and `l23_report_claude-qwen.json`
-(2-judge sensitivity analysis) are committed per model. **Outstanding: the blind
-human subset (`human_rate.py`, never run) and `analysis.md`.**
+(2-judge sensitivity analysis) are committed per model. The blind human subset is
+**drawn and committed** (`human_subset.json`, 28 images, seed 0) — **outstanding:
+the ratings themselves (`python human_rate.py`) and `analysis.md`.**
 Pre-registration drafted 2026-07-15; the whole pipeline was validated
 end-to-end on the M5 on 2026-07-21 (a 2-image smoke run: generate → Claude +
 Qwen judge → quality → analyze, all green). The only issues found were
@@ -103,6 +104,9 @@ Each is a first-class reportable outcome — see `analysis_plan.md` §8.
 | `judge_llama.py` | **Llama-3.2-11B-Vision** MLX judge (judge C; opt-in Llama 4 Scout), identical rubric | ✅ written (2026-07-21) |
 | `quality.py` | CLIP-IQA + LAION-aesthetic, per image | ✅ written |
 | `human_rate.py` | Blind local rating tool for the 25–30 subset | ✅ written |
+| `human_subset.json` | The drawn worklist + un-blinding key (28 images, seed 0) | ✅ drawn before rating; committed with the ratings (see log) |
+| `human_ratings.json` | Author's blind scores | ✅ 28/28 rated 2026-08-08 |
+| `judge_probe.py` | Screens a candidate MLX judge on the 28-image subset for *gradedness* | ✅ added 2026-08-08 |
 | `statlib.py` | numpy stats (Spearman/partial, Cliff's δ, BH, κ, Gwet AC2) | ✅ written |
 | `analyze.py` | LMM, κ/AC2, partial-corr, matched-quality, BH, figures | ✅ written |
 | `log.md` / `analysis.md` | Daily log / written up after the run | log ✅ / analysis ⬜ |
@@ -166,9 +170,18 @@ for m in sdxl sd35; do
   python quality.py     --dir results-local/$m
 done
 
-# human subset (25–30 blind ratings for inter-rater κ)
-python human_rate.py --sample        # build the stratified subset once
+# human subset (28 blind ratings for inter-rater κ) — DONE 2026-08-08.
+# --sample already run; human_subset.json is committed. Re-running it would
+# redraw the worklist, which is exactly what pre-committing it prevents.
 python human_rate.py                 # rate (resumable; opens each image, guidance hidden)
+python human_rate.py --show-progress
+
+# screening a replacement judge (the human subset showed Qwen-7B and Llama-11B
+# emit no variance at all). Scores those same 28 images and reports whether the
+# candidate ever uses an interior level; selection does NOT use human kappa,
+# which stays the independent validation of whichever judge is chosen.
+python judge_probe.py --model mlx-community/Qwen2.5-VL-32B-Instruct-4bit
+python judge_probe.py --compare
 
 # analysis: LMM · quality de-confound · κ/AC2 · matched-quality · BH · figures + verdict
 python analyze.py --both --plot

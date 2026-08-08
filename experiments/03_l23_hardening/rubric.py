@@ -115,20 +115,67 @@ def parse_filename(filename: str) -> dict | None:
 
 
 def coerce(raw: dict) -> dict:
-    """Clamp a judge's raw JSON reply into the fixed schema."""
+    """Clamp a judge's raw JSON reply into the fixed schema.
+
+    Absent or unparseable fields default to 0, which is indistinguishable from a
+    genuine 0 — the failure mode that made the 2026-07-22 judge diagnosis need
+    forensics. `missing_fields` records which ones were defaulted so a caller can
+    drop or flag the record instead of trusting a fabricated zero.
+    """
     out: dict = {}
+    missing: list[str] = []
     for k in INT_FIELDS:
         try:
-            out[k] = max(0, min(3, int(round(float(raw.get(k, 0))))))
-        except (TypeError, ValueError):
-            out[k] = 0
+            out[k] = max(0, min(3, int(round(float(raw[k])))))
+        except (KeyError, TypeError, ValueError):
+            out[k], _ = 0, missing.append(k)
     for k in BIN_FIELDS:
         try:
-            out[k] = 1 if int(float(raw.get(k, 0))) else 0
-        except (TypeError, ValueError):
-            out[k] = 0
+            out[k] = 1 if int(float(raw[k])) else 0
+        except (KeyError, TypeError, ValueError):
+            out[k], _ = 0, missing.append(k)
     out["notes"] = str(raw.get("notes", ""))[:120]
+    if missing:
+        out["missing_fields"] = missing
     return out
+
+
+def _repair_truncated(fragment: str) -> dict:
+    """Parse a JSON object that was cut off mid-generation.
+
+    A local judge that hits its token limit emits a well-formed prefix like
+    '{"reduplication": 0, "fragmentation": 0, "notes": "no chang' and no closing
+    brace. Discarding those cost ~90 images in the 2026-07-22 run. Close any open
+    string and brackets, then walk back to the previous comma until it parses.
+    """
+    depth: list[str] = []
+    in_str = esc = False
+    for ch in fragment:
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+        elif ch == '"':
+            in_str = True
+        elif ch in "{[":
+            depth.append("}" if ch == "{" else "]")
+        elif ch in "}]" and depth:
+            depth.pop()
+
+    candidate = fragment
+    for _ in range(len(fragment)):
+        closed = candidate + ('"' if in_str else "") + "".join(reversed(depth))
+        try:
+            return json.loads(closed)
+        except json.JSONDecodeError:
+            cut = candidate.rfind(",")
+            if cut == -1:
+                break
+            candidate, in_str = candidate[:cut], False
+    raise ValueError(f"unparseable judge reply: {fragment[:200]!r}")
 
 
 def extract_json(text: str) -> dict:
@@ -136,6 +183,11 @@ def extract_json(text: str) -> dict:
     if text.startswith("```"):
         text = re.sub(r"^```[a-zA-Z]*\n?|\n?```$", "", text).strip()
     start, end = text.find("{"), text.rfind("}")
-    if start == -1 or end == -1:
+    if start == -1:
         raise ValueError(f"no JSON object in judge reply: {text[:200]!r}")
-    return json.loads(text[start:end + 1])
+    if end != -1:
+        try:
+            return json.loads(text[start:end + 1])
+        except json.JSONDecodeError:
+            pass
+    return _repair_truncated(text[start:])

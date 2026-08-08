@@ -1,0 +1,261 @@
+{
+  "model": "mlx-community/Qwen3-VL-8B-Instruct-4bit",
+  "max_tokens": 700,
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "n": 28,
+  "seconds": 69.2,
+  "records": {
+    "h00": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "single bicycle, no hallucinations",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"single bicycle, no hallucinations\"\n}"
+    },
+    "h01": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended elements present without excess",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended elements present without excess\"\n}"
+    },
+    "h02": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended portrait, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended portrait, no hallucinatory artifacts\"\n}"
+    },
+    "h03": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene, no hallucinatory artifacts\"\n}"
+    },
+    "h04": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended portrait, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended portrait, no hallucinatory artifacts\"\n}"
+    },
+    "h05": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects present as intended",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects present as intended\"\n}"
+    },
+    "h06": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects as intended",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects as intended\"\n}"
+    },
+    "h07": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended objects present without excess",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended objects present without excess\"\n}"
+    },
+    "h08": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended portrait, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended portrait, no hallucinatory artifacts\"\n}"
+    },
+    "h09": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "single bicycle against wall",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"single bicycle against wall\"\n}"
+    },
+    "h10": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended content visually intact",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended content visually intact\"\n}"
+    },
+    "h11": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects as intended",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects as intended\"\n}"
+    },
+    "h12": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene, no hallucinatory artifacts\"\n}"
+    },
+    "h13": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "intended elements present without excess",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"intended elements present without excess\"\n}"
+    },
+    "h14": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "intended portrait, no hallucinatory constants present",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"intended portrait, no hallucinatory constants present\"\n}"
+    },
+    "h15": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended content accurately depicted",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended content accurately depicted\"\n}"
+    },
+    "h16": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges naturally clustered, no hallucinatory excess",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Oranges naturally clustered, no hallucinatory excess\"\n}"
+    },
+    "h17": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest in mist, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest in mist, no hallucinatory artifacts\"\n}"
+    },
+    "h18": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "single bicycle against wall",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"single bicycle against wall\"\n}"
+    },
+    "h19": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene, no hallucinatory artifacts\"\n}"
+    },
+    "h20": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended elements present without excess",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended elements present without excess\"\n}"
+    },
+    "h21": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects as intended",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects as intended\"\n}"
+    },
+    "h22": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended portrait, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended portrait, no hallucinatory artifacts\"\n}"
+    },
+    "h23": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended objects present, no hallucinatory distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended objects present, no hallucinatory distortion\"\n}"
+    },
+    "h24": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene, no hallucinatory artifacts",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene, no hallucinatory artifacts\"\n}"
+    },
+    "h25": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "intended content fully present",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"intended content fully present\"\n}"
+    },
+    "h26": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Intended content visually intact",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Intended content visually intact\"\n}"
+    },
+    "h27": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects as intended",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects as intended\"\n}"
+    }
+  }
+}

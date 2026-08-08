@@ -1,0 +1,261 @@
+{
+  "model": "mlx-community/Qwen2.5-VL-7B-Instruct-4bit",
+  "max_tokens": 700,
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "n": 28,
+  "seconds": 71.7,
+  "records": {
+    "h00": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a red bicycle leaning against a brick wall",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a red bicycle leaning against a brick wall\"\n}"
+    },
+    "h01": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentation, condensation, or distortion. The scene is not tiled.\"\n}"
+    },
+    "h02": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a close-up portrait photograph of an elderly man's face\"\n}"
+    },
+    "h03": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion\"\n}"
+    },
+    "h04": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a close-up portrait photograph of an elderly man's face\"\n}"
+    },
+    "h05": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional ",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional objects or motifs.\"\n}"
+    },
+    "h06": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects are present as intended, no additional or fragmented forms\"\n}"
+    },
+    "h07": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Coherent room with one sofa, one lamp, and one window",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Coherent room with one sofa, one lamp, and one window\"\n}"
+    },
+    "h08": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a close-up portrait photograph of an elderly man's face\"\n}"
+    },
+    "h09": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"one bicycle against a wall\"\n}"
+    },
+    "h10": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a bowl of oranges on a kitchen counter\"\n}"
+    },
+    "h11": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, matching the intended ",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, matching the intended content.\"\n}"
+    },
+    "h12": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion\"\n}"
+    },
+    "h13": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentation, condensation, or distortion. The scene is clear and undistorted.\"\n}"
+    },
+    "h14": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a close-up portrait photograph of an elderly man's face\"\n}"
+    },
+    "h15": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a bowl of oranges on a kitchen counter\"\n}"
+    },
+    "h16": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"A bowl of oranges on a kitchen counter, no reduplication or distortion\"\n}"
+    },
+    "h17": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no artificial repetition or distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural mist and trees, no artificial repetition or distortion\"\n}"
+    },
+    "h18": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"one bicycle against a wall\"\n}"
+    },
+    "h19": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion\"\n}"
+    },
+    "h20": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, condensation, or distortion.\"\n}"
+    },
+    "h21": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table. There is no reduplicat",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table. There is no reduplication, fragmentation, condensation, or distortion. The image does not dissolve into a repeating texture.\"\n}"
+    },
+    "h22": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A close-up portrait of an elderly man's face with enhanced coloration",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"A close-up portrait of an elderly man's face with enhanced coloration\"\n}"
+    },
+    "h23": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Coherent room with one sofa, one lamp, and one window",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Coherent room with one sofa, one lamp, and one window\"\n}"
+    },
+    "h24": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion\"\n}"
+    },
+    "h25": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"one bicycle against a wall\"\n}"
+    },
+    "h26": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"a bowl of oranges on a kitchen counter\"\n}"
+    },
+    "h27": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and clear",
+      "_raw": "{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"all objects present and clear\"\n}"
+    }
+  }
+}

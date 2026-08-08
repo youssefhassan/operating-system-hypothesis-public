@@ -184,6 +184,129 @@
   },
   "verdict": "inconclusive-null (judges disagree: composite weighted kappa < 0.4)",
   "human_reliability": {
-    "available": false
-  }
+    "available": true,
+    "n_subset": 28,
+    "n_rated": 28,
+    "n_rated_used": 28,
+    "n_rated_outside_panel": 0,
+    "degenerate_on_subset": {
+      "human": [
+        "tiling"
+      ],
+      "claude": [
+        "tiling"
+      ],
+      "qwen": [
+        "reduplication",
+        "fragmentation",
+        "condensation",
+        "distortion",
+        "tiling"
+      ],
+      "llama": [
+        "fragmentation",
+        "condensation",
+        "distortion"
+      ]
+    },
+    "human_vs_claude": {
+      "reduplication": 0.3376,
+      "fragmentation": 0.4167,
+      "condensation": 0.3824,
+      "distortion": 0.2119,
+      "tiling": NaN,
+      "gwet_ac2": {
+        "reduplication": 0.841,
+        "fragmentation": 0.9274,
+        "condensation": 0.8129,
+        "distortion": 0.5687,
+        "tiling": 1.0
+      },
+      "percent_agreement": {
+        "reduplication": 0.5357,
+        "fragmentation": 0.6786,
+        "condensation": 0.5714,
+        "distortion": 0.2857,
+        "tiling": 1.0
+      },
+      "composite_weighted_kappa": 0.3372,
+      "composite_bootstrap": {
+        "point": 0.3371,
+        "ci95": [
+          0.106,
+          0.4954
+        ],
+        "n_valid": 4000,
+        "n_bootstrap": 4000
+      }
+    },
+    "human_vs_qwen": {
+      "reduplication": 0.0,
+      "fragmentation": 0.0,
+      "condensation": 0.0,
+      "distortion": 0.0,
+      "tiling": NaN,
+      "gwet_ac2": {
+        "reduplication": 0.9516,
+        "fragmentation": 0.8948,
+        "condensation": 0.7865,
+        "distortion": 0.5429,
+        "tiling": 1.0
+      },
+      "percent_agreement": {
+        "reduplication": 0.8929,
+        "fragmentation": 0.7143,
+        "condensation": 0.5714,
+        "distortion": 0.5,
+        "tiling": 1.0
+      },
+      "composite_weighted_kappa": 0.0,
+      "composite_bootstrap": {
+        "point": 0.0,
+        "ci95": [
+          -0.0,
+          0.0
+        ],
+        "n_valid": 4000,
+        "n_bootstrap": 4000
+      }
+    },
+    "human_vs_llama": {
+      "reduplication": -0.1058,
+      "fragmentation": 0.0,
+      "condensation": 0.0,
+      "distortion": 0.0,
+      "tiling": 0.0,
+      "gwet_ac2": {
+        "reduplication": 0.7064,
+        "fragmentation": 0.8948,
+        "condensation": 0.7865,
+        "distortion": 0.5429,
+        "tiling": 0.963
+      },
+      "percent_agreement": {
+        "reduplication": 0.7143,
+        "fragmentation": 0.7143,
+        "condensation": 0.5714,
+        "distortion": 0.5,
+        "tiling": 0.9643
+      },
+      "composite_weighted_kappa": -0.0265,
+      "composite_bootstrap": {
+        "point": -0.0264,
+        "ci95": [
+          -0.0517,
+          -0.0
+        ],
+        "n_valid": 4000,
+        "n_bootstrap": 4000
+      }
+    }
+  },
+  "judge_panel": [
+    "claude",
+    "qwen",
+    "llama"
+  ],
+  "is_prereg_primary_panel": true
 }

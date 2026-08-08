@@ -150,3 +150,37 @@ def gwet_ac2(a, b, q: int) -> float:
 def percent_agreement(a, b) -> float:
     a, b = np.asarray(a), np.asarray(b)
     return float((a == b).mean()) if len(a) else float("nan")
+
+
+def composite_kappa_ci(fields: list[tuple[list, list]], q: int,
+                       n: int = 4000, seed: int = 0) -> dict:
+    """Bootstrap CI for a mean-over-fields weighted kappa.
+
+    Image indices are resampled *jointly* across fields, because the same image
+    contributes one row to every field — resampling each field independently
+    would understate the interval. Used for the human-vs-judge composite, where
+    n is ~28 and the point estimate alone is misleading.
+
+    Draws where a resample leaves a rater with no variance give an undefined
+    kappa and are discarded; `n_valid` reports how many survived.
+    """
+    if not fields or not len(fields[0][0]):
+        return {"point": float("nan"), "ci95": None, "n_valid": 0}
+    m = len(fields[0][0])
+    arrs = [(np.asarray(a, int), np.asarray(b, int)) for a, b in fields]
+
+    def _composite(idx) -> float:
+        return float(np.nanmean([weighted_cohens_kappa(a[idx], b[idx], q) for a, b in arrs]))
+
+    point = _composite(np.arange(m))
+    rng = np.random.default_rng(seed)
+    boots = []
+    for _ in range(n):
+        v = _composite(rng.integers(0, m, m))
+        if np.isfinite(v):
+            boots.append(v)
+    if not boots:
+        return {"point": round(point, 4), "ci95": None, "n_valid": 0}
+    lo, hi = np.percentile(boots, [2.5, 97.5])
+    return {"point": round(point, 4), "ci95": [round(float(lo), 4), round(float(hi), 4)],
+            "n_valid": len(boots), "n_bootstrap": n}
