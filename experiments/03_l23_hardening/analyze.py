@@ -48,10 +48,14 @@ def _load_judge(model_dir: Path, fname: str) -> dict:
 # reliability triangulates across three model families (Anthropic / Qwen / Meta).
 # Analysis degrades gracefully to whatever judges are present (>=2 required), so
 # 2-judge smoke data still analyzes.
+# `llama` is retained so the archived 2026-07-22 run still analyzes, but it is a
+# dead rater (no variance on three of four fields) and was replaced as judge C on
+# 2026-08-08. Use --judges to select a panel explicitly.
 JUDGES = [
     ("a", "judgements_claude.json", "claude"),
     ("b", "judgements_qwen.json", "qwen"),
     ("c", "judgements_llama.json", "llama"),
+    ("d", "judgements_gemma.json", "gemma"),
 ]
 
 
