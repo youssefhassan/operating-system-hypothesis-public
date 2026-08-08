@@ -1,7 +1,7 @@
 """
 Experiment 01 (local) — Multi-model classifier-free-guidance sweep via diffusers.
 
-This is the plan-aligned version of Exp 01 (see the project plan Phase I and §8):
+This is the plan-aligned version of Exp 01:
 the guidance gradient runs on open-weights latent-diffusion models, not on the
 BFL FLUX.2-flex API (whose guidance floor of 1.5 can't reach the low regime).
 

@@ -105,7 +105,7 @@ Each is a first-class reportable outcome — see `analysis_plan.md` §8.
 | `judge_probe.py` | Screens a candidate MLX judge on the 28-image subset for *gradedness* | ✅ added 2026-08-08 |
 | `statlib.py` | numpy stats (Spearman/partial, Cliff's δ, BH, κ, Gwet AC2) | ✅ written |
 | `analyze.py` | LMM, κ/AC2, partial-corr, matched-quality, BH, figures | ✅ written |
-| `log.md` / `analysis.md` | Daily log / written up after the run | log ✅ / analysis ⬜ |
+| `analysis.md` | Written up after the run | ✅ |
 
 > **Status of the code (updated 2026-07-21):** all eight scripts now run green
 > end-to-end on the M5. The 2-image smoke run validated: SDXL fp16 generation on

@@ -24,7 +24,7 @@ that model's own ingredients, unrelated to V1 form constants?
 | Structuredness on conv UNet (SDXL), absent on transformer (SD 3.5) | Narrower "local coupling" thread survives; content match to brains denied |
 | Structured low-g + weak form-constant-like scores on ≥2 architectures | Bridge stays testable (not proven) |
 
-See also § "What we do and don't expect" below and the project notes
+See also § "What we do and don't expect" below.
 
 ## Hypothesis
 

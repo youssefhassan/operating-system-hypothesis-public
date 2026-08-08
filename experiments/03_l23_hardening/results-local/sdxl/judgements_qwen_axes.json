@@ -1,0 +1,3024 @@
+{
+  "judge": "qwen",
+  "model": "mlx-community/Qwen3-VL-32B-Instruct-4bit",
+  "rubric": "axes",
+  "rubric_version": "exp03b-suzuki-axes-v1",
+  "fields": [
+    "veridicality",
+    "spontaneity",
+    "complexity",
+    "coherent_scene"
+  ],
+  "images": {
+    "p4_oranges_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and depth"
+    },
+    "p1_stilllife_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract, painterly rendering with unintended objects and textures"
+    },
+    "uncond_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "dense floral tapestry with soft, dreamlike color blending"
+    },
+    "p4_oranges_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p1_stilllife_g1_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with visible objects and subtle abstraction"
+    },
+    "p4_oranges_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p1_stilllife_g1_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with watermelon, glass, and keys implied"
+    },
+    "p3_bicycle_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall with window"
+    },
+    "p1_stilllife_g7_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor unintended elements"
+    },
+    "p3_bicycle_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p6_forest_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest with abstracted pine forms, consistent with prompt"
+    },
+    "p4_oranges_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and detailed textures"
+    },
+    "p5_livingroom_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p6_forest_g1_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest scene with pine trees emerging from fog, rendered in monochrome with atmospheric depth"
+    },
+    "p1_stilllife_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "surreal, fragmented, and abstractly rendered"
+    },
+    "p3_bicycle_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic bicycle against brick wall with minor environmental details"
+    },
+    "p1_stilllife_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present"
+    },
+    "p2_portrait_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized monochrome portrait with painterly texture"
+    },
+    "p3_bicycle_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present"
+    },
+    "p3_bicycle_g2_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle fragments integrated into brick wall as 3D relief"
+    },
+    "p6_forest_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with layered depth"
+    },
+    "p2_portrait_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and depth"
+    },
+    "p4_oranges_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "abstract, fragmented, non-representational composition"
+    },
+    "p6_forest_g1_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty mountain with pine trees, slightly abstracted but coherent"
+    },
+    "p3_bicycle_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p5_livingroom_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p2_portrait_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p2_portrait_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p5_livingroom_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p3_bicycle_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p4_oranges_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "fragmented, ghostly kitchen with duplicated elements"
+    },
+    "p5_livingroom_g3_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered, sunlit living room with sofa, lamp, and window"
+    },
+    "p6_forest_g1_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "uncond_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Abstract yet cohesive mechanical figure with organic elements"
+    },
+    "p5_livingroom_g1_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy, monochromatic rendering of a living room with sofa, lamp, and window"
+    },
+    "p2_portrait_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p1_stilllife_g2_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with subtle additions beyond prompt"
+    },
+    "p1_stilllife_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present"
+    },
+    "p6_forest_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest on misty mountainside, no unintended elements"
+    },
+    "p1_stilllife_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and logically arranged."
+    },
+    "p3_bicycle_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and textures"
+    },
+    "p1_stilllife_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p3_bicycle_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall with natural details"
+    },
+    "p2_portrait_g1_s45.png": {
+      "veridicality": 0,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "faint, abstract form resembling a face in soft textures"
+    },
+    "p5_livingroom_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p4_oranges_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and plausible objects"
+    },
+    "p2_portrait_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p1_stilllife_g15_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with minor surreal elements"
+    },
+    "p3_bicycle_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "uncond_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract mountain landscape with soft textures and muted tones"
+    },
+    "p6_forest_g2_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "p2_portrait_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Highly detailed photorealistic portrait of an elderly man"
+    },
+    "p3_bicycle_g3_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "semi-transparent ghostly overlay of bicycle against brick wall"
+    },
+    "p5_livingroom_g1_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "ethereal, dreamlike overlay with abstract elements"
+    },
+    "uncond_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract architectural forms with a central winged figure, evoking a dreamlike urban landscape."
+    },
+    "p6_forest_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with layered tree forms"
+    },
+    "p4_oranges_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges arranged naturally, including a central vase arrangement and scattered fruit, "
+    },
+    "p5_livingroom_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p3_bicycle_g3_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Red bicycle against textured wall, with minor added clutter"
+    },
+    "p6_forest_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest with abstracted, repeating tree forms"
+    },
+    "p2_portrait_g15_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed elderly face with realistic textures and lighting"
+    },
+    "p3_bicycle_g15_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p5_livingroom_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with added furniture and decor beyond prompt"
+    },
+    "p4_oranges_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with multiple bowls of oranges, slightly more elaborate than requested"
+    },
+    "p4_oranges_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges in bowls, minor background details beyond prompt"
+    },
+    "p4_oranges_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges arranged naturally, but includes unplanned elements like a vase of orange bran"
+    },
+    "p6_forest_g3_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with natural layering and depth"
+    },
+    "p6_forest_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and lighting"
+    },
+    "p6_forest_g11_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest on mountainside, with natural layering and atmospheric depth"
+    },
+    "p2_portrait_g2_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and texture"
+    },
+    "p1_stilllife_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects arranged naturally on a wooden surface."
+    },
+    "p5_livingroom_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with multiple windows and two sofas, beyond the prompt's one window and one sofa."
+    },
+    "p6_forest_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest scene with mist, no unintended elements"
+    },
+    "p2_portrait_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural aging details"
+    },
+    "p5_livingroom_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p1_stilllife_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract, fragmented objects on wood; watermelon and keys visible, glass implied but not clear; extra elements like comb"
+    },
+    "p1_stilllife_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor spontaneous elements"
+    },
+    "p6_forest_g2_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest with repeated tree forms, coherent and prompt-aligned"
+    },
+    "p6_forest_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest scene with mist, no unintended elements"
+    },
+    "p2_portrait_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Highly realistic portrait with natural lighting and textures"
+    },
+    "p1_stilllife_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor unintended detail (ice in glass)"
+    },
+    "p2_portrait_g2_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p4_oranges_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and depth"
+    },
+    "p2_portrait_g2_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p6_forest_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p6_forest_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest rendered with natural depth and atmosphere"
+    },
+    "p6_forest_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p6_forest_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with layered tree canopies"
+    },
+    "p3_bicycle_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p5_livingroom_g2_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa and lamp; no window visible"
+    },
+    "p4_oranges_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges in bowl and on counter"
+    },
+    "p1_stilllife_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "Abstract, fragmented forms suggest intended objects but lack clear definition"
+    },
+    "p5_livingroom_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "sketchy, abstract rendering with many unintended elements"
+    },
+    "p1_stilllife_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and realistic textures"
+    },
+    "p2_portrait_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and depth"
+    },
+    "p2_portrait_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p5_livingroom_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window; additional architectural details and city view beyond prompt sco"
+    },
+    "p6_forest_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest with layered tree rows"
+    },
+    "p4_oranges_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on wooden counter"
+    },
+    "p2_portrait_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man's face"
+    },
+    "p5_livingroom_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, window, and natural lighting; minor additions like plants and decor enhance "
+    },
+    "p6_forest_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with soft, atmospheric depth"
+    },
+    "p3_bicycle_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p6_forest_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p1_stilllife_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p6_forest_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "p5_livingroom_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "softly painted, dreamlike living room with added furnishings and details"
+    },
+    "p4_oranges_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Abstract, painterly rendering with excessive, scattered oranges and kitchen objects"
+    },
+    "p2_portrait_g2_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural textures and lighting"
+    },
+    "p3_bicycle_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p5_livingroom_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p4_oranges_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p1_stilllife_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and textures"
+    },
+    "p4_oranges_g3_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "richly detailed kitchen scene with natural lighting and varied textures"
+    },
+    "p2_portrait_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p2_portrait_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and depth"
+    },
+    "p2_portrait_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and texture"
+    },
+    "p2_portrait_g2_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p1_stilllife_g7_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Watermelon fused with glass, keys and phone added"
+    },
+    "p3_bicycle_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p6_forest_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p2_portrait_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p2_portrait_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p5_livingroom_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p2_portrait_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p6_forest_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest with natural layering and depth"
+    },
+    "p4_oranges_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges arranged naturally and elaborately"
+    },
+    "p6_forest_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest with mist, no unintended elements"
+    },
+    "p5_livingroom_g7_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized, warm-lit living room with sofa, lamp, and window; minor spontaneous elements like side table and books."
+    },
+    "p2_portrait_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p3_bicycle_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and clear object relationships"
+    },
+    "p3_bicycle_g2_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic bicycle against brick wall with natural details"
+    },
+    "p2_portrait_g15_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "highly detailed elderly face with realistic textures and lighting"
+    },
+    "p3_bicycle_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly abstraction with added textures and debris"
+    },
+    "p3_bicycle_g1_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstracted bicycle against brick wall, with implied structure"
+    },
+    "p3_bicycle_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p3_bicycle_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic depiction of a red bicycle against a brick wall with no unintended elements."
+    },
+    "p1_stilllife_g1_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with added elements beyond prompt"
+    },
+    "p5_livingroom_g2_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and subtle added details"
+    },
+    "p6_forest_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p3_bicycle_g1_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic depiction of a bicycle against a weathered wall"
+    },
+    "p1_stilllife_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present"
+    },
+    "p2_portrait_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p3_bicycle_g3_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and depth"
+    },
+    "p2_portrait_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and depth"
+    },
+    "p1_stilllife_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p4_oranges_g1_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen with artistic tile and decorative elements beyond oranges"
+    },
+    "uncond_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "dense, layered architectural landscape with organic forms"
+    },
+    "p5_livingroom_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p5_livingroom_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window-like panels; minimal unintended elements."
+    },
+    "p3_bicycle_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract, textured rendering with fragmented forms suggesting a bicycle and wall, but not photorealistic"
+    },
+    "p5_livingroom_g15_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized illustration with clear room elements, minor abstract touches"
+    },
+    "uncond_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "ethereal bird-like form nestled in fibrous textures"
+    },
+    "p5_livingroom_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and subtle additions"
+    },
+    "p6_forest_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p5_livingroom_g1_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "monochromatic sketch-style rendering of a living room with sofa, lamp, and window"
+    },
+    "p3_bicycle_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p4_oranges_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p4_oranges_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with multiple bowls of oranges, slightly more elaborate than requested"
+    },
+    "p2_portrait_g2_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p6_forest_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest on misty mountainside, no unintended elements"
+    },
+    "p6_forest_g3_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest scene with mist, no unintended elements"
+    },
+    "p4_oranges_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered kitchen with realistic textures and lighting"
+    },
+    "p5_livingroom_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa and lamp; no window present"
+    },
+    "p2_portrait_g3_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p6_forest_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "p1_stilllife_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p3_bicycle_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic depiction of a red bicycle against a brick wall"
+    },
+    "p4_oranges_g2_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as focal point"
+    },
+    "p4_oranges_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "painterly kitchen scene with bowl of oranges"
+    },
+    "p1_stilllife_g3_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Realistic still life with minor artistic abstraction"
+    },
+    "p4_oranges_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges, minor spontaneous additions like cut pieces and vase"
+    },
+    "p6_forest_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized forest scene with misty atmosphere"
+    },
+    "p3_bicycle_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p4_oranges_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p2_portrait_g2_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p4_oranges_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p6_forest_g3_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with consistent texture and depth"
+    },
+    "p6_forest_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p1_stilllife_g2_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p6_forest_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest with mist, no unintended elements"
+    },
+    "p5_livingroom_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa and lamp; no window visible"
+    },
+    "p3_bicycle_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against red brick wall with consistent lighting and shadows"
+    },
+    "p4_oranges_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p4_oranges_g1_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly painted still life with oranges and flowers"
+    },
+    "p2_portrait_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Highly realistic portrait with natural lighting and texture"
+    },
+    "p3_bicycle_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstracted portrait with visible facial features"
+    },
+    "p5_livingroom_g5_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered, sunlit living room with sofa, lamp, and window"
+    },
+    "p5_livingroom_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "richly detailed living room with multiple windows and furnishings beyond prompt"
+    },
+    "p1_stilllife_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly style with realistic lighting and shadows"
+    },
+    "p6_forest_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest with layered depth and natural lighting"
+    },
+    "p2_portrait_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly realistic portrait with natural lighting and texture"
+    },
+    "p6_forest_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "p3_bicycle_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "uncond_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "abstract figure with fragmented form and grid overlay"
+    },
+    "p4_oranges_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural additions beyond oranges"
+    },
+    "p2_portrait_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p4_oranges_g15_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with multiple bowls of oranges, naturally arranged"
+    },
+    "p3_bicycle_g2_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Red bicycle against brick wall with subtle surreal textures"
+    },
+    "p3_bicycle_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g2_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with unexpected kiwi and glass bottle"
+    },
+    "p6_forest_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest scene with mist, no unintended elements"
+    },
+    "p3_bicycle_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly abstraction of bicycle and wall"
+    },
+    "p5_livingroom_g11_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized but coherent living room with intended objects"
+    },
+    "p4_oranges_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly painted still life with natural lighting and subtle textures"
+    },
+    "p5_livingroom_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window; minor additions like side tables and plants"
+    },
+    "p2_portrait_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p2_portrait_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p4_oranges_g2_s42.png": {
+      "veridicality": 0,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "repeating pattern of oranges and leaves, no bowl or counter"
+    },
+    "p5_livingroom_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p3_bicycle_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Red bicycle against brick wall with shop window, slightly painterly but coherent"
+    },
+    "p6_forest_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest scene with natural tree forms and atmospheric depth"
+    },
+    "p1_stilllife_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p1_stilllife_g3_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly style with realistic lighting and shadows"
+    },
+    "p5_livingroom_g15_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized but coherent living room with intended elements"
+    },
+    "p4_oranges_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p4_oranges_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p1_stilllife_g2_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Watermelon-themed glass and scattered pink cubes on wood, with keys and lock"
+    },
+    "p1_stilllife_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p2_portrait_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly realistic portrait with natural aging details"
+    },
+    "p5_livingroom_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p5_livingroom_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p4_oranges_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p1_stilllife_g3_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Watermelon-themed glass and keys on wood, with realistic textures and lighting"
+    },
+    "p3_bicycle_g2_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p3_bicycle_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall with door"
+    },
+    "p1_stilllife_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor additions beyond prompt"
+    },
+    "p3_bicycle_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p3_bicycle_g2_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic depiction of a red bicycle against a brick wall"
+    },
+    "p3_bicycle_g2_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle against wall with added bag, slightly stylized texture"
+    },
+    "p1_stilllife_g3_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with minor surreal elements"
+    },
+    "p3_bicycle_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against red brick wall, no unintended elements"
+    },
+    "p4_oranges_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract kitchen scene with implied bowl of oranges, overlaid with translucent forms and reflections"
+    },
+    "p5_livingroom_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract window view and layered textures create surreal atmosphere"
+    },
+    "p6_forest_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "p5_livingroom_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered, sunlit living room with sofa, lamp, and window"
+    },
+    "p3_bicycle_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick and stucco wall, no unintended elements"
+    },
+    "p4_oranges_g1_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "impressionistic still life with soft forms and muted colors"
+    },
+    "p2_portrait_g1_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered face with abstract textures and minimal background detail"
+    },
+    "p5_livingroom_g3_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements plus minor additions"
+    },
+    "p4_oranges_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges arranged naturally, including a central bowl with foliage, scattered fruit, an"
+    },
+    "p2_portrait_g2_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p4_oranges_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with naturalistic details beyond the core prompt"
+    },
+    "p1_stilllife_g1_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with watermelon, juice, and keys on wood"
+    },
+    "p3_bicycle_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p1_stilllife_g15_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized but coherent still life with intended objects"
+    },
+    "p4_oranges_g1_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "stylized still life with painterly textures and layered objects"
+    },
+    "p5_livingroom_g2_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with added furnishings and decor beyond prompt"
+    },
+    "p2_portrait_g1_s44.png": {
+      "veridicality": 0,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "abstract monochrome texture with no discernible facial features"
+    },
+    "p4_oranges_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p3_bicycle_g2_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with natural details beyond the prompt"
+    },
+    "p6_forest_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest rendered with natural depth and atmosphere"
+    },
+    "p1_stilllife_g2_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Surreal fusion of watermelon and glass with metallic elements, creating an abstract yet unified still life."
+    },
+    "p6_forest_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty pine forest with natural depth and atmosphere"
+    },
+    "p5_livingroom_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p5_livingroom_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with natural light and detailed furnishings beyond the prompt"
+    },
+    "p5_livingroom_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window; minor additions like pillows and plant add subtle detail."
+    },
+    "p4_oranges_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and depth"
+    },
+    "p4_oranges_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges, vase, and sink; minor spontaneous elements like utensil holder and soap dispe"
+    },
+    "p6_forest_g15_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest on mountainside, with natural layering and atmospheric depth"
+    },
+    "p2_portrait_g2_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p4_oranges_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with oranges and foliage on kitchen counter"
+    },
+    "p6_forest_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p5_livingroom_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p2_portrait_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "face obscured by abstract, textured overlay"
+    },
+    "p1_stilllife_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and textures"
+    },
+    "p1_stilllife_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor added context"
+    },
+    "p5_livingroom_g2_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic, minimal living room with intended objects only"
+    },
+    "p3_bicycle_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with minor environmental details beyond the prompt"
+    },
+    "p5_livingroom_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p5_livingroom_g2_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, window, and natural light; minor additions like plants and decor enhance rea"
+    },
+    "p1_stilllife_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p5_livingroom_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p6_forest_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty pine forest with natural depth and atmosphere"
+    },
+    "p1_stilllife_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and composition"
+    },
+    "p6_forest_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest with natural layering and depth"
+    },
+    "p4_oranges_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p1_stilllife_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Painted still life with watermelon, glass, and pitcher; keys absent"
+    },
+    "p5_livingroom_g15_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized cartoon room with clear sofa, lamp, and window"
+    },
+    "p2_portrait_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p6_forest_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p6_forest_g2_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with layered fog, consistent with prompt"
+    },
+    "p4_oranges_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges, no unintended elements"
+    },
+    "p5_livingroom_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p2_portrait_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p3_bicycle_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man's face"
+    },
+    "p5_livingroom_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy, semi-abstract rendering with added clutter"
+    },
+    "p2_portrait_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and detailed skin texture"
+    },
+    "p1_stilllife_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p6_forest_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized forest with soft, blended forms and muted colors"
+    },
+    "p6_forest_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest with layered tree bands"
+    },
+    "p3_bicycle_g2_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle against brick wall with weathered textures"
+    },
+    "p5_livingroom_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p4_oranges_g2_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen with oranges, but with painterly textures and subtle distortions"
+    },
+    "p1_stilllife_g5_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with subtle surreal elements"
+    },
+    "p6_forest_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty pine forest on mountainside"
+    },
+    "p1_stilllife_g3_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "distorted textures and extra objects suggest hallucination"
+    },
+    "p3_bicycle_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p6_forest_g1_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest scene with stylized, repeating tree forms"
+    },
+    "p4_oranges_g1_s42.png": {
+      "veridicality": 0,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "abstract tiling of oranges and leaves, no bowl or kitchen"
+    },
+    "p3_bicycle_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p5_livingroom_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p4_oranges_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and plausible object arrangement"
+    },
+    "p5_livingroom_g1_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "soft watercolor rendering of a quiet, lived-in living room"
+    },
+    "p2_portrait_g3_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p2_portrait_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man's face"
+    },
+    "p4_oranges_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and composition"
+    },
+    "p3_bicycle_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall with natural lighting and shadows"
+    },
+    "p4_oranges_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges in bowl and on counter"
+    },
+    "p3_bicycle_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p5_livingroom_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa and lamps, no window visible"
+    },
+    "p6_forest_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest on mountainside, photorealistic and prompt-aligned"
+    },
+    "p1_stilllife_g15_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor surreal elements"
+    },
+    "p2_portrait_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Highly detailed photorealistic portrait of an elderly man"
+    },
+    "p1_stilllife_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with intended objects clearly present and naturally arranged."
+    },
+    "p1_stilllife_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with minor unexpected elements (e.g., chain, bottle opener)"
+    },
+    "p1_stilllife_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Watermelon, glass, and keys present but with added elements and surreal key fragments"
+    },
+    "p4_oranges_g2_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p6_forest_g2_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and lighting"
+    },
+    "uncond_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "dreamlike floral portrait with ethereal composition"
+    },
+    "p1_stilllife_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with natural lighting and realistic textures"
+    },
+    "p2_portrait_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "Abstract, textured face with fragmented features and surreal elements"
+    },
+    "p2_portrait_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "abstracted face with textured, non-photorealistic rendering"
+    },
+    "p2_portrait_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract, textured rendering of a man's face with added structural elements"
+    },
+    "p3_bicycle_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural aging details"
+    },
+    "p5_livingroom_g15_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Warm, illustrated living room with natural light and detailed furnishings"
+    },
+    "p3_bicycle_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "abstracted bicycle against textured wall"
+    },
+    "uncond_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "richly detailed pastoral scene with horses and ruins under a blossoming tree"
+    },
+    "p5_livingroom_g1_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered interior with natural light and subtle details"
+    },
+    "p6_forest_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty pine forest on mountainside"
+    },
+    "p4_oranges_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and plausible object arrangement"
+    },
+    "p3_bicycle_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p5_livingroom_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy monochrome interior with added furniture and architectural details"
+    },
+    "p5_livingroom_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window; minor additions like pillows and rug add subtle detail."
+    },
+    "p6_forest_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with layered tree forms"
+    },
+    "p6_forest_g2_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and lighting"
+    },
+    "p4_oranges_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p6_forest_g1_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with layered depth, consistent with prompt"
+    },
+    "p6_forest_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with repeating patterns, coherent and naturalistic"
+    },
+    "p1_stilllife_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p3_bicycle_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic bicycle against brick wall with natural lighting and ground details"
+    },
+    "uncond_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "abstract architectural collages with fragmented interiors"
+    },
+    "p3_bicycle_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against red brick wall, no unintended elements"
+    },
+    "p1_stilllife_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor unexpected elements"
+    },
+    "p4_oranges_g3_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen with multiple bowls of oranges, some scattered, forming a natural still-life composition."
+    },
+    "p4_oranges_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with multiple bowls of oranges, slightly more elaborate than requested"
+    },
+    "p3_bicycle_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bicycle against plain wall, slightly stylized but coherent"
+    },
+    "p1_stilllife_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with unintended elements like a pitcher, slices, and papers"
+    },
+    "p1_stilllife_g3_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with unexpected objects and surreal elements"
+    },
+    "p4_oranges_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and plausible object arrangement"
+    },
+    "p4_oranges_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges in bowl and on counter"
+    },
+    "p2_portrait_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man's face"
+    },
+    "p2_portrait_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man's face"
+    },
+    "p2_portrait_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait of an elderly man"
+    },
+    "p5_livingroom_g15_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p2_portrait_g1_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p1_stilllife_g2_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract glass forms and fragmented objects disrupt realism"
+    },
+    "p6_forest_g15_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with layered depth and atmospheric realism"
+    },
+    "p3_bicycle_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle and wall blend into abstract texture"
+    },
+    "p2_portrait_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p3_bicycle_g2_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly style with visible brushwork, but scene is coherent and matches prompt"
+    },
+    "p4_oranges_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and detailed textures"
+    },
+    "p5_livingroom_g2_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "semi-abstract rendering with surreal textures and unexpected elements"
+    },
+    "p1_stilllife_g11_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized but coherent scene with imaginative fusion of watermelon and glass"
+    },
+    "p5_livingroom_g3_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and subtle additions"
+    },
+    "p5_livingroom_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window; minor additions like rug, ottoman, and framed art extend beyond "
+    },
+    "p6_forest_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p3_bicycle_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p6_forest_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p1_stilllife_g3_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Realistic still life with subtle surreal twist"
+    },
+    "p1_stilllife_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic scene with intended objects clearly present and naturally arranged."
+    },
+    "p5_livingroom_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with intended elements and minor additions"
+    },
+    "p1_stilllife_g2_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with subtle additions beyond prompt"
+    },
+    "p2_portrait_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Highly realistic portrait with natural lighting and texture"
+    },
+    "p4_oranges_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges as intended"
+    },
+    "p4_oranges_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen with bowl of oranges, minor contextual additions"
+    },
+    "p6_forest_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural depth and atmosphere"
+    },
+    "p5_livingroom_g11_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized illustration with clear room layout and natural lighting"
+    },
+    "p2_portrait_g2_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic close-up of an elderly man's face"
+    },
+    "p5_livingroom_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa and lamp; no window visible"
+    },
+    "p5_livingroom_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy monochrome rendering of a living room with sofa and windows"
+    },
+    "p3_bicycle_g1_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly abstraction of a bicycle against a brick wall"
+    },
+    "p4_oranges_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges in bowl and on counter, minor background elements not requested"
+    },
+    "p3_bicycle_g3_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle against brick wall with weathered details"
+    },
+    "p1_stilllife_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor additions beyond prompt"
+    },
+    "p5_livingroom_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic room with sofa, lamp, window; minor additions like plant and pendant light"
+    },
+    "p4_oranges_g2_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly kitchen scene with two bowls of oranges on counter"
+    },
+    "p3_bicycle_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Abstract, textured rendering with added environmental elements beyond the prompt"
+    },
+    "p6_forest_g11_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with layered depth, visually coherent and prompt-aligned"
+    },
+    "p1_stilllife_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Realistic still life with subtle surreal elements"
+    },
+    "p6_forest_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty pine forest with layered fog, consistent with prompt"
+    },
+    "p1_stilllife_g5_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with subtle surreal fusion of watermelon and glass"
+    },
+    "p3_bicycle_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man"
+    },
+    "p5_livingroom_g1_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "softly rendered living room with visible sofa, window, and lamp, plus tropical view and plant"
+    },
+    "p6_forest_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic misty forest scene with natural layering and depth"
+    },
+    "p4_oranges_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with bowl of oranges on counter"
+    },
+    "p2_portrait_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and detailed skin texture"
+    },
+    "p5_livingroom_g2_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic living room with sofa, lamp, and window as requested"
+    },
+    "p1_stilllife_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic still life with minor additions beyond prompt"
+    },
+    "p6_forest_g2_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Misty forest scene with pine trees emerging from fog, rendered with painterly softness"
+    },
+    "p6_forest_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest scene with mist, no unintended elements"
+    },
+    "p3_bicycle_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p2_portrait_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and depth of field"
+    },
+    "p4_oranges_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural lighting and plausible object arrangement"
+    },
+    "p2_portrait_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photorealistic portrait with natural lighting and texture"
+    },
+    "p5_livingroom_g15_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Stylized illustration with clear room layout and consistent lighting"
+    },
+    "p3_bicycle_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p4_oranges_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "painterly kitchen scene with oranges scattered and in sink, beyond a simple bowl"
+    },
+    "p3_bicycle_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against red brick wall, no unintended elements"
+    },
+    "p6_forest_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic forest scene with mist, no unintended elements"
+    },
+    "p3_bicycle_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    },
+    "p4_oranges_g2_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with natural additions beyond oranges"
+    },
+    "p4_oranges_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with oranges in bowl and on counter, minor additional kitchen items"
+    },
+    "p2_portrait_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "highly detailed photorealistic portrait of an elderly man's face"
+    },
+    "p1_stilllife_g1_s42.png": {
+      "veridicality": 0,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "Abstract, fragmented forms with no clear objects or scene"
+    },
+    "p4_oranges_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "Photorealistic kitchen scene with abundant oranges arranged naturally"
+    },
+    "p6_forest_g2_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "dense misty forest with consistent tree forms"
+    },
+    "p3_bicycle_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "Photorealistic red bicycle against brick wall, no unintended elements"
+    }
+  }
+}

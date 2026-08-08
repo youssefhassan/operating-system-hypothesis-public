@@ -2,7 +2,7 @@
 
 **Completed 2026-08-08** (amended judge panel; post-hoc shape/control analyses
 added the same day). Pre-registration: [`preregistration.json`](preregistration.json) +
-[`analysis_plan.md`](analysis_plan.md). Daily record: [`log.md`](log.md).
+[`analysis_plan.md`](analysis_plan.md). Daily record: kept privately.
 Handoff for follow-on work: [`HANDOFF.md`](HANDOFF.md).
 
 ---
@@ -411,4 +411,4 @@ dose-response and is a timely warning for VLM-as-judge pipelines.
 - Human: `human_subset.json`, `human_ratings.json`
 - Probes: `probes/probe_Qwen*.json`, `probes/probe_gemma-3-27b-it-qat-4bit.json`
 - Code: `analyze.py` (confirmatory), `posthoc.py` (§9)
-- Write-up for a general audience: `a draft write-up`
+

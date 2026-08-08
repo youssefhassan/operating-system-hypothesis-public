@@ -1,0 +1,3025 @@
+{
+  "judge": "claude",
+  "model": "claude-sonnet-5",
+  "rubric": "axes",
+  "rubric_version": "exp03b-suzuki-axes-v1",
+  "fields": [
+    "veridicality",
+    "spontaneity",
+    "complexity",
+    "coherent_scene"
+  ],
+  "images": {
+    "p3_bicycle_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bicycle, basket, wall, pipes, grass, sidewalk"
+    },
+    "p5_livingroom_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, window plus small side table with plant"
+    },
+    "p6_forest_g1_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, slightly painterly texture"
+    },
+    "p3_bicycle_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, brick wall, added basket/plants/pipe"
+    },
+    "p3_bicycle_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bike, brick wall, shutter, door, pavement all cohere"
+    },
+    "p4_oranges_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with added plant, vase, and extra oranges outside bowl"
+    },
+    "uncond_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized dense floral pattern"
+    },
+    "p1_stilllife_g5_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "keys, glass, watermelon slices on wood table"
+    },
+    "p1_stilllife_g7_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra carafe added; otherwise coherent tabletop scene"
+    },
+    "p2_portrait_g1_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "abstract blurred forms, no discernible face"
+    },
+    "p2_portrait_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "close-up elderly male face, heavily wrinkled, matches prompt"
+    },
+    "p1_stilllife_g15_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon, glass of red liquid, and keys on wood table"
+    },
+    "p1_stilllife_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "extra jars, flowers, cucumber-like object, no clear keys"
+    },
+    "p4_oranges_g5_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges scattered beyond bowl, extra decor items added"
+    },
+    "p4_oranges_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges scattered beyond bowl, plus vase/greenery not requested"
+    },
+    "p4_oranges_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "sketchy vases, leaves, urns replace bowl/counter concept"
+    },
+    "p1_stilllife_g7_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "glass merged with watermelon texture, unreal fusion"
+    },
+    "p1_stilllife_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "extra bottle, scissors, misc objects; watermelon unclear"
+    },
+    "p1_stilllife_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon, red drink with straw, slice, and keys on wood table; glass has colored drink not plain water"
+    },
+    "p3_bicycle_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, sidewalk setting"
+    },
+    "uncond_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "abstract tangled armor/hair forms obscuring figure, stylized not photoreal"
+    },
+    "p1_stilllife_g7_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "keys fused into watermelon slice, glass filled with juice not water"
+    },
+    "p4_oranges_g3_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with extra jars, bottles, papers beyond simple prompt"
+    },
+    "p2_portrait_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "detailed close-up of elderly man's face, matches prompt"
+    },
+    "p5_livingroom_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra floor lamp, table, rug, painting beyond prompt"
+    },
+    "p5_livingroom_g3_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra chaise, table, decor beyond sofa/lamp/window"
+    },
+    "p3_bicycle_g2_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "distorted, fragmented bicycle mounted flat on wall, not leaning realistically"
+    },
+    "p2_portrait_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "realistic elderly man portrait, matches prompt"
+    },
+    "p6_forest_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized misty pine forest, painterly tiling"
+    },
+    "p1_stilllife_g5_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon, glass, keys on wood table; glass has odd metal hook"
+    },
+    "p1_stilllife_g2_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra watermelon slices, glass containers, stirrer/utensils added beyond prompt"
+    },
+    "p6_forest_g2_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, slightly textured/painterly"
+    },
+    "p5_livingroom_g1_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketch-like room with extra furniture and wall ornament beyond request"
+    },
+    "p1_stilllife_g7_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra water bottle added, glass filled with pink liquid not water"
+    },
+    "p3_bicycle_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn red bike by brick wall and dark door"
+    },
+    "p3_bicycle_g7_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike against brick wall, sidewalk visible"
+    },
+    "p3_bicycle_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall with window, cobblestone ground"
+    },
+    "p6_forest_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine ridge, coherent and photoreal"
+    },
+    "p2_portrait_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "detailed close-up of elderly man's textured face"
+    },
+    "p1_stilllife_g1_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "extra glass vessel with green liquid, no visible keys, painterly unreal rendering"
+    },
+    "p6_forest_g1_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty snowy slope with small structure, painterly texture"
+    },
+    "p3_bicycle_g3_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "two bikes, doorway, and wall form plausible street scene"
+    },
+    "p5_livingroom_g1_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "sofa/lamps present but hazy, no clear window, odd chandelier not requested"
+    },
+    "p2_portrait_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, neutral background"
+    },
+    "p3_bicycle_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike against brick wall, realistic"
+    },
+    "p6_forest_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty layered pine forest, coherent and photoreal"
+    },
+    "p4_oranges_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "bowl of oranges clear, but background kitchen appliances/surfaces are distorted and ambiguous"
+    },
+    "p5_livingroom_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, window plus added table, chair, rug, plant"
+    },
+    "p4_oranges_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "realistic kitchen scene with sink, faucet, and sugar jar beyond prompt"
+    },
+    "p6_forest_g1_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "misty pines, soft consistent scene"
+    },
+    "p4_oranges_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "realistic kitchen with bowl of oranges, background clutter adds detail"
+    },
+    "p1_stilllife_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life, extra jars/leaves/utensils, no visible keys"
+    },
+    "uncond_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "abstract fragmented bird over geometric cubist backdrop"
+    },
+    "p2_portrait_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "painterly stylized portrait with hood, not photorealistic"
+    },
+    "p6_forest_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered mist over pine forest, natural scene"
+    },
+    "p3_bicycle_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall with door, cobblestone ground"
+    },
+    "uncond_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 3,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "muted painterly mountain landscape, loosely rendered"
+    },
+    "p5_livingroom_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, ottoman, window in coherent room"
+    },
+    "p5_livingroom_g3_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, pendant lamp, window with added chair, table, books"
+    },
+    "p2_portrait_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "elderly man portrait, cap and shirt, matches request"
+    },
+    "p1_stilllife_g11_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "extra carafe fused with watermelon, odd object overlap"
+    },
+    "p2_portrait_g2_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "elderly man portrait with cap, textured skin, slightly stylized rendering"
+    },
+    "p5_livingroom_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "extra furniture, plant, rug, piano beyond simple request"
+    },
+    "p1_stilllife_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "carafe of pink liquid instead of plain water glass, added metal bowl"
+    },
+    "p2_portrait_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, cap and shirt"
+    },
+    "p6_forest_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, natural and coherent"
+    },
+    "p6_forest_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog bands"
+    },
+    "p6_forest_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered misty forest ridges, coherent photoreal scene"
+    },
+    "p3_bicycle_g15_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, brick wall, window, cobbled sidewalk"
+    },
+    "p2_portrait_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly face, matches prompt"
+    },
+    "p4_oranges_g3_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with oranges spilling beyond bowl, added plant/decor items"
+    },
+    "p5_livingroom_g11_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "two sofas, extra windows, rug, coffee table beyond simple request"
+    },
+    "p2_portrait_g2_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "textured, slightly artificial skin/hair rendering"
+    },
+    "p2_portrait_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, slightly painterly texture"
+    },
+    "p6_forest_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized flat forest with misty tonal patches, illustrative not photoreal"
+    },
+    "p6_forest_g3_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine ridge, slightly repetitive tree texture"
+    },
+    "p5_livingroom_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "sketchy interior with extra bookshelves, plant, bird figure, multiple windows beyond request"
+    },
+    "p2_portrait_g15_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "textured elderly face, slightly over-processed skin detail"
+    },
+    "p5_livingroom_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra windows, ottoman, cabinet beyond simple prompt"
+    },
+    "p4_oranges_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen counter with bowl and extra loose oranges, faucet and appliances visible"
+    },
+    "p4_oranges_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra small plate of oranges beyond single bowl, plus kitchen utensils/decor"
+    },
+    "p2_portrait_g3_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, textured skin, matches prompt"
+    },
+    "p6_forest_g2_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "repetitive tree texture, painterly and hazy"
+    },
+    "p2_portrait_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly male face, matches prompt"
+    },
+    "p1_stilllife_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra whole watermelons and carafe instead of glass"
+    },
+    "p2_portrait_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man with cap, striped shirt, blurred background"
+    },
+    "p3_bicycle_g3_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike against brick wall, odd frame geometry"
+    },
+    "p6_forest_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog and treeline, coherent"
+    },
+    "p6_forest_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent and realistic"
+    },
+    "p2_portrait_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, matches prompt"
+    },
+    "p5_livingroom_g5_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "cozy living room with extra furniture and decor beyond prompt"
+    },
+    "p4_oranges_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "three bowls of oranges, some loose, on kitchen counter"
+    },
+    "p1_stilllife_g11_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "watermelon slice oddly bowl-shaped, extra whole melon and board"
+    },
+    "p1_stilllife_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "watermelon and spoon present, but glass/keys replaced by ambiguous camera-like object; no coherent table scene"
+    },
+    "p1_stilllife_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "melon pieces and utensils, no clear glass or keys"
+    },
+    "p4_oranges_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "vase with citrus branch replaces bowl, oranges scattered on counter"
+    },
+    "p6_forest_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, aerial view, repetitive tree pattern"
+    },
+    "p5_livingroom_g2_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, extra side tables, pendant lights; no window visible"
+    },
+    "p5_livingroom_g5_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, window plus small side table with decor"
+    },
+    "p3_bicycle_g5_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike with basket against striped brick wall"
+    },
+    "p3_bicycle_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, basket, brick wall, dark door"
+    },
+    "p2_portrait_g2_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "elderly man with cap, beard, and clothing"
+    },
+    "p5_livingroom_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra pillows, plants, art, rug beyond simple prompt"
+    },
+    "p4_oranges_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean kitchen scene, bowl of oranges, extra background items"
+    },
+    "p4_oranges_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "cluttered abstract scene, oranges scattered outside bowl, extra plants/objects"
+    },
+    "p4_oranges_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges outside bowl on counter, plausible kitchen scene"
+    },
+    "p6_forest_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog and treetops, coherent"
+    },
+    "p2_portrait_g15_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extreme wrinkle texture, blurred nose"
+    },
+    "p6_forest_g15_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "misty pine slope, slightly repetitive tree pattern"
+    },
+    "p2_portrait_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly male face, matches prompt"
+    },
+    "p6_forest_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "layered mist bands over pine forest, natural and coherent"
+    },
+    "p6_forest_g2_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty repetitive tree pattern, painterly not photoreal"
+    },
+    "p1_stilllife_g11_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra key set beyond one, stylized rendering"
+    },
+    "p4_oranges_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges outside bowl, otherwise realistic kitchen scene"
+    },
+    "p6_forest_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent and simple composition"
+    },
+    "p3_bicycle_g3_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike with bag against paneled wall, not brick"
+    },
+    "p1_stilllife_g11_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "watermelon, juice glass, keys on wood table; glass filled with pink liquid not water"
+    },
+    "p5_livingroom_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "realistic room with sofa, lamp, window, plus curtains and pendant light"
+    },
+    "p1_stilllife_g15_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "glass shows watermelon texture instead of water/keys look plausible"
+    },
+    "p6_forest_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent and realistic"
+    },
+    "p1_stilllife_g1_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "watermelon, pitcher, glass, tools on wooden table; no keys visible"
+    },
+    "p3_bicycle_g5_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike, wall, grate, pavement cohere plausibly"
+    },
+    "p4_oranges_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with bowl of oranges, two loose ones outside bowl"
+    },
+    "p6_forest_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent layered scene"
+    },
+    "p3_bicycle_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, brick wall, window, sidewalk"
+    },
+    "p2_portrait_g2_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, outdoor blurred background"
+    },
+    "p3_bicycle_g3_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "red bike against brick/wood wall, cobbled ground"
+    },
+    "p3_bicycle_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "photoreal bike on sidewalk against brick wall, extra hallway/windows visible"
+    },
+    "p6_forest_g3_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog bands"
+    },
+    "p5_livingroom_g15_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "cartoonish room with extra lamp, sconce, and side table beyond prompt"
+    },
+    "p5_livingroom_g7_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sketchy illustration with sofa, lamp, window, extra small table/stool"
+    },
+    "p1_stilllife_g7_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "phone replaces glass, watermelon has odd antenna, extra slices added"
+    },
+    "p6_forest_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine ridge, natural and cohesive"
+    },
+    "p4_oranges_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly kitchen scene, bowl of oranges plausible, extra jars/objects on counter"
+    },
+    "p6_forest_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered misty pine forest, coherent depth"
+    },
+    "p2_portrait_g15_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "textured skin appears overly rendered, slightly synthetic"
+    },
+    "p2_portrait_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man face, matches prompt"
+    },
+    "p4_oranges_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges spread across counter, cutting board, and vase beyond a single bowl"
+    },
+    "p3_bicycle_g3_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "worn bike against brick wall with metal grate"
+    },
+    "p2_portrait_g3_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, matches prompt"
+    },
+    "p2_portrait_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extreme close-up, textured skin, slightly waxy/artificial look"
+    },
+    "uncond_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "sketchy hillside town pattern, repetitive and disjointed"
+    },
+    "p4_oranges_g2_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "desaturated kitchen scene with plausible bowl of oranges"
+    },
+    "p3_bicycle_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "distorted skeletal bike, not red, oddly mounted on wall"
+    },
+    "p5_livingroom_g15_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, window, lamp with pillow and curtains, mostly coherent room"
+    },
+    "p5_livingroom_g11_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa and lamp shown, but no window; extra frames and side table added"
+    },
+    "p4_oranges_g1_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with extra unrequested vases, plant, decor beyond requested bowl of oranges"
+    },
+    "p3_bicycle_g1_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn bike against textured wall, muted tones not vivid red"
+    },
+    "p5_livingroom_g7_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "no window shown; extra wall art and side table added"
+    },
+    "p6_forest_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty forested slope, photoreal and cohesive"
+    },
+    "p5_livingroom_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "adds artwork, plant, curtains, coffee table beyond prompt"
+    },
+    "p3_bicycle_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bicycle by wall with hanging wire, painterly texture"
+    },
+    "p3_bicycle_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, matches prompt"
+    },
+    "p1_stilllife_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon, water glass, keys on wood table"
+    },
+    "p1_stilllife_g3_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra water bottle added, painterly style"
+    },
+    "p4_oranges_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra small bowl and scattered slices beyond prompt"
+    },
+    "p6_forest_g3_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent natural scene"
+    },
+    "p4_oranges_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "multiple bowls of oranges plus loose oranges, plausible kitchen scene"
+    },
+    "p2_portrait_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait with cap, matches prompt"
+    },
+    "p2_portrait_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, matches prompt"
+    },
+    "p3_bicycle_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, basket, brick wall, brick floor"
+    },
+    "p1_stilllife_g11_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra glass with straw and pink drink added"
+    },
+    "p3_bicycle_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly bike with basket by weathered wall, extra window/steps"
+    },
+    "p4_oranges_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean modern kitchen scene with fruit bowl and faucet"
+    },
+    "p2_portrait_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, matches prompt"
+    },
+    "p1_stilllife_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra cut watermelon slice beyond whole melon"
+    },
+    "uncond_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "loosely painted bird on nest, soft impressionistic rendering"
+    },
+    "p2_portrait_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "elderly man's face with background trees/sky, sweater"
+    },
+    "p6_forest_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent layered scene"
+    },
+    "p5_livingroom_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra plant, art, rug, table beyond request"
+    },
+    "p2_portrait_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, matches prompt"
+    },
+    "p2_portrait_g7_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "wrinkled elderly face, slightly overprocessed texture"
+    },
+    "p2_portrait_g15_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "detailed aged face, heavy texture emphasis"
+    },
+    "p6_forest_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered misty pine ridges, photoreal"
+    },
+    "p3_bicycle_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "brick wall with abstracted, malformed bicycle shape"
+    },
+    "p5_livingroom_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy painted room with sofa, hanging lamps, glass windows"
+    },
+    "p1_stilllife_g5_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "glass rendered as watermelon-skin textured object, breaks scene logic"
+    },
+    "p6_forest_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly, stylized misty forest scene"
+    },
+    "p5_livingroom_g2_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly, hazy textures with extra plant/artwork/ceiling wires"
+    },
+    "p3_bicycle_g5_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bike, wall, pipes, grassy curb form plausible urban scene"
+    },
+    "p2_portrait_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly male face, matches prompt"
+    },
+    "p5_livingroom_g3_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "basic room scene with an extra side table/basket"
+    },
+    "p3_bicycle_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle, wall, storefront window with items, gate"
+    },
+    "p5_livingroom_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra chair, table, rug, plants beyond prompt"
+    },
+    "p2_portrait_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up portrait, textured skin, neutral background"
+    },
+    "p4_oranges_g1_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly still life with added flowers, vase, extra fruit not in prompt"
+    },
+    "p4_oranges_g15_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "three bowls of oranges, plus loose ones, exceeds simple request but scene is coherent"
+    },
+    "p3_bicycle_g2_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "distorted frame, wall not brick, extra bag draped on wheel"
+    },
+    "p6_forest_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent natural scene"
+    },
+    "p3_bicycle_g7_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, plain scene"
+    },
+    "p2_portrait_g2_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "textured elderly face, waxy/artificial skin rendering"
+    },
+    "p1_stilllife_g2_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "extra bottle, glass; keys replaced by metal ring/hook; melon slices not keys"
+    },
+    "p1_stilllife_g2_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "keys look distorted but scene matches prompt"
+    },
+    "p4_oranges_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with bowl and extra loose oranges on counter"
+    },
+    "p3_bicycle_g2_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn red bike against brick alley wall"
+    },
+    "p2_portrait_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "detailed close-up portrait, matches prompt"
+    },
+    "p1_stilllife_g5_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra pitcher and cut watermelon slices beyond simple prompt"
+    },
+    "p2_portrait_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "abstract textured rendering, facial features barely coherent"
+    },
+    "p3_bicycle_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike against brick doorway, realistic setting"
+    },
+    "p3_bicycle_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bicycle against red brick wall with door"
+    },
+    "p3_bicycle_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "painterly bike against paneled wall, muted realism"
+    },
+    "p1_stilllife_g7_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra vintage key added beyond keyring"
+    },
+    "p4_oranges_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with bowl, extra oranges, halved orange, and citrus tool"
+    },
+    "p6_forest_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest hillside, natural and coherent"
+    },
+    "p5_livingroom_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, window in coherent sunlit room"
+    },
+    "p5_livingroom_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "photoreal room but no window shown, extra side tables added"
+    },
+    "p1_stilllife_g11_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "wooden table with keys, glass, watermelon slice"
+    },
+    "p5_livingroom_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "realistic room with sofa, lamp, window, added rug, curtains, pendant light, view"
+    },
+    "p5_livingroom_g11_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "stylized room with extra table/ottoman"
+    },
+    "p2_portrait_g7_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, matches prompt"
+    },
+    "p2_portrait_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "detailed close-up of elderly man's face, matches prompt"
+    },
+    "p5_livingroom_g5_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy but coherent lit room with sofa, lamp, window, extra small table/books"
+    },
+    "p4_oranges_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean kitchen scene, extra bowl and dishes in background"
+    },
+    "p3_bicycle_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, brick wall, sidewalk, doorway"
+    },
+    "p6_forest_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent and photoreal"
+    },
+    "p4_oranges_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges outside bowl and on stove, otherwise realistic kitchen scene"
+    },
+    "uncond_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "faint abstract ghostly figure, undefined features"
+    },
+    "p4_oranges_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen with bowl of oranges, extras spilled on counter"
+    },
+    "p2_portrait_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, blurred outdoor background"
+    },
+    "p4_oranges_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean kitchen scene, bowl of oranges plus incidental background items"
+    },
+    "p3_bicycle_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn red bike, basket, brick wall, sidewalk"
+    },
+    "p1_stilllife_g15_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra empty glass and two key sets beyond request"
+    },
+    "p3_bicycle_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, simple realistic scene"
+    },
+    "p6_forest_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine slope, textured but coherent"
+    },
+    "p4_oranges_g2_s42.png": {
+      "veridicality": 0,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "seamless orange/leaf pattern, no bowl or counter, tiled fabric-like design"
+    },
+    "p6_forest_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent natural scene"
+    },
+    "p6_forest_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered misty pine ridgelines, photoreal"
+    },
+    "p4_oranges_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "added plant, vase, stray oranges beyond bowl"
+    },
+    "p1_stilllife_g3_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "glass painted like watermelon, plus extra loose slices not requested"
+    },
+    "p3_bicycle_g2_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn red bike against brick wall, sidewalk visible"
+    },
+    "p3_bicycle_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle against brick wall with barred windows, sidewalk perspective"
+    },
+    "p1_stilllife_g2_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra bottle, watermelon slice, tools added beyond prompt"
+    },
+    "p5_livingroom_g15_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized flat illustration; extra window, rug, table, frames beyond prompt"
+    },
+    "p4_oranges_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges outside bowl, plant and vase add unrequested elements"
+    },
+    "p2_portrait_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man face, matches prompt directly"
+    },
+    "p5_livingroom_g5_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, bay window plus extra pillows, plant, art, rug"
+    },
+    "p1_stilllife_g3_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "keys look distorted/melted but scene layout is plausible"
+    },
+    "p1_stilllife_g2_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "watermelon-glass hybrid, odd metal object, scattered pink chunks"
+    },
+    "p6_forest_g3_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "repetitive tree texture, hazy uniform lighting"
+    },
+    "p1_stilllife_g3_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra pitcher, wine glass, and multiple keys added"
+    },
+    "p6_forest_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog and trees"
+    },
+    "p5_livingroom_g3_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 1,
+      "notes": "extra furniture, plant, rug, decor beyond prompt"
+    },
+    "p4_oranges_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges scattered on counter/cutting board plus plant arrangement, beyond simple bowl request"
+    },
+    "p6_forest_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, natural layered fog"
+    },
+    "p3_bicycle_g15_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, stylized lighting"
+    },
+    "p6_forest_g3_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent and photoreal"
+    },
+    "p1_stilllife_g7_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon, glass of pink liquid, keys on cloth over wood table"
+    },
+    "p5_livingroom_g5_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra lamps, table, pillow beyond prompt"
+    },
+    "p5_livingroom_g2_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra plants, pillows, art, side table beyond prompt"
+    },
+    "p4_oranges_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bowl overflowing with oranges, some spilled onto counter"
+    },
+    "p5_livingroom_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean realistic room, extra plant and art decor"
+    },
+    "p2_portrait_g1_s44.png": {
+      "veridicality": 0,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "abstract marbled texture, vague face suggestion"
+    },
+    "p2_portrait_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extreme close-up of wrinkled elderly face, matches prompt"
+    },
+    "p4_oranges_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "cluttered still life with jars, plants, wall art, not a kitchen counter scene"
+    },
+    "p5_livingroom_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra rug, table, plant, art, second lamp beyond request"
+    },
+    "p4_oranges_g1_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "impressionistic kitchen still life, blurred vessels, indistinct forms"
+    },
+    "p2_portrait_g1_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly, blurred, non-photographic rendering of face"
+    },
+    "p1_stilllife_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "keys missing, small pitcher instead, painterly style"
+    },
+    "p6_forest_g3_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog and treeline"
+    },
+    "p1_stilllife_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon, keys, drink on wood table, plausible still life"
+    },
+    "p1_stilllife_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "simple realistic tabletop still life"
+    },
+    "p4_oranges_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "loose painterly kitchen scene with added plant, jars, utensils beyond bowl of fruit"
+    },
+    "p1_stilllife_g2_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "melon/glass fused with odd metallic hardware, key isolated"
+    },
+    "p5_livingroom_g15_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "stylized flat-shaded room, added rug and side table beyond prompt"
+    },
+    "p3_bicycle_g3_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "old bike, brick/plaster wall, stray wire and outlet"
+    },
+    "p2_portrait_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, plain background"
+    },
+    "p5_livingroom_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly texture, added plants and decor beyond prompt"
+    },
+    "p5_livingroom_g5_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra ottoman, art, windows, city view beyond simple request"
+    },
+    "p3_bicycle_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "old bike leaning on tiled brick wall, cobblestone ground"
+    },
+    "p5_livingroom_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly room with sofa, lamp, window, plus extra curtains, table, floor items"
+    },
+    "p6_forest_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered misty pine ridgelines, photoreal aerial view"
+    },
+    "p6_forest_g11_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty layered pine forest, coherent and photoreal"
+    },
+    "p4_oranges_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges outside bowl, plant, sink in background"
+    },
+    "p5_livingroom_g3_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, pendant lamp, large windows form plausible minimalist room"
+    },
+    "p6_forest_g2_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, slightly textured/repetitive canopy"
+    },
+    "p2_portrait_g2_s49.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly face, slight texture overlay artifact"
+    },
+    "p2_portrait_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "textured mask-like face obscures features, background separate"
+    },
+    "p4_oranges_g15_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean kitchen scene, extra soap dispenser"
+    },
+    "p1_stilllife_g15_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra whole watermelon and tray beyond simple prompt"
+    },
+    "p3_bicycle_g3_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bike, wall, grass, door, vine all cohere"
+    },
+    "p1_stilllife_g15_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "cartoonish style, extra watermelon slices and dark liquid instead of water"
+    },
+    "p3_bicycle_g2_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bike, wall, plants, door, grass form plausible scene"
+    },
+    "p5_livingroom_g2_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "simple room, slightly odd window texture, extra basket/books"
+    },
+    "p5_livingroom_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "cozy room with added curtains, plant, pillows, rug"
+    },
+    "p4_oranges_g3_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with extra decor items beyond fruit bowl"
+    },
+    "p6_forest_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog and treeline, coherent and realistic"
+    },
+    "p4_oranges_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "simple realistic kitchen scene"
+    },
+    "p6_forest_g15_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty forested slope, slightly repetitive tree texture"
+    },
+    "p2_portrait_g2_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "detailed close-up of elderly man's face, matches prompt"
+    },
+    "p1_stilllife_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "keychain/leaf replace keys, painterly style, no water glass"
+    },
+    "p2_portrait_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man face, matches prompt"
+    },
+    "p5_livingroom_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra plants, rug, art, table beyond prompt"
+    },
+    "p5_livingroom_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "cluttered shelves, extra furniture, sketchy rendering beyond simple room"
+    },
+    "p4_oranges_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges scattered across counter beyond bowl, painterly kitchen scene"
+    },
+    "p5_livingroom_g2_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra furniture, plants, art beyond requested sofa/lamp/window"
+    },
+    "p3_bicycle_g5_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn red bike against brick wall, doorway included"
+    },
+    "p1_stilllife_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra carafe and watermelon slice, glass has watermelon chunks not water"
+    },
+    "p2_portrait_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly male face, photoreal"
+    },
+    "p4_oranges_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges scattered outside bowl plus added vase, plant, faucet, sink"
+    },
+    "p6_forest_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized painterly texture of treetops, repetitive pattern"
+    },
+    "p3_bicycle_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, realistic"
+    },
+    "p4_oranges_g7_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean kitchen scene, bowl overfilled, two loose oranges beside it"
+    },
+    "p6_forest_g1_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, painterly texture"
+    },
+    "p6_forest_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty coniferous mountainside, coherent depth"
+    },
+    "p6_forest_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized repeating tree/snow pattern, flat illustrative texture"
+    },
+    "p2_portrait_g5_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, b&w"
+    },
+    "p3_bicycle_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bicycle against plain wall, wall not brick, odd frame details"
+    },
+    "p3_bicycle_g15_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "bicycle, window, door, cobblestones form believable scene"
+    },
+    "p5_livingroom_g15_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "simple room with sofa, lamp, window, curtains, pendant light"
+    },
+    "uncond_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "grid of sketchy disconnected interior vignettes"
+    },
+    "p1_stilllife_g3_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "no keys, added paper and tool instead"
+    },
+    "uncond_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly horses, rider, ruined tower and tree, somewhat coherent but stylized"
+    },
+    "p3_bicycle_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike with basket against brick wall, cobblestone street"
+    },
+    "p4_oranges_g1_s42.png": {
+      "veridicality": 0,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "all-over orange tree pattern, no bowl or counter"
+    },
+    "p3_bicycle_g11_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, added door and hardware"
+    },
+    "p1_stilllife_g5_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "watermelon slices, red drink, keys on wood table"
+    },
+    "p6_forest_g2_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, painterly repetitive texture"
+    },
+    "p1_stilllife_g3_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra empty jar and sunglasses added"
+    },
+    "p1_stilllife_g3_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "glass fused with strange metal fixtures, key oddly shaped"
+    },
+    "p4_oranges_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges outside bowl, plus vase/plant and decor not requested"
+    },
+    "p3_bicycle_g7_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, cobblestone street"
+    },
+    "p5_livingroom_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra lamp, ottoman, table, rug beyond prompt"
+    },
+    "p6_forest_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "layered mist bands over pine forest, banding pattern slightly repetitive"
+    },
+    "p1_stilllife_g5_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extra bottle added, otherwise matches prompt items on table"
+    },
+    "p4_oranges_g15_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra loose oranges and background props beyond bowl"
+    },
+    "p4_oranges_g2_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clean kitchen counter with bowl of oranges, plausible scene"
+    },
+    "p6_forest_g2_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered ridgelines, coherent"
+    },
+    "p1_stilllife_g15_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "watermelon has odd keyring attachment, glass liquid tinted red"
+    },
+    "p2_portrait_g3_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly face, matches prompt directly"
+    },
+    "p4_oranges_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "three bowls of oranges plus loose oranges, kitchen background"
+    },
+    "p4_oranges_g3_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "multiple bowls, scattered oranges beyond single bowl request, blurry kitchen"
+    },
+    "p3_bicycle_g1_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "melted, translucent bicycle merges with wall texture"
+    },
+    "p3_bicycle_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall with doorway"
+    },
+    "p5_livingroom_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy monochrome room with extra fireplace, cabinet, table not requested"
+    },
+    "p5_livingroom_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "added pillows, rug, painting, side table beyond request"
+    },
+    "p6_forest_g11_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, layered fog bands"
+    },
+    "p2_portrait_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "photoreal close-up portrait, matches prompt"
+    },
+    "p2_portrait_g5_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "detailed realistic close-up of elderly man's face"
+    },
+    "p6_forest_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent layered mountainside"
+    },
+    "p5_livingroom_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketchy rendering, extra plant, ottoman, curtains beyond prompt"
+    },
+    "p1_stilllife_g7_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "odd hook attached to melon, otherwise coherent tabletop scene"
+    },
+    "p1_stilllife_g15_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra water bottle and pink drink not requested"
+    },
+    "p4_oranges_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges outside bowl, plant, added kitchen items"
+    },
+    "p5_livingroom_g1_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra wall art, clock, side table added"
+    },
+    "uncond_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 3,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "dreamlike floral-haired figure with butterflies, painterly not photoreal"
+    },
+    "p6_forest_g5_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty layered pine forest, coherent and photoreal"
+    },
+    "p3_bicycle_g3_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "worn red bike, brick wall, basket, window"
+    },
+    "p1_stilllife_g2_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "extra watermelon and scattered odd key fragments beyond simple set"
+    },
+    "p4_oranges_g2_s51.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with extra oranges scattered near sink beyond bowl"
+    },
+    "p3_bicycle_g2_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "old bike, brick wall, door; warped wheel geometry"
+    },
+    "p2_portrait_g1_s47.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly, blurred, monochrome face rendering"
+    },
+    "p3_bicycle_g11_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike, wall, grass, pole - simple coherent scene"
+    },
+    "p5_livingroom_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa and two lamps, no window, side table added"
+    },
+    "p2_portrait_g1_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "painterly face merged with hand, ropes, wood beam"
+    },
+    "p1_stilllife_g3_s47.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra whole melon, wedge, and keys tangled unnaturally"
+    },
+    "p1_stilllife_g7_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "glass oddly filled with watermelon-colored liquid, but scene otherwise coherent"
+    },
+    "p6_forest_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, slightly textured/painterly rendering"
+    },
+    "p4_oranges_g5_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra loose oranges beside bowl, otherwise plausible kitchen scene"
+    },
+    "p2_portrait_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "distorted, painterly double-exposed face, not a coherent photo-real portrait"
+    },
+    "p5_livingroom_g15_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra sofa, rug, table, vase beyond minimal request"
+    },
+    "p3_bicycle_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike leaning on brick wall, sidewalk"
+    },
+    "p2_portrait_g11_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, cap, blurred background"
+    },
+    "p2_portrait_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, matches request"
+    },
+    "p1_stilllife_g2_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "watermelon fused into glass goblet, odd for scene"
+    },
+    "p3_bicycle_g1_s48.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "distorted bike shape, extra pipes/structures on wall"
+    },
+    "p2_portrait_g11_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extreme close-up of textured aged skin, eyes, nose, mustache"
+    },
+    "p2_portrait_g2_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "wrinkled elderly face, blurred background, added cap and collar details"
+    },
+    "p1_stilllife_g5_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "book, extra key/tool shapes, red liquid instead of water added"
+    },
+    "p5_livingroom_g2_s48.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, pendant lamp, window with cityscape view, painterly rendering"
+    },
+    "p4_oranges_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with juice jar and plant, mostly matches prompt"
+    },
+    "p2_portrait_g5_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man face, matches request"
+    },
+    "p5_livingroom_g15_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized room with extra window and second lamp beyond request"
+    },
+    "p1_stilllife_g2_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "distorted glass, no keys visible, fragmented objects"
+    },
+    "p2_portrait_g1_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly monochrome portrait, not photoreal"
+    },
+    "p3_bicycle_g1_s51.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly bike, tree, wall, grass, extra debris"
+    },
+    "p3_bicycle_g11_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike, wall, window, door, brick floor"
+    },
+    "p1_stilllife_g11_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "extra dark glass, watermelon slices, and glass merged into melon"
+    },
+    "p6_forest_g7_s46.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine mountainside, coherent and photoreal"
+    },
+    "p6_forest_g15_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine slope, slightly stylized texture repetition"
+    },
+    "p5_livingroom_g3_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "soft render with extra plant, art, curtains beyond core prompt"
+    },
+    "p2_portrait_g7_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man portrait, plain background"
+    },
+    "p4_oranges_g3_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "realistic kitchen with extra utensils, blender, and dishware beyond simple request"
+    },
+    "p4_oranges_g2_s46.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 3,
+      "coherent_scene": 0,
+      "notes": "cluttered surreal kitchen, oranges scattered beyond bowl, distorted objects"
+    },
+    "p5_livingroom_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, windows plus rug, plant, curtains, art, track lights"
+    },
+    "p2_portrait_g3_s45.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "close-up elderly man's face, plain background"
+    },
+    "p6_forest_g7_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent layered depth"
+    },
+    "p5_livingroom_g11_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "stylized room, extra lamp/rug/frames/window beyond request"
+    },
+    "p1_stilllife_g2_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra paper, small glass, and pink liquid not requested"
+    },
+    "p3_bicycle_g1_s43.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "distorted bike merges with door/wall details"
+    },
+    "p3_bicycle_g3_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "worn bike, wall, door, debris on ground"
+    },
+    "p6_forest_g15_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, slight repetitive tree tiling on slope"
+    },
+    "p1_stilllife_g3_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra pitcher, spoon, watermelon slices beyond basic request"
+    },
+    "p5_livingroom_g3_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, table, rug; no window visible"
+    },
+    "p4_oranges_g5_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "peeled orange peels add minor extra detail"
+    },
+    "p1_stilllife_g11_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "glass merged with watermelon texture, unreal fusion"
+    },
+    "p1_stilllife_g5_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "watermelon-glass hybrid, extra phone and melon slices not requested"
+    },
+    "p3_bicycle_g15_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall, window adds minor extra detail"
+    },
+    "p6_forest_g1_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty conifer slope, painterly texture"
+    },
+    "p3_bicycle_g7_s46.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "red bike against brick wall with windows, plausible but slightly odd frame geometry"
+    },
+    "p6_forest_g11_s42.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent layered depth"
+    },
+    "p5_livingroom_g11_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "sofa, lamp, window plus side table and plant, coherent minimal room"
+    },
+    "p5_livingroom_g15_s42.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra lamp, plant, rug, track lighting beyond simple request"
+    },
+    "p4_oranges_g15_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "realistic kitchen with bowl of oranges, extra counter items"
+    },
+    "p3_bicycle_g2_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly texture, distorted bike parts, added window/curb"
+    },
+    "p6_forest_g15_s45.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty layered pine forest, slight tiling repetition in canopy texture"
+    },
+    "p6_forest_g15_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty forested ridge, natural layering"
+    },
+    "p1_stilllife_g3_s49.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 0,
+      "notes": "watermelon texture merged into glass, illogical fusion"
+    },
+    "p2_portrait_g5_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "extreme close-up of wrinkled elderly face, matches prompt"
+    },
+    "p4_oranges_g15_s51.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with extra utensils, coffee maker, oranges outside bowl"
+    },
+    "p5_livingroom_g2_s45.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "sketchy unfinished render with extra clutter, floating objects"
+    },
+    "p4_oranges_g7_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "monochrome kitchen with color oranges, extra fruit outside bowl"
+    },
+    "p5_livingroom_g7_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra ottoman, rug, art, floor lamp beyond request"
+    },
+    "p4_oranges_g2_s43.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "painterly kitchen scene with two bowls of oranges, sink, utensils"
+    },
+    "p5_livingroom_g2_s44.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "sketch-like room, extra windows/shelves, no distinct lamp visible"
+    },
+    "p6_forest_g2_s48.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent atmospheric scene"
+    },
+    "p4_oranges_g15_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra oranges scattered and second cluster beyond single bowl"
+    },
+    "p2_portrait_g5_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "elderly man with cap, plausible portrait"
+    },
+    "p4_oranges_g7_s44.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with oranges spilling from bowl, plausible setting"
+    },
+    "p5_livingroom_g1_s50.png": {
+      "veridicality": 1,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extra armchair, plants, artwork, cityscape view beyond simple request"
+    },
+    "p2_portrait_g3_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "clothing and suspenders add minor extra context"
+    },
+    "p6_forest_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, coherent layered scene"
+    },
+    "p2_portrait_g7_s44.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "extreme close-up, slightly waxy skin texture, plausible face"
+    },
+    "p4_oranges_g2_s50.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with added juice bottle, cut orange, plant, towels"
+    },
+    "p6_forest_g2_s50.png": {
+      "veridicality": 2,
+      "spontaneity": 0,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "misty pine forest, repetitive tree pattern"
+    },
+    "p3_bicycle_g5_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, brick wall, door, basket added"
+    },
+    "p3_bicycle_g15_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "bike leaning on red wall, plus extra handlebar on wall"
+    },
+    "p1_stilllife_g1_s42.png": {
+      "veridicality": 1,
+      "spontaneity": 1,
+      "complexity": 2,
+      "coherent_scene": 0,
+      "notes": "abstract fragmented forms, unclear layout"
+    },
+    "p4_oranges_g11_s47.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "oranges spread across counter, vase, and bowls beyond a single bowl"
+    },
+    "p3_bicycle_g7_s49.png": {
+      "veridicality": 3,
+      "spontaneity": 1,
+      "complexity": 1,
+      "coherent_scene": 1,
+      "notes": "red bike, brick wall, dark door"
+    },
+    "p4_oranges_g5_s43.png": {
+      "veridicality": 3,
+      "spontaneity": 2,
+      "complexity": 2,
+      "coherent_scene": 1,
+      "notes": "kitchen scene with extra jars, cups, and halved oranges beyond prompt"
+    }
+  },
+  "via": "batches"
+}
