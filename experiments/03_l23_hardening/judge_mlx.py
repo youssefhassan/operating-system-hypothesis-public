@@ -28,14 +28,17 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import importlib
 import json
 import os
 import random
 from pathlib import Path
 
-import rubric as R
+import rubric as R  # default scale; --rubric axes swaps in rubric_axes
 
 MAX_TOKENS = int(os.environ.get("EXP03_JUDGE_MAX_TOKENS", "700"))
+
+RUBRICS = {"kluver": "rubric", "axes": "rubric_axes"}
 
 
 def _to_text(result) -> str:
@@ -76,6 +79,8 @@ class MlxJudge:
 
 
 def score(args: argparse.Namespace) -> None:
+    global R
+    R = importlib.import_module(RUBRICS[args.rubric])
     tag = f"j-{args.name}"
     model_dir = Path(args.dir)
     if not model_dir.is_absolute():
@@ -85,8 +90,11 @@ def score(args: argparse.Namespace) -> None:
         raise SystemExit(f"no PNGs in {model_dir}")
 
     prereg = R.load_prereg()
-    out_path = model_dir / f"judgements_{args.name}.json"
-    raw_path = model_dir / f"judgements_{args.name}_raw.json"
+    # Klüver keeps the historic filenames; a second scale must never overwrite
+    # the committed confirmatory judgements.
+    suffix = "" if args.rubric == "kluver" else f"_{args.rubric}"
+    out_path = model_dir / f"judgements_{args.name}{suffix}.json"
+    raw_path = model_dir / f"judgements_{args.name}{suffix}_raw.json"
     results: dict[str, dict] = {}
     raws: dict[str, str] = {}
     if not args.overwrite:
@@ -101,7 +109,7 @@ def score(args: argparse.Namespace) -> None:
     def _save() -> None:
         out_path.write_text(json.dumps({
             "judge": args.name, "model": args.model,
-            "rubric_version": R.rubric_version(),
+            "rubric": args.rubric, "rubric_version": R.rubric_version(),
             "fields": list(R.ALL_FIELDS), "images": results,
         }, indent=2))
         raw_path.write_text(json.dumps({
@@ -145,6 +153,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--dir", required=True, help="results-local/<model> directory")
     p.add_argument("--overwrite", action="store_true")
     p.add_argument("--shuffle-seed", type=int, default=0)
+    p.add_argument("--rubric", choices=sorted(RUBRICS), default="kluver",
+                   help="kluver (default, historic filenames) or axes "
+                        "(Suzuki veridicality/spontaneity/complexity -> "
+                        "judgements_<name>_axes.json)")
     return p
 
 

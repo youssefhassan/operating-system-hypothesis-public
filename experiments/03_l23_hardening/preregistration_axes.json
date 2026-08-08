@@ -1,0 +1,135 @@
+{
+  "experiment": "03b_suzuki_axes",
+  "status": "confirmatory",
+  "kind": "replication_and_dissociation_study",
+  "date_committed": "2026-08-08",
+  "committed_before_any_axes_scoring_run": true,
+
+  "one_line": "Score the existing Exp 03 corpus on the Suzuki three-axis scale (veridicality / spontaneity / complexity) to (a) replicate Exp 01's exploratory directions on a hardened corpus and (b) test whether that global scale carries information about guidance that the local Kluver scale does not.",
+
+  "derives_from": {
+    "corpus": "experiments/03_l23_hardening/results-local/{sdxl,sd35} -- the SAME 860 images already generated and scored on the Kluver Level-2/3 scale. No new generation.",
+    "rubric_provenance": "Field definitions lifted VERBATIM from experiments/01_image_test/judge.py, which credits Suzuki, Schwartzman & Seth (2024). This is a replication of Exp 01's exploratory arm, not a new instrument.",
+    "exp01_exploratory_results_being_replicated": {
+      "note": "SDXL, one prompt, one judge, ten seeds. Weak priors, which is exactly why they are worth hardening.",
+      "veridicality_vs_guidance_rho": 0.67,
+      "complexity_vs_guidance_rho": -0.54,
+      "spontaneity_vs_guidance_rho": -0.40,
+      "coherent_scene_vs_guidance_rho": 0.41
+    }
+  },
+
+  "hypothesis": "On the existing Exp 03 corpus, scoring the same images on the Suzuki three-axis scale will show (a) veridicality RISING as guidance rises, with spontaneity and complexity FALLING, replicating Exp 01's exploratory directions on a multi-prompt, two-architecture, quality-controlled corpus; and (b) veridicality tracking guidance even after partialling out the Kluver Level-2/3 composite -- i.e. the global scale is not a restatement of the local one, and neither contains the other.",
+
+  "null_result": "Any of: (i) the veridicality slope is flat on at least one model (standardized LMM slope CI includes 0); (ii) the veridicality-vs-guidance association vanishes once the Kluver composite is partialled out (partial Spearman CI includes 0), which would mean the two scales are redundant and the 'complementary instruments' claim is wrong; (iii) the two judges do not agree on the axes at quadratic-weighted composite kappa >= 0.4, rendering the scale uninterpretable (inconclusive-null). Each is a first-class reportable outcome. Outcome (ii) in particular would falsify the central argument of Substack post #6 and must be reported as such.",
+
+  "prompts": "INHERITED from preregistration.json (same corpus, same intended inventories). rubric_axes.load_prereg() merges them in at runtime so the two files cannot drift.",
+
+  "metric": {
+    "graded_fields": ["veridicality", "spontaneity", "complexity"],
+    "binary_fields": ["coherent_scene"],
+    "primary_field": "veridicality",
+    "primary_field_rationale": "It is the axis Exp 03's distortion field was implicitly and badly conflating (melted at low g vs waxy at high g), and it is directional where distortion is magnitude-only.",
+    "global_composite": "mean of z-scored veridicality, -spontaneity, -complexity (signs aligned so the composite rises with guidance, matching veridicality). Reported as a secondary summary only; the primary endpoint rides on veridicality alone.",
+    "uncond_arm": "Spontaneity is undefined with no prompt; the rubric returns 3 by definition there and the uncond arm is EXCLUDED from every spontaneity analysis. Veridicality and complexity are analysed normally on the uncond arm."
+  },
+
+  "primary_statistical_model": {
+    "spec": "field ~ guidance_std + (1|prompt) + (1|seed), per model, statsmodels MixedLM with crossed prompt+seed random intercepts",
+    "note": "Identical specification to the Kluver primary endpoint, so the two scales' slopes are directly comparable."
+  },
+
+  "confirm": {
+    "requires": "both_models",
+    "criteria": [
+      {
+        "id": "P1_replication",
+        "test": "LMM standardized slope of VERIDICALITY on guidance_std >= +0.20, BH-adjusted p <= .05, 95% CI excludes 0",
+        "direction": "positive (veridicality rises with guidance)"
+      },
+      {
+        "id": "P2_dissociation",
+        "test": "partial Spearman(veridicality, guidance | Kluver L2/3 composite) >= +0.20, 95% bootstrap CI excludes 0",
+        "rationale": "If the global scale merely restates the local one, partialling out the Kluver composite removes the guidance signal and this goes to zero. A surviving association is the quantitative form of 'neither scale contains the other'."
+      },
+      {
+        "id": "P3_reliability",
+        "test": "inter-judge quadratic-weighted Cohen's kappa on the composite of the three graded axes >= 0.40",
+        "note": "Same gate and same computation as the Kluver panel."
+      }
+    ]
+  },
+
+  "secondary": {
+    "correction": "Benjamini-Hochberg FDR across the secondary field tests, effect sizes reported alongside",
+    "tests": [
+      "spontaneity LMM slope <= -0.20 (Exp 01 direction), uncond arm excluded",
+      "complexity LMM slope <= -0.20 (Exp 01 direction)",
+      "coherent_scene rises with guidance",
+      "per-prompt generality of the veridicality slope, negative-count out of 6"
+    ]
+  },
+
+  "prespecified_exploratory": {
+    "note": "Written down in advance for honesty, but NOT gates and NOT part of the confirm criteria. Reported as exploratory regardless of outcome.",
+    "tests": [
+      {
+        "id": "E1_overshoot",
+        "question": "Is veridicality non-monotonic in guidance -- rising to a peak and then FALLING at the top of the dial?",
+        "why": "Exp 03 found the distortion field firing at both ends (analysis.md 9.3), and SD 3.5's portrait prompt reversed sign. If veridicality overshoots, that explains both as one phenomenon: over-conditioning degrades realism just as under-conditioning does."
+      },
+      {
+        "id": "E2_scale_correlation",
+        "question": "What is the correlation between the global composite and the Kluver composite, overall and per prompt?"
+      },
+      {
+        "id": "E3_painterly_confound",
+        "question": "Does veridicality account for the low-guidance variance the distortion field was absorbing? This is the construct-validity threat named in analysis.md section 6."
+      },
+      {
+        "id": "E4_shape",
+        "question": "Do the global axes show a gradient on SD 3.5 where the local scale showed only a cliff at g=1 (analysis.md 9.1)?"
+      }
+    ]
+  },
+
+  "judges": {
+    "panel": ["claude", "qwen"],
+    "judge_a": "Claude Sonnet 5 via the Message Batches API (EXP03_CLAUDE_MODEL=claude-sonnet-5)",
+    "judge_b": "mlx-community/Qwen3-VL-32B-Instruct-4bit, local, deterministic decoding",
+    "rationale": "The same amended panel that scored the Kluver scale, so cross-scale comparisons hold the raters fixed.",
+    "screening_gate": {
+      "requirement": "MANDATORY before any full axes pass. Each open-weight judge must be probed on the committed 28-image human subset WITH THE AXES RUBRIC and show gradedness > 0 with NO flat field.",
+      "why": "Clearing a screen on one rubric does not clear a judge on another. Exp 03 established that sub-30B VLMs fail silently, and Gemma-3-27B passed on headline gradedness while being dead on two of four Kluver fields. A rubric change can re-break a judge that previously passed.",
+      "command": "python judge_probe.py --model mlx-community/Qwen3-VL-32B-Instruct-4bit --rubric axes"
+    }
+  },
+
+  "declared_limitations": [
+    "WEAKER PRE-REGISTRATION THAN EXP 03. The images already exist and the author has seen them, and knows the Kluver results on them. The SCORES do not exist, so the predictions here are genuinely pre-data, but this is not the same standing as a pre-registration written before any data existed. Declared rather than hidden.",
+    "The replicated directions come from Exp 01's exploratory arm (one prompt, one judge, ten seeds, no correction), a deliberately weak prior.",
+    "Judges are shared with the Kluver scale, so P2's dissociation could in principle reflect rater-specific structure rather than a property of the images. The blind human subset is the check on that.",
+    "Single human rater if the 28-image subset is re-rated on these axes; same limitation as Exp 03."
+  ],
+
+  "rubric_version": "exp03b-suzuki-axes-v1",
+
+  "forbidden_to_automate": [
+    "rubric_text",
+    "field_definitions",
+    "metric_definition",
+    "primary_endpoint_definition",
+    "confirm_thresholds",
+    "null_thresholds",
+    "prompts",
+    "intended_inventories"
+  ],
+
+  "swappable_without_reclassifying": [
+    "judge_models (rubric_version fixed; changing judge model does not change the scoring text)",
+    "device/dtype/decoding settings",
+    "shuffle seed for blind presentation order"
+  ],
+
+  "notes": "Changing any 'forbidden_to_automate' field after seeing axes scores reclassifies this run as exploratory (Methodology Section 4) and requires a separate dated commit. This file must be git-committed BEFORE any axes scoring run. The field definitions in rubric_axes.py are verbatim Exp 01 text and are the reason this counts as a replication; rewording them forfeits that and must be treated as a new instrument."
+}

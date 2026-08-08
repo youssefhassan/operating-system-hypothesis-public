@@ -37,6 +37,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import importlib
 import json
 import time
 from pathlib import Path
@@ -48,6 +49,16 @@ RESULTS = HERE / "results-local"
 SUBSET = HERE / "human_subset.json"
 PROBES = HERE / "probes"
 INT = R.INT_FIELDS
+
+RUBRICS = {"kluver": "rubric", "axes": "rubric_axes"}
+
+
+def _use_rubric(name: str) -> None:
+    """Swap the active scale. Probe files record which one they used, so
+    --compare can read mixed-scale runs without this being set."""
+    global R, INT
+    R = importlib.import_module(RUBRICS[name])
+    INT = R.INT_FIELDS
 
 
 def _to_text(result) -> str:
@@ -91,7 +102,7 @@ def _slug(model_path: str) -> str:
     return model_path.rstrip("/").split("/")[-1]
 
 
-def run(model_path: str, max_tokens: int) -> Path:
+def run(model_path: str, max_tokens: int, rubric_name: str = "kluver") -> Path:
     if not SUBSET.exists():
         raise SystemExit("no human_subset.json — run `python human_rate.py --sample` first")
     items = json.loads(SUBSET.read_text())["items"]
@@ -99,7 +110,8 @@ def run(model_path: str, max_tokens: int) -> Path:
     judge = MlxJudge(model_path, max_tokens)
 
     PROBES.mkdir(exist_ok=True)
-    out_path = PROBES / f"probe_{_slug(model_path)}.json"
+    suffix = "" if rubric_name == "kluver" else f"_{rubric_name}"
+    out_path = PROBES / f"probe_{_slug(model_path)}{suffix}.json"
     records: dict[str, dict] = {}
     t0 = time.time()
     for i, s in enumerate(items, start=1):
@@ -116,7 +128,8 @@ def run(model_path: str, max_tokens: int) -> Path:
 
     out_path.write_text(json.dumps({
         "model": model_path, "max_tokens": max_tokens,
-        "rubric_version": R.rubric_version(),
+        "rubric": rubric_name, "rubric_version": R.rubric_version(),
+        "fields": list(R.INT_FIELDS),
         "n": len(items), "seconds": round(time.time() - t0, 1),
         "records": records,
     }, indent=2))
@@ -127,11 +140,21 @@ def run(model_path: str, max_tokens: int) -> Path:
 # ------------------------------- reporting ------------------------------------
 
 
-def _claude_scores() -> dict[str, dict]:
-    """Claude's committed scores for the subset images, keyed by blind_id."""
+def _claude_scores(rubric_name: str = "kluver") -> dict[str, dict]:
+    """Claude's committed scores for the subset images, keyed by blind_id.
+
+    Returns {} when Claude has not scored this scale yet, which is the normal
+    state the first time a new rubric is probed. Gradedness is the screening
+    criterion; rank agreement with Claude is a bonus when it happens to exist.
+    """
     items = json.loads(SUBSET.read_text())["items"]
-    by_model = {m: json.loads((RESULTS / m / "judgements_claude.json").read_text())["images"]
-                for m in {s["model"] for s in items}}
+    suffix = "" if rubric_name == "kluver" else f"_{rubric_name}"
+    by_model = {}
+    for m in {s["model"] for s in items}:
+        path = RESULTS / m / f"judgements_claude{suffix}.json"
+        if not path.exists():
+            return {}
+        by_model[m] = json.loads(path.read_text())["images"]
     out = {}
     for s in items:
         rec = by_model[s["model"]].get(s["filename"])
@@ -147,28 +170,35 @@ def summarize(path: Path) -> dict:
     blob = json.loads(path.read_text())
     recs = blob["records"]
     ok = {b: r for b, r in recs.items() if "error" not in r}
-    claude = _claude_scores()
+    rubric_name = blob.get("rubric", "kluver")
+    # Fields come from the probe file, so --compare reads mixed-scale runs.
+    fields = tuple(blob.get("fields") or INT)
+    claude = _claude_scores(rubric_name)
 
-    dist = {f: {v: sum(1 for r in ok.values() if r[f] == v) for v in (0, 1, 2, 3)} for f in INT}
-    interior = sum(dist[f][1] + dist[f][2] for f in INT)
-    total = sum(sum(dist[f].values()) for f in INT)
+    dist = {f: {v: sum(1 for r in ok.values() if r[f] == v) for v in (0, 1, 2, 3)} for f in fields}
+    interior = sum(dist[f][1] + dist[f][2] for f in fields)
+    total = sum(sum(dist[f].values()) for f in fields)
     shared = [b for b in ok if b in claude]
     rho = {}
-    for f in INT:
+    for f in fields:
         a = np.array([ok[b][f] for b in shared], float)
         c = np.array([claude[b][f] for b in shared], float)
         rho[f] = round(S.spearman(a, c), 3) if len(set(a)) > 1 and len(set(c)) > 1 else float("nan")
+    # All-nan when every field is flat (rho undefined), which numpy warns about.
+    finite = [v for v in rho.values() if v == v]
+    mean_rho = float(np.mean(finite)) if finite else float("nan")
 
     return {
         "model": blob["model"],
+        "rubric": rubric_name,
         "n_ok": len(ok),
         "n_error": len(recs) - len(ok),
         "n_coerce_defaulted": sum(1 for r in ok.values() if r.get("missing_fields")),
         "distribution": dist,
         "gradedness": round(interior / total, 4) if total else 0.0,
-        "flat_fields": [f for f in INT if len({r[f] for r in ok.values()}) < 2],
+        "flat_fields": [f for f in fields if len({r[f] for r in ok.values()}) < 2],
         "spearman_vs_claude": rho,
-        "mean_spearman_vs_claude": round(float(np.nanmean(list(rho.values()))), 3),
+        "mean_spearman_vs_claude": round(mean_rho, 3) if mean_rho == mean_rho else None,
         "seconds": blob.get("seconds"),
     }
 
@@ -177,11 +207,13 @@ def compare() -> None:
     paths = sorted(PROBES.glob("probe_*.json")) if PROBES.exists() else []
     if not paths:
         raise SystemExit(f"no probe runs in {PROBES} — run one first")
-    print(f"{'model':44s} {'ok':>4s} {'err':>4s} {'graded':>7s} {'rho_claude':>11s}  flat fields")
+    print(f"{'model':40s} {'scale':>7s} {'ok':>4s} {'err':>4s} {'graded':>7s} "
+          f"{'rho_claude':>11s}  flat fields")
     for p in paths:
         s = summarize(p)
-        print(f"{_slug(s['model']):44s} {s['n_ok']:4d} {s['n_error']:4d} "
-              f"{s['gradedness']:7.3f} {s['mean_spearman_vs_claude']:11.3f}  "
+        mr = s["mean_spearman_vs_claude"]
+        print(f"{_slug(s['model']):40s} {s['rubric']:>7s} {s['n_ok']:4d} {s['n_error']:4d} "
+              f"{s['gradedness']:7.3f} {(f'{mr:11.3f}' if mr is not None else f'{'n/a':>11s}')}  "
               f"{','.join(s['flat_fields']) or '-'}")
     print("\ngradedness = share of field scores on an interior level (1 or 2). "
           "The two failed judges scored ~0.00.\nFlat fields never varied at all, "
@@ -194,6 +226,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--max-tokens", type=int, default=700,
                    help="700 (default) vs the original 400 that truncated ~90 replies")
     p.add_argument("--compare", action="store_true", help="table over all probe runs so far")
+    p.add_argument("--rubric", choices=sorted(RUBRICS), default="kluver",
+                   help="which scale to screen on. A judge that cleared one "
+                        "scale has NOT thereby cleared another: re-probe.")
     return p
 
 
@@ -202,7 +237,8 @@ if __name__ == "__main__":
     if a.compare:
         compare()
     elif a.model:
-        summary = summarize(run(a.model, a.max_tokens))
+        _use_rubric(a.rubric)
+        summary = summarize(run(a.model, a.max_tokens, a.rubric))
         print(json.dumps(summary, indent=2))
     else:
         build_parser().error("pass --model or --compare")

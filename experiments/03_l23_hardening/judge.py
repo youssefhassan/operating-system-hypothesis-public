@@ -25,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import importlib
 import base64
 import json
 import os
@@ -45,6 +46,9 @@ CLAUDE_MODEL = os.environ.get("EXP03_CLAUDE_MODEL", "claude-sonnet-5")
 JUDGE_NAME = "claude"
 OUT_FILE = "judgements_claude.json"
 BATCH_STATE = ".batch_claude.json"
+
+RUBRICS = {"kluver": "rubric", "axes": "rubric_axes"}
+RUBRIC_NAME = "kluver"
 
 
 def _b64(path: Path) -> str:
@@ -72,7 +76,7 @@ def _message_params(path: Path, prereg: dict) -> dict:
 def _save(out_path: Path, results: dict) -> None:
     out_path.write_text(json.dumps({
         "judge": JUDGE_NAME, "model": CLAUDE_MODEL,
-        "rubric_version": R.rubric_version(),
+        "rubric": RUBRIC_NAME, "rubric_version": R.rubric_version(),
         "fields": list(R.ALL_FIELDS), "images": results,
         "via": "batches",
     }, indent=2))
@@ -177,6 +181,13 @@ def score(args: argparse.Namespace) -> None:
         raise SystemExit(f"Missing ANTHROPIC_API_KEY in {_PROJECT_ROOT / '.env'}")
     import anthropic
 
+    global R, OUT_FILE, BATCH_STATE, RUBRIC_NAME
+    R = importlib.import_module(RUBRICS[args.rubric])
+    RUBRIC_NAME = args.rubric
+    if args.rubric != "kluver":  # never overwrite the committed Klüver scores
+        OUT_FILE = f"judgements_{JUDGE_NAME}_{args.rubric}.json"
+        BATCH_STATE = f".batch_{JUDGE_NAME}_{args.rubric}.json"
+
     model_dir = Path(args.dir)
     if not model_dir.is_absolute():
         model_dir = Path(__file__).resolve().parent / model_dir
@@ -213,6 +224,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--dir", required=True, help="results-local/<model> directory")
     p.add_argument("--overwrite", action="store_true", help="re-score already-scored images")
     p.add_argument("--shuffle-seed", type=int, default=0)
+    p.add_argument("--rubric", choices=sorted(RUBRICS), default="kluver",
+                   help="kluver (default, historic filenames) or axes "
+                        "(Suzuki veridicality/spontaneity/complexity -> "
+                        "judgements_claude_axes.json)")
     p.add_argument("--sync", action="store_true",
                    help="per-request instead of Batches API (smoke only; forfeits 50%% discount)")
     p.add_argument("--workers", type=int, default=8, help="concurrent API calls (sync mode only)")
