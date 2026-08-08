@@ -1,6 +1,6 @@
 {
   "judge": "qwen",
-  "model": "mlx-community/Qwen2.5-VL-7B-Instruct-4bit",
+  "model": "mlx-community/Qwen3-VL-32B-Instruct-4bit",
   "rubric_version": "exp03-kluver-l2l3-v1",
   "fields": [
     "reduplication",
@@ -10,45 +10,29 @@
     "tiling"
   ],
   "images": {
-    "p2_portrait_g15_s42.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
-    },
-    "p2_portrait_g1_s42.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 3,
-      "tiling": 0,
-      "notes": "An abstract, distorted close-up of a face"
-    },
     "p4_oranges_g3_s43.png": {
       "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No visible hallucinatory constants; image depicts a normal kitchen scene with a bowl of oranges."
     },
     "p1_stilllife_g1_s46.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image dissolves into abstract, repeating, shattered forms with no coherent objects"
     },
     "uncond_s42.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 1,
-      "notes": "Abstract floral pattern with no discernible scene"
+      "notes": "dense floral field with repeated, blended, and warped forms"
     },
     "p4_oranges_g7_s51.png": {
       "reduplication": 0,
@@ -56,15 +40,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p1_stilllife_g1_s49.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There is no redupli"
+      "notes": "Objects are shattered and warped, with elements merging and deforming beyond recognition."
     },
     "p4_oranges_g3_s48.png": {
       "reduplication": 0,
@@ -72,15 +56,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p1_stilllife_g1_s50.png": {
       "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Slight warping in forms, especially in the glass and watermelon, but no major distortions or fusions"
     },
     "p3_bicycle_g5_s44.png": {
       "reduplication": 0,
@@ -88,7 +72,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g7_s51.png": {
       "reduplication": 0,
@@ -96,7 +80,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with a pink beverage, and a set of keys on a wooden table. There are"
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p3_bicycle_g7_s50.png": {
       "reduplication": 0,
@@ -104,15 +88,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p6_forest_g1_s47.png": {
-      "reduplication": 1,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 1,
-      "notes": "Repetitive, blurred forest pattern"
+      "notes": "Repetitive tree forms dominate, merging into a textured field with slight warping and fusion."
     },
     "p4_oranges_g5_s46.png": {
       "reduplication": 0,
@@ -120,7 +104,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Oranges are naturally scattered on counter and in bowl; no implausible repetition or fusion."
     },
     "p5_livingroom_g11_s49.png": {
       "reduplication": 0,
@@ -128,23 +112,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+      "notes": "Coherent room with intended objects present without hallucinatory alterations."
     },
     "p6_forest_g1_s48.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 1,
-      "notes": "The image depicts a forest of pine trees on a misty mountainside, with the mist creating a repeating texture across the "
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repeated tree forms in mist, slight merging and warping, no full tiling"
     },
     "p1_stilllife_g1_s51.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 3,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 3,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "Objects are fragmented and distorted"
+      "notes": "Extreme multiplication and shattering of objects with pervasive warping and fusion"
     },
     "p3_bicycle_g15_s51.png": {
       "reduplication": 0,
@@ -152,7 +136,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g7_s44.png": {
       "reduplication": 0,
@@ -160,15 +144,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "all objects present and correctly placed"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p2_portrait_g1_s50.png": {
       "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "a close-up portrait of an elderly man's face"
+      "notes": "mild facial warping and texture blending, but single coherent face present"
     },
     "p3_bicycle_g5_s46.png": {
       "reduplication": 0,
@@ -176,7 +160,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g5_s45.png": {
       "reduplication": 0,
@@ -184,7 +168,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "All intended objects are present and correctly formed without hallucinatory alterations."
     },
     "p3_bicycle_g2_s47.png": {
       "reduplication": 0,
@@ -192,15 +176,15 @@
       "condensation": 0,
       "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a fragmented and distorted bicycle against a brick wall, with no clear reduplication or tiling."
+      "notes": "bicycle shattered into disconnected fragments with warped, impossible geometry"
     },
     "p6_forest_g7_s47.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repeated tree forms in mist, slight fusion and warping at edges"
     },
     "p2_portrait_g5_s43.png": {
       "reduplication": 0,
@@ -208,31 +192,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g1_s44.png": {
       "reduplication": 3,
-      "fragmentation": 3,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
       "tiling": 1,
-      "notes": "Oranges and books repeated and fragmented, forming a pattern"
+      "notes": "Repetitive orange forms and fragmented, distorted objects tile the frame in a non-representational pattern."
     },
     "p6_forest_g1_s49.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "No visible reduplication, fragmentation, condensation, or distortion. The image depicts a natural scene without a repeat"
+      "notes": "Tree forms merge and warp in mist, with subtle repetition but not dominant tiling"
     },
     "p3_bicycle_g5_s43.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 2,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "bicycle wheels and frame appear shattered and warped, with broken spokes and misshapen components"
     },
     "p5_livingroom_g11_s45.png": {
       "reduplication": 0,
@@ -240,7 +224,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+      "notes": "Coherent room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p2_portrait_g11_s42.png": {
       "reduplication": 0,
@@ -248,7 +232,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g11_s50.png": {
       "reduplication": 0,
@@ -256,7 +240,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p5_livingroom_g3_s45.png": {
       "reduplication": 0,
@@ -264,7 +248,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+      "notes": "Coherent living room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p3_bicycle_g7_s48.png": {
       "reduplication": 0,
@@ -272,15 +256,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g1_s48.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter"
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a heavily fragmented, distorted, and tiled field of repeated kitchen elements and oranges, with no coherent sin"
     },
     "p5_livingroom_g3_s47.png": {
       "reduplication": 0,
@@ -288,23 +272,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with one sofa, one lamp, one window; no hallucinatory constants visible"
     },
     "p6_forest_g1_s51.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with mist-induced blending and slight warping, but not fully tiling or fragmented"
     },
     "uncond_s46.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 3,
       "condensation": 3,
       "distortion": 3,
       "tiling": 0,
-      "notes": "Fragmented, distorted, and condensed forms create a surreal, abstract composition."
+      "notes": "shattered, fused, and warped forms dominate the composition"
     },
     "p5_livingroom_g1_s45.png": {
       "reduplication": 0,
@@ -312,7 +296,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with sofa, lamp, and window as intended"
     },
     "p2_portrait_g15_s46.png": {
       "reduplication": 0,
@@ -320,7 +304,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g2_s50.png": {
       "reduplication": 0,
@@ -328,7 +312,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All objects are clearly depicted without hallucinatory distortions."
     },
     "p1_stilllife_g11_s48.png": {
       "reduplication": 0,
@@ -336,15 +320,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+      "notes": "All intended objects are present and clearly distinguishable without hallucinatory alterations."
     },
     "p6_forest_g5_s49.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight fusion and warping, but no full tiling or shattering"
     },
     "p1_stilllife_g7_s47.png": {
       "reduplication": 0,
@@ -352,7 +336,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table. There is no reduplicat"
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p3_bicycle_g11_s44.png": {
       "reduplication": 0,
@@ -360,7 +344,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g5_s48.png": {
       "reduplication": 0,
@@ -368,15 +352,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p1_stilllife_g7_s49.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 3,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Glass appears as watermelon rind, merging with fruit; keys and watermelon are physically plausible but glass is distorte"
     },
     "p3_bicycle_g7_s51.png": {
       "reduplication": 0,
@@ -384,15 +368,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g1_s45.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 3,
       "condensation": 0,
       "distortion": 3,
       "tiling": 0,
-      "notes": "face obscured by fur-like texture"
+      "notes": "face shattered into fibrous fragments with warped, impossible features"
     },
     "p5_livingroom_g15_s49.png": {
       "reduplication": 0,
@@ -400,7 +384,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+      "notes": "All intended objects present and coherent, no hallucinatory constants visible"
     },
     "p4_oranges_g3_s49.png": {
       "reduplication": 0,
@@ -408,7 +392,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No visible hallucinatory constants; scene depicts a single bowl of oranges and plant on a counter as intended."
     },
     "p2_portrait_g7_s46.png": {
       "reduplication": 0,
@@ -416,7 +400,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g15_s47.png": {
       "reduplication": 0,
@@ -424,7 +408,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+      "notes": "All intended objects are present and visually coherent without hallucinatory distortions."
     },
     "p3_bicycle_g5_s45.png": {
       "reduplication": 0,
@@ -432,23 +416,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "uncond_s49.png": {
       "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "A serene, abstract depiction of a mountainous landscape with soft, blended colors and textures."
+      "notes": "soft, abstract mountain forms with subtle warping and texture"
     },
     "p6_forest_g2_s43.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no hallucinatory effects"
+      "notes": "Repetitive tree forms with slight warping and fusion in mist, but not fully tiled or shattered"
     },
     "p2_portrait_g15_s48.png": {
       "reduplication": 0,
@@ -456,47 +440,47 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
     },
     "p3_bicycle_g3_s42.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "one red bicycle against a brick wall"
-    },
-    "p5_livingroom_g1_s49.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a coherent room with a sofa, a lamp, and a window, without any visible reduplication, fragmentation, c"
-    },
-    "uncond_s47.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 0,
       "distortion": 3,
+      "tiling": 0,
+      "notes": "Bicycle appears shattered and warped, with multiple overlapping, semi-transparent forms."
+    },
+    "p5_livingroom_g1_s49.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Multiple ghostly duplicates and shattered forms of furniture and light fixtures, with warped geometry and semi-transpare"
+    },
+    "uncond_s47.png": {
+      "reduplication": 2,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
       "tiling": 1,
-      "notes": "Fragmented, distorted bird in a textured, abstract background"
+      "notes": "Abstract, fractured forms with repeating textures and warped structures"
     },
     "p6_forest_g11_s48.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive rows of trees create dominant reduplication; no visible fragmentation, condensation, or distortion."
     },
     "p4_oranges_g7_s47.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter"
+      "notes": "Oranges are multiply repeated across the counter beyond a single bowl, constituting reduplication."
     },
     "p5_livingroom_g11_s50.png": {
       "reduplication": 0,
@@ -504,7 +488,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Coherent room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p3_bicycle_g3_s50.png": {
       "reduplication": 0,
@@ -512,15 +496,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against a wall, no hallucinatory constants visible."
     },
     "p6_forest_g1_s50.png": {
       "reduplication": 3,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 1,
-      "notes": "High reduplication of trees and misty texture"
+      "notes": "Repetitive tree forms merge into a textured, patterned field with warped and fused elements."
     },
     "p2_portrait_g15_s51.png": {
       "reduplication": 0,
@@ -528,7 +512,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
     },
     "p3_bicycle_g15_s42.png": {
       "reduplication": 0,
@@ -536,7 +520,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g11_s46.png": {
       "reduplication": 0,
@@ -544,7 +528,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present but not repeated or fragmented; they appear as intended."
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p5_livingroom_g5_s46.png": {
       "reduplication": 0,
@@ -552,15 +536,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There are no reduplications, fragmenta"
+      "notes": "Coherent living room with sofa, lamp, and windows as intended; no hallucinatory constants visible."
     },
     "p4_oranges_g7_s42.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Multiple bowls and oranges are present, but not implausibly multiplied beyond the intended scene."
     },
     "p4_oranges_g11_s51.png": {
       "reduplication": 0,
@@ -568,39 +552,39 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No hallucinatory constants visible; image depicts a normal kitchen scene with oranges in bowls."
     },
     "p4_oranges_g3_s47.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter"
+      "notes": "Oranges are scattered and multiplied far beyond a single bowl, covering the counter and arranged in multiple clusters."
     },
     "p6_forest_g3_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 1,
-      "notes": "The image shows a patterned texture of trees, suggesting a tiled or repeated pattern rather than a single scene."
+      "notes": "Repetitive tree forms create a seamless, patterned texture across the entire image."
     },
     "p6_forest_g3_s49.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in misty areas"
     },
     "p6_forest_g11_s47.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "Repetitive tree forms dominate, merging into a textured field with slight warping and fusion at edges."
     },
     "p2_portrait_g2_s50.png": {
       "reduplication": 0,
@@ -608,7 +592,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with no hallucinatory constants"
     },
     "p1_stilllife_g11_s43.png": {
       "reduplication": 0,
@@ -616,7 +600,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, matching the intended "
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p5_livingroom_g11_s46.png": {
       "reduplication": 0,
@@ -624,15 +608,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Coherent room with one sofa, one lamp, and multiple windows; no hallucinatory constants present."
     },
     "p6_forest_g5_s46.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in dense areas, but no full tiling or shattering."
     },
     "p2_portrait_g7_s43.png": {
       "reduplication": 0,
@@ -640,7 +624,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g5_s43.png": {
       "reduplication": 0,
@@ -648,23 +632,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window as intended."
+      "notes": "All intended objects present and coherent, no hallucinatory constants visible"
     },
     "p1_stilllife_g1_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 3,
-      "condensation": 0,
+      "condensation": 3,
       "distortion": 3,
-      "tiling": 1,
-      "notes": "Objects appear fragmented and distorted, with a repeating texture pattern"
+      "tiling": 0,
+      "notes": "Multiple fragmented, distorted, and reduplicated forms of watermelon, glass, and keys are scattered across the table, wi"
     },
     "p1_stilllife_g7_s50.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of water, and a set of keys on a wooden table, with no additional objects or dis"
+      "notes": "Two watermelons present instead of one, otherwise objects intact and correctly formed."
     },
     "p6_forest_g2_s42.png": {
       "reduplication": 3,
@@ -672,15 +656,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 1,
-      "notes": "High reduplication and tiling, no fragmentation or condensation"
+      "notes": "Repetitive tree forms form a seamless, patterned texture field."
     },
     "p6_forest_g11_s46.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Dense, uniform repetition of pine trees beyond natural variation, creating a field-like pattern."
     },
     "p2_portrait_g15_s43.png": {
       "reduplication": 0,
@@ -688,7 +672,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g5_s50.png": {
       "reduplication": 0,
@@ -696,7 +680,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and intact without hallucinatory alterations."
     },
     "p2_portrait_g2_s45.png": {
       "reduplication": 0,
@@ -704,7 +688,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with no hallucinatory distortions"
     },
     "p4_oranges_g7_s43.png": {
       "reduplication": 0,
@@ -712,7 +696,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p2_portrait_g2_s47.png": {
       "reduplication": 0,
@@ -720,39 +704,39 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p6_forest_g5_s50.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no reduplication or distortion"
+      "notes": "Repeated tree forms with slight warping and merging in mist, but no full tiling or shattering"
     },
     "p6_forest_g3_s50.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no reduplication or distortion"
+      "notes": "Repetitive tree forms in mist, slight fusion and warping, no full tiling"
     },
     "p6_forest_g15_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms dominate, with slight fusion and warping in misty areas"
     },
     "p6_forest_g5_s48.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms in mist, slight fusion and warping at edges"
     },
     "p3_bicycle_g15_s49.png": {
       "reduplication": 0,
@@ -760,7 +744,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g5_s49.png": {
       "reduplication": 0,
@@ -768,7 +752,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g2_s49.png": {
       "reduplication": 0,
@@ -776,7 +760,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window, all in a coherent room. There is no reduplication, "
+      "notes": "Coherent living room with sofa, lamp, and no visible window; no hallucinatory constants present."
     },
     "p4_oranges_g15_s50.png": {
       "reduplication": 0,
@@ -784,23 +768,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p1_stilllife_g1_s48.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 3,
       "distortion": 3,
-      "tiling": 1,
-      "notes": "Hybrid forms and distorted objects dominate, merging into a single, fragmented scene."
+      "tiling": 0,
+      "notes": "Objects are shattered and fused into abstract forms with warped geometry."
     },
     "p5_livingroom_g1_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 3,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a living room with a sofa, a lamp, and a window, but the objects appear fragmented and shattered."
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Scene dissolved into repeating, shattered, and fused forms beyond recognition."
     },
     "p1_stilllife_g11_s47.png": {
       "reduplication": 0,
@@ -808,7 +792,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+      "notes": "All intended objects are present and clearly distinguishable without hallucinatory alterations."
     },
     "p2_portrait_g3_s48.png": {
       "reduplication": 0,
@@ -816,7 +800,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g3_s47.png": {
       "reduplication": 0,
@@ -824,7 +808,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g3_s44.png": {
       "reduplication": 0,
@@ -832,15 +816,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "Coherent living room with sofa, lamp, and window; no hallucinatory constants visible."
     },
     "p6_forest_g7_s48.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree rows in mist; slight form blending and warping; no shattering or full tiling."
     },
     "p4_oranges_g15_s43.png": {
       "reduplication": 0,
@@ -848,7 +832,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p2_portrait_g15_s44.png": {
       "reduplication": 0,
@@ -856,7 +840,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p5_livingroom_g3_s51.png": {
       "reduplication": 0,
@@ -864,15 +848,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+      "notes": "Coherent living room with sofa, lamp, and window as intended; no hallucinatory constants visible."
     },
     "p6_forest_g2_s47.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 1,
-      "notes": "The image depicts a forest of pine trees on a misty mountainside, with a repeating pattern of trees and mist creating a "
+      "notes": "Repetitive tree forms create a tiling pattern with slight fusion and warping in mist."
     },
     "p3_bicycle_g3_s48.png": {
       "reduplication": 0,
@@ -880,47 +864,47 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no visible hallucinatory distortions."
     },
     "p6_forest_g11_s43.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
-    },
-    "p1_stilllife_g15_s49.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
-    },
-    "p6_forest_g15_s49.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
-    },
-    "p5_livingroom_g2_s46.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
-    },
-    "p4_oranges_g1_s46.png": {
       "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 1,
-      "notes": "Oranges and flowers repeated in a patterned, abstract style"
+      "notes": "Repetitive tree forms create a tiling pattern across the image."
+    },
+    "p1_stilllife_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 3,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Glass contains watermelon rind pattern, merging two objects into one"
+    },
+    "p6_forest_g15_s49.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Dense, uniform repetition of pine trees beyond natural variation"
+    },
+    "p5_livingroom_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Objects appear shattered and warped, with partial fusions and inconsistent forms."
+    },
+    "p4_oranges_g1_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a chaotic, repeating, shattered field of oranges and kitchen objects, fully tiling the frame."
     },
     "p2_portrait_g2_s43.png": {
       "reduplication": 0,
@@ -928,7 +912,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p3_bicycle_g5_s50.png": {
       "reduplication": 0,
@@ -936,7 +920,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p5_livingroom_g5_s48.png": {
       "reduplication": 0,
@@ -944,7 +928,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+      "notes": "Coherent room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p4_oranges_g5_s45.png": {
       "reduplication": 0,
@@ -952,7 +936,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p1_stilllife_g11_s44.png": {
       "reduplication": 0,
@@ -960,15 +944,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p4_oranges_g3_s46.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter"
+      "notes": "Oranges appear in multiple locations beyond a single bowl, with some warping and soft edges suggesting mild distortion."
     },
     "p2_portrait_g7_s49.png": {
       "reduplication": 0,
@@ -976,7 +960,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g5_s51.png": {
       "reduplication": 0,
@@ -984,7 +968,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g3_s50.png": {
       "reduplication": 0,
@@ -992,7 +976,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with no hallucinatory constants"
     },
     "p2_portrait_g2_s51.png": {
       "reduplication": 0,
@@ -1000,15 +984,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g7_s42.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There are no redupl"
+      "notes": "Watermelon fused with glass; glass shape warped"
     },
     "p3_bicycle_g11_s48.png": {
       "reduplication": 0,
@@ -1016,15 +1000,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p6_forest_g3_s48.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "a forest of pine trees on a misty mountainside"
+      "notes": "Repeated tree forms in mist, slight fusion and warping, but not tiling or fragmentation"
     },
     "p2_portrait_g5_s47.png": {
       "reduplication": 0,
@@ -1032,7 +1016,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g15_s50.png": {
       "reduplication": 0,
@@ -1040,7 +1024,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g5_s50.png": {
       "reduplication": 0,
@@ -1048,7 +1032,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+      "notes": "Coherent living room with one sofa, one lamp, and one window; no hallucinatory constants present."
     },
     "p2_portrait_g11_s49.png": {
       "reduplication": 0,
@@ -1056,31 +1040,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p6_forest_g5_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "Repetitive tree patterns and mist layers form a tiling texture; slight fusion and warping of tree forms."
     },
     "p4_oranges_g15_s47.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Multiple oranges scattered beyond a single bowl, exceeding intended content but not tiling or shattering."
     },
     "p6_forest_g7_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "tiling": 1,
+      "notes": "Repetitive tree forms create a seamless, tiled forest pattern with high reduplication."
     },
     "p5_livingroom_g7_s47.png": {
       "reduplication": 0,
@@ -1088,7 +1072,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+      "notes": "coherent room with sofa, lamp, and window as intended"
     },
     "p2_portrait_g7_s48.png": {
       "reduplication": 0,
@@ -1096,7 +1080,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
     },
     "p3_bicycle_g15_s45.png": {
       "reduplication": 0,
@@ -1104,7 +1088,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g5_s46.png": {
       "reduplication": 0,
@@ -1112,7 +1096,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "all objects present and in their intended quantities"
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p3_bicycle_g2_s49.png": {
       "reduplication": 0,
@@ -1120,15 +1104,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against wall, no hallucinatory constants visible"
+    },
+    "p2_portrait_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "exaggerated facial features with warped proportions and texture"
     },
     "p3_bicycle_g1_s46.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 0,
       "distortion": 3,
-      "tiling": 1,
-      "notes": "Fragmented and distorted bicycle against a textured wall"
+      "tiling": 0,
+      "notes": "Bicycle and wall are shattered into fragmented, distorted pieces."
     },
     "p3_bicycle_g1_s47.png": {
       "reduplication": 0,
@@ -1136,7 +1128,7 @@
       "condensation": 0,
       "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a fragmented and distorted bicycle against a brick wall, with no clear reduplication or tiling."
+      "notes": "Bicycle is shattered into disconnected parts and warped beyond recognition."
     },
     "p3_bicycle_g7_s47.png": {
       "reduplication": 0,
@@ -1144,7 +1136,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p3_bicycle_g3_s47.png": {
       "reduplication": 0,
@@ -1152,7 +1144,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g1_s43.png": {
       "reduplication": 0,
@@ -1160,7 +1152,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with a pink beverage, and a set of keys on a wooden table. There are"
+      "notes": "Image depicts a coherent still life with no visible hallucinatory constants."
     },
     "p5_livingroom_g2_s42.png": {
       "reduplication": 0,
@@ -1168,15 +1160,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+      "notes": "coherent room with intended objects present without hallucinatory alterations"
     },
     "p6_forest_g7_s42.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms with mist-induced blending and slight warping, but no shattering or full tiling."
     },
     "p3_bicycle_g1_s49.png": {
       "reduplication": 0,
@@ -1184,7 +1176,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against textured wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g15_s44.png": {
       "reduplication": 0,
@@ -1192,7 +1184,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p2_portrait_g3_s51.png": {
       "reduplication": 0,
@@ -1200,7 +1192,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p3_bicycle_g3_s46.png": {
       "reduplication": 0,
@@ -1208,7 +1200,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g15_s45.png": {
       "reduplication": 0,
@@ -1216,7 +1208,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g5_s48.png": {
       "reduplication": 0,
@@ -1224,7 +1216,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g11_s51.png": {
       "reduplication": 0,
@@ -1232,23 +1224,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present but not repeated, fragmented, condensed, or distorted. The image depicts a watermelon, a glass of wa"
+      "notes": "All intended objects are present and intact without hallucinatory alterations."
     },
     "p4_oranges_g1_s50.png": {
       "reduplication": 0,
-      "fragmentation": 3,
+      "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 1,
-      "notes": "Oranges appear outside the bowl, fragmented and tiled across the frame."
+      "tiling": 0,
+      "notes": "No visible hallucinatory constants; image depicts a coherent kitchen scene with natural objects."
     },
     "uncond_s44.png": {
-      "reduplication": 0,
-      "fragmentation": 3,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 1,
-      "notes": "Fragmented and repetitive architectural forms"
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "dense, repeating architectural and natural forms with fragmented and distorted elements"
     },
     "p5_livingroom_g15_s51.png": {
       "reduplication": 0,
@@ -1256,23 +1248,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+      "notes": "All intended objects present and coherent; no hallucinatory constants visible."
     },
     "p5_livingroom_g7_s43.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Three white panel-like objects on wall suggest reduplication of window motif beyond one intended window."
     },
     "p3_bicycle_g1_s42.png": {
       "reduplication": 0,
       "fragmentation": 3,
-      "condensation": 0,
+      "condensation": 2,
       "distortion": 3,
       "tiling": 1,
-      "notes": "Fragmented and distorted bicycle against a textured wall"
+      "notes": "Image dissolves into fragmented, distorted, and condensed forms with no coherent bicycle or wall; entire canvas is a til"
     },
     "p5_livingroom_g15_s43.png": {
       "reduplication": 0,
@@ -1280,15 +1272,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "All intended objects are present and coherent without hallucinatory distortions."
     },
     "uncond_s45.png": {
       "reduplication": 0,
-      "fragmentation": 3,
-      "condensation": 3,
-      "distortion": 3,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "Abstract, fragmented forms merge into a surreal, distorted scene."
+      "notes": "Fibrous, web-like structures fragment and distort a central bird-like form."
     },
     "p5_livingroom_g5_s42.png": {
       "reduplication": 0,
@@ -1296,23 +1288,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+      "notes": "coherent living room with sofa, lamp, and window; no hallucinatory constants visible"
     },
     "p6_forest_g3_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "tiling": 1,
+      "notes": "Repetitive tree forms create a seamless, tiled texture across the image."
     },
     "p5_livingroom_g1_s48.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 1,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Sofa and lamp show warped, fragmented forms; room structure is distorted but not tiled or reduplicated."
     },
     "p3_bicycle_g5_s51.png": {
       "reduplication": 0,
@@ -1320,7 +1312,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g5_s51.png": {
       "reduplication": 0,
@@ -1328,15 +1320,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p4_oranges_g11_s42.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Multiple bowls of oranges are present, beyond one intended bowl, but not excessively tiled or repeated."
     },
     "p2_portrait_g2_s44.png": {
       "reduplication": 0,
@@ -1344,23 +1336,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p6_forest_g7_s49.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight fusion and warping, but no full tiling or shattering"
     },
     "p6_forest_g3_s46.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in misty areas"
     },
     "p4_oranges_g2_s44.png": {
       "reduplication": 0,
@@ -1368,15 +1360,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No visible hallucinatory constants; image depicts a bowl of oranges on a kitchen counter as intended."
     },
     "p5_livingroom_g11_s43.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and a window, without any reduplication, fragmentation, conde"
+      "notes": "Three identical frames above sofa, beyond intended one window"
     },
     "p2_portrait_g3_s46.png": {
       "reduplication": 0,
@@ -1384,23 +1376,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p6_forest_g11_s49.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping, no fragmentation or fusion"
     },
     "p1_stilllife_g5_s49.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
+      "condensation": 3,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass, and a set of keys on a wooden table, with no additional objects or distortions."
+      "notes": "Glass is fused with watermelon rind, creating a hybrid object."
     },
     "p3_bicycle_g5_s47.png": {
       "reduplication": 0,
@@ -1408,7 +1400,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g2_s48.png": {
       "reduplication": 0,
@@ -1416,7 +1408,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p4_oranges_g1_s45.png": {
       "reduplication": 0,
@@ -1424,7 +1416,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p1_stilllife_g3_s51.png": {
       "reduplication": 0,
@@ -1432,23 +1424,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with a red beverage, and a set of keys on a wooden table. There is n"
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p4_oranges_g15_s46.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
+      "reduplication": 1,
+      "fragmentation": 1,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Oranges appear in multiple bowls and scattered, beyond a single bowl; some are cut into pieces."
     },
     "p6_forest_g1_s46.png": {
-      "reduplication": 1,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 1,
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 1,
-      "notes": "High reduplication and distortion, tiling pattern"
+      "notes": "Repetitive, fragmented tree forms merge into a textured, patterned field."
     },
     "p3_bicycle_g7_s44.png": {
       "reduplication": 0,
@@ -1456,7 +1448,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g11_s45.png": {
       "reduplication": 0,
@@ -1464,7 +1456,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p2_portrait_g2_s48.png": {
       "reduplication": 0,
@@ -1472,7 +1464,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
     },
     "p4_oranges_g11_s43.png": {
       "reduplication": 0,
@@ -1480,39 +1472,39 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p6_forest_g3_s42.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 1,
-      "notes": "repeated pattern of trees"
+      "notes": "Repetitive tree forms dominate, forming a seamless tiling pattern with slight shape warping and fusion."
     },
     "p6_forest_g7_s50.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no reduplication or distortion"
+      "notes": "Repetitive tree forms with mist-induced blurring and partial merging"
     },
     "p1_stilllife_g2_s45.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 3,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "keys and watermelon appear shattered into disconnected pieces"
     },
     "p6_forest_g5_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Highly repetitive pine tree forms create a dense, uniform forest pattern."
     },
     "p5_livingroom_g5_s49.png": {
       "reduplication": 0,
@@ -1520,7 +1512,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "All objects are present and coherent; no hallucinatory constants visible."
     },
     "p3_bicycle_g15_s43.png": {
       "reduplication": 0,
@@ -1528,15 +1520,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against red brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g11_s44.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Oranges are repeated beyond the bowl but not excessively or tiling the frame."
     },
     "p4_oranges_g1_s49.png": {
       "reduplication": 0,
@@ -1544,7 +1536,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a still life with a bowl of fruit and a vase of flowers"
+      "notes": "No visible hallucinatory constants; image depicts a single bowl of fruit and a vase of flowers without repetition, fragm"
     },
     "p2_portrait_g11_s45.png": {
       "reduplication": 0,
@@ -1552,7 +1544,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p3_bicycle_g15_s48.png": {
       "reduplication": 0,
@@ -1560,7 +1552,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
+    },
+    "p2_portrait_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "face shattered into abstract textures with warped features"
     },
     "p5_livingroom_g5_s47.png": {
       "reduplication": 0,
@@ -1568,7 +1568,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+      "notes": "coherent room with sofa, lamp, and window as intended"
     },
     "p5_livingroom_g7_s46.png": {
       "reduplication": 0,
@@ -1576,23 +1576,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+      "notes": "Coherent living room with sofa, lamp, and windows; no hallucinatory constants visible."
     },
     "p1_stilllife_g2_s46.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "Multiple sets of keys and watermelon slices beyond intended one each"
     },
     "p6_forest_g7_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree patterns dominate, with slight form blending and warping in mist"
     },
     "p2_portrait_g7_s51.png": {
       "reduplication": 0,
@@ -1600,15 +1600,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p6_forest_g5_s51.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in mist, but no full tiling or shattering"
     },
     "p3_bicycle_g7_s45.png": {
       "reduplication": 0,
@@ -1616,7 +1616,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g15_s47.png": {
       "reduplication": 0,
@@ -1624,15 +1624,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "uncond_s48.png": {
       "reduplication": 0,
       "fragmentation": 3,
-      "condensation": 0,
+      "condensation": 2,
       "distortion": 3,
-      "tiling": 1,
-      "notes": "Fragmented, distorted, and tiled abstract forms"
+      "tiling": 0,
+      "notes": "shattered, warped figure with merged forms"
     },
     "p4_oranges_g7_s49.png": {
       "reduplication": 0,
@@ -1640,7 +1640,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal kitchen scene with oranges in a bowl and a few scattered, no "
     },
     "p2_portrait_g3_s49.png": {
       "reduplication": 0,
@@ -1648,23 +1648,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g15_s42.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Multiple bowls of oranges are present, but not implausibly multiplied beyond the scene's context."
     },
     "p3_bicycle_g2_s48.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Bicycle parts appear broken and warped, with some fusion of frame and wall elements"
     },
     "p3_bicycle_g11_s45.png": {
       "reduplication": 0,
@@ -1672,7 +1672,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g2_s51.png": {
       "reduplication": 0,
@@ -1680,15 +1680,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There are no redupl"
+      "notes": "All intended objects are present and clearly depicted without hallucinatory distortions."
     },
     "p6_forest_g7_s43.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest and mist, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms with slight warping, no fragmentation or fusion"
     },
     "p3_bicycle_g1_s50.png": {
       "reduplication": 0,
@@ -1696,7 +1696,7 @@
       "condensation": 0,
       "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a red bicycle with a fragmented and distorted appearance, breaking down into disconnected pieces."
+      "notes": "Bicycle is shattered into disconnected fragments with warped, impossible geometry."
     },
     "p5_livingroom_g11_s47.png": {
       "reduplication": 0,
@@ -1704,7 +1704,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with one sofa, one lamp, one window; no hallucinatory constants visible"
     },
     "p4_oranges_g2_s49.png": {
       "reduplication": 0,
@@ -1712,7 +1712,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges and plant on counter, no visible hallucinatory constants"
     },
     "p5_livingroom_g5_s51.png": {
       "reduplication": 0,
@@ -1720,7 +1720,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+      "notes": "All intended objects present in coherent, undistorted form; no hallucinatory constants visible."
     },
     "p2_portrait_g11_s51.png": {
       "reduplication": 0,
@@ -1728,7 +1728,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g7_s42.png": {
       "reduplication": 0,
@@ -1736,7 +1736,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g2_s42.png": {
       "reduplication": 3,
@@ -1744,7 +1744,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 1,
-      "notes": "Oranges and leaves repeated in a tiled pattern"
+      "notes": "Oranges and leaves repeat endlessly in a seamless pattern, filling the entire frame."
     },
     "p5_livingroom_g7_s48.png": {
       "reduplication": 0,
@@ -1752,7 +1752,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "coherent room with one sofa, one lamp, one window; no hallucinatory constants visible"
     },
     "p3_bicycle_g2_s46.png": {
       "reduplication": 0,
@@ -1760,15 +1760,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no visible hallucinatory constants"
     },
     "p6_forest_g2_s49.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural misty forest scene"
+      "notes": "Repetitive tree forms with misty blending, slight warping and merging, but not fully tiled or shattered."
     },
     "p1_stilllife_g11_s45.png": {
       "reduplication": 0,
@@ -1776,15 +1776,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p1_stilllife_g3_s46.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "Watermelon is cut into three slices, exceeding intended single whole fruit, but no other major repetitions or distortion"
     },
     "p5_livingroom_g15_s44.png": {
       "reduplication": 0,
@@ -1792,7 +1792,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with intended objects present without hallucinatory alterations"
     },
     "p4_oranges_g5_s44.png": {
       "reduplication": 0,
@@ -1800,7 +1800,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p4_oranges_g3_s45.png": {
       "reduplication": 0,
@@ -1808,15 +1808,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p1_stilllife_g2_s42.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass, and a set of keys on a wooden table, with no visible reduplication, fragmentati"
+      "notes": "Multiple watermelon pieces and keys are repeated and fragmented; glass is distorted and fused with wood texture."
     },
     "p1_stilllife_g7_s46.png": {
       "reduplication": 0,
@@ -1824,7 +1824,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "all objects present and correctly placed"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p2_portrait_g7_s47.png": {
       "reduplication": 0,
@@ -1832,7 +1832,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g15_s45.png": {
       "reduplication": 0,
@@ -1840,7 +1840,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+      "notes": "Coherent room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p5_livingroom_g3_s43.png": {
       "reduplication": 0,
@@ -1848,7 +1848,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions."
     },
     "p4_oranges_g11_s48.png": {
       "reduplication": 0,
@@ -1856,15 +1856,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "A single bowl of oranges on a kitchen counter, with a few oranges beside it; no hallucinatory constants visible."
     },
     "p1_stilllife_g3_s42.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 3,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass, and a set of keys on a wooden table, with no additional objects or motifs."
+      "notes": "Glass and watermelon fused into a single hybrid object with distorted features"
     },
     "p3_bicycle_g2_s45.png": {
       "reduplication": 0,
@@ -1872,7 +1872,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against wall, no hallucinatory constants visible"
     },
     "p3_bicycle_g7_s43.png": {
       "reduplication": 0,
@@ -1880,7 +1880,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g15_s46.png": {
       "reduplication": 0,
@@ -1888,7 +1888,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p3_bicycle_g5_s48.png": {
       "reduplication": 0,
@@ -1896,7 +1896,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g5_s44.png": {
       "reduplication": 0,
@@ -1904,7 +1904,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p3_bicycle_g2_s44.png": {
       "reduplication": 0,
@@ -1912,23 +1912,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p3_bicycle_g2_s50.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 1,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Bicycle shows warped frame and spokes, with fragmented rear wheel and seat, but no reduplication or tiling."
     },
     "p1_stilllife_g3_s45.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 3,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "Keys and glass are shattered into multiple disconnected fragments"
     },
     "p3_bicycle_g11_s47.png": {
       "reduplication": 0,
@@ -1936,31 +1936,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against red brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g1_s47.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "objects appear broken and warped, with some merging, but no excessive repetition or full tiling"
     },
     "p5_livingroom_g1_s51.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a chaotic, repeating, fragmented, and distorted field of overlapping objects and textures, not a coherent room."
     },
     "p6_forest_g3_s43.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in misty zones"
     },
     "p5_livingroom_g2_s47.png": {
       "reduplication": 0,
@@ -1968,7 +1968,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with sofa, lamp, and window as intended"
     },
     "p3_bicycle_g3_s49.png": {
       "reduplication": 0,
@@ -1976,23 +1976,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against wall, no hallucinatory constants visible"
     },
     "p4_oranges_g1_s43.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "a still life painting of a kitchen counter with a plate of oranges"
+      "notes": "Soft, impressionistic rendering with blurred forms and merged elements, but no extreme repetition or tiling."
     },
     "p2_portrait_g1_s43.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 1,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "a close-up portrait of an elderly man's face"
+      "notes": "Severe facial distortion with smudged features, minimal fragmentation, no reduplication or condensation"
     },
     "p5_livingroom_g3_s46.png": {
       "reduplication": 0,
@@ -2000,15 +2000,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There are no reduplications, fragmenta"
+      "notes": "Coherent living room with sofa, lamp, and windows as intended; no hallucinatory constants visible."
     },
     "p4_oranges_g5_s47.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, with some oranges outside the bowl."
+      "notes": "Oranges are scattered and repeated beyond a single bowl, some peeled, but not tiling or fused."
     },
     "p2_portrait_g2_s42.png": {
       "reduplication": 0,
@@ -2016,7 +2016,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g3_s51.png": {
       "reduplication": 0,
@@ -2024,15 +2024,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No visible hallucinatory constants; scene depicts a single bowl of oranges on a counter as intended."
     },
     "p1_stilllife_g1_s47.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 3,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no visible red"
+      "notes": "Watermelon and keys are shattered and warped, with fragmented pieces scattered across the table."
     },
     "p3_bicycle_g15_s44.png": {
       "reduplication": 0,
@@ -2040,23 +2040,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g15_s42.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Watermelon is shown whole and in two slices, indicating mild reduplication beyond one intended instance."
     },
     "p4_oranges_g1_s51.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a bowl of oranges on a kitchen counter, with no reduplication, fragmentation, condensation, or distort"
+      "notes": "Oranges and containers show fragmented, distorted forms; some merging but not dominant; no tiling or reduplication beyon"
     },
     "p5_livingroom_g2_s50.png": {
       "reduplication": 0,
@@ -2064,15 +2064,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+      "notes": "Coherent living room with sofa, windows, and plants; no hallucinatory constants evident."
     },
     "p2_portrait_g1_s44.png": {
       "reduplication": 0,
       "fragmentation": 3,
-      "condensation": 3,
+      "condensation": 0,
       "distortion": 3,
       "tiling": 1,
-      "notes": "Fragmented, distorted, and repetitive texture"
+      "notes": "face shattered into fragmented, distorted, tile-like textures"
     },
     "p4_oranges_g15_s45.png": {
       "reduplication": 0,
@@ -2080,7 +2080,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p3_bicycle_g2_s51.png": {
       "reduplication": 0,
@@ -2088,31 +2088,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p6_forest_g11_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "tiling": 1,
+      "notes": "Repetitive tree forms create a seamless, tiled forest pattern under mist."
     },
     "p1_stilllife_g2_s48.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There is no redupli"
+      "notes": "Watermelon and glass are fused and distorted, with fragmented elements; keys appear intact but contextually merged."
     },
     "p6_forest_g15_s46.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Highly repetitive pine tree forms with slight warping, no fragmentation or fusion"
     },
     "p5_livingroom_g3_s48.png": {
       "reduplication": 0,
@@ -2120,7 +2120,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "coherent living room with sofa, lamp, and window as intended"
     },
     "p5_livingroom_g3_s50.png": {
       "reduplication": 0,
@@ -2128,7 +2128,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+      "notes": "Coherent living room with sofa, lamp, and window; no hallucinatory constants visible."
     },
     "p5_livingroom_g11_s51.png": {
       "reduplication": 0,
@@ -2136,7 +2136,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+      "notes": "All intended objects present and coherent, no hallucinatory distortions"
     },
     "p4_oranges_g11_s49.png": {
       "reduplication": 0,
@@ -2144,23 +2144,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No visible hallucinatory constants; image depicts a natural bowl of oranges on a kitchen counter."
     },
     "p4_oranges_g7_s46.png": {
-      "reduplication": 1,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "Oranges appear outside the bowl, multiplying beyond the intended content."
-    },
-    "p6_forest_g15_s47.png": {
       "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Oranges are naturally scattered around the bowl, not implausibly multiplied or tiled."
+    },
+    "p6_forest_g15_s47.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "Repetitive tree forms and mist create a tiling effect with slight fusion and warping"
     },
     "p2_portrait_g2_s49.png": {
       "reduplication": 0,
@@ -2168,7 +2168,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g2_s47.png": {
       "reduplication": 1,
@@ -2176,15 +2176,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Oranges appear outside the bowl, multiplying across the frame."
+      "notes": "Oranges scattered beyond the bowl, but not excessively repeated or tiled"
     },
     "p6_forest_g11_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms dominate; slight fusion and warping in misty areas"
     },
     "p5_livingroom_g5_s45.png": {
       "reduplication": 0,
@@ -2192,15 +2192,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+      "notes": "Coherent living room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p2_portrait_g1_s51.png": {
       "reduplication": 0,
-      "fragmentation": 0,
+      "fragmentation": 3,
       "condensation": 3,
       "distortion": 3,
       "tiling": 0,
-      "notes": "Hybrid forms and distorted anatomy"
+      "notes": "Face fragmented and distorted, with textures merging into a chaotic, non-anatomical form."
     },
     "p1_stilllife_g15_s43.png": {
       "reduplication": 0,
@@ -2208,7 +2208,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p1_stilllife_g15_s50.png": {
       "reduplication": 0,
@@ -2216,7 +2216,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p5_livingroom_g2_s43.png": {
       "reduplication": 0,
@@ -2224,15 +2224,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions."
     },
     "p3_bicycle_g3_s51.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Two bicycles are visible where one was intended, indicating reduplication."
     },
     "p5_livingroom_g7_s42.png": {
       "reduplication": 0,
@@ -2240,7 +2240,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+      "notes": "coherent living room with intended objects present and undistorted"
     },
     "p5_livingroom_g2_s51.png": {
       "reduplication": 0,
@@ -2248,7 +2248,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+      "notes": "Coherent living room with sofa, lamp, and window as intended; no hallucinatory constants visible."
     },
     "p1_stilllife_g7_s43.png": {
       "reduplication": 0,
@@ -2256,7 +2256,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of water, and a set of keys on a wooden table, with no additional objects or dis"
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p5_livingroom_g5_s44.png": {
       "reduplication": 0,
@@ -2264,15 +2264,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent living room with sofa, lamp, and window as intended"
     },
     "p6_forest_g3_s51.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural misty forest scene, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms with slight warping and merging in mist, but no full tiling or shattering"
     },
     "p1_stilllife_g15_s45.png": {
       "reduplication": 0,
@@ -2280,15 +2280,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "all objects present and clear"
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p6_forest_g5_s42.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural mist and trees, no artificial repetition or distortion"
+      "notes": "Repetitive tree forms create a dense, uniform forest pattern consistent with intended content; no visible fragmentation,"
     },
     "p4_oranges_g7_s45.png": {
       "reduplication": 0,
@@ -2296,7 +2296,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p1_stilllife_g1_s45.png": {
       "reduplication": 0,
@@ -2304,7 +2304,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of water, and a set of keys, but the keys are not present."
+      "notes": "All visible objects are present as single, coherent forms without repetition, breakage, fusion, or warping."
     },
     "p5_livingroom_g15_s47.png": {
       "reduplication": 0,
@@ -2312,7 +2312,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with single sofa, lamp, and window as intended"
     },
     "p2_portrait_g11_s46.png": {
       "reduplication": 0,
@@ -2320,23 +2320,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p6_forest_g3_s47.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "No visible reduplication, fragmentation, condensation, or distortion. The image depicts a forest of pine trees on a mist"
+      "notes": "Repeated tree forms in mist, slight fusion and warping, but not tiling or fragmentation"
     },
     "p6_forest_g2_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 0,
-      "notes": "No visible reduplication, fragmentation, condensation, or distortion. The image depicts a forest of pine trees on a mist"
+      "tiling": 1,
+      "notes": "Repetitive tree forms create a seamless, tiled texture field."
     },
     "p4_oranges_g11_s50.png": {
       "reduplication": 0,
@@ -2344,7 +2344,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p5_livingroom_g7_s50.png": {
       "reduplication": 0,
@@ -2352,7 +2352,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+      "notes": "Coherent living room with sofa, lamp, and window as intended; no hallucinatory constants present."
     },
     "p2_portrait_g15_s49.png": {
       "reduplication": 0,
@@ -2360,7 +2360,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants visible"
     },
     "p3_bicycle_g5_s42.png": {
       "reduplication": 0,
@@ -2368,7 +2368,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g3_s44.png": {
       "reduplication": 0,
@@ -2376,15 +2376,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g1_s46.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 3,
-      "condensation": 0,
+      "condensation": 2,
       "distortion": 3,
       "tiling": 0,
-      "notes": "objects appear fragmented and distorted, with no clear coherent room"
+      "notes": "Scene dissolves into repeated, shattered, and warped forms beyond intended objects."
     },
     "p2_portrait_g7_s50.png": {
       "reduplication": 0,
@@ -2392,7 +2392,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g11_s50.png": {
       "reduplication": 0,
@@ -2400,31 +2400,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "all objects present and in their intended quantities"
+      "notes": "All intended objects are present and clearly distinct without hallucinatory alterations."
     },
     "p6_forest_g1_s42.png": {
       "reduplication": 3,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 1,
-      "notes": "High reduplication and distortion, tiling pattern"
+      "notes": "Repetitive, blended tree forms create a textured, patterned forest field with merged and warped shapes."
     },
     "p6_forest_g15_s48.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive rows of pine trees create dominant reduplication; no visible fragmentation, condensation, or distortion."
     },
     "p3_bicycle_g2_s43.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The bicycle is fragmented into disconnected pieces."
+      "notes": "Bicycle is shattered and warped, with broken spokes and deformed frame."
     },
     "p5_livingroom_g7_s45.png": {
       "reduplication": 0,
@@ -2432,7 +2432,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Coherent room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p4_oranges_g2_s51.png": {
       "reduplication": 0,
@@ -2440,31 +2440,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "A single bowl of oranges on a kitchen counter, no visible hallucinatory constants."
     },
     "p1_stilllife_g5_s51.png": {
       "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image contains a watermelon, a glass of water, and a set of keys, all on a wooden table. There are no additional obj"
+      "notes": "Glass and bottle show embossed figures, but no true reduplication; distortion in form and texture of objects."
     },
     "p6_forest_g15_s51.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Dense, repeating rows of pine trees create dominant reduplication; no visible fragmentation, condensation, or distortion"
     },
     "p1_stilllife_g3_s44.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "Objects are present but not repeated, fragmented, condensed, or distorted. The image depicts a watermelon, a glass, and "
+      "notes": "Watermelon and glass show severe warping and shattering, with keys partially fused to fruit."
     },
     "p3_bicycle_g3_s44.png": {
       "reduplication": 0,
@@ -2472,23 +2472,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p6_forest_g1_s44.png": {
-      "reduplication": 1,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 1,
-      "notes": "repeated forest pattern"
+      "notes": "Repetitive tree forms create a tiling pattern with slight fusion and warping"
     },
     "p4_oranges_g1_s42.png": {
       "reduplication": 3,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 1,
-      "notes": "Oranges and leaves repeated in a tiled pattern"
+      "notes": "Oranges and leaves form a dense, repeating pattern filling the frame, with fragmented and distorted elements."
     },
     "p3_bicycle_g11_s42.png": {
       "reduplication": 0,
@@ -2496,7 +2496,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p5_livingroom_g15_s48.png": {
       "reduplication": 0,
@@ -2504,15 +2504,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, lamp, and window as intended, with no additional objects or distortions."
+      "notes": "All intended objects present and coherent, no hallucinatory constants visible"
     },
     "p4_oranges_g11_s46.png": {
-      "reduplication": 1,
+      "reduplication": 0,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Oranges appear outside the bowl, filling the frame."
+      "notes": "Oranges are naturally scattered around the bowl; no implausible repetition or tiling."
     },
     "p5_livingroom_g1_s43.png": {
       "reduplication": 0,
@@ -2520,7 +2520,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with sofa, lamp, and window as intended"
     },
     "p2_portrait_g3_s42.png": {
       "reduplication": 0,
@@ -2528,7 +2528,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p2_portrait_g5_s42.png": {
       "reduplication": 0,
@@ -2536,7 +2536,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g5_s49.png": {
       "reduplication": 0,
@@ -2544,7 +2544,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a natural kitchen scene with oranges in a bowl and on the counter."
     },
     "p3_bicycle_g11_s43.png": {
       "reduplication": 0,
@@ -2552,7 +2552,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g5_s50.png": {
       "reduplication": 0,
@@ -2560,7 +2560,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p3_bicycle_g7_s42.png": {
       "reduplication": 0,
@@ -2568,7 +2568,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p5_livingroom_g7_s49.png": {
       "reduplication": 0,
@@ -2576,15 +2576,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window, all in a coherent room."
+      "notes": "All visible objects are coherent and correctly formed; no hallucinatory constants present."
     },
     "p6_forest_g11_s50.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Dense, repeating tree forms create a field-like reduplication; slight warping in tree shapes due to mist."
     },
     "p1_stilllife_g15_s51.png": {
       "reduplication": 0,
@@ -2592,7 +2592,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of water, and a set of keys on a wooden table, with no additional objects or dis"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p2_portrait_g11_s48.png": {
       "reduplication": 0,
@@ -2600,7 +2600,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
     },
     "p1_stilllife_g7_s48.png": {
       "reduplication": 0,
@@ -2608,7 +2608,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "all objects present and clear"
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p1_stilllife_g3_s47.png": {
       "reduplication": 0,
@@ -2616,15 +2616,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and intact without hallucinatory alterations."
     },
     "p1_stilllife_g2_s47.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 3,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "Keys appear fragmented and distorted"
+      "notes": "Multiple watermelons, keys, and broken fragments scattered; keys and watermelon pieces are distorted and fragmented beyo"
     },
     "p4_oranges_g2_s45.png": {
       "reduplication": 0,
@@ -2632,23 +2632,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p6_forest_g2_s46.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in misty areas"
     },
     "uncond_s43.png": {
-      "reduplication": 0,
-      "fragmentation": 3,
+      "reduplication": 2,
+      "fragmentation": 2,
       "condensation": 3,
       "distortion": 3,
       "tiling": 0,
-      "notes": "Floral and butterfly motifs are fragmented and condensed, creating a surreal, dreamlike scene."
+      "notes": "Floral and facial elements merge and warp into surreal, hybrid forms"
     },
     "p1_stilllife_g15_s48.png": {
       "reduplication": 0,
@@ -2656,15 +2656,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p2_portrait_g1_s47.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
+      "fragmentation": 3,
+      "condensation": 3,
       "distortion": 3,
       "tiling": 0,
-      "notes": "An abstract, distorted close-up of a face"
+      "notes": "Face fragments merge into abstract, distorted forms"
     },
     "p2_portrait_g1_s48.png": {
       "reduplication": 0,
@@ -2672,15 +2672,15 @@
       "condensation": 0,
       "distortion": 3,
       "tiling": 0,
-      "notes": "Facial features appear fragmented and distorted, with no clear repetition of objects."
+      "notes": "Face shattered into fragmented, distorted planes with no clear anatomical structure"
     },
     "p2_portrait_g1_s46.png": {
       "reduplication": 0,
-      "fragmentation": 1,
+      "fragmentation": 2,
       "condensation": 1,
-      "distortion": 1,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "Facial features and hands appear distorted and fragmented, with a painterly texture overlay"
+      "notes": "Face and hand appear shattered and warped, with textures merging into abstract forms"
     },
     "p3_bicycle_g11_s50.png": {
       "reduplication": 0,
@@ -2688,7 +2688,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g5_s45.png": {
       "reduplication": 0,
@@ -2696,7 +2696,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g15_s46.png": {
       "reduplication": 0,
@@ -2704,39 +2704,39 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Coherent living room with one sofa, one lamp, and multiple windows; no hallucinatory constants present."
     },
     "p3_bicycle_g1_s44.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 0,
       "distortion": 3,
-      "tiling": 1,
-      "notes": "Bicycle appears fragmented and distorted, with a repeating brick wall pattern"
+      "tiling": 0,
+      "notes": "Bicycle is shattered into fragmented, distorted pieces against a textured wall."
     },
     "uncond_s51.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "A serene pastoral scene with horses and a rustic setting"
+      "notes": "Horses and riders show hybrid forms and warped anatomy, with repeated elements in foliage and architecture."
     },
     "p5_livingroom_g1_s47.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Sofa and window elements appear broken and warped, with soft, smudged forms suggesting fragmentation and distortion, but"
     },
     "p6_forest_g11_s51.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in mist, but no full tiling or shattering"
     },
     "p4_oranges_g15_s49.png": {
       "reduplication": 0,
@@ -2744,7 +2744,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No visible hallucinatory constants; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p3_bicycle_g11_s49.png": {
       "reduplication": 0,
@@ -2752,15 +2752,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle leaning against brick wall, no hallucinatory constants visible"
     },
     "p5_livingroom_g1_s42.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Faint architectural elements and furniture appear fragmented and warped, with some merging and distortion, but no domina"
     },
     "p5_livingroom_g7_s51.png": {
       "reduplication": 0,
@@ -2768,23 +2768,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions."
     },
     "p6_forest_g5_s47.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no reduplication or distortion"
+      "notes": "Repetitive tree forms in mist, slight fusion and warping at edges"
     },
     "p6_forest_g2_s51.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural misty forest scene"
+      "notes": "Repetitive tree forms with mist-induced blending and slight warping, but no shattering or full tiling."
     },
     "p4_oranges_g7_s48.png": {
       "reduplication": 0,
@@ -2792,23 +2792,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p6_forest_g1_s43.png": {
-      "reduplication": 1,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 1,
-      "notes": "repeated forest pattern"
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms dominate, with slight fusion and warping in misty areas"
     },
     "p6_forest_g2_s44.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 1,
-      "notes": "repeated pattern of trees"
+      "notes": "Repetitive tree forms create a seamless, tiled pattern across the image."
     },
     "p1_stilllife_g7_s45.png": {
       "reduplication": 0,
@@ -2816,7 +2816,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Objects are present as intended, no additional or fragmented forms"
+      "notes": "All intended objects are present and intact without hallucinatory alterations."
     },
     "p3_bicycle_g11_s51.png": {
       "reduplication": 0,
@@ -2824,15 +2824,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "uncond_s50.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 1,
-      "notes": "The image appears to be a repeating pattern of interior scenes, possibly due to tiling."
+      "notes": "repeated architectural fragments and interior scenes form a tiled grid with warped and fused elements"
     },
     "p3_bicycle_g15_s46.png": {
       "reduplication": 0,
@@ -2840,7 +2840,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against red brick wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g5_s47.png": {
       "reduplication": 0,
@@ -2848,23 +2848,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with a red beverage, and a set of keys on a wooden table. There are "
+      "notes": "All intended objects are present and correctly formed without hallucinatory distortions."
     },
     "p4_oranges_g3_s42.png": {
-      "reduplication": 3,
+      "reduplication": 2,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Oranges appear in multiple bowls and scattered on the counter, exceeding the intended content."
+      "notes": "Multiple bowls and scattered oranges suggest reduplication beyond a single bowl, but not tiling or fragmentation."
     },
     "p4_oranges_g5_s42.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A simple arrangement of oranges in bowls on a kitchen counter."
+      "notes": "Multiple bowls of oranges are present, but not implausibly multiplied beyond the scene's context."
     },
     "p3_bicycle_g1_s45.png": {
       "reduplication": 0,
@@ -2872,7 +2872,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against plain wall, no hallucinatory constants visible"
     },
     "p1_stilllife_g3_s43.png": {
       "reduplication": 0,
@@ -2880,15 +2880,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All objects are clearly rendered without hallucinatory distortions."
     },
     "p1_stilllife_g3_s48.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Watermelon and glass are fused and multiplied, keys are distorted and fragmented"
     },
     "p4_oranges_g15_s51.png": {
       "reduplication": 0,
@@ -2896,7 +2896,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p4_oranges_g7_s50.png": {
       "reduplication": 0,
@@ -2904,7 +2904,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p2_portrait_g11_s44.png": {
       "reduplication": 0,
@@ -2912,7 +2912,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g5_s44.png": {
       "reduplication": 0,
@@ -2920,7 +2920,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p2_portrait_g3_s45.png": {
       "reduplication": 0,
@@ -2928,7 +2928,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g15_s42.png": {
       "reduplication": 0,
@@ -2936,7 +2936,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "coherent living room with intended objects present and undistorted"
     },
     "p2_portrait_g1_s49.png": {
       "reduplication": 0,
@@ -2944,31 +2944,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants visible."
     },
     "p1_stilllife_g2_s44.png": {
       "reduplication": 0,
-      "fragmentation": 1,
+      "fragmentation": 3,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "A watermelon, a glass, and a set of keys are present, but the glass appears fragmented."
+      "notes": "objects shattered and warped beyond recognition"
     },
     "p6_forest_g15_s42.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "Repetitive tree forms dominate, creating a tiling effect with slight warping in fog."
     },
     "p3_bicycle_g1_s48.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 3,
       "distortion": 3,
-      "tiling": 1,
-      "notes": "The image depicts a red bicycle against a brick wall, but the visual elements are fragmented and distorted, creating a s"
+      "tiling": 0,
+      "notes": "Bicycle and wall are shattered and fused into a single textured mass."
     },
     "p2_portrait_g5_s46.png": {
       "reduplication": 0,
@@ -2976,15 +2976,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p3_bicycle_g2_s42.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Bicycle appears shattered and warped, with parts merging into the wall; no repetition beyond one bicycle."
     },
     "p4_oranges_g3_s44.png": {
       "reduplication": 0,
@@ -2992,23 +2992,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No visible hallucinatory constants; image depicts a normal kitchen scene with a bowl of oranges."
     },
     "p5_livingroom_g2_s45.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
-      "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Scene dissolved into fragmented, reduplicated, distorted forms with tiling texture"
     },
     "p1_stilllife_g11_s42.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 3,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Watermelon fused into glass, creating a hybrid object; glass shape warped"
     },
     "p5_livingroom_g3_s42.png": {
       "reduplication": 0,
@@ -3016,7 +3016,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+      "notes": "coherent living room with sofa, lamp, and window as intended"
     },
     "p5_livingroom_g7_s44.png": {
       "reduplication": 0,
@@ -3024,15 +3024,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Coherent living room with one sofa, one lamp, and one large window; no hallucinatory constants present."
     },
     "p6_forest_g15_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "tiling": 1,
+      "notes": "Repetitive tree forms create a tiling pattern across the entire image."
     },
     "p3_bicycle_g7_s46.png": {
       "reduplication": 0,
@@ -3040,31 +3040,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p6_forest_g15_s50.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms dominate, with slight warping in fog-affected areas"
     },
     "p1_stilllife_g3_s49.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 3,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Watermelon rind fused into glass, creating a chimera; glass shape warped."
     },
     "p1_stilllife_g11_s49.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 2,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "Glass and watermelon fused into a hybrid object; slight warping in the glass shape."
     },
     "p5_livingroom_g11_s42.png": {
       "reduplication": 0,
@@ -3072,7 +3072,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "Coherent living room with single sofa, lamp, and window; no hallucinatory constants present."
     },
     "p1_stilllife_g2_s43.png": {
       "reduplication": 0,
@@ -3080,7 +3080,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p2_portrait_g7_s45.png": {
       "reduplication": 0,
@@ -3088,7 +3088,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p4_oranges_g5_s48.png": {
       "reduplication": 0,
@@ -3096,7 +3096,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Single bowl of oranges on counter, no hallucinatory constants visible"
     },
     "p4_oranges_g15_s48.png": {
       "reduplication": 0,
@@ -3104,15 +3104,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p6_forest_g7_s51.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight fusion and warping in mist, but not fully tiling or fragmented"
     },
     "p5_livingroom_g11_s44.png": {
       "reduplication": 0,
@@ -3120,7 +3120,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with intended objects present without hallucinatory alterations"
     },
     "p2_portrait_g2_s46.png": {
       "reduplication": 0,
@@ -3128,7 +3128,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
     },
     "p5_livingroom_g3_s49.png": {
       "reduplication": 0,
@@ -3136,39 +3136,39 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room, without any reduplication, fragm"
+      "notes": "Coherent living room with sofa, lamp, and no visible window; no hallucinatory constants present."
     },
     "p5_livingroom_g2_s44.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "Room and objects dissolve into repeated, shattered, and warped forms"
     },
     "p3_bicycle_g1_s43.png": {
       "reduplication": 0,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
       "tiling": 0,
-      "notes": "a red bicycle leaning against a brick wall"
+      "notes": "Bicycle and wall appear shattered and warped, with partial overlaps and smudged forms."
     },
     "p4_oranges_g15_s44.png": {
-      "reduplication": 0,
+      "reduplication": 1,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Oranges appear outside the bowl, suggesting mild reduplication beyond the intended single bowl of fruit."
     },
     "p3_bicycle_g3_s43.png": {
       "reduplication": 0,
       "fragmentation": 3,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The bicycle is fragmented into disconnected pieces."
+      "notes": "Bicycle is shattered and warped, with broken wheels and frame, appearing physically impossible."
     },
     "p1_stilllife_g5_s43.png": {
       "reduplication": 0,
@@ -3176,7 +3176,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, accurately representin"
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p5_livingroom_g11_s48.png": {
       "reduplication": 0,
@@ -3184,7 +3184,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, lamp, and window as intended, with no additional objects or distortions."
+      "notes": "All intended objects present and coherent, no hallucinatory constants visible"
     },
     "p4_oranges_g2_s43.png": {
       "reduplication": 0,
@@ -3192,23 +3192,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Two bowls of oranges on a kitchen counter, no hallucinatory constants visible."
     },
     "p3_bicycle_g1_s51.png": {
-      "reduplication": 0,
-      "fragmentation": 1,
-      "condensation": 1,
-      "distortion": 1,
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "Bicycle and wall partially obscured by trees and grass"
+      "notes": "Multiple red bicycles are fragmented, distorted, and fused into a chaotic, repeating mass against a wall."
     },
     "p6_forest_g11_s42.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms dominate, creating a dense, uniform forest pattern beyond natural variation."
     },
     "p1_stilllife_g2_s49.png": {
       "reduplication": 0,
@@ -3216,23 +3216,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
     },
     "p6_forest_g1_s45.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 1,
-      "notes": "The image shows a patterned texture rather than a single scene."
+      "notes": "Repetitive tree forms dominate, merging into a textured field with slight warping and fusion."
     },
     "p1_stilllife_g5_s42.png": {
       "reduplication": 0,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 3,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There is no redupli"
+      "notes": "Watermelon and glass are fused into a single hybrid object with impossible structure"
     },
     "p3_bicycle_g15_s50.png": {
       "reduplication": 0,
@@ -3240,7 +3240,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g11_s47.png": {
       "reduplication": 0,
@@ -3248,7 +3248,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present."
     },
     "p5_livingroom_g1_s50.png": {
       "reduplication": 0,
@@ -3256,15 +3256,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent living room with sofa, window, and chair; no hallucinatory constants evident"
     },
     "p6_forest_g15_s43.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
-      "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "tiling": 1,
+      "notes": "Repetitive tree forms and mist create a seamless, tiled pattern across the image."
     },
     "p4_oranges_g7_s44.png": {
       "reduplication": 0,
@@ -3272,7 +3272,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "Normal kitchen scene with a bowl of oranges; no hallucinatory constants present."
     },
     "p2_portrait_g5_s50.png": {
       "reduplication": 0,
@@ -3280,7 +3280,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with no hallucinatory constants"
     },
     "p5_livingroom_g2_s48.png": {
       "reduplication": 0,
@@ -3288,7 +3288,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+      "notes": "Coherent room with one sofa, one lamp, one window; no hallucinatory constants visible."
     },
     "p1_stilllife_g3_s50.png": {
       "reduplication": 0,
@@ -3296,23 +3296,23 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+      "notes": "All intended objects are present and clearly depicted without hallucinatory distortions."
     },
     "p6_forest_g2_s48.png": {
-      "reduplication": 0,
-      "fragmentation": 0,
+      "reduplication": 2,
+      "fragmentation": 1,
       "condensation": 1,
-      "distortion": 0,
-      "tiling": 1,
-      "notes": "Fog obscures and merges tree forms"
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repeated tree forms in mist, slight fusion and warping, no full tiling"
     },
     "p6_forest_g7_s46.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
       "condensation": 0,
-      "distortion": 0,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+      "notes": "Repetitive tree forms with slight warping, no clear chimeras or shattering"
     },
     "p3_bicycle_g11_s46.png": {
       "reduplication": 0,
@@ -3320,7 +3320,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p2_portrait_g11_s43.png": {
       "reduplication": 0,
@@ -3328,7 +3328,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p4_oranges_g3_s50.png": {
       "reduplication": 0,
@@ -3336,7 +3336,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No hallucinatory constants visible; image depicts a normal bowl of oranges on a kitchen counter."
     },
     "p2_portrait_g3_s43.png": {
       "reduplication": 0,
@@ -3344,7 +3344,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p5_livingroom_g15_s50.png": {
       "reduplication": 0,
@@ -3352,7 +3352,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+      "notes": "coherent room with intended objects present without hallucinatory alterations"
     },
     "p3_bicycle_g3_s45.png": {
       "reduplication": 0,
@@ -3360,15 +3360,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single bicycle against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g2_s46.png": {
       "reduplication": 3,
-      "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
       "tiling": 0,
-      "notes": "Oranges appear in multiple locations, including outside the bowl and on the counter."
+      "notes": "Oranges and kitchen elements are multiply repeated and warped, with fragmented and fused forms throughout."
     },
     "p3_bicycle_g15_s47.png": {
       "reduplication": 0,
@@ -3376,15 +3376,15 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against red brick wall, no hallucinatory constants visible"
     },
     "p6_forest_g5_s43.png": {
-      "reduplication": 0,
+      "reduplication": 2,
       "fragmentation": 0,
-      "condensation": 0,
-      "distortion": 0,
+      "condensation": 1,
+      "distortion": 1,
       "tiling": 0,
-      "notes": "Natural mist and trees, no visible reduplication or distortion"
+      "notes": "Repetitive tree forms with slight warping and fusion in misty midground"
     },
     "p3_bicycle_g7_s49.png": {
       "reduplication": 0,
@@ -3392,7 +3392,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     },
     "p4_oranges_g2_s50.png": {
       "reduplication": 0,
@@ -3400,7 +3400,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a bowl of oranges on a kitchen counter"
+      "notes": "No visible hallucinatory constants; scene depicts a normal kitchen counter with a bowl of oranges and surrounding items."
     },
     "p4_oranges_g5_s43.png": {
       "reduplication": 0,
@@ -3408,7 +3408,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "No hallucinatory constants visible; image depicts a normal kitchen scene with a bowl of oranges."
     },
     "p2_portrait_g7_s44.png": {
       "reduplication": 0,
@@ -3416,31 +3416,31 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "a close-up portrait photograph of an elderly man's face"
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
     },
     "p1_stilllife_g1_s42.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 3,
       "condensation": 3,
       "distortion": 3,
       "tiling": 1,
-      "notes": "Abstract, fragmented forms with distorted shapes and repeated patterns"
+      "notes": "Image is a dense, repeating, fragmented, and distorted field of abstract forms with no coherent objects."
     },
     "p4_oranges_g11_s47.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+      "notes": "Oranges and orange arrangements are repeated far beyond a single bowl, covering the counter in multiple groupings and ar"
     },
     "p6_forest_g2_s50.png": {
-      "reduplication": 0,
+      "reduplication": 3,
       "fragmentation": 0,
       "condensation": 0,
       "distortion": 0,
       "tiling": 1,
-      "notes": "The image shows a patterned, tiled texture of trees and mist, not a single scene."
+      "notes": "Repetitive tree forms create a seamless, tiled pattern across the image."
     },
     "p3_bicycle_g5_s49.png": {
       "reduplication": 0,
@@ -3448,7 +3448,7 @@
       "condensation": 0,
       "distortion": 0,
       "tiling": 0,
-      "notes": "one bicycle against a wall"
+      "notes": "Single red bicycle against brick wall, no hallucinatory constants visible"
     }
   }
 }
