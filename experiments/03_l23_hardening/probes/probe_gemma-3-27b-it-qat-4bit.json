@@ -1,0 +1,261 @@
+{
+  "model": "mlx-community/gemma-3-27b-it-qat-4bit",
+  "max_tokens": 700,
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "n": 28,
+  "seconds": 163.1,
+  "records": {
+    "h00": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Minimal hallucinatory content",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Minimal hallucinatory content\"\n}\n```"
+    },
+    "h01": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Scene largely coherent.",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Scene largely coherent.\"\n}\n```"
+    },
+    "h02": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Exaggerated skin texture",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 2,\n  \"tiling\": 0,\n  \"notes\": \"Exaggerated skin texture\"\n}\n```"
+    },
+    "h03": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Dense, repetitive forest pattern",
+      "_raw": "```json\n{\n  \"reduplication\": 3,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 1,\n  \"notes\": \"Dense, repetitive forest pattern\"\n}\n```"
+    },
+    "h04": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Exaggerated facial features",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 2,\n  \"tiling\": 0,\n  \"notes\": \"Exaggerated facial features\"\n}\n```"
+    },
+    "h05": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Subtle warping present",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Subtle warping present\"\n}\n```"
+    },
+    "h06": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects appear intact.",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects appear intact.\"\n}\n```"
+    },
+    "h07": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Minimal hallucinatory content",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Minimal hallucinatory content\"\n}\n```"
+    },
+    "h08": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Wrinkles are exaggerated.",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Wrinkles are exaggerated.\"\n}\n```"
+    },
+    "h09": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single bicycle, intact scene",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single bicycle, intact scene\"\n}\n```"
+    },
+    "h10": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Normal depiction",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Normal depiction\"\n}\n```"
+    },
+    "h11": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects appear as intended.",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects appear as intended.\"\n}\n```"
+    },
+    "h12": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Dense, repetitive trees",
+      "_raw": "```json\n{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Dense, repetitive trees\"\n}\n```"
+    },
+    "h13": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Multiple chairs and lamps",
+      "_raw": "```json\n{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Multiple chairs and lamps\"\n}\n```"
+    },
+    "h14": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Subtle textural repetition",
+      "_raw": "```json\n{\n  \"reduplication\": 1,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Subtle textural repetition\"\n}\n```"
+    },
+    "h15": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges slightly beyond normal bowl",
+      "_raw": "```json\n{\n  \"reduplication\": 1,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Oranges slightly beyond normal bowl\"\n}\n```"
+    },
+    "h16": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Multiple bowls and oranges",
+      "_raw": "```json\n{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Multiple bowls and oranges\"\n}\n```"
+    },
+    "h17": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "Trees become texture",
+      "_raw": "```json\n{\n  \"reduplication\": 3,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 1,\n  \"notes\": \"Trees become texture\"\n}\n```"
+    },
+    "h18": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single bicycle, intact scene",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Single bicycle, intact scene\"\n}\n```"
+    },
+    "h19": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Subtle repetition, slight warping",
+      "_raw": "```json\n{\n  \"reduplication\": 2,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 1,\n  \"tiling\": 0,\n  \"notes\": \"Subtle repetition, slight warping\"\n}\n```"
+    },
+    "h20": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Coherent, realistic depiction",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Coherent, realistic depiction\"\n}\n```"
+    },
+    "h21": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects appear intact.",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects appear intact.\"\n}\n```"
+    },
+    "h22": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Color anomalies present",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 2,\n  \"tiling\": 0,\n  \"notes\": \"Color anomalies present\"\n}\n```"
+    },
+    "h23": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Minimal hallucinatory content",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Minimal hallucinatory content\"\n}\n```"
+    },
+    "h24": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Dense, repetitive forest texture",
+      "_raw": "```json\n{\n  \"reduplication\": 3,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 1,\n  \"notes\": \"Dense, repetitive forest texture\"\n}\n```"
+    },
+    "h25": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Minimal hallucinatory features",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Minimal hallucinatory features\"\n}\n```"
+    },
+    "h26": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges slightly beyond normal",
+      "_raw": "```json\n{\n  \"reduplication\": 1,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Oranges slightly beyond normal\"\n}\n```"
+    },
+    "h27": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects appear intact.",
+      "_raw": "```json\n{\n  \"reduplication\": 0,\n  \"fragmentation\": 0,\n  \"condensation\": 0,\n  \"distortion\": 0,\n  \"tiling\": 0,\n  \"notes\": \"Objects appear intact.\"\n}\n```"
+    }
+  }
+}
