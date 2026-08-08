@@ -1,22 +1,42 @@
 # Experiment 03 — Analysis
 
-**Completed 2026-08-08** (amended judge panel). Generation, quality, Claude
-judging, blind human subset, open-weight judge diagnosis/repair, and
-confirmatory analysis are done. Pre-registration:
+**Completed 2026-08-08** (amended judge panel). Pre-registration:
 [`preregistration.json`](preregistration.json) +
 [`analysis_plan.md`](analysis_plan.md). Daily record: [`log.md`](log.md).
-
-This experiment hardens Exp 01's *exploratory* Klüver Level-2/3 dose-response
-into a confirmatory test along four axes: multi-prompt generality, inter-rater
-reliability (including a human subset), quality-controlled de-confound, and
-FDR-corrected secondary fields.
+Handoff for follow-on work: [`HANDOFF.md`](HANDOFF.md).
 
 ---
 
-## Verdict (headline)
+## 0. What this experiment is
 
-**Overall confirmatory claim: not confirmed** — `both_models_required` is true,
-and SD 3.5 misses the pre-registered slope threshold (−0.182 vs ≤ −0.2).
+Exp 03 is not primarily a yes/no on one slope. It is a **controllable neuroAI
+assay** for objecthood dissolution under precision relaxation:
+
+| Role | Choice |
+|---|---|
+| Independent variable | Classifier-free guidance *g* (the "knob") |
+| Dependent measure | Klüver Level-2/3 fields — reduplication, fragmentation, condensation, distortion (+ tiling) |
+| Neuroscience import | Klüver's hallucinatory constants; REBUS-style precision relaxation as the *analogy* for lowering *g* (computational, not identity) |
+| Substrate factor | SDXL (conv UNet) vs SD 3.5 (MMDiT) |
+| Generality factor | 6 prompts spanning object count and objecthood, plus forest control |
+| Confound check | No-reference quality (CLIP-IQA + LAION-aesthetic); partial correlation + matched-quality arms |
+| Reliability | Independent VLM judges + blind human subset |
+
+The win is the scaffold: a doseable generative system, a phenomenology neuroscience
+already has language for, and pre-registered hygiene (multi-prompt, multi-judge,
+quality de-confound, FDR). The gate table below is what that scaffold produced —
+including an honest overall non-confirm under `both_models_required`.
+
+Derives from Exp 01: Level-1 form constants were a clean null; Level-2/3
+objecthood dissolution was the exploratory signal this run hardens.
+
+---
+
+## 1. Results at a glance
+
+**Overall confirmatory claim: not confirmed** (`both_models_required`; SD 3.5
+slope −0.182 vs threshold ≤ −0.2). That is scientific honesty inside a working
+method, not a failed setup.
 
 | | SDXL (Claude + Qwen3-VL-32B) | SD 3.5 (Claude + Qwen3-VL-32B) |
 |---|---|---|
@@ -26,38 +46,46 @@ and SD 3.5 misses the pre-registered slope threshold (−0.182 vs ≤ −0.2).
 | Composite κ (≥0.4) | **0.562** ✓ | **0.440** ✓ |
 | Per-model verdict | **confirm** | **null** (slope) |
 
-SDXL is a clean confirm on every gate after repairing judge B. SD 3.5 clears
-reliability and the quality de-confound, and its slope CI excludes 0
-([−0.248, −0.116]), but the point estimate sits just short of the pre-registered
-−0.2 threshold. Honest line: *the objecthood-dissolution dose-response hardens
-on the convolutional UNet (SDXL) and is attenuated on the MMDiT (SD 3.5).*
+**Interpretation:** objecthood dissolution tracks guidance on the convolutional
+UNet (SDXL) after quality control and at adequate inter-judge reliability. On
+the MMDiT (SD 3.5) the same direction is present (CI excludes 0) but attenuated
+below the pre-registered effect-size gate. Substrate matters — consistent with
+the series' depth-and-substrate framing.
+
+Secondary products of the same scaffold:
+
+1. **Silent VLM-judge failure below ~30B** — open-weight judges return
+   well-formed JSON and "no anomaly" captions for visibly ghosted images.
+2. **Panel repair works** — Qwen3-VL-32B raises Claude–Qwen κ from 0.29→0.56
+   (SDXL) and 0.16→0.44 (SD 3.5) without changing the rubric.
+3. **Human–model gap** — human–Claude κ ≈ 0.34; human–Qwen32 κ ≈ 0.12 even when
+   the two VLMs agree with each other.
 
 The original 2026-07-22 3-judge run was an inconclusive-null driven by dead
-open-weight judges; that is superseded by the amended panel below, not quietly
-replaced.
+open-weight judges; superseded by the amended panel, not quietly replaced.
 
 ---
 
-## 1. What was run
+## 2. What was run
 
 | Leg | Status |
 |---|---|
 | Generation (SDXL + SD 3.5, 430 images each) | ✅ 2026-07-22 |
 | Judge A — Claude Sonnet 5 (Batches) | ✅ |
 | Judge B — Qwen2.5-VL-7B → **Qwen3-VL-32B** (dated amendment) | ✅ 2026-08-08 |
-| Judge C — Llama-3.2-11B | ⚠ archived (dead rater; no replacement landed) |
+| Judge C — Llama-3.2-11B | ⚠ archived (dead); Gemma-3-27B probed, not promoted |
 | Quality (CLIP-IQA + LAION-aesthetic) | ✅ |
 | Blind human subset (28 images, author) | ✅ 2026-08-08 |
 | Analysis (`analyze.py --both --judges claude,qwen --plot`) | ✅ |
 | Sonnet 5 vs 4.6 calibration (§5 of plan) | ❌ not run (declared) |
 
 Reports: `results-local/<model>/l23_report_claude-qwen.json` (amended
-confirmatory panel). The archived 7B judgements live under `archive/`. The
-original 3-judge `l23_report.json` files remain as the pre-amendment record.
+confirmatory panel). Archived 7B judgements under `archive/`. Original 3-judge
+`l23_report.json` kept as the pre-amendment record.
 
 ---
 
-## 2. Pre-registered confirm criteria (reminder)
+## 3. Pre-registered confirm criteria
 
 Confirm requires **both** models, all of:
 
@@ -68,7 +96,7 @@ Confirm requires **both** models, all of:
 
 ---
 
-## 3. Original 3-judge panel (2026-07-22) — why it failed
+## 4. Original 3-judge panel (2026-07-22) — instrument failure
 
 | Criterion | SDXL 3-judge | SDXL Claude+Qwen7B | SD 3.5 3-judge | SD 3.5 Claude+Qwen7B |
 |---|---|---|---|---|
@@ -77,19 +105,15 @@ Confirm requires **both** models, all of:
 | Prompts | 6/6 ✓ | 6/6 ✓ | 4/6 ✗ | 5/6 ✓ |
 | Composite κ | 0.126 ✗ | 0.291 ✗ | 0.135 ✗ | 0.158 ✗ |
 
-**Cause of the κ failure (not soft disagreement):**
-
-- **Llama-3.2-11B** scored fragmentation = condensation = distortion = 0 on every
-  completed image. Pairwise κ against it is exactly 0 by arithmetic. ~90
-  "errors" were truncated JSON at `max_tokens=400`.
-- **Qwen2.5-VL-7B** is a near-binary detector (~96% zeros). On the human subset
-  it scored **0 on all four fields on all 28 images**.
-
-Axis 2 of the hardening did not succeed as first executed.
+**Cause (not soft disagreement):** Llama-3.2-11B scored fragmentation =
+condensation = distortion = 0 on every completed image (κ vs it is 0 by
+arithmetic; ~90 "errors" were truncated JSON at `max_tokens=400`).
+Qwen2.5-VL-7B is a near-binary detector; on the human subset it scored **0 on
+all four fields on all 28 images**.
 
 ---
 
-## 4. Human subset — rubric is scoreable
+## 5. Human subset — rubric is scoreable
 
 28 images, stratified, author-rated blind, guidance hidden, identical rubric.
 Single rater — stated limitation.
@@ -101,55 +125,55 @@ Single rater — stated limitation.
 | Qwen2.5-VL-7B (pre-amendment) | 0.0 | [0, 0] |
 | Llama-3.2-11B | −0.027 | [−0.052, 0] |
 
-Human–Claude is fair-to-moderate. Human–Qwen32 is weak (CI includes 0) even
-though Claude–Qwen32 agree with each other at κ 0.56 / 0.44. The two capable
-VLMs share a signal that only partially overlaps the human — important for
-interpretation, and consistent with the construct-validity caveat in §5.
+Human–Claude fair-to-moderate. Human–Qwen32 weak even though Claude–Qwen32
+agree at κ 0.56 / 0.44 — the VLMs share a signal that only partially overlaps
+the human.
 
 Per-field human vs Claude: fragmentation 0.417, condensation 0.382,
-reduplication 0.338, **distortion 0.212**. Distortion was Exp 01's headline and
-remains the hardest field for human–model agreement. Tiling untestable (0/28).
+reduplication 0.338, **distortion 0.212** (Exp 01's headline field; hardest for
+human–model agreement). Tiling untestable (0/28).
 
 ---
 
-## 5. Screening probes — size threshold between 8B and 32B
+## 6. Screening probes — size threshold; Gemma partial fail
 
 | probe (same 28 images) | gradedness | mean ρ vs Claude | flat fields |
 |---|---|---|---|
 | Qwen2.5-VL-7B-4bit | 0.000 | n/a | all four |
 | Qwen3-VL-8B-4bit | 0.000 | n/a | all four |
 | **Qwen3-VL-32B-4bit** | **0.134** | **0.355** | **none** |
+| Gemma-3-27B-it-qat-4bit | 0.134 | 0.225 | fragmentation, condensation |
 
 Images reach the models; stripping rubric priming does not help. Sub-~30B VLMs
-**fail silently** — well-formed JSON, confident "no anomaly" captions for
-visibly ghosted images. Same family/release for 8B vs 32B ⇒ capacity threshold,
-not model age.
+**fail silently**. Same family 8B vs 32B ⇒ capacity threshold, not model age.
+Gemma matches Qwen32 gradedness but is dead on half the composite — not promoted
+to judge C (would reintroduce the Llama κ failure mode).
 
 **Construct-validity caveat:** on a painterly still life the author scored
 condensation/distortion 3; Qwen3-VL-32B scored near 0. Part of the low-g signal
-may be reading painterly looseness as objecthood dissolution. The ghosted
-living-room case is unambiguous.
+may be painterly looseness vs true objecthood dissolution. Ghosted living-room
+cases are unambiguous.
 
 ---
 
-## 6. Dated amendments
+## 7. Dated amendments
 
 `judge_models` ∈ `swappable_without_reclassifying`. Rubric text unchanged.
 
 | Date | Amendment |
 |---|---|
 | 2026-07-21 | Third judge (Llama) added; Claude Batches API |
-| 2026-08-08 | Qwen2.5-VL-7B → **Qwen3-VL-32B** after human-subset κ = 0 and probe evidence. Deviation from the *named* Qwen2.5-VL-32B fallback (one generation newer; cleared the screen). |
-| 2026-08-08 | Llama retained in archive only; 2-judge Claude+Qwen32 is the amended confirmatory panel. Gemma-3-27B candidate for a new judge C was not probed in this write-up. |
+| 2026-08-08 | Qwen2.5-VL-7B → **Qwen3-VL-32B** after human-subset κ = 0 and probes. Deviation from the *named* Qwen2.5-VL-32B fallback (one generation newer; cleared the screen). |
+| 2026-08-08 | Llama archived; Claude+Qwen32 = amended confirmatory panel. Gemma-3-27B probed, not promoted. |
 
 Harness repairs: truncated-JSON repair, `max_tokens=700`, `missing_fields` on
 coerce, raw-reply sidecars, save-every-image.
 
 ---
 
-## 7. Amended panel results (Claude + Qwen3-VL-32B)
+## 8. Amended panel detail (Claude + Qwen3-VL-32B)
 
-### 7.1 Primary gates
+### 8.1 Primary gates
 
 | Criterion | SDXL | SD 3.5 |
 |---|---|---|
@@ -159,7 +183,7 @@ coerce, raw-reply sidecars, save-every-image.
 | Composite weighted κ | 0.562 | 0.440 |
 | Matched-quality Cliff's δ | 0.489 [0.362, 0.606] | 0.188 [0.050, 0.320] |
 
-### 7.2 Per-field inter-judge κ (Claude vs Qwen32)
+### 8.2 Per-field inter-judge κ (Claude vs Qwen32)
 
 | field | SDXL | SD 3.5 |
 |---|---|---|
@@ -169,58 +193,51 @@ coerce, raw-reply sidecars, save-every-image.
 | distortion | 0.515 | 0.418 |
 | reduplication | 0.432 | 0.439 |
 
-Distortion — Exp 01's headline field — clears 0.4 on both models after the
-judge repair (it was 0.27 / 0.20 under Qwen-7B).
-
-### 7.3 Per-prompt Spearman (composite vs g)
+### 8.3 Per-prompt Spearman (composite vs g)
 
 **SDXL:** bicycle −0.74, forest −0.62, living room −0.57, still life −0.57,
 oranges −0.49, portrait −0.28.
 
 **SD 3.5:** living room −0.49, bicycle −0.46, oranges −0.40, still life −0.24,
-forest −0.02, **portrait +0.30** (the generality miss).
+forest −0.02, **portrait +0.30** (generality holdout).
 
 ---
 
-## 8. Methodological finding (independent of the dose-response)
+## 9. Methodological finding (VLM-as-judge)
 
 Open-weight VLMs **below ~30B** do not detect object-level generative artifacts
-under any framing tested here, while a frontier judge does and tracks a human
-at κ ≈ 0.34. The failure mode is silent. Repairing the panel (Qwen3-VL-32B)
-raises inter-judge κ from 0.29 → 0.56 on SDXL and 0.16 → 0.44 on SD 3.5 — enough
-to clear the reliability gate — without changing the rubric.
+under any framing tested here; a frontier judge does and tracks a human at
+κ ≈ 0.34. Failure mode is silent. This is reportable independently of the
+dose-response and is a timely warning for VLM-as-judge pipelines.
 
 ---
 
-## 9. Limitations
+## 10. Limitations
 
-- Single human rater; no human–human reliability. Author knew the hypothesis
-  (model/guidance blinding intact).
-- Human–Qwen32 κ remains weak (0.12); Claude–Qwen agreement ≠ human agreement.
-- Distortion construct may mix painterly looseness with true objecthood
-  dissolution.
-- Sonnet 5 vs Exp 01 Sonnet 4.6 calibration was pre-registered as reported and
-  was **not run**.
-- No third model family after Llama's failure; triangulation is two lineages.
-- SD 3.5 portrait prompt reverses the expected sign.
+- Single human rater; author knew the hypothesis (model/guidance blinding intact).
+- Human–Qwen32 κ weak (0.12); Claude–Qwen agreement ≠ human agreement.
+- Distortion may mix painterly looseness with objecthood dissolution.
+- Sonnet 5 vs Exp 01 Sonnet 4.6 calibration pre-registered as reported; **not run**.
+- No third model family after Llama/Gemma; triangulation is two lineages.
+- SD 3.5 portrait reverses expected sign.
 
 ---
 
-## 10. What this does *not* claim
+## 11. What this does *not* claim
 
 - Does not revive Exp 01's Level-1 form-constant hypothesis (still a clean null).
-- Does not equate guidance with REBUS precision-relaxation.
+- Does not equate guidance with REBUS precision-relaxation (analogy only).
 - Does not claim a cross-architecture confirm — SD 3.5 is attenuated.
 - Clearing inter-judge κ does not mean the metric matches humans closely.
 
 ---
 
-## 11. Artifacts
+## 12. Artifacts
 
 - Reports: `results-local/{sdxl,sd35}/l23_report_claude-qwen.json`
 - Figures: `results-local/{sdxl,sd35}/figures_claude-qwen/`
-- Judgements: `judgements_claude.json`, `judgements_qwen.json` (now Qwen3-VL-32B),
-  raw sidecars `judgements_qwen_raw.json`
+- Judgements: `judgements_claude.json`, `judgements_qwen.json` (Qwen3-VL-32B),
+  `judgements_qwen_raw.json`
 - Archive: `archive/judgements_qwen_Qwen2.5-VL-7B_{sdxl,sd35}.json`
 - Human: `human_subset.json`, `human_ratings.json`
-- Probes: `probes/probe_Qwen*.json`
+- Probes: `probes/probe_Qwen*.json`, `probes/probe_gemma-3-27b-it-qat-4bit.json`

@@ -1,14 +1,13 @@
 # Experiment 03 — Hardening the Klüver Level-2/3 finding
 
-**Status:** **complete (2026-08-08), amended judge panel.** Generation, quality,
-Claude, human subset, open-weight judge diagnosis/repair, and confirmatory
-analysis are done. Amended panel = Claude + **Qwen3-VL-32B** (dated swap after
-Qwen-7B and Llama flatlined). **Overall confirmatory claim not confirmed**
-(`both_models_required`): SDXL confirms on every gate (κ 0.56); SD 3.5 clears
-κ/de-confound/generality but misses the slope threshold (−0.182 vs −0.2).
-Write-up: [`analysis.md`](analysis.md). Pre-registration drafted 2026-07-15;
-pipeline validated end-to-end on the M5 on 2026-07-21 (see
-[Environment notes](#environment-notes-from-the-2026-07-21-smoke-run)).
+**Status:** **complete (2026-08-08), amended judge panel.** The contribution is
+the **neuroAI assay** (guidance knob × Klüver L2/3 × quality de-confound ×
+substrate), not a binary gate pass. Amended panel = Claude + **Qwen3-VL-32B**.
+Overall confirmatory claim not confirmed (`both_models_required`): SDXL confirms
+(κ 0.56); SD 3.5 attenuated (slope −0.182 vs −0.2). Write-up:
+[`analysis.md`](analysis.md). Next-agent brief: [`HANDOFF.md`](HANDOFF.md).
+Pre-registration 2026-07-15; see
+[Environment notes](#environment-notes-from-the-2026-07-21-smoke-run).
 
 **Derives from** [Exp 01](../01_image_test/). Exp 01's *confirmatory* metric
 (Klüver level-1 geometry) was a clean null. Its *exploratory, post-hoc* Klüver
