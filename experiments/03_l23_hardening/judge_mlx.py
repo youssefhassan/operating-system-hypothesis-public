@@ -131,8 +131,9 @@ def score(args: argparse.Namespace) -> None:
         raws[path.name] = raw[:600]
         shown = {k: rec.get(k) for k in R.ALL_FIELDS} if "error" not in rec else rec
         print(f"[{tag}] ({i}/{len(todo)}) {path.name} {shown}", flush=True)
-        if i % 10 == 0:
-            _save()
+        # Save every image: a hang mid-batch otherwise loses up to 9 scores
+        # (2026-08-08: the 32B re-judge stalled at 70/430 with 9 unsaved).
+        _save()
     _save()
     print(f"[{tag}] wrote {out_path} ({len(results)} images)", flush=True)
 
