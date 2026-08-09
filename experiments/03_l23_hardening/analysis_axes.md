@@ -138,6 +138,74 @@ returns null rather than a negative percentage.
 The local scale was contaminated in a way that only a global axis could reveal,
 which is precisely the case for running both.
 
+### 5.1 The confound is not uniform across prompts
+
+**Descriptive, not an endpoint.** This came out of checking whether the comparison
+to Exp 01 was even fair, rather than from looking for something. Two questions in
+sequence, both worth recording because the second only appears if you ask the
+first.
+
+**Was the drop from Exp 01's −0.64 caused by adding a second judge?** No. On the
+Exp 03 corpus, distortion vs guidance on SDXL is −0.439 for **Claude alone**,
+−0.460 for **Qwen3-VL-32B alone**, and −0.486 for the judge-mean. The judges agree,
+and averaging them slightly *increases* the estimate by cancelling independent
+noise. Same judge family, same rubric, same field: the number still fell from
+−0.64 to −0.44.
+
+**Then it is the corpus.** Exp 01 ran one prompt; Exp 03 runs six. Per prompt,
+SDXL, distortion vs guidance:
+
+| | Claude alone | judge-mean | veridicality held fixed |
+|---|---|---|---|
+| oranges | −0.698 | −0.702 | **−0.084** |
+| bicycle | −0.688 | −0.734 | −0.261 |
+| **still life** (Exp 01's prompt) | **−0.548** | −0.547 | −0.216 |
+| living room | −0.491 | −0.530 | **−0.385** |
+| forest | −0.372 | −0.503 | −0.328 |
+| portrait | −0.217 | −0.231 | **+0.240** |
+
+**Exp 01's prompt reproduces.** The still life, re-used verbatim as the anchor,
+gives −0.55 here against −0.64 there, a gap consistent with n=68 vs n=90 and a
+newer judge. Exp 01 was not wrong about its prompt. It was wrong to treat one
+prompt as representative: the magnitude ranges roughly threefold across the set,
+and the still life sat mid-to-high within it.
+
+**Direction is robust; magnitude is not.** Every SDXL prompt is negative, which is
+what the pre-registered ≥5/6 generality criterion was for and why it passed 6/6.
+"Lower guidance, more distortion" holds everywhere on SDXL. "By how much" depends
+heavily on what was asked for.
+
+**The new observation is in the third column: the confound itself is
+prompt-dependent.**
+
+- **oranges** −0.70 → −0.08. Almost the whole effect was rendering style. At low
+  guidance that prompt becomes a repeating pattern field (it has the highest
+  tiling rate in the set, `analysis.md` §9.2), which is a global change, not
+  objects breaking.
+- **living room** −0.53 → −0.39. Most of it survives. This is the ghosting and
+  duplication case: genuine structural breakdown.
+- **portrait** −0.23 → **+0.24**, a sign flip. Holding realism fixed, distortion
+  runs the *other* way, which is the over-conditioned waxy-face effect from E1
+  showing through once the low-g melt is partialled out.
+
+So the living room being the cleanest positive case in this experiment is not a
+matter of taste. It is the prompt where the distortion signal is most nearly what
+Exp 01 claimed it was, and the oranges prompt is where it is least.
+
+On SD 3.5 the pattern is messier and consistent with §3: portrait and forest are
+positive, and several partials are *larger* than their raw values (bicycle
+−0.50 → −0.60, living room −0.39 → −0.55), which is the suppression described in
+§5 appearing prompt by prompt.
+
+⚠ **Caveats.** n ≈ 70 per prompt, no correction for multiple comparisons, and none
+of this is a pre-registered endpoint. Treat the *ordering* as real and the
+individual values as soft.
+
+**Consequence.** Any future claim about this effect should be stated per prompt
+family or with the range attached, never as a single pooled correlation. A pooled
+number here averages a threefold spread and a confound that varies from "almost
+everything" to "not much".
+
 ---
 
 ## 6. Secondary endpoints (BH-corrected, all q ≤ .0004)
@@ -187,6 +255,10 @@ endpoint the pre-registration rides on is the one the judges agree about.
   Only the scores were pre-data. Declared in the pre-registration.
 - Complexity's reliability (§7) undercuts its secondary result.
 - E3's SD 3.5 suppression pattern is described, not explained.
+- **Effect sizes are strongly prompt-dependent (§5.1)**, roughly threefold across
+  the six prompts, and so is the veridicality confound. Any single pooled
+  correlation from this program, including Exp 01's −0.64 and this run's −0.486,
+  is an average over a wide range and should not be quoted alone.
 
 ---
 
