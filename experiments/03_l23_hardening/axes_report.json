@@ -1,0 +1,211 @@
+{
+  "prereg": "exp03b-suzuki-axes-v1",
+  "judges": [
+    "claude",
+    "qwen"
+  ],
+  "models": {
+    "sdxl": {
+      "model": "sdxl",
+      "n": 418,
+      "judges": [
+        "claude",
+        "qwen"
+      ],
+      "P1_veridicality_lmm": {
+        "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+        "slope_standardized": 0.462834930687382,
+        "ci95": [
+          0.3822004676803463,
+          0.5434693936944177
+        ],
+        "p": 2.3152414418109467e-29
+      },
+      "P2_dissociation": {
+        "raw_spearman_veridicality_vs_g": 0.5762,
+        "partial_spearman_controlling_kluver": 0.4168,
+        "ci95": [
+          0.3216,
+          0.506
+        ]
+      },
+      "P3_reliability": {
+        "per_field": {
+          "veridicality": 0.6849,
+          "spontaneity": 0.6254,
+          "complexity": 0.2763
+        },
+        "composite_weighted_kappa": 0.5289
+      },
+      "secondary": {
+        "spontaneity": {
+          "spearman_vs_g": -0.2745,
+          "perm_p": 0.0002,
+          "n": 418,
+          "bh_q": 0.0003
+        },
+        "complexity": {
+          "spearman_vs_g": -0.1657,
+          "perm_p": 0.0004,
+          "n": 418,
+          "bh_q": 0.0004
+        },
+        "coherent_scene": {
+          "spearman_vs_g": 0.3599,
+          "perm_p": 0.0002,
+          "n": 418,
+          "bh_q": 0.0003
+        }
+      },
+      "per_prompt_veridicality_spearman": {
+        "p1_stilllife": 0.575,
+        "p2_portrait": 0.5309,
+        "p3_bicycle": 0.8319,
+        "p4_oranges": 0.7806,
+        "p5_livingroom": 0.4031,
+        "p6_forest": 0.5268
+      },
+      "exploratory": {
+        "E1_overshoot": {
+          "veridicality_by_guidance": {
+            "1.0": 1.2583,
+            "2.0": 2.125,
+            "3.0": 2.575,
+            "5.0": 2.8051,
+            "7.0": 2.8136,
+            "11.0": 2.825,
+            "15.0": 2.6667
+          },
+          "peak_at_g": "11.0",
+          "top_of_dial": "15.0",
+          "overshoot": true,
+          "drop_from_peak": 0.1583
+        },
+        "E2_scale_correlation": {
+          "spearman_axes_vs_kluver_composite": -0.6155
+        },
+        "E3_painterly_confound": {
+          "raw_spearman_distortion_vs_g": -0.4863,
+          "partial_controlling_veridicality": -0.1755,
+          "ci95": [
+            -0.2675,
+            -0.0753
+          ],
+          "shrinkage": 0.3108,
+          "share_of_association_explained": 0.6391,
+          "pattern": "confounding: veridicality accounts for part of the distortion signal, i.e. the field was partly tracking rendering style"
+        },
+        "E4_shape": {
+          "excluding_g1_spearman_veridicality_vs_g": 0.3388,
+          "n": 358
+        }
+      },
+      "verdict": [
+        "P1 pass",
+        "P2 pass",
+        "P3 pass"
+      ]
+    },
+    "sd35": {
+      "model": "sd35",
+      "n": 417,
+      "judges": [
+        "claude",
+        "qwen"
+      ],
+      "P1_veridicality_lmm": {
+        "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+        "slope_standardized": -0.26074651163051527,
+        "ci95": [
+          -0.34710739326768825,
+          -0.17438562999334228
+        ],
+        "p": 3.26567074511911e-09
+      },
+      "P2_dissociation": {
+        "raw_spearman_veridicality_vs_g": -0.0708,
+        "partial_spearman_controlling_kluver": -0.1607,
+        "ci95": [
+          -0.2624,
+          -0.0531
+        ]
+      },
+      "P3_reliability": {
+        "per_field": {
+          "veridicality": 0.7228,
+          "spontaneity": 0.3482,
+          "complexity": 0.3827
+        },
+        "composite_weighted_kappa": 0.4846
+      },
+      "secondary": {
+        "spontaneity": {
+          "spearman_vs_g": -0.2237,
+          "perm_p": 0.0002,
+          "n": 417,
+          "bh_q": 0.0002
+        },
+        "complexity": {
+          "spearman_vs_g": -0.2357,
+          "perm_p": 0.0002,
+          "n": 417,
+          "bh_q": 0.0002
+        },
+        "coherent_scene": {
+          "spearman_vs_g": 0.195,
+          "perm_p": 0.0002,
+          "n": 417,
+          "bh_q": 0.0002
+        }
+      },
+      "per_prompt_veridicality_spearman": {
+        "p1_stilllife": 0.2052,
+        "p2_portrait": -0.2125,
+        "p3_bicycle": -0.0592,
+        "p4_oranges": -0.0665,
+        "p5_livingroom": -0.2665,
+        "p6_forest": -0.0113
+      },
+      "exploratory": {
+        "E1_overshoot": {
+          "veridicality_by_guidance": {
+            "1.0": 2.0,
+            "2.0": 2.7672,
+            "3.0": 2.8417,
+            "5.0": 2.9083,
+            "7.0": 2.9153,
+            "11.0": 2.4667,
+            "15.0": 1.85
+          },
+          "peak_at_g": "7.0",
+          "top_of_dial": "15.0",
+          "overshoot": true,
+          "drop_from_peak": 1.0653
+        },
+        "E2_scale_correlation": {
+          "spearman_axes_vs_kluver_composite": -0.3522
+        },
+        "E3_painterly_confound": {
+          "raw_spearman_distortion_vs_g": -0.1143,
+          "partial_controlling_veridicality": -0.1794,
+          "ci95": [
+            -0.2798,
+            -0.0784
+          ],
+          "shrinkage": -0.0651,
+          "share_of_association_explained": null,
+          "pattern": "suppression: the association is LARGER once veridicality is held fixed, so veridicality was masking it rather than causing it"
+        },
+        "E4_shape": {
+          "excluding_g1_spearman_veridicality_vs_g": -0.3866,
+          "n": 357
+        }
+      },
+      "verdict": [
+        "P1 FAIL",
+        "P2 FAIL",
+        "P3 pass"
+      ]
+    }
+  }
+}

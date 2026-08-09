@@ -78,14 +78,35 @@ failure on the composite while having behaved as designed on the two fields it w
 built to dissociate. And the distortion field fires at *both* ends of the dial,
 absorbing under-conditioned melt and over-conditioned waxiness on one scale.
 
-### Exp 03b — a second scale on the same corpus (in progress)
+### Exp 03b — a second scale on the same corpus
 
 [`preregistration_axes.json`](experiments/03_l23_hardening/preregistration_axes.json)
 adds continuous axes (veridicality, spontaneity, complexity) whose definitions are
-reused verbatim from Exp 01. The novel endpoint is a dissociation test: does the
-global scale track guidance *after* partialling out the local one, or is it a
-restatement? The pre-registration commits to the failure condition in advance.
-See [`RUN_AXES.md`](experiments/03_l23_hardening/RUN_AXES.md).
+reused verbatim from Exp 01, scored on the same 860 images. The novel endpoint is a
+dissociation test: does the global scale track guidance *after* partialling out the
+local one, or is it a restatement? Write-up:
+[`analysis_axes.md`](experiments/03_l23_hardening/analysis_axes.md).
+
+**Also not confirmed** (both models required). SDXL passes all three endpoints;
+SD 3.5 fails the two monotonic ones. Two results matter more than the verdict.
+
+**The scales are not redundant, on SDXL.** Veridicality still tracks guidance at
++0.417 after partialling out the Kluver composite, and the two composites correlate
+at only -0.62. What an image is *like* overall, and an inventory of what broke
+inside it, are separable measurements.
+
+**Two thirds of the distortion signal was rendering style.** Holding veridicality
+fixed drops distortion's association with guidance on SDXL from -0.486 to -0.175.
+That lands on Exp 01's headline field: much of "the knob dissolves objecthood" was
+the picture becoming painterly rather than the objects coming apart. Distortion
+survives at a third of its apparent size. The only way to find this was to run the
+second scale against the first.
+
+SD 3.5's failure is uninformative rather than negative. Its veridicality is an
+inverted U, peaking at g=7 and collapsing below its starting value by g=15, and
+both endpoints are monotonic tests. **That is the second time an assumed response
+shape has cost an endpoint here**; the first was a linear slope that could not
+distinguish a gradient from a cliff.
 
 ---
 
