@@ -88,8 +88,11 @@ def _dataset_readme(repo_id: str, manifest: dict) -> str:
     prereg = json.loads(PREREG.read_text())
     prompt = prereg["prompt"]
     grid = ", ".join(str(g) for g in prereg["guidance_grid"])
-    github = "https://github.com/youssefhassan/operating-system-hypothesis"
+    # MUST be the -public repo. The private one 404s for every reader, which is
+    # how this card shipped with a dead "go check the pre-registration" link.
+    github = "https://github.com/youssefhassan/operating-system-hypothesis-public"
     exp_path = f"{github}/tree/main/experiments/01_image_test"
+    post = "https://youssefhassan13.substack.com/p/the-base-layer-and-a-first-experiment"
 
     return f"""---
 license: mit
@@ -151,6 +154,7 @@ manifest.json
 ## Provenance
 
 - **Code / prereg:** [{exp_path}]({exp_path})
+- **Write-up:** [The Base Layer, and a First Experiment]({post})
 - **Git commit:** `{manifest.get("git_commit", "unknown")}`
 - **Exported:** {manifest.get("exported_at", "unknown")}
 - **Judge:** Claude Sonnet (blind, shuffled order)
@@ -199,8 +203,52 @@ def build_export(export_dir: Path) -> dict:
     return manifest
 
 
+def _token() -> str:
+    token = os.environ.get("HF_TOKEN")
+    if not token:
+        raise SystemExit("HF_TOKEN not set — add it to the project-root .env")
+    return token
+
+
+def push_readme_only(args: argparse.Namespace) -> None:
+    """Rewrite the dataset card without touching the data.
+
+    The provenance block is regenerated from the manifest ALREADY ON THE HUB, not
+    from a fresh local export. The card says "git commit X, exported Y" about the
+    uploaded images, so stamping today's commit onto an older export would make
+    the card lie in a new way while fixing an old one.
+    """
+    from huggingface_hub import HfApi, hf_hub_download
+
+    api = HfApi(token=_token())
+    manifest_path = hf_hub_download(
+        repo_id=args.repo_id, repo_type="dataset", filename="manifest.json"
+    )
+    manifest = json.loads(Path(manifest_path).read_text())
+    print(f"[publish_hf] reusing manifest from the hub: {manifest.get('exported_at')}")
+
+    readme = _dataset_readme(args.repo_id, manifest)
+    if args.dry_run:
+        print("\n[publish_hf] dry-run, would push this README.md:\n")
+        print(readme)
+        return
+
+    api.upload_file(
+        path_or_fileobj=readme.encode(),
+        path_in_repo="README.md",
+        repo_id=args.repo_id,
+        repo_type="dataset",
+        commit_message=args.message or "Fix dataset card: point at the public repo",
+    )
+    print(f"[publish_hf] card updated -> https://huggingface.co/datasets/{args.repo_id}")
+
+
 def run(args: argparse.Namespace) -> None:
     load_dotenv(REPO_ROOT / ".env")
+
+    if args.readme_only:
+        push_readme_only(args)
+        return
 
     with tempfile.TemporaryDirectory(prefix="exp01_hf_") as tmp:
         export_dir = Path(tmp) / "dataset"
@@ -273,6 +321,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p.add_argument("--private", action="store_true", help="create/upload as private dataset")
     p.add_argument("--dry-run", action="store_true", help="build export and print manifest only")
+    p.add_argument(
+        "--readme-only",
+        action="store_true",
+        help="rewrite only the dataset card, reusing the manifest already on the hub",
+    )
     p.add_argument("--message", default="", help="optional commit message on HF")
     return p
 

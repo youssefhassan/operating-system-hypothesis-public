@@ -32,9 +32,23 @@ a citable, pre-registered result** (target: NeurIPS 2026 workshop, ~late Aug).
    Judge B = **Qwen2.5-VL-7B** (MLX, local, $0); Judge C = **Llama-3.2-11B-Vision**
    (MLX, local, $0; safe dense default — opt into the newer Llama 4 Scout via
    `EXP03_LLAMA_MODEL` if you have the RAM). Plus a 25–30 image human-rated subset. Reliability = **mean of the
-   pairwise** quadratic-weighted **Cohen's κ** across the three judges (with Gwet
+   pairwise** quadratic-weighted **Cohen's κ** across the judges (with Gwet
    AC2 + percent agreement alongside, because the fields are 0-heavy). The
    composite-κ ≥ 0.4 gate is unchanged.
+
+   > **AMENDED 2026-08-08, and the amendment turned out to be one of the
+   > findings.** Judges B and C above were **inert**. Llama scored fragmentation,
+   > condensation and distortion as zero on every image it completed;
+   > Qwen2.5-VL-7B scored zero on all four fields across the entire human subset.
+   > Both failed **silently**: no errors, no refusals, well-formed JSON and
+   > fluent, confident captions. The confirmatory panel is therefore **two**
+   > judges, Claude Sonnet 5 + **Qwen3-VL-32B**, and the swap lifted composite κ
+   > from 0.29 to 0.56 (SDXL) and 0.16 to 0.44 (SD 3.5) **without one word of the
+   > rubric changing**. The dead raters' scores are kept in the repo
+   > (`judgements_llama.json`, `archive/`) so the failure is inspectable rather
+   > than described, and `probes/` shows the capacity threshold sits between 8B
+   > and 32B. The design above is left as written because it is the
+   > pre-registration; this note is the amendment, not a rewrite of it.
 3. **Guidance-matching.** The low-g breakdown is confounded with
    under-conditioning (SDXL's comfort zone is g ≈ 5–8; g = 1.0 is out of
    distribution). Build a per-model **no-reference quality curve** (CLIP-IQA +
