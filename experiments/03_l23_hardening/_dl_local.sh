@@ -4,11 +4,13 @@
 # resumes transient drops internally; only rerun if the process EXITS. Then drive
 # the smoke off local fp16 weights. hf_transfer OFF. Scratch file.
 set -u
-cd /Users/youssefhassan/Development/operating-system-hypothesis/experiments/03_l23_hardening
+# Repo-relative on purpose: this file ships in the public export, and absolute
+# paths both leak the home directory and break for anyone else running it.
+cd "$(dirname "$0")"
 set -a; . ../../.env 2>/dev/null; set +a
 export HF_HUB_ENABLE_HF_TRANSFER=0
 export HF_HUB_DOWNLOAD_TIMEOUT=20        # stalled stream read raises -> internal retry+resume
-VENV=/Users/youssefhassan/Development/operating-system-hypothesis/.venv/bin/python
+VENV=../../.venv/bin/python
 export LOCAL=$PWD/sdxl_local
 LOG=$PWD/dl_local.log; : > "$LOG"
 stamp(){ date +%H:%M:%S; }

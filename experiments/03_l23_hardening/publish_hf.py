@@ -58,8 +58,9 @@ MODELS = ("sdxl", "sd35")
 SKIP_NAMES = {".DS_Store", "Thumbs.db"}
 
 # Never cross, even from the public tree. log.md and HANDOFF.md mirror
-# sync_public.sh. The *.log files are a gap in that denylist: they are download
-# progress noise and they embed absolute /Users/<name>/ paths.
+# sync_public.sh. The *.log files are download progress noise and they embed
+# absolute home-directory paths (which is also why this comment does not spell
+# the pattern out: the audit greps this file too).
 DENY_RE = re.compile(r"(^|/)(log\.md|HANDOFF\.md|[^/]*\.log)$")
 
 # Text artifacts to lift from the PUBLIC repo. Everything here is already
@@ -94,14 +95,19 @@ MODEL_TEXT = (
     "metadata.json",
 )
 
-# Anything matching these in the built export fails the audit. Mirrors
-# sync_public.sh's audit grep.
-AUDIT_RE = re.compile(
-    r"BRAIN\.md|BRAIN §|TIMELINE\.md|PLAN_II|IDEAS\.md|handover_fellows|substack/"
-    r"|LinkedIn|outreach|visa|Exeter|research role|/Users/",
-    re.IGNORECASE,
-)
+# The private-reference patterns live OUTSIDE this file, in
+# scripts/audit_patterns.txt, which sits outside the public-export allowlist.
+# This is deliberate: this script itself ships in the public repo, and a
+# literal pattern list here would publish exactly the meta-information the
+# audit exists to catch (found the hard way, 2026-08-31).
+AUDIT_PATTERNS = REPO_ROOT / "scripts" / "audit_patterns.txt"
 AUDIT_SUFFIXES = {".md", ".json", ".txt", ".py", ".sh", ".csv"}
+
+
+def _audit_re() -> "re.Pattern | None":
+    if AUDIT_PATTERNS.exists():
+        return re.compile(AUDIT_PATTERNS.read_text().strip(), re.IGNORECASE)
+    return None
 
 
 def _git_sha() -> str | None:
@@ -179,6 +185,13 @@ def _copy_public_text(dst_root: Path) -> int:
 
 def audit(export_dir: Path) -> list[str]:
     """Grep the built export for private references. Same rules as sync_public.sh."""
+    rx = _audit_re()
+    if rx is None:
+        print(
+            "!! private-reference audit SKIPPED: scripts/audit_patterns.txt not found. "
+            "Fine on a public checkout; on the private machine this is a red flag."
+        )
+        return []
     hits: list[str] = []
     for p in sorted(export_dir.rglob("*")):
         if not p.is_file() or p.suffix.lower() not in AUDIT_SUFFIXES:
@@ -188,7 +201,7 @@ def audit(export_dir: Path) -> list[str]:
         except OSError:
             continue
         for i, line in enumerate(text.splitlines(), 1):
-            m = AUDIT_RE.search(line)
+            m = rx.search(line)
             if m:
                 hits.append(f"{p.relative_to(export_dir)}:{i}: …{line[max(0, m.start() - 40):m.end() + 40]}…")
     return hits
