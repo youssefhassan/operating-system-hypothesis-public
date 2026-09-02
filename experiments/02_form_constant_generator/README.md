@@ -2,11 +2,11 @@
 
 **Status:** **Stage A run 2026-09-03** under two dated pre-scoring amendments (see
 `preregistration.json` → `amendments`, and the note below). Write-up:
-[`analysis.md`](analysis.md). Pre-registered 2026-06-29 (renumbered from Exp 29 →
-Exp 02 on 2026-06-30); untouched for 65 days before the run.
+[`analysis.md`](analysis.md). Pre-registered 2026-06-29 (renumbered on
+2026-06-30); untouched for 65 days before the run.
 
 > **Amendments 2026-09-03, recorded before any image was scored.** (1) The
-> "Exp 14 detector" this file names below was never built. The instrument is the
+> "planned scorer" this file names below was never built. The instrument is the
 > archived **Exp 01 judge** (`../01_image_test/judge.py`, rubric
 > `exp01-formconstant-v1`, `claude-sonnet-4-6`), unchanged, which is the only
 > detector that ever scored the AI outputs and therefore the faithful reading of
@@ -18,9 +18,9 @@ Exp 02 on 2026-06-30); untouched for 65 days before the run.
 > `params.json`. The design text below is left as pre-registered; the amendments
 > are the record of what changed and why.
 
-> **Note on the renumber.** Originally labeled Exp 29 in the legacy phased plan.
+> **Note on the renumber.** Originally carried a higher number in the legacy phased plan.
 > Renumbered under the new rule: sequential IDs assigned when an experiment
-> actually starts (here, at pre-registration). The legacy "Exp 14 / 26 / 28"
+> actually starts (here, at pre-registration). The legacy "scorer / replication / paper"
 > forward references below point to the form-constant scorer, Suzuki-style
 > replication, and framing paper — those are plain-named work items now
 > (see [`the project plan`](the project plan) and [`the project plan`](the project plan)).
@@ -34,19 +34,19 @@ Exp 02 on 2026-06-30); untouched for 65 days before the run.
   patterns* — the minimal scalar precursor we implement first.
 - Klüver (1966) — the form-constant taxonomy the output is scored against.
 - Bertolero et al. (2026) — the empirical Dreamachine drawing corpus this
-  experiment's synthetic corpus complements for Exp 14 detector calibration.
+  experiment's synthetic corpus complements for planned scorer calibration.
 
 ## Why this experiment exists (the gap it fills)
 
-The program **cites** Bressloff three times — Exp 07 (V1-shaped-output
-prediction), Exp 14 (form-constant rubric), Exp 24 (auditory form constants by
-analogy) — but **never implements it**. Every experiment in `the project plan` is an
+The program **cites** Bressloff three times — the V1-shaped-output
+prediction, the form-constant rubric, and auditory form constants by
+analogy, but **never implements it**. Every experiment in `the project plan` is an
 *AI-side* perturbation (CFG sweep, dropout, SAE intervention). The only place
-the program runs a *biological* mechanism as code is Exp 27 (forking Bredenberg
-for the predictive-coding / audio side). There is no vision-side mechanistic
+the program runs a *biological* mechanism as code was a planned fork of Bredenberg,
+for the predictive-coding / audio side. There is no vision-side mechanistic
 model.
 
-This experiment is that model. It is to the vision thread what Exp 27 is to the
+This experiment is that model. It is to the vision thread what that fork would be to the
 predictive-coding thread: a faithful replication of a published generative
 account, run as code, that the AI-side experiments can be measured *against*.
 
@@ -78,7 +78,7 @@ This maps onto all three subquestions in `RESEARCH_METHODOLOGY.md` §1:
   spirals; hexagonal lattice → honeycomb/cobweb)?
 - **Q3 (dose-response).** Does the μ-sweep produce a graded blank → faint
   geometry → full form-constant curve whose *shape* can be compared against
-  the AI-side CFG/temperature dose-response curves (Exps 01, 26, 28)?
+  the AI-side CFG/temperature dose-response curves (Exp 01 and its planned follow-ups)?
 
 ## Method
 
@@ -109,7 +109,7 @@ selects the stable *contoured* planforms (rolls / squares / hexagons made of
 oriented line elements) that the scalar model cannot produce — the contoured
 form constants. Heavier; staged only if Stage A replicates.
 
-**Scoring.** Run the *same* blind form-constant detector built for Exp 14 (the
+**Scoring.** Run the *same* blind form-constant detector built as the planned scorer (the
 four-class Klüver rubric) over the rendered visual-field images. Reusing the form-constant experiment's
 detector is deliberate: it ties this experiment's ground truth to the same
 instrument that scores the AI outputs, so the comparison in Q3 is
@@ -124,7 +124,7 @@ yield is therefore in the two derived deliverables, not in the existence claim
 alone:
 
 1. A **labeled synthetic form-constant corpus** (parametric, knob-controlled,
-   class-labeled) → feeds Exp 14 detector calibration alongside Bertolero.
+   class-labeled) → feeds planned scorer calibration alongside Bertolero.
 2. A **biological-side dose-response curve** (μ-sweep) → the reference curve the
    AI-side CFG/temperature curves are compared to. This is the only curve in the
    program generated by the actual V1 mechanism, so it is what "do the AI curves
@@ -153,7 +153,7 @@ The PDE is deterministic given (μ, kernel, initial condition), but planform
 selection is multistable near onset, so the random initial-condition **seed** is
 the unit of replication: N = 10 seeds per μ per kernel regime. μ grid:
 `{0.8, 0.9, 0.95, 1.0, 1.05, 1.1, 1.25, 1.5} · μ_c`. Each rendered field scored
-by the Exp 14 detector. Primary product is the **curve** (detector score vs μ),
+by the planned scorer. Primary product is the **curve** (detector score vs μ),
 per §5's "effect estimation over significance." Trend tested by permutation;
 Q2 specificity reported as a planform → detected-class **confusion matrix**
 (expected near-diagonal per the Bressloff correspondence).

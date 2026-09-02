@@ -12,7 +12,7 @@
   "subquestions_addressed": {
     "Q1_existence": "Does the V1 neural-field model produce the four Kluver classes qualitatively, vs degrading to noise?",
     "Q2_specificity": "Does the cortical planform (stripe orientation / lattice symmetry) predict which form-constant class the inverse log-polar map renders?",
-    "Q3_dose_response": "Does the mu-sweep produce a graded blank -> geometry curve whose shape can be compared against the AI-side CFG/temperature curves (Exps 01, 26, 28)?"
+    "Q3_dose_response": "Does the mu-sweep produce a graded blank -> geometry curve whose shape can be compared against the AI-side CFG/temperature curves (Exp 01 and its planned follow-ups)?"
   },
   "hypothesis": "When the cortical excitability/gain parameter mu is raised through the Turing-bifurcation threshold mu_c in an Ermentrout-Cowan/Bressloff neural-field model on V1, holding the lateral-connectivity kernel and the retino-cortical (complex-log) map fixed, the visual-field rendering transitions from a blank field to the four Kluver form-constant classes (lattice/honeycomb, cobweb, tunnel/funnel, spiral), because reduced inhibition destabilizes the homogeneous cortical state into doubly-periodic planforms that the inverse log-polar map renders as those geometries. The cortical planform geometry predicts the rendered class (Q2).",
   "null_result": "Across the full mu-sweep the rendered output never yields form-constant-detector scores above the blank/noise baseline for any of the four classes (our implementation fails to reproduce Bressloff -- reported honestly as a methods failure, Methodology Section 2.3), OR the model produces a single degenerate pattern with no planform->class correspondence (off-diagonal-dominant confusion matrix).",
@@ -48,7 +48,7 @@
   "blank_baseline": "sub-threshold mu (0.8 * mu_c) homogeneous state, rendered and scored identically",
   "metric": {
     "name": "kluver_form_constant_score",
-    "instrument": "the SAME blind form-constant detector built for Exp 14 (four-class Kluver rubric), reused so the ground truth shares the instrument that scores the AI outputs",
+    "instrument": "the SAME blind form-constant detector built as the planned scorer (four-class Kluver rubric), reused so the ground truth shares the instrument that scores the AI outputs",
     "per_image": "detector class scores for {lattice, cobweb, tunnel, spiral}",
     "per_mu": "mean over initial-condition seeds",
     "range": [
@@ -80,8 +80,8 @@
   ],
   "primary_product": "the dose-response curve (detector score vs mu) and the planform->class confusion matrix; significance is a sanity check on the curve, not the product (Methodology Section 5)",
   "deliverables": [
-    "labeled synthetic form-constant corpus (parametric, class-labeled) for Exp 14 detector calibration alongside Bertolero (2026)",
-    "biological-side mu-sweep dose-response curve, the reference the AI-side CFG/temperature curves (Exps 01, 26, 28) are compared against in Q3"
+    "labeled synthetic form-constant corpus (parametric, class-labeled) for planned scorer calibration alongside Bertolero (2026)",
+    "biological-side mu-sweep dose-response curve, the reference the AI-side CFG/temperature curves (Exp 01 and its planned follow-ups) are compared against in Q3"
   ],
   "budget": {
     "api_spend_usd": 0,
@@ -103,7 +103,7 @@
     {
       "date": "2026-09-03",
       "before_any_analyzed_run": true,
-      "why": "Stage A is being run now (2026-09-03), 65 days after the pre-registration, and two things it references do not exist: the 'Exp 14 form-constant detector' was never built, and no metadata.json exists to pin parameters. This amendment resolves both before any simulation or scoring run, and adds one deliverable the 2026-09-02 program review asked for: a positive control for the Exp 01 Level-1 judge, whose null result currently rests on an instrument never shown to detect a form constant.",
+      "why": "Stage A is being run now (2026-09-03), 65 days after the pre-registration, and two things it references do not exist: the 'planned form-constant scorer' was never built, and no metadata.json exists to pin parameters. This amendment resolves both before any simulation or scoring run, and adds one deliverable the 2026-09-02 program review asked for: a positive control for the Exp 01 Level-1 judge, whose null result currently rests on an instrument never shown to detect a form constant.",
       "instrument": {
         "change": "The detector is the archived Exp 01 judge, unchanged: experiments/01_image_test/judge.py, rubric_version exp01-formconstant-v1, model claude-sonnet-4-6, single judge, blind shuffled order. This is the faithful reading of the pre-registered metric text ('the SAME blind form-constant detector ... reused so the ground truth shares the instrument that scores the AI outputs'): the only detector that ever scored the AI outputs is this one.",
         "per_image_score": "kluver_form_constant_score = geometric_intensity / 3 (Exp 01's pre-registered M). Class detection uses the four binary fields lattice/cobweb/tunnel/spiral. 'Structured' = any binary field 1.",
