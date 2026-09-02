@@ -1,0 +1,167 @@
+{
+  "experiment": "02_form_constant_generator",
+  "status": "confirmatory",
+  "kind": "anchor_replication",
+  "committed_before_analyzed_runs": true,
+  "anchor_papers": [
+    "Bressloff, Cowan, Golubitsky, Thomas & Wiener (2001), Phil. Trans. R. Soc. B 356:299-330",
+    "Ermentrout & Cowan (1979), Biol. Cybernetics 34:137-150 (minimal scalar precursor)",
+    "Kluver (1966), Mechanisms of Hallucinations (form-constant taxonomy)",
+    "Bertolero et al. (2026) bioRxiv (empirical Dreamachine corpus this complements)"
+  ],
+  "subquestions_addressed": {
+    "Q1_existence": "Does the V1 neural-field model produce the four Kluver classes qualitatively, vs degrading to noise?",
+    "Q2_specificity": "Does the cortical planform (stripe orientation / lattice symmetry) predict which form-constant class the inverse log-polar map renders?",
+    "Q3_dose_response": "Does the mu-sweep produce a graded blank -> geometry curve whose shape can be compared against the AI-side CFG/temperature curves (Exps 01, 26, 28)?"
+  },
+  "hypothesis": "When the cortical excitability/gain parameter mu is raised through the Turing-bifurcation threshold mu_c in an Ermentrout-Cowan/Bressloff neural-field model on V1, holding the lateral-connectivity kernel and the retino-cortical (complex-log) map fixed, the visual-field rendering transitions from a blank field to the four Kluver form-constant classes (lattice/honeycomb, cobweb, tunnel/funnel, spiral), because reduced inhibition destabilizes the homogeneous cortical state into doubly-periodic planforms that the inverse log-polar map renders as those geometries. The cortical planform geometry predicts the rendered class (Q2).",
+  "null_result": "Across the full mu-sweep the rendered output never yields form-constant-detector scores above the blank/noise baseline for any of the four classes (our implementation fails to reproduce Bressloff -- reported honestly as a methods failure, Methodology Section 2.3), OR the model produces a single degenerate pattern with no planform->class correspondence (off-diagonal-dominant confusion matrix).",
+  "stages": {
+    "A_scalar_field": {
+      "status": "confirmatory",
+      "model": "Wilson-Cowan scalar neural field a(x,t) on a periodic 2-D cortical sheet: tau da/dt = -a + f(mu*(w conv a)), f = sigmoid, w = difference-of-Gaussians Mexican-hat (short-range excitation, longer-range inhibition), quadratic nonlinearity term to make hexagons competitive with stripes near onset.",
+      "render": "inverse retino-cortical complex-log map, cortical (x,y) <-> visual-field polar (r,theta) with x ~ ln r, y ~ theta."
+    },
+    "B_orientation_field": {
+      "status": "exploratory_extension",
+      "model": "a(x,phi) on cortex x S^1 with anisotropic shift-twist (E(2)) lateral connectivity coupling iso-orientation cells along their preferred axis; equivariant bifurcation theory selects stable contoured planforms.",
+      "gate": "only run if Stage A replicates the four classes."
+    }
+  },
+  "fixed": {
+    "grid": "cortical sheet resolution and physical extent fixed across the sweep (pinned in metadata.json at run time)",
+    "kernel": "difference-of-Gaussians parameters (sigma_exc, sigma_inh, amplitudes) fixed; mu_c and k_c derived from the fixed kernel by linear stability analysis",
+    "map": "complex-log map parameters (foveal r0, scaling) fixed",
+    "nonlinearity": "sigmoid slope/threshold and quadratic coefficient fixed",
+    "integrator": "fixed timestep and settle-time to a steady pattern state"
+  },
+  "mu_grid_in_units_of_mu_c": [
+    0.8,
+    0.9,
+    0.95,
+    1.0,
+    1.05,
+    1.1,
+    1.25,
+    1.5
+  ],
+  "blank_baseline": "sub-threshold mu (0.8 * mu_c) homogeneous state, rendered and scored identically",
+  "metric": {
+    "name": "kluver_form_constant_score",
+    "instrument": "the SAME blind form-constant detector built for Exp 14 (four-class Kluver rubric), reused so the ground truth shares the instrument that scores the AI outputs",
+    "per_image": "detector class scores for {lattice, cobweb, tunnel, spiral}",
+    "per_mu": "mean over initial-condition seeds",
+    "range": [
+      0,
+      1
+    ]
+  },
+  "direction": "form-constant score rises as mu crosses mu_c (blank below, structured above); positive Spearman rho(score, mu) over the onset region",
+  "specificity_test": {
+    "name": "planform_to_class_confusion_matrix",
+    "expected": "near-diagonal per Bressloff correspondence: horizontal cortical stripes -> tunnels (concentric), vertical -> funnels (radial), oblique -> spirals, hexagonal lattice -> honeycomb/cobweb"
+  },
+  "confirm": {
+    "above_threshold_score_min": 0.5,
+    "blank_baseline_score_max": 0.15,
+    "all_four_classes_realized": true,
+    "confusion_matrix_diagonal_dominant": true
+  },
+  "null": {
+    "max_score_over_sweep_below": 0.2,
+    "or_confusion_matrix_off_diagonal_dominant": true
+  },
+  "samples_per_setting": 10,
+  "sample_unit": "random initial-condition seed (planform selection is multistable near onset; the seed is the unit of replication)",
+  "tests": [
+    "spearman_trend_score_vs_mu",
+    "permutation_test",
+    "planform_class_confusion_matrix"
+  ],
+  "primary_product": "the dose-response curve (detector score vs mu) and the planform->class confusion matrix; significance is a sanity check on the curve, not the product (Methodology Section 5)",
+  "deliverables": [
+    "labeled synthetic form-constant corpus (parametric, class-labeled) for Exp 14 detector calibration alongside Bertolero (2026)",
+    "biological-side mu-sweep dose-response curve, the reference the AI-side CFG/temperature curves (Exps 01, 26, 28) are compared against in Q3"
+  ],
+  "budget": {
+    "api_spend_usd": 0,
+    "gpu": "none",
+    "compute": "local CPU/numpy PDE integration",
+    "time_to_result": "days for Stage A"
+  },
+  "forbidden_to_automate": [
+    "hypothesis",
+    "metric",
+    "rubric",
+    "confirm_thresholds",
+    "mu_grid_bounds",
+    "kernel_family"
+  ],
+  "scope_limit": "This model is the reference, not a claim that any AI system implements V1. A diffusion UNet has no retinotopic map or orientation columns. Q3 compares the SHAPE of two dose-response curves; it does not assert shared mechanism (cf. Exp 01 README, 'What we do and don't expect').",
+  "notes": "Anchor replication per Methodology Section 2 (replication-first). Faithful Stage-A replication is expected to succeed; the scientific yield is the two derived deliverables, not the existence claim. Changing any forbidden_to_automate field after seeing data reclassifies the run as exploratory (Section 4) in a separate dated commit.",
+  "amendments": [
+    {
+      "date": "2026-09-03",
+      "before_any_analyzed_run": true,
+      "why": "Stage A is being run now (2026-09-03), 65 days after the pre-registration, and two things it references do not exist: the 'Exp 14 form-constant detector' was never built, and no metadata.json exists to pin parameters. This amendment resolves both before any simulation or scoring run, and adds one deliverable the 2026-09-02 program review asked for: a positive control for the Exp 01 Level-1 judge, whose null result currently rests on an instrument never shown to detect a form constant.",
+      "instrument": {
+        "change": "The detector is the archived Exp 01 judge, unchanged: experiments/01_image_test/judge.py, rubric_version exp01-formconstant-v1, model claude-sonnet-4-6, single judge, blind shuffled order. This is the faithful reading of the pre-registered metric text ('the SAME blind form-constant detector ... reused so the ground truth shares the instrument that scores the AI outputs'): the only detector that ever scored the AI outputs is this one.",
+        "per_image_score": "kluver_form_constant_score = geometric_intensity / 3 (Exp 01's pre-registered M). Class detection uses the four binary fields lattice/cobweb/tunnel/spiral. 'Structured' = any binary field 1.",
+        "model_availability_note": "If claude-sonnet-4-6 is no longer served at run time, the run uses claude-sonnet-5 and is reported as a deviation; the instrument identity with Exp 01 is then weaker and the write-up must say so."
+      },
+      "fixed_parameters_pinned": "params.json, committed with this amendment. Kernel: difference of unit-mass Gaussians, sigma_exc = 1.0, sigma_inh = 2.0 (cortical units), so w_hat(k) = exp(-k^2/2) - exp(-2 k^2) with k_c^2 = 2 ln 4 / 3. Nonlinearity: f(u) = S(u) - S(0), S = logistic with slope beta = 4 and threshold theta = 0.5 (the asymmetric sigmoid supplies the quadratic term). mu_c = 1 / (f'(0) w_hat(k_c)), computed numerically at run time and written to metadata.json. Sheet: 128 x 128 periodic, side L = 6 lambda_c so the critical mode is commensurate. Integrator: forward Euler, dt = 0.1, T = 300, tau = 1, initial condition 0.01 * N(0,1) per seed. Map: x = L (ln r - ln r0)/(ln r_max - ln r0), y = L theta / 2 pi, r0 = 0.02, r_max = 1, rendered at 512 x 512 with a FIXED intensity mapping (128 + 127 a / 0.5, clipped) so a sub-threshold field renders blank rather than being contrast-stretched into noise.",
+      "planform_labelling_rule": "From the power spectrum of the mean-removed steady field: pattern amplitude std(a) < 0.02 -> 'blank'. Otherwise cluster spectral peaks above 0.2 x max power by wavevector angle mod pi: one cluster -> 'stripes', two or more -> 'lattice'. For stripes, psi = angle of the wavevector to the x (ln r) axis: |psi| <= 22.5 deg -> predicted class 'tunnel' (concentric rings); |psi| >= 67.5 deg -> 'tunnel' (radial funnel; the Exp 01 rubric merges tunnels and funnels into one field); otherwise -> 'spiral'. Lattice -> 'lattice' or 'cobweb' (either binary counts as a hit; the rubric's honeycomb/web distinction is not one the scalar model makes). This rule is fixed here, before any field is simulated.",
+      "positive_control_added": {
+        "deliverable": "(iii) Validation of the Exp 01 Level-1 judge against labelled ground truth. This is not a new experiment: it is the calibration use of deliverable (i) that the pre-registration already lists, applied to the one judge that exists.",
+        "positives": "all supra-threshold renders, mu in {1.05, 1.1, 1.25, 1.5} x mu_c, 10 seeds each = 40 images, labelled by the planform rule.",
+        "negatives_blank": "sub-threshold renders, mu in {0.8, 0.9} x mu_c, 10 seeds each = 20 images (the pre-registered blank baseline).",
+        "negatives_photographic": "40 images from the Exp 03 corpus at guidance 7 and 11 (both architectures' comfort zone), 20 per architecture, stratified over the six prompts, drawn once with numpy seed 0 and listed in negatives.json. These are ordinary photographic scenes with no form constants; they were previously scored only on the Kl\u00fcver Level-2/3 rubric, a different instrument.",
+        "ambiguous_not_scored_for_the_control": "mu in {0.95, 1.0} x mu_c, reported on the curve only.",
+        "thresholds": {
+          "validated": "judge 'structured' (any class) rate >= 0.80 on positives AND <= 0.20 on photographic negatives AND <= 0.20 on blank negatives",
+          "partially_sensitive": "positives rate in [0.50, 0.80) with negatives <= 0.20: the Exp 01 null stands but must be reported with the measured sensitivity attached",
+          "failed": "positives rate < 0.50, or either negative rate > 0.20: the Exp 01 Level-1 null is reclassified as uninterpretable (instrument not validated) and the preprint must say so"
+        },
+        "class_specificity": "confusion matrix of predicted class (planform rule) vs judged class on positives; diagonal-dominant per the pre-registered specificity test. A miss here with a pass on the structured rate means the judge sees geometry but not which geometry."
+      },
+      "budget_revision": "api_spend_usd 0 -> about 2 (roughly 100 Claude Sonnet 4.6 vision calls at ~$0.015 each). Within RESEARCH_METHODOLOGY section 9.",
+      "unchanged": [
+        "hypothesis",
+        "mu_grid",
+        "samples_per_setting",
+        "confirm thresholds",
+        "null thresholds",
+        "specificity_test",
+        "kernel_family",
+        "Stage B gate"
+      ],
+      "why_still_confirmatory": "No field has been simulated and no image scored. Every choice above is made blind to the outcome. The instrument substitution is a resolution of a dangling reference, not a change of metric: the score formula (geometric_intensity/3) and the four classes are exactly Exp 01's."
+    },
+    {
+      "date": "2026-09-03",
+      "after": "a two-seed pipeline smoke test of the simulation (no scoring run; no image has been judged)",
+      "before_any_scoring_run": true,
+      "what_the_smoke_test_showed": "(1) With the amendment-1 parameters (asymmetric sigmoid theta = 0.5) every supra-threshold field is a hexagonal lattice; rolls never form, so tunnel / funnel / spiral cannot be realized and the 'all four classes' gate would fail for a reason known in advance. Ermentrout & Cowan 1979 is explicit that the quadratic term decides hexagons versus rolls. (2) With an odd sigmoid (theta = 0) rolls form but, from pure noise on a 12-wavelength sheet, as a defect-ridden labyrinth with many orientations rather than a single roll family, which the map renders as a swirl with no single class. (3) Six wavelengths per side rendered by nearest-neighbour sampling is too coarse to read as a honeycomb.",
+      "changes": {
+        "two_nonlinearity_regimes": "Stage A now runs two regimes with the same kernel, sheet, map and integrator: 'hex' (beta 4, theta 0.5, pure-noise initial condition) and 'stripe' (beta 4, theta 0.0, noise plus an oriented cosine at k_c of the SAME amplitude as the noise, orientation psi drawn uniformly per seed). The oriented seed selects one member of the E(2)-symmetric roll family, which is what the equivariant-bifurcation analysis assumes; it does not set the wavelength or the amplitude. Each regime has its own mu_c (computed from its f'(0)) and its own 8 x 10 sweep. 160 renders in total.",
+        "sheet_and_render": "grid 128 -> 256, wavelengths per side 6 -> 12 (cortical resolution unchanged at ~0.31 units per pixel), bilinear sampling with periodic wrap in the render. Intensity mapping unchanged.",
+        "labelling_rule_refined": "Lattice = the three strongest spectral directions are ~60 degrees apart (tolerance 15); a hexagonal field with a domain wall carries a second weaker rotated triple and is still a lattice. Several directions that do not satisfy this = 'labyrinth', predicted class None: counted as a structured positive for the judge control, excluded from the confusion matrix. Stripe angle rule unchanged.",
+        "positives_for_the_control": "all supra-threshold renders from BOTH regimes (80 images); blank negatives from both regimes (40 images); photographic negatives unchanged (40).",
+        "budget": "about 160 + 40 = 200 Sonnet 4.6 vision calls, roughly $3."
+      },
+      "unchanged": [
+        "hypothesis",
+        "mu_grid",
+        "samples_per_setting",
+        "confirm thresholds",
+        "null thresholds",
+        "specificity_test",
+        "kernel_family",
+        "instrument (Exp 01 judge)",
+        "positive-control thresholds",
+        "Stage B gate"
+      ],
+      "why_still_confirmatory": "Methodology section 4 and the Exp 03 precedent: a methods change made after a pipeline smoke test and before any analyzed (scored) run stays confirmatory when it is dated and its trigger is recorded. The change widens what the model is allowed to produce; it does not touch the metric, the thresholds, or the judge. The honest reading is that without it the confirmatory gate would have failed on an implementation choice rather than on the mechanism."
+    }
+  ]
+}

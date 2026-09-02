@@ -1,0 +1,62 @@
+{
+  "grid_n": 256,
+  "sigma_exc": 1.0,
+  "sigma_inh": 2.0,
+  "wavelengths_per_side": 12,
+  "dt": 0.1,
+  "T": 300.0,
+  "tau": 1.0,
+  "init_amp": 0.01,
+  "mu_grid_in_units_of_mu_c": [
+    0.8,
+    0.9,
+    0.95,
+    1.0,
+    1.05,
+    1.1,
+    1.25,
+    1.5
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "render_px": 512,
+  "r0": 0.02,
+  "r_max": 1.0,
+  "intensity_scale": 0.5,
+  "blank_std_threshold": 0.02,
+  "peak_power_fraction": 0.2,
+  "stripe_angle_deg": 22.5,
+  "negatives": {
+    "source": "../03_l23_hardening/results-local/{sdxl,sd35}",
+    "guidance": [
+      7,
+      11
+    ],
+    "per_arch": 20,
+    "draw_seed": 0
+  },
+  "regimes": {
+    "hex": {
+      "beta": 4.0,
+      "theta": 0.5,
+      "note": "asymmetric sigmoid, quadratic term present: hexagon (lattice) planforms expected near onset",
+      "oriented_seed": false
+    },
+    "stripe": {
+      "beta": 4.0,
+      "theta": 0.0,
+      "note": "odd sigmoid, no quadratic term: roll (stripe) planforms expected; their orientation selects tunnel / funnel / spiral",
+      "oriented_seed": true
+    }
+  }
+}
