@@ -1,0 +1,894 @@
+{
+  "judge": "qwen",
+  "model": "mlx-community/Qwen3-VL-32B-Instruct-4bit",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "fields": [
+    "reduplication",
+    "fragmentation",
+    "condensation",
+    "distortion",
+    "tiling"
+  ],
+  "images": {
+    "p2_portrait_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "face shattered into abstract forms, merged with surrounding textures, and warped beyond recognition"
+    },
+    "p6_forest_g1.75_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with mist-induced blending and slight warping, but not fully tiling or fragmented"
+    },
+    "p1_stilllife_g0.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Abstract forms dominate; objects are shattered, fused, and warped beyond recognition."
+    },
+    "p5_livingroom_g0.25_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a chaotic field of fragmented, distorted, and reduplicated organic forms with no coherent objects or room struc"
+    },
+    "p4_oranges_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible bowl or oranges; forms are fragmented, distorted, and fus"
+    },
+    "p3_bicycle_g1.25_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Bicycle appears broken and warped, partially fused with wall and debris"
+    },
+    "p2_portrait_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible human face; all features are fragmented, distorted, and c"
+    },
+    "p6_forest_g1.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Repetitive tree forms form a seamless, patterned texture field."
+    },
+    "p5_livingroom_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "coherent room with sofa, lamp, and window as intended"
+    },
+    "p2_portrait_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Face is shattered into fragmented, warped textures with no coherent features"
+    },
+    "p6_forest_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Repetitive, patterned forest forms with merged and warped tree shapes"
+    },
+    "p4_oranges_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Soft, impressionistic rendering with blurred forms and merged elements, but no extreme repetition or tiling."
+    },
+    "p6_forest_g0.25_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image dissolves into repeating, fragmented, and fused floral forms with no coherent forest structure."
+    },
+    "p6_forest_g0.75_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Repetitive tree forms merge into a textured, misty field with warped and fused silhouettes."
+    },
+    "p6_forest_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Dense, repeating floral forms with fused and warped elements, fully tiling the image."
+    },
+    "p1_stilllife_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Multiple watermelon pieces and keys are repeated and fragmented; glass is distorted and fused with wood texture."
+    },
+    "p2_portrait_g1.75_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
+    },
+    "p3_bicycle_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image dissolves into fragmented, distorted, and condensed forms with no coherent bicycle or wall; entire canvas is a til"
+    },
+    "p1_stilllife_g1.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating field of fragmented, distorted watermelon pieces and indistinct objects, with no coherent sc"
+    },
+    "p4_oranges_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "No visible hallucinatory constants; image depicts a coherent kitchen scene with two bowls of oranges as intended."
+    },
+    "p2_portrait_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating, fragmented, and distorted field of abstract forms with no coherent face."
+    },
+    "p3_bicycle_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Bicycle and wall fragmented and distorted, with partial merging of forms"
+    },
+    "p5_livingroom_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions."
+    },
+    "uncond_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Floral and facial elements merge and warp into surreal, hybrid forms"
+    },
+    "p3_bicycle_g0.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a fragmented, distorted, and condensed field of abstract forms with no recognizable bicycle or wall"
+    },
+    "p3_bicycle_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, fragmented, and distorted floral-butterfly field with no discernible bicycle or wall; entire compositi"
+    },
+    "p1_stilllife_g1.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of fragmented, distorted watermelon slices, glass fragments, and keys, fully tiling "
+    },
+    "p6_forest_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Repetitive tree forms form a seamless, patterned texture field."
+    },
+    "p2_portrait_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Floral and butterfly motifs densely repeat and fragment, merging into a distorted, tiled field obscuring any single face"
+    },
+    "p5_livingroom_g0.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Sofa and window appear warped and fragmented, with soft, smudged forms; no clear reduplication or tiling."
+    },
+    "p1_stilllife_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of abstract, fragmented, and distorted forms with no discernible objects."
+    },
+    "p3_bicycle_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Bicycle is shattered into fragments and warped beyond recognition."
+    },
+    "p6_forest_g1.25_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with slight fusion and warping in mist, but not fully tiled or shattered"
+    },
+    "p1_stilllife_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
+    },
+    "p3_bicycle_g1.75_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Bicycle parts appear broken and warped, but no full reduplication or tiling"
+    },
+    "p5_livingroom_g1.25_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Sofa and lamp appear slightly fragmented and distorted, but no reduplication or tiling."
+    },
+    "p5_livingroom_g1.75_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "coherent room with sofa, lamp, window; no hallucinatory constants visible"
+    },
+    "p5_livingroom_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "coherent room with sofa, lamp, and window as intended"
+    },
+    "p5_livingroom_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions."
+    },
+    "p2_portrait_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
+    },
+    "p2_portrait_g0.25_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating field of fragmented, distorted floral and organic forms, with no coherent human face visible"
+    },
+    "p1_stilllife_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible watermelon, glass, or keys."
+    },
+    "p2_portrait_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features; no hallucinatory constants present."
+    },
+    "p5_livingroom_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "coherent room with intended objects present without hallucinatory alterations"
+    },
+    "p4_oranges_g0.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Flowers and vase are heavily distorted with fluid, melted forms, but no reduplication or tiling."
+    },
+    "p4_oranges_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Oranges and foliage endlessly repeated in a dense, patterned field with fragmented and distorted forms."
+    },
+    "p6_forest_g1_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms dominate, with slight fusion and warping in misty areas"
+    },
+    "p2_portrait_g1.5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
+    },
+    "p2_portrait_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
+    },
+    "p5_livingroom_g1.5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "coherent room with sofa, lamp, and window as intended"
+    },
+    "p4_oranges_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Floral forms and objects appear softly blurred and warped, but no clear reduplication, fragmentation, or condensation; o"
+    },
+    "p1_stilllife_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating, fragmented, and distorted field of abstract forms with no coherent objects."
+    },
+    "p6_forest_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Repetitive, patterned forms dominate with fused and warped tree shapes"
+    },
+    "p5_livingroom_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible sofa, lamp, or window; all intended objects are replaced "
+    },
+    "p1_stilllife_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of fragmented, distorted, and fused forms with no discernible single objects."
+    },
+    "p5_livingroom_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of abstract, fragmented, and distorted organic forms with no discernible sofa, lamp,"
+    },
+    "p5_livingroom_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Faint architectural elements and furniture appear fragmented and warped, with some merging and distortion, but no domina"
+    },
+    "p2_portrait_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of abstract, fragmented forms with no discernible human face."
+    },
+    "p3_bicycle_g1.5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Bicycle parts are broken and warped, merging with the wall in a fragmented, distorted manner."
+    },
+    "p1_stilllife_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Image depicts a coherent still life with no visible hallucinatory constants."
+    },
+    "p2_portrait_g0.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Face and form shattered into abstract, overlapping fragments with merged and warped features"
+    },
+    "p5_livingroom_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a chaotic, repeating texture of fragmented, distorted, and multiplied forms with no coherent objects."
+    },
+    "p3_bicycle_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Bicycle appears shattered and warped, with parts merging into the wall; no repetition beyond one bicycle."
+    },
+    "p4_oranges_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "No visible hallucinatory constants; image depicts a coherent kitchen scene with a bowl of oranges."
+    },
+    "p1_stilllife_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of abstract floral forms with no discernible objects"
+    },
+    "p6_forest_g1.5_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with mist-induced blending and slight warping, but not fully tiling or fragmented"
+    },
+    "p1_stilllife_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All objects are clearly depicted without hallucinatory distortions."
+    },
+    "p1_stilllife_g0.25_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a chaotic, fragmented field of flowers and butterflies with no discernible watermelon, glass, or keys; dominate"
+    },
+    "p1_stilllife_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, abstract field of floral and butterfly motifs with no discernible watermelon, glass, or keys; all elem"
+    },
+    "p6_forest_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Repetitive, blended tree forms create a textured, patterned forest field with merged and warped shapes."
+    },
+    "p4_oranges_g1.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and leaves repeat endlessly in a seamless pattern, filling the frame as a tiling texture."
+    },
+    "p4_oranges_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of fragmented, distorted, and fused organic forms, completely tiling the frame."
+    },
+    "p6_forest_g1.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Repetitive, textured forest forms with merged and warped tree shapes, tiling across the entire image."
+    },
+    "p4_oranges_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and leaves repeat endlessly in a seamless pattern, filling the entire frame."
+    },
+    "p2_portrait_g1.25_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Single, coherent human face with natural aging features, no hallucinatory constants present"
+    },
+    "p3_bicycle_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, abstract field of fragmented, distorted, and repeated forms with no coherent object boundaries."
+    },
+    "p4_oranges_g0.25_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, fragmented, and distorted field of floral and butterfly motifs, with no recognizable bowl or oranges; "
+    },
+    "p6_forest_g2_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Repetitive tree forms with slight warping and fusion in mist, but not fully tiled or shattered"
+    },
+    "p5_livingroom_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and coherent with no hallucinatory distortions."
+    },
+    "p4_oranges_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Two bowls of oranges on a kitchen counter, no hallucinatory constants visible."
+    },
+    "p4_oranges_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible bowl or oranges; reduplication and distortion dominate."
+    },
+    "p3_bicycle_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible bicycle or wall"
+    },
+    "p1_stilllife_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Watermelon and glass appear fragmented and distorted, with keys partially dissolved into the surface; no tiling or redup"
+    },
+    "p6_forest_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Dense, repeating floral forms with merged and warped structures, forming a seamless pattern field."
+    },
+    "p3_bicycle_g0.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Abstract, shattered forms with no coherent object boundaries"
+    },
+    "p2_portrait_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating floral pattern with no discernible human face or features"
+    },
+    "p5_livingroom_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "coherent room with sofa, lamp, window; no hallucinatory constants visible"
+    },
+    "p4_oranges_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Oranges and leaves form a dense, repeating pattern filling the frame, with fragmented and distorted elements."
+    },
+    "p2_portrait_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "face shattered into abstract textures with warped features"
+    },
+    "p5_livingroom_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, abstract field of flowers, butterflies, and a fragmented face, with no recognizable room elements."
+    },
+    "p1_stilllife_g1.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating, fragmented field of watermelon slices, leaves, and keys, with objects warped and merged int"
+    },
+    "p6_forest_g0.5_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image dissolves into repeating, warped, and fused forms with dominant reduplication and tiling."
+    },
+    "p3_bicycle_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating pattern of abstract floral forms with no discernible bicycle or wall"
+    },
+    "p1_stilllife_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "All intended objects are present and clearly rendered without hallucinatory distortions."
+    },
+    "p4_oranges_g1.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and leaves repeat endlessly in a seamless pattern, filling the frame as a tiling texture."
+    },
+    "p2_portrait_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Face appears warped and smudged, with blurred features and indistinct boundaries, suggesting dysmorphopsia."
+    },
+    "p5_livingroom_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating mosaic of fragmented, distorted architectural forms with no coherent room or intended object"
+    },
+    "p3_bicycle_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Bicycle is shattered and warped, with parts merging into the wall and ground"
+    },
+    "p4_oranges_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, fragmented, and distorted field of floral and butterfly motifs, with no recognizable bowl or oranges; "
+    },
+    "p3_bicycle_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Image is a dense, repeating mosaic of fragmented, distorted, and fused forms with no discernible bicycle or wall"
+    },
+    "p6_forest_g1.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "Repetitive, fused, and warped tree forms create a tiling pattern."
+    },
+    "p3_bicycle_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Bicycle and wall appear shattered and warped, with partial overlaps and smudged forms."
+    },
+    "p4_oranges_g1.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "Oranges and leaves repeat endlessly in a seamless pattern, forming a tiling texture."
+    },
+    "p4_oranges_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "No visible hallucinatory constants; image depicts a coherent kitchen scene with bowls of fruit."
+    },
+    "p2_portrait_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Severe facial distortion with warped features and smudged anatomy"
+    },
+    "p1_stilllife_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "Objects are broken and warped, with some fusion, but no full tiling or reduplication."
+    },
+    "p3_bicycle_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Bicycle is shattered and warped, with broken spokes and deformed frame."
+    },
+    "p6_forest_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Floral and butterfly motifs densely repeated and fused into a textured, dreamlike field."
+    },
+    "p3_bicycle_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Bicycle is shattered and warped, with broken components and impossible geometry."
+    },
+    "uncond_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "dense floral field with repeated, blended, and warped forms"
+    }
+  }
+}

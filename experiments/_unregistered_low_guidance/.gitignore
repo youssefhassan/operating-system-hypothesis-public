@@ -1,0 +1,8 @@
+smoke/
+__pycache__/
+
+# generation/judging logs are progress-bar spam; exp 03 does not track them either,
+# and the public sync denylists *.log outright
+run.log
+gen_*.log
+judge_*.log

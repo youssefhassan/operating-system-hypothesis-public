@@ -1,0 +1,827 @@
+{
+  "experiment": "03_l23_hardening (local)",
+  "model_key": "sd35",
+  "model_id": "stabilityai/stable-diffusion-3.5-medium",
+  "arch": "MMDiT",
+  "cfg_type": "true CFG",
+  "device": "mps",
+  "dtype": "torch.float16",
+  "scheduler": "keep",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "finished_at": "2026-09-03T15:58:24.519847+00:00",
+  "fixed": {
+    "steps": 25,
+    "width": 1024,
+    "height": 1024
+  },
+  "sweep": {
+    "prompt_ids": [
+      "p1_stilllife",
+      "p2_portrait",
+      "p3_bicycle",
+      "p4_oranges",
+      "p5_livingroom",
+      "p6_forest"
+    ],
+    "guidance": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0
+    ],
+    "seeds": [
+      42,
+      43
+    ],
+    "unconditional": true
+  },
+  "prompts": {
+    "p1_stilllife": "a watermelon, a glass half-filled with water, and a set of keys on a wooden table",
+    "p2_portrait": "a close-up portrait photograph of an elderly man's face",
+    "p3_bicycle": "a red bicycle leaning against a brick wall",
+    "p4_oranges": "a bowl of oranges on a kitchen counter",
+    "p5_livingroom": "an empty living room with a sofa, a lamp, and a window",
+    "p6_forest": "a forest of pine trees on a misty mountainside"
+  },
+  "shard": {
+    "index": 0,
+    "num_shards": 1
+  },
+  "runs": [
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.0,
+      "seed": 42,
+      "filename": "p1_stilllife_g0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.0,
+      "seed": 43,
+      "filename": "p1_stilllife_g0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.25,
+      "seed": 42,
+      "filename": "p1_stilllife_g0.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.25,
+      "seed": 43,
+      "filename": "p1_stilllife_g0.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.5,
+      "seed": 42,
+      "filename": "p1_stilllife_g0.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.5,
+      "seed": 43,
+      "filename": "p1_stilllife_g0.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.75,
+      "seed": 42,
+      "filename": "p1_stilllife_g0.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 0.75,
+      "seed": 43,
+      "filename": "p1_stilllife_g0.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "p1_stilllife_g1_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "p1_stilllife_g1_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.25,
+      "seed": 42,
+      "filename": "p1_stilllife_g1.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.25,
+      "seed": 43,
+      "filename": "p1_stilllife_g1.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.5,
+      "seed": 42,
+      "filename": "p1_stilllife_g1.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.5,
+      "seed": 43,
+      "filename": "p1_stilllife_g1.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.75,
+      "seed": 42,
+      "filename": "p1_stilllife_g1.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 1.75,
+      "seed": 43,
+      "filename": "p1_stilllife_g1.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 2.0,
+      "seed": 42,
+      "filename": "p1_stilllife_g2_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p1_stilllife",
+      "guidance": 2.0,
+      "seed": 43,
+      "filename": "p1_stilllife_g2_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.0,
+      "seed": 42,
+      "filename": "p2_portrait_g0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.0,
+      "seed": 43,
+      "filename": "p2_portrait_g0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.25,
+      "seed": 42,
+      "filename": "p2_portrait_g0.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.25,
+      "seed": 43,
+      "filename": "p2_portrait_g0.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.5,
+      "seed": 42,
+      "filename": "p2_portrait_g0.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.5,
+      "seed": 43,
+      "filename": "p2_portrait_g0.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.75,
+      "seed": 42,
+      "filename": "p2_portrait_g0.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 0.75,
+      "seed": 43,
+      "filename": "p2_portrait_g0.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "p2_portrait_g1_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "p2_portrait_g1_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.25,
+      "seed": 42,
+      "filename": "p2_portrait_g1.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.25,
+      "seed": 43,
+      "filename": "p2_portrait_g1.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.5,
+      "seed": 42,
+      "filename": "p2_portrait_g1.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.5,
+      "seed": 43,
+      "filename": "p2_portrait_g1.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.75,
+      "seed": 42,
+      "filename": "p2_portrait_g1.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 1.75,
+      "seed": 43,
+      "filename": "p2_portrait_g1.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 2.0,
+      "seed": 42,
+      "filename": "p2_portrait_g2_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p2_portrait",
+      "guidance": 2.0,
+      "seed": 43,
+      "filename": "p2_portrait_g2_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.0,
+      "seed": 42,
+      "filename": "p3_bicycle_g0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.0,
+      "seed": 43,
+      "filename": "p3_bicycle_g0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.25,
+      "seed": 42,
+      "filename": "p3_bicycle_g0.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.25,
+      "seed": 43,
+      "filename": "p3_bicycle_g0.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.5,
+      "seed": 42,
+      "filename": "p3_bicycle_g0.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.5,
+      "seed": 43,
+      "filename": "p3_bicycle_g0.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.75,
+      "seed": 42,
+      "filename": "p3_bicycle_g0.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 0.75,
+      "seed": 43,
+      "filename": "p3_bicycle_g0.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "p3_bicycle_g1_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "p3_bicycle_g1_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.25,
+      "seed": 42,
+      "filename": "p3_bicycle_g1.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.25,
+      "seed": 43,
+      "filename": "p3_bicycle_g1.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.5,
+      "seed": 42,
+      "filename": "p3_bicycle_g1.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.5,
+      "seed": 43,
+      "filename": "p3_bicycle_g1.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.75,
+      "seed": 42,
+      "filename": "p3_bicycle_g1.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 1.75,
+      "seed": 43,
+      "filename": "p3_bicycle_g1.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 2.0,
+      "seed": 42,
+      "filename": "p3_bicycle_g2_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p3_bicycle",
+      "guidance": 2.0,
+      "seed": 43,
+      "filename": "p3_bicycle_g2_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.0,
+      "seed": 42,
+      "filename": "p4_oranges_g0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.0,
+      "seed": 43,
+      "filename": "p4_oranges_g0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.25,
+      "seed": 42,
+      "filename": "p4_oranges_g0.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.25,
+      "seed": 43,
+      "filename": "p4_oranges_g0.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.5,
+      "seed": 42,
+      "filename": "p4_oranges_g0.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.5,
+      "seed": 43,
+      "filename": "p4_oranges_g0.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.75,
+      "seed": 42,
+      "filename": "p4_oranges_g0.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 0.75,
+      "seed": 43,
+      "filename": "p4_oranges_g0.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "p4_oranges_g1_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "p4_oranges_g1_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.25,
+      "seed": 42,
+      "filename": "p4_oranges_g1.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.25,
+      "seed": 43,
+      "filename": "p4_oranges_g1.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.5,
+      "seed": 42,
+      "filename": "p4_oranges_g1.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.5,
+      "seed": 43,
+      "filename": "p4_oranges_g1.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.75,
+      "seed": 42,
+      "filename": "p4_oranges_g1.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 1.75,
+      "seed": 43,
+      "filename": "p4_oranges_g1.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 2.0,
+      "seed": 42,
+      "filename": "p4_oranges_g2_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p4_oranges",
+      "guidance": 2.0,
+      "seed": 43,
+      "filename": "p4_oranges_g2_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.0,
+      "seed": 42,
+      "filename": "p5_livingroom_g0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.0,
+      "seed": 43,
+      "filename": "p5_livingroom_g0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.25,
+      "seed": 42,
+      "filename": "p5_livingroom_g0.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.25,
+      "seed": 43,
+      "filename": "p5_livingroom_g0.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.5,
+      "seed": 42,
+      "filename": "p5_livingroom_g0.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.5,
+      "seed": 43,
+      "filename": "p5_livingroom_g0.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.75,
+      "seed": 42,
+      "filename": "p5_livingroom_g0.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 0.75,
+      "seed": 43,
+      "filename": "p5_livingroom_g0.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "p5_livingroom_g1_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "p5_livingroom_g1_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.25,
+      "seed": 42,
+      "filename": "p5_livingroom_g1.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.25,
+      "seed": 43,
+      "filename": "p5_livingroom_g1.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.5,
+      "seed": 42,
+      "filename": "p5_livingroom_g1.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.5,
+      "seed": 43,
+      "filename": "p5_livingroom_g1.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.75,
+      "seed": 42,
+      "filename": "p5_livingroom_g1.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 1.75,
+      "seed": 43,
+      "filename": "p5_livingroom_g1.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 2.0,
+      "seed": 42,
+      "filename": "p5_livingroom_g2_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p5_livingroom",
+      "guidance": 2.0,
+      "seed": 43,
+      "filename": "p5_livingroom_g2_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.0,
+      "seed": 42,
+      "filename": "p6_forest_g0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.0,
+      "seed": 43,
+      "filename": "p6_forest_g0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.25,
+      "seed": 42,
+      "filename": "p6_forest_g0.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.25,
+      "seed": 43,
+      "filename": "p6_forest_g0.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.5,
+      "seed": 42,
+      "filename": "p6_forest_g0.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.5,
+      "seed": 43,
+      "filename": "p6_forest_g0.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.75,
+      "seed": 42,
+      "filename": "p6_forest_g0.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 0.75,
+      "seed": 43,
+      "filename": "p6_forest_g0.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "p6_forest_g1_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "p6_forest_g1_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.25,
+      "seed": 42,
+      "filename": "p6_forest_g1.25_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.25,
+      "seed": 43,
+      "filename": "p6_forest_g1.25_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.5,
+      "seed": 42,
+      "filename": "p6_forest_g1.5_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.5,
+      "seed": 43,
+      "filename": "p6_forest_g1.5_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.75,
+      "seed": 42,
+      "filename": "p6_forest_g1.75_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 1.75,
+      "seed": 43,
+      "filename": "p6_forest_g1.75_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 2.0,
+      "seed": 42,
+      "filename": "p6_forest_g2_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "prompt_id": "p6_forest",
+      "guidance": 2.0,
+      "seed": 43,
+      "filename": "p6_forest_g2_s43.png"
+    },
+    {
+      "kind": "unconditional",
+      "prompt_id": "uncond",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "uncond_s42.png"
+    },
+    {
+      "kind": "unconditional",
+      "prompt_id": "uncond",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "uncond_s43.png"
+    }
+  ]
+}

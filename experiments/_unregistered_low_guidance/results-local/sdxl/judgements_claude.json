@@ -1,0 +1,899 @@
+{
+  "judge": "claude",
+  "model": "claude-sonnet-5",
+  "rubric": "kluver",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "fields": [
+    "reduplication",
+    "fragmentation",
+    "condensation",
+    "distortion",
+    "tiling"
+  ],
+  "images": {
+    "p4_oranges_g0.5_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers repeated well beyond a bowl of oranges; vase/orange fused; petal shapes warped and doubled",
+      "missing_fields": [
+        "tiling"
+      ]
+    },
+    "p1_stilllife_g1.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "many watermelon slices tiled with fused glass/keys forms"
+    },
+    "p3_bicycle_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers/butterflies replace bicycle and wall, face-flower hybrid"
+    },
+    "p5_livingroom_g1.75_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "sketchy warped lines but coherent single room scene"
+    },
+    "p1_stilllife_g1.75_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "two melon slices and two liquid containers instead of one each; keys slightly warped"
+    },
+    "p6_forest_g0.75_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "misty treeline with soft blending, mild repetition of tree silhouettes"
+    },
+    "p2_portrait_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "slightly asymmetric eyes/nose bridge, otherwise coherent single face"
+    },
+    "p3_bicycle_g0.25_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "floral/butterfly bouquet, no bicycle or wall visible"
+    },
+    "p5_livingroom_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "dense repeating floral pattern, no room/sofa/lamp/window visible"
+    },
+    "p2_portrait_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "slight asymmetry/blending near ear and hat edge"
+    },
+    "p1_stilllife_g1.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "many scattered watermelon slices/rinds repeating, no glass or keys clearly visible"
+    },
+    "p1_stilllife_g0.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "flowers, vase, watermelon, and cloth merge into ambiguous fused forms"
+    },
+    "p2_portrait_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "face merged with mass of flowers and butterflies, not an elderly man"
+    },
+    "p5_livingroom_g1.25_s42.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "extra seating/table beyond sofa, lamp, window; sketchy uneven linework"
+    },
+    "p3_bicycle_g1_s42.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle merges with wall/vegetation, brick texture dominant"
+    },
+    "p4_oranges_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "kitchen items blur and merge into indistinct forms"
+    },
+    "p2_portrait_g0.75_s42.png": {
+      "reduplication": 1,
+      "fragmentation": 3,
+      "condensation": 1,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "abstract fractured texture, no coherent face visible"
+    },
+    "p1_stilllife_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "abstract repeating shard pattern, no clear objects"
+    },
+    "p6_forest_g2_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "uniform repeating treetop texture, forms blur into pattern"
+    },
+    "p6_forest_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral pattern field, not forest scene"
+    },
+    "p5_livingroom_g0.5_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "multiple shelves/objects, blurred edges, no visible lamp, sofa distorted"
+    },
+    "p3_bicycle_g1.25_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle merges with wall/debris, shape barely coherent"
+    },
+    "p3_bicycle_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle and wall/crate forms blur and merge into wall texture"
+    },
+    "p3_bicycle_g1.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "warped frame with extra wheel-like arcs, melted merging of parts"
+    },
+    "p5_livingroom_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "warped sofa/table forms, blurred wall seams, melted lamp stand"
+    },
+    "p2_portrait_g1.75_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "mostly coherent face with minor asymmetry in eyes/nose"
+    },
+    "p6_forest_g1.25_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "distant trees blend into textured mass, foreground trees clearer"
+    },
+    "p5_livingroom_g1_s42.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "furniture shapes ambiguous, merging with architectural lines"
+    },
+    "p3_bicycle_g1.5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle shape barely recognizable, merged with wall/debris"
+    },
+    "p1_stilllife_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "shattered watermelon/glass motifs repeated across fractured tiled surface"
+    },
+    "p3_bicycle_g1.75_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle shape broken/melted into wall, unclear form"
+    },
+    "p1_stilllife_g1_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "watermelon split into two wedges, extra glass/jar; keys absent"
+    },
+    "p5_livingroom_g1.5_s42.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "overlapping window frames, blended furniture edges"
+    },
+    "p4_oranges_g1.75_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "two orange bowls instead of one; faucet slightly warped"
+    },
+    "p6_forest_g0.75_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "repetitive foliage clusters merging into textured pattern field"
+    },
+    "p6_forest_g1.75_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "uniform repeating treetop texture, forms blur into pattern"
+    },
+    "p2_portrait_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "hand/face-like shape merges into beard/neck; skin and fabric textures warped"
+    },
+    "p2_portrait_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "no recognizable face; abstract foliage-like texture pattern"
+    },
+    "p2_portrait_g0.25_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "face merged with mass of flowers/leaves, features dissolve into floral texture"
+    },
+    "p6_forest_g1_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "misty texture blurs tree forms, slight repetitive canopy pattern"
+    },
+    "p2_portrait_g1.5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "slightly irregular skin/eye texture, otherwise coherent single face"
+    },
+    "p6_forest_g0.25_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "floral/face hybrid, no pine forest visible"
+    },
+    "p1_stilllife_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "abstract floral/leaf pattern, no watermelon/glass/keys/table discernible"
+    },
+    "p5_livingroom_g0.25_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "floral/organic forms merged, no recognizable sofa/lamp/window"
+    },
+    "p4_oranges_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral pattern field, no bowl or counter visible"
+    },
+    "p5_livingroom_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "no recognizable sofa/lamp/window; abstract foliage-like tiled pattern"
+    },
+    "p1_stilllife_g2_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "watermelon-glass hybrid, scattered melon chunks, warped faucet/key shapes"
+    },
+    "p2_portrait_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "face dissolves into swirling abstract textured mass, features merged and warped"
+    },
+    "p4_oranges_g0.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "single orange with flowers/leaves merging into vessel, edges dissolve"
+    },
+    "p4_oranges_g0.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "oranges/leaves tiled across entire frame, no bowl or counter"
+    },
+    "p5_livingroom_g1.25_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "duplicate lamps and multiple frames; sofa has odd seam line"
+    },
+    "p1_stilllife_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral pattern field, no recognizable intended objects"
+    },
+    "p6_forest_g0.5_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "foliage dissolved into repeating textured pattern, tree forms fused and indistinct"
+    },
+    "p5_livingroom_g1_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "extra wall frames/clock beyond intended objects, mild warped window lines"
+    },
+    "p2_portrait_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "warped facial features, blurred eye/nose merge, misplaced ear"
+    },
+    "uncond_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "face merging with floral mass, two butterflies echo motif"
+    },
+    "p5_livingroom_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "window panes slightly warped/asymmetric, otherwise coherent scene"
+    },
+    "p6_forest_g1.75_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "distant treeline slightly repetitive/textured, foreground trees more distinct"
+    },
+    "p2_portrait_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "floral pattern field, no face visible"
+    },
+    "p5_livingroom_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "window panes slightly irregular, otherwise coherent scene"
+    },
+    "p6_forest_g2_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "distant trees blur into a repetitive textured mass with soft merging edges"
+    },
+    "p2_portrait_g0.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "face merged with floral/organic textures, features dissolved and warped"
+    },
+    "p4_oranges_g1.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "two overlapping fruit bowls, ambiguous double faucet shapes"
+    },
+    "p4_oranges_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers/face merged, no oranges present"
+    },
+    "p1_stilllife_g2_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "two watermelon slices instead of one, otherwise coherent scene"
+    },
+    "p4_oranges_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "orange/floral motifs tile entire frame, no bowl or counter visible"
+    },
+    "p3_bicycle_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral pattern field, no bicycle or wall visible"
+    },
+    "p6_forest_g1.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "uniform repeating tree-texture with merged, warped forms"
+    },
+    "p4_oranges_g2_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "two bowls of oranges instead of one, faucet slightly warped"
+    },
+    "p1_stilllife_g0.25_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers/butterflies replace intended objects, vase merges with forms"
+    },
+    "p2_portrait_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "asymmetric blurred features, ear-like shapes fused into hair, uneven face structure"
+    },
+    "p5_livingroom_g0.75_s42.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "textured surfaces obscure coherent objects, window/curtain area shattered and duplicated framing"
+    },
+    "p3_bicycle_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "no bicycle/wall discernible; abstract fractured texture field"
+    },
+    "p4_oranges_g0_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral pattern field, no bowl or oranges visible"
+    },
+    "p6_forest_g0_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers/hair merged into face, no trees or mountain visible"
+    },
+    "p3_bicycle_g1_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bike frame merges with door/wall, extra spokes/wheel fragments"
+    },
+    "p3_bicycle_g0.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "abstract blurred forms, no clear bicycle or wall discernible"
+    },
+    "p5_livingroom_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers/butterflies replace intended sofa/lamp/window, merged into face"
+    },
+    "p1_stilllife_g1.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "watermelon shown as two slices, otherwise coherent scene"
+    },
+    "p5_livingroom_g1.5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "sofa seam split, window panes irregular, lamp warped/melted"
+    },
+    "p4_oranges_g0.25_s43.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers merge into vase/face, not oranges in bowl"
+    },
+    "p1_stilllife_g0.75_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "jar/glass merges with unclear objects, keys fragmented/unclear, edges warped"
+    },
+    "p2_portrait_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "no face visible; dissolved into repeating floral/foliage texture field"
+    },
+    "p6_forest_g1.25_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "trees dissolve into uniform repeating textured pattern"
+    },
+    "p1_stilllife_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "abstract floral pattern, no intended objects visible"
+    },
+    "p4_oranges_g1.25_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "kitchen forms blur and melt into indistinct shapes"
+    },
+    "p6_forest_g1_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "repetitive foliage texture, tree forms merge into pattern"
+    },
+    "p3_bicycle_g1.25_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "bike frame warped, wheels doubled/misaligned, fused into wall/door textures"
+    },
+    "p1_stilllife_g0_s43.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 3,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "flowers/face/butterflies fused; no watermelon, glass, or keys visible"
+    },
+    "p1_stilllife_g1.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "many watermelon slices, scattered keys/tools, glass overlapping leaves"
+    },
+    "p3_bicycle_g0.75_s42.png": {
+      "reduplication": 2,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "brick texture dominates, bicycle barely discernible, forms melt into wall"
+    },
+    "p1_stilllife_g1.25_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "watermelon shown as two wedges; keys replaced by wrench-like tool"
+    },
+    "p3_bicycle_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral pattern field, no bicycle or wall visible"
+    },
+    "p3_bicycle_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle frame warped, parts merge into wall/ground textures"
+    },
+    "p4_oranges_g1.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "oranges tile entire frame as repeating leaf pattern, no bowl visible"
+    },
+    "p2_portrait_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "face dissolved into textured, warped pattern with barely discernible features"
+    },
+    "p3_bicycle_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bicycle frame/wheels broken apart with fused odd components"
+    },
+    "p6_forest_g1.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "distant trees blend into a textured mass under mist"
+    },
+    "uncond_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 2,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "dense repeating floral/leaf motif field, no distinct scene"
+    },
+    "p6_forest_g0.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "floral/leaf pattern field, no readable pine forest"
+    },
+    "p5_livingroom_g0.5_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "no recognizable sofa/lamp/window, dissolved into repeating architectural fragments"
+    },
+    "p3_bicycle_g1.75_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "bike frame merges oddly with wheels, handlebars distorted, some parts disconnected"
+    },
+    "p4_oranges_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "oranges and leaves tile entire frame, no bowl visible"
+    },
+    "p6_forest_g0.5_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 2,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "misty forms merge into hazy, warped clusters"
+    },
+    "p4_oranges_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "oranges and leaves tile entire frame, no bowl visible"
+    },
+    "p5_livingroom_g0.75_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "extra shelves/objects added, window slightly warped"
+    },
+    "p4_oranges_g1.25_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 1,
+      "condensation": 2,
+      "distortion": 2,
+      "tiling": 1,
+      "notes": "oranges and leaves tile entire frame, no bowl or counter visible"
+    },
+    "p4_oranges_g1.75_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "oranges and leaves form an all-over repeating pattern, not a bowl scene"
+    },
+    "p2_portrait_g1.25_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "asymmetric eyes/skin texture slightly irregular, otherwise coherent single face"
+    },
+    "p2_portrait_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 2,
+      "tiling": 0,
+      "notes": "hair/skin textures blur into face, features irregularly warped"
+    }
+  },
+  "via": "batches"
+}
