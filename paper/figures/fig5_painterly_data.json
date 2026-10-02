@@ -1,0 +1,23 @@
+{
+ "note": "SDXL still life, g = 1, seed 50; human-subset blind id h05",
+ "scores": {
+  "human (author)": {
+   "reduplication": 1,
+   "fragmentation": 2,
+   "condensation": 3,
+   "distortion": 3
+  },
+  "Qwen3-VL-32B": {
+   "reduplication": 0,
+   "fragmentation": 0,
+   "condensation": 0,
+   "distortion": 1
+  },
+  "Claude Sonnet 5": {
+   "reduplication": 2,
+   "fragmentation": 1,
+   "condensation": 1,
+   "distortion": 2
+  }
+ }
+}

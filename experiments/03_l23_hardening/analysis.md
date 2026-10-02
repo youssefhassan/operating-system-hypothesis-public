@@ -412,3 +412,39 @@ dose-response and is a timely warning for VLM-as-judge pipelines.
 - Probes: `probes/probe_Qwen*.json`, `probes/probe_gemma-3-27b-it-qat-4bit.json`
 - Code: `analyze.py` (confirmatory), `posthoc.py` (§9)
 
+
+## 14. Corrections, 2026-09-29
+
+An outside audit of the preprint checked this analysis against the pre-registration. The
+code was corrected and the reports regenerated (`analyze.py`, `analyze_axes.py`,
+`l23_report_claude-qwen.json`, `axes_report.json`). No verdict changed.
+
+- **Mixed-model convergence.** The SD 3.5 primary LMM (and the SD 3.5 Exp 03b veridicality
+  LMM) never converged under L-BFGS; statsmodels warned and returned estimates, and the code
+  did not record it. `_lmm_slope` now records `converged` and the optimizer attempts, and
+  falls back to Powell, which converges with the seed variance at zero. SD 3.5 slope
+  −0.182 [−0.248, −0.115] (upper bound −0.116 under L-BFGS). SDXL converges under L-BFGS,
+  unchanged. A non-converged primary fit now makes the verdict inconclusive.
+- **Registered gates the code skipped.** The BH-adjusted p ≤ .05 on the primary family and
+  the 5-of-6 prompt-generality gate were in the pre-registration but not in `_verdict`; both
+  are now checked. Neither changes a verdict.
+- **Kappa denominator.** The registered full-set κ includes the 10 empty-prompt baselines:
+  0.562 (n = 428) on SDXL, 0.440 (n = 427) on SD 3.5. On conditioned images only it is 0.542
+  and **0.394**, so the SD 3.5 reliability pass depends on the baselines. Both are now in the
+  report (`reliability_conditioned_only`), with bootstrap intervals.
+- **Quality arm.** The registration says quality-matched arms; the code trims to common
+  support, leaving standardised quality differences of 0.740 (SDXL) and 0.284 (SD 3.5).
+  This is a deviation from the registered matching, now labelled as such, and the arm
+  contrast is descriptive.
+- **Language.** Q is measured on the generated image, after guidance has acted, so the
+  partial correlation is an adjustment for two quality proxies, not a causal de-confound.
+  The same applies to the Exp 03b distortion-veridicality contrast (the 64%): construct
+  overlap, not a causal split.
+- **Denominators.** Guidance cells hold 58 to 60 complete-case images (`n_by_guidance`).
+- **Exp 03b.** The registered result (SDXL passes P1, P2, P3; SD 3.5 fails P1 and P2 in the
+  direction opposite to the registration) was reported in `analysis_axes.md` from the start
+  but left out of the preprint draft; the preprint now reports it (Table 6). The secondary
+  family is now fitted with LMMs, as registered, instead of Spearman permutation tests.
+
+Added robustness numbers, not gates: judge-only LMM slopes (Claude / Qwen) −0.321 / −0.295
+on SDXL and −0.174 / −0.141 on SD 3.5.

@@ -1,0 +1,15 @@
+{
+ "note": "seeds shown in Figure 1, chosen by the per-image z-composite (mean of both judges) on the living-room prompt",
+ "seeds": {
+  "sdxl": {
+   "upper_middle_g1": 42,
+   "top_g1": 44,
+   "upper_middle_g11": 50
+  },
+  "sd35": {
+   "upper_middle_g1": 48,
+   "top_g1": 50,
+   "upper_middle_g11": 51
+  }
+ }
+}

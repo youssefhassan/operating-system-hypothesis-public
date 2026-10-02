@@ -98,18 +98,19 @@ def _z(v):
     return (v - v.mean()) / s if s else v * 0.0
 
 
+def _field_lmm(recs: list[dict], field: str) -> dict:
+    """Fit the registered LMM after standardising one axes field."""
+    vals = _z([r[field] for r in recs])
+    rows = [dict(r, composite=float(v)) for r, v in zip(recs, vals)]
+    return A._lmm_slope(rows)
+
+
 def analyze_model(model: str, judges: list[str]) -> dict:
     recs, notes = _merge(model, judges)
     g = np.array([r["guidance"] for r in recs], float)
 
     # ---- P1: veridicality dose-response -------------------------------------
-    # _lmm_slope reads r['composite'], so point it at the field under test.
-    for r in recs:
-        r["composite"] = 0.0
-    zver = _z([r["veridicality"] for r in recs])
-    for r, v in zip(recs, zver):
-        r["composite"] = float(v)
-    p1 = A._lmm_slope(recs)
+    p1 = _field_lmm(recs, "veridicality")
 
     # ---- P2: dissociation ---------------------------------------------------
     ver = np.array([r["veridicality"] for r in recs], float)
@@ -133,13 +134,10 @@ def analyze_model(model: str, judges: list[str]) -> dict:
         gg = np.array([r["guidance"] for r in sub], float)
         vv = np.array([r[f] for r in sub], float)
         secondary[f] = {
+            "lmm": _field_lmm(sub, f),
             "spearman_vs_g": round(float(S.spearman(gg, vv)), 4),
-            "perm_p": round(float(S.spearman_perm_p(gg, vv)), 4),
             "n": len(sub),
         }
-    qs = S.benjamini_hochberg([secondary[f]["perm_p"] for f in secondary])
-    for f, q in zip(secondary, qs):
-        secondary[f]["bh_q"] = round(float(q), 4)
 
     # per-prompt generality of the veridicality slope
     per_prompt = {}
@@ -182,14 +180,14 @@ def analyze_model(model: str, judges: list[str]) -> dict:
         # Only meaningful when the partial is SMALLER than the raw. If controlling
         # for veridicality makes the association larger, that is suppression, not
         # confounding, and a "share explained" figure would be actively misleading.
-        "share_of_association_explained": (
+        "proportional_attenuation_in_absolute_association": (
             round(float(1 - abs(part_dg) / abs(raw_dg)), 4)
             if raw_dg and abs(part_dg) < abs(raw_dg) else None),
-        "pattern": ("confounding: veridicality accounts for part of the distortion "
-                    "signal, i.e. the field was partly tracking rendering style"
+        "pattern": ("attenuation: distortion and veridicality share rank association "
+                    "with guidance; this is not a causal decomposition"
                     if abs(part_dg) < abs(raw_dg) else
-                    "suppression: the association is LARGER once veridicality is held "
-                    "fixed, so veridicality was masking it rather than causing it"),
+                    "suppression: the conditional association is larger after adjustment "
+                    "for veridicality; this is not a causal decomposition"),
     }
 
     # E4: does the global scale show a gradient where the local one showed a cliff?
@@ -200,14 +198,6 @@ def analyze_model(model: str, judges: list[str]) -> dict:
             np.array([r["veridicality"] for r in sub], float))), 4),
         "n": len(sub),
     }
-
-    verdict = []
-    if p1["slope_standardized"] >= 0.20 and p1["ci95"][0] > 0:
-        verdict.append("P1 pass")
-    else:
-        verdict.append("P1 FAIL")
-    verdict.append("P2 pass" if (p2_rho >= 0.20 and p2_ci[0] > 0) else "P2 FAIL")
-    verdict.append("P3 pass" if p3 >= 0.40 else "P3 FAIL")
 
     return {
         "model": model, "n": len(recs), "judges": judges,
@@ -220,10 +210,51 @@ def analyze_model(model: str, judges: list[str]) -> dict:
         "P3_reliability": {"per_field": per_field_kappa, "composite_weighted_kappa": p3},
         "secondary": secondary,
         "per_prompt_veridicality_spearman": per_prompt,
+        "n_prompts_positive": sum(v > 0 for v in per_prompt.values()),
         "exploratory": {"E1_overshoot": e1, "E2_scale_correlation": e2,
                         "E3_painterly_confound": e3, "E4_shape": e4},
-        "verdict": verdict,
     }
+
+
+def _apply_bh_and_verdict(models: dict[str, dict]) -> None:
+    model_names = list(models)
+
+    # Registered primary family: one veridicality LMM per checkpoint.
+    p1_q = S.benjamini_hochberg(
+        [models[m]["P1_veridicality_lmm"]["p"] for m in model_names])
+    for m, q in zip(model_names, p1_q):
+        p1 = models[m]["P1_veridicality_lmm"]
+        p1["bh_q"] = float(q)
+        p1["bh_family_n"] = len(model_names)
+
+    # Registered secondary family: three LMMs per checkpoint.
+    keys = [(m, f) for m in model_names for f in models[m]["secondary"]]
+    secondary_q = S.benjamini_hochberg(
+        [models[m]["secondary"][f]["lmm"]["p"] for m, f in keys])
+    for (m, f), q in zip(keys, secondary_q):
+        models[m]["secondary"][f]["lmm"]["bh_q"] = float(q)
+        models[m]["secondary"][f]["lmm"]["bh_family_n"] = len(keys)
+
+    for m in model_names:
+        r = models[m]
+        p1 = r["P1_veridicality_lmm"]
+        p2 = r["P2_dissociation"]
+        p3 = r["P3_reliability"]["composite_weighted_kappa"]
+        verdict = []
+        verdict.append(
+            "P1 pass" if (
+                p1.get("converged", False)
+                and p1["slope_standardized"] >= 0.20
+                and p1["ci95"][0] > 0
+                and p1["bh_q"] <= 0.05
+            ) else "P1 FAIL")
+        verdict.append(
+            "P2 pass" if (
+                p2["partial_spearman_controlling_kluver"] >= 0.20
+                and p2["ci95"][0] > 0
+            ) else "P2 FAIL")
+        verdict.append("P3 pass" if p3 >= 0.40 else "P3 FAIL")
+        r["verdict"] = verdict
 
 
 def main() -> None:
@@ -237,6 +268,7 @@ def main() -> None:
     report = {"prereg": PREREG["rubric_version"], "judges": judges, "models": {}}
     for m in [x.strip() for x in args.models.split(",") if x.strip()]:
         report["models"][m] = analyze_model(m, judges)
+    _apply_bh_and_verdict(report["models"])
 
     (HERE / args.out).write_text(json.dumps(report, indent=2))
 

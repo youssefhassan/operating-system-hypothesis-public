@@ -1,0 +1,68 @@
+Hi! Thank you so much for helping with this. It takes about 30 minutes.
+
+I'm sending you 28 pictures, numbered photo_01 to photo_28. Each one was supposed to show a simple scene (the list is at the bottom). Some look normal, some look strange. For each picture, I'd like you to tell me how much of five things you see in it.
+
+Please don't look anything up and don't ask me about the pictures. There are no right or wrong answers, I just want your honest eye. If you're unsure, give your best guess. Please don't skip any.
+
+THE FIVE THINGS
+
+For the first four, give a number from 0 to 3:
+0 = not there at all, 1 = a little, 2 = clearly there, 3 = it dominates the picture
+
+1. COPIES: things repeated far more than they should be. For example, many watermelons where there should be one, or rows of the same object.
+2. BROKEN: objects broken into separate or shattered pieces.
+3. FUSED: separate objects melted or merged into each other, like a mix of two things.
+4. WARPED: shapes that are melted, bent, twisted or physically impossible.
+
+For the last one, answer just 0 or 1:
+5. PATTERN: 1 if the whole picture has turned into a repeating pattern or texture instead of a readable scene. Otherwise 0.
+
+Two special cases:
+- Forest pictures: many trees is normal, so don't count the trees as copies. Score only trees that are fused, warped or broken, or a picture that has become a pattern.
+- Oranges pictures: a bowl full of oranges is normal. Count copies only if there are far too many, or oranges spread outside the bowl or all over the picture.
+
+Judge only what you can actually see, not what the picture was supposed to look like.
+
+HOW TO REPLY
+
+One line per photo: the photo number, then your five numbers in the order above (copies, broken, fused, warped, pattern), separated by spaces. Like this:
+
+1: 0 1 0 2 0
+2: 3 0 1 1 0
+...
+28: 0 0 0 0 0
+
+You can type it in a message or a notes app and send it to me.
+
+WHAT EACH PICTURE WAS SUPPOSED TO SHOW
+
+Photo 1: a red bicycle leaning against a brick wall
+Photo 2: an empty living room with a sofa, a lamp, and a window
+Photo 3: a close-up portrait photograph of an elderly man's face
+Photo 4: a forest of pine trees on a misty mountainside
+Photo 5: a close-up portrait photograph of an elderly man's face
+Photo 6: a watermelon, a glass half-filled with water, and a set of keys on a wooden table
+Photo 7: a watermelon, a glass half-filled with water, and a set of keys on a wooden table
+Photo 8: an empty living room with a sofa, a lamp, and a window
+Photo 9: a close-up portrait photograph of an elderly man's face
+Photo 10: a red bicycle leaning against a brick wall
+Photo 11: a bowl of oranges on a kitchen counter
+Photo 12: a watermelon, a glass half-filled with water, and a set of keys on a wooden table
+Photo 13: a forest of pine trees on a misty mountainside
+Photo 14: an empty living room with a sofa, a lamp, and a window
+Photo 15: a close-up portrait photograph of an elderly man's face
+Photo 16: a bowl of oranges on a kitchen counter
+Photo 17: a bowl of oranges on a kitchen counter
+Photo 18: a forest of pine trees on a misty mountainside
+Photo 19: a red bicycle leaning against a brick wall
+Photo 20: a forest of pine trees on a misty mountainside
+Photo 21: an empty living room with a sofa, a lamp, and a window
+Photo 22: a watermelon, a glass half-filled with water, and a set of keys on a wooden table
+Photo 23: a close-up portrait photograph of an elderly man's face
+Photo 24: an empty living room with a sofa, a lamp, and a window
+Photo 25: a forest of pine trees on a misty mountainside
+Photo 26: a red bicycle leaning against a brick wall
+Photo 27: a bowl of oranges on a kitchen counter
+Photo 28: a watermelon, a glass half-filled with water, and a set of keys on a wooden table
+
+Thanks again!

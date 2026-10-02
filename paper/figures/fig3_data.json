@@ -1,0 +1,35 @@
+{
+ "note": "SDXL, judge-mean distortion vs guidance per prompt; partial rank correlation adjusts for judge-mean veridicality (analysis_axes.md 5.1)",
+ "per_prompt": {
+  "bicycle": {
+   "raw_spearman": -0.7338,
+   "partial_controlling_veridicality": -0.2608,
+   "n": 70
+  },
+  "oranges": {
+   "raw_spearman": -0.7015,
+   "partial_controlling_veridicality": -0.0836,
+   "n": 70
+  },
+  "still life": {
+   "raw_spearman": -0.5469,
+   "partial_controlling_veridicality": -0.2159,
+   "n": 68
+  },
+  "living room": {
+   "raw_spearman": -0.5301,
+   "partial_controlling_veridicality": -0.385,
+   "n": 70
+  },
+  "forest": {
+   "raw_spearman": -0.5029,
+   "partial_controlling_veridicality": -0.3284,
+   "n": 70
+  },
+  "portrait": {
+   "raw_spearman": -0.2312,
+   "partial_controlling_veridicality": 0.2402,
+   "n": 70
+  }
+ }
+}

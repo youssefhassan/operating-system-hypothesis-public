@@ -1,0 +1,108 @@
+{
+ "status": "POST-HOC / EXPLORATORY, written 2026-09-28; does not affect the confirmatory verdict",
+ "judges": [
+  "claude",
+  "qwen"
+ ],
+ "bootstrap": "image-level, 5000 resamples, seed 0",
+ "models": {
+  "sdxl": {
+   "n_images": 418,
+   "within_guidance_level": {
+    "rho_composite_vs_Q_by_g": {
+     "1": -0.1412,
+     "2": 0.0549,
+     "3": -0.0026,
+     "5": 0.1268,
+     "7": 0.0549,
+     "11": 0.1835,
+     "15": 0.1874
+    },
+    "rho_composite_vs_Q_g_above_1_pooled": 0.0048,
+    "note": "composite vs Q inside each guidance level; read with between_level_means"
+   },
+   "between_level_means": {
+    "rho_mean_composite_vs_mean_Q": -0.8929,
+    "n_levels": 7
+   },
+   "rho_composite_vs_g": -0.463,
+   "rho_Q_vs_g": 0.479,
+   "rho_Q_vs_g_perm_p": 0.0002,
+   "rho_composite_vs_Q": -0.1876,
+   "rho_composite_vs_Q_ci95": [
+    -0.284,
+    -0.0876
+   ],
+   "rho_composite_vs_Q_perm_p": 0.0002,
+   "partial_spearman_controlling_Q": -0.4328,
+   "change_raw_to_partial": 0.0302,
+   "change_raw_to_partial_ci95": [
+    -0.008,
+    0.0719
+   ],
+   "quality_component_check": {
+    "rho_clip_iqa_vs_aesthetic": -0.1552,
+    "partial_spearman_controlling_clip_iqa": -0.5088,
+    "partial_spearman_controlling_aesthetic": -0.4647,
+    "note": "The components are separate no-reference proxies. Their agreement and separate adjustments are construct checks, not a causal decomposition."
+   },
+   "decomposition": {
+    "numerator_shared_term": 0.0898,
+    "numerator": -0.3732,
+    "denominator": 0.8622,
+    "numerator_only_partial": -0.3732,
+    "denominator_only_partial": -0.537,
+    "note": "Algebraic rank-correlation decomposition only: numerator_only = raw minus the shared correlation term before rescaling; denominator_only = raw rescaled as if Q had zero correlation with the composite."
+   }
+  },
+  "sd35": {
+   "n_images": 417,
+   "within_guidance_level": {
+    "rho_composite_vs_Q_by_g": {
+     "1": -0.1248,
+     "2": 0.1888,
+     "3": 0.0385,
+     "5": 0.2642,
+     "7": 0.1926,
+     "11": 0.2793,
+     "15": 0.4221
+    },
+    "rho_composite_vs_Q_g_above_1_pooled": 0.2298,
+    "note": "composite vs Q inside each guidance level; read with between_level_means"
+   },
+   "between_level_means": {
+    "rho_mean_composite_vs_mean_Q": -0.75,
+    "n_levels": 7
+   },
+   "rho_composite_vs_g": -0.216,
+   "rho_Q_vs_g": 0.3576,
+   "rho_Q_vs_g_perm_p": 0.0002,
+   "rho_composite_vs_Q": 0.0367,
+   "rho_composite_vs_Q_ci95": [
+    -0.0593,
+    0.1332
+   ],
+   "rho_composite_vs_Q_perm_p": 0.4741,
+   "partial_spearman_controlling_Q": -0.2455,
+   "change_raw_to_partial": -0.0295,
+   "change_raw_to_partial_ci95": [
+    -0.065,
+    0.0036
+   ],
+   "quality_component_check": {
+    "rho_clip_iqa_vs_aesthetic": 0.1702,
+    "partial_spearman_controlling_clip_iqa": -0.2416,
+    "partial_spearman_controlling_aesthetic": -0.213,
+    "note": "The components are separate no-reference proxies. Their agreement and separate adjustments are construct checks, not a causal decomposition."
+   },
+   "decomposition": {
+    "numerator_shared_term": -0.0131,
+    "numerator": -0.2291,
+    "denominator": 0.9332,
+    "numerator_only_partial": -0.2291,
+    "denominator_only_partial": -0.2314,
+    "note": "Algebraic rank-correlation decomposition only: numerator_only = raw minus the shared correlation term before rescaling; denominator_only = raw rescaled as if Q had zero correlation with the composite."
+   }
+  }
+ }
+}

@@ -1,0 +1,1721 @@
+{
+  "rubric_version": "exp01-formconstant-v1",
+  "claude_model": "claude-sonnet-4-6",
+  "openai_model": null,
+  "judges": [
+    "claude"
+  ],
+  "images": {
+    "g1.5_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "chaotic double-exposed watermelon still life with glassware overlays"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with unexpected keys as spontaneous element"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "still-life of watermelon-themed items on wood surface, no form constants"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "still life with watermelon, glasses, keys; no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "dreamlike flatlay of watermelon, keys, glass, needles with translucent plastic overlay distortion"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 1,
+        "coherent_scene": 0,
+        "geometric_intensity": 2,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "fragmented watermelon-and-architecture collage with swirling curved forms suggesting spiral/tunnel pull"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.6667,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, juice, and keys on wood"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "dense overlapping architectural sketch collage, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s44.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "ice tray grid is lattice; odd mix of watermelon, squeegee, crushed plastic unexplained"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "flat-lay still life with watermelon drink can hybrid, phone, keys, slices"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "surreal flatlay of fruits and ghostly tool forms on wood, no form constants"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "realistic still life with watermelon, juice, and keys on wooden table"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life with watermelon, pitcher, and glass; no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "glass rim creates faint concentric tunnel framing"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with watermelon, juice, and keys on wood"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 1,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "seed pattern on cut watermelon suggests radial cobweb; key ring shows small spiral"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "dreamlike floral figure with butterflies, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "glass rim creates mild concentric tunnel framing; watermelon face pattern is unexpected"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "realistic still life with watermelon, juice, and papers; no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s44.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faceted glass panels form faint lattice; wood grain adds linear repetition"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life with watermelon, pitcher, wooden surface; no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "realistic still life with watermelon, drinks, keys, paper; no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 0,
+        "complexity": 2,
+        "notes": "flat-lay illustration of watermelon drink, phone, keys on wood"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "flat-lay of watermelon-themed items with padlock and keys, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 1,
+        "complexity": 3,
+        "notes": "dense painterly floral chaos, no geometric form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life with plastic-wrap overlay effect; no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life of watermelons with glass of juice, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s50.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "paneled wall forms faint grid lattice behind still-life scene"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "painterly still life with watermelon, glasses, wood board \u2014 no form constants"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life with glassware, no form constants present"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s48.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "vertical plank texture suggests faint lattice; dreamlike still-life fragments dissolve into background"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 1,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "surreal still life with radial cucumber cross-section and scattered glassy artifacts"
+      },
+      "gpt": {
+        "error": "Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope************here. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s45.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood plank parallel lines form faint lattice; otherwise mundane still life"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 2,
+        "notes": "realistic still life painting of watermelon, glass, and carafes on wooden table"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "simple still life with watermelon slice and glass, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "chaotic anime-mech figure with tangled organic-mechanical forms, no form constants"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s46.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint lattice in glass texture; painterly still life with watermelon, keys, drinks"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "painterly still life with watermelon, blender, and small metal objects; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s45.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "faint lattice from glass facets; otherwise ordinary tabletop scene"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "realistic still life with unexpected handcuffs as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, novelty glass, and keys"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with unexpected keys as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s48.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood plank grid provides faint lattice; keys and glass are unexpected additions"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "radial seed pattern in cut melon suggests faint cobweb form"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "simple still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "kiwi cross-section shows faint radial seed pattern resembling cobweb"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with drinks, watermelon slice, and keys"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint radial web pattern in watermelon flesh interior"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly bird with chicks in nest, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "odd mix of handcuffs, razor, key, watermelon, glass on wood \u2014 no form constants"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 3,
+        "notes": "painterly medieval scene with horses and figures near ruined tower, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with keys as unexpected addition"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, drink, and car keys on wood table"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s46.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "lattice faintly present in textured glass facets and wood grain planks"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life; keys are unexpected but no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "stylized still life with watermelon, glass vessels, and keys on wood table"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "still life with watermelon, glass, keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "still-life with watermelons and scattered keys on wood planks, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s48.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "wood plank lines form faint lattice; key unexpected element"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with unexpected handcuffs as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon-patterned glass as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "watermelon seed ring forms faint radial cobweb pattern"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s50.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 2,
+        "veridicality": 1,
+        "spontaneity": 1,
+        "complexity": 3,
+        "notes": "grid of overlapping interior sketches forming a lattice mosaic"
+      },
+      "m_img": 0.6667,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "surreal still life merging watermelon with glass vessel and key, no form constants"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s48.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "faint grid underlayer beneath fragmented figurative abstraction"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint radial fiber pattern on watermelon flesh suggests cobweb"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s50.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "wooden plank wall forms faint lattice-like vertical striping"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s47.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 1,
+        "spontaneity": 1,
+        "complexity": 3,
+        "notes": "fragmented architectural grid behind painterly bird in flight"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "watermelon still life with oddly merged glass and key artifacts"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with unexpected keys/chain as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s51.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "cut-glass diamond lattice pattern on tumbler base"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s50.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint lattice from geometric wall panel lines"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon-patterned glass as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, drink, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "watermelon seed ring suggests faint radial/cobweb pattern; otherwise realistic still life"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with keys as unprompted addition"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly still life with unexpected scissors as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s46.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "lattice from textured glass facets; otherwise photoreal still life"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "still life with watermelon, glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "unexpected keys scattered among watermelon still life"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s50.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "vertical wood planks form faint lattice; keys unexpected element"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s47.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "wood plank parallel lines form faint lattice; keys are unexpected elements"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s45.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint lattice from cut-glass tumbler facets; scattered metallic objects add visual noise"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly mountain landscape, muted earth tones, no form constants"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "radial fiber pattern in cut cucumber cross-section suggests faint cobweb form"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "experiment": "01_image_test (local)",
+  "model_key": "sdxl",
+  "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+  "arch": "UNet (latent)",
+  "cfg_type": "true CFG",
+  "device": "mps",
+  "dtype": "torch.float32",
+  "scheduler": "keep",
+  "finished_at": "2026-06-21T17:00:49.572750+00:00",
+  "prompt": "a watermelon, a glass half-filled with water, and a set of keys on a wooden table",
+  "fixed": {
+    "steps": 25,
+    "width": 1024,
+    "height": 1024
+  },
+  "sweep": {
+    "guidance": [
+      1.0
+    ],
+    "seeds": [
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "unconditional": true
+  },
+  "shard": {
+    "index": 0,
+    "num_shards": 1
+  },
+  "runs": [
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 45,
+      "filename": "uncond_s45.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 46,
+      "filename": "uncond_s46.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 47,
+      "filename": "uncond_s47.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 48,
+      "filename": "uncond_s48.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 49,
+      "filename": "uncond_s49.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 50,
+      "filename": "uncond_s50.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 51,
+      "filename": "uncond_s51.png"
+    }
+  ]
+}

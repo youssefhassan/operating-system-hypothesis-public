@@ -25,12 +25,27 @@
   },
   "primary_lmm": {
     "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+    "optimizer": "lbfgs",
+    "converged": true,
+    "optimizer_attempts": [
+      {
+        "optimizer": "lbfgs",
+        "converged": true,
+        "warnings": []
+      }
+    ],
+    "variance_components": [
+      0.09977181843677872,
+      0.023616393725549613
+    ],
     "slope_standardized": -0.3397278547881432,
     "ci95": [
       -0.40019516451619336,
       -0.27926054506009307
     ],
-    "p": 3.352111333931719e-28
+    "p": 3.352111333931719e-28,
+    "bh_q": 6.704222667863438e-28,
+    "bh_family_n": 2
   },
   "deconfound": {
     "computable": true,
@@ -55,7 +70,7 @@
       0.362,
       0.6058
     ],
-    "interpretation": "positive = more L2/3 at the low-g arm at matched quality (effect specific to under-conditioning, not generic quality loss)"
+    "interpretation": "positive = more L2/3 in the common-support-trimmed low-g arm; the arms are not quality-matched, so this is descriptive"
   },
   "reliability": {
     "n_images": 428,
@@ -109,7 +124,79 @@
         "percent_agreement": 0.9486
       }
     },
-    "composite_weighted_kappa": 0.5616
+    "composite_weighted_kappa": 0.5616,
+    "composite_bootstrap": {
+      "point": 0.5616,
+      "ci95": [
+        0.5121,
+        0.6021
+      ],
+      "n_valid": 4000,
+      "n_bootstrap": 4000
+    }
+  },
+  "reliability_conditioned_only": {
+    "n_images": 418,
+    "n_judges": 2,
+    "judges": [
+      "claude",
+      "qwen"
+    ],
+    "pairs": [
+      "claude+qwen"
+    ],
+    "per_field": {
+      "reduplication": {
+        "weighted_kappa": 0.4053,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.4053
+        },
+        "gwet_ac2": 0.7099,
+        "percent_agreement": 0.3971
+      },
+      "fragmentation": {
+        "weighted_kappa": 0.6938,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.6938
+        },
+        "gwet_ac2": 0.9276,
+        "percent_agreement": 0.7321
+      },
+      "condensation": {
+        "weighted_kappa": 0.5678,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.5678
+        },
+        "gwet_ac2": 0.8813,
+        "percent_agreement": 0.6603
+      },
+      "distortion": {
+        "weighted_kappa": 0.4998,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.4998
+        },
+        "gwet_ac2": 0.7453,
+        "percent_agreement": 0.3708
+      },
+      "tiling": {
+        "weighted_kappa": 0.5788,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.5788
+        },
+        "gwet_ac2": 0.9461,
+        "percent_agreement": 0.9522
+      }
+    },
+    "composite_weighted_kappa": 0.5417,
+    "composite_bootstrap": {
+      "point": 0.5417,
+      "ci95": [
+        0.4913,
+        0.5852
+      ],
+      "n_valid": 4000,
+      "n_bootstrap": 4000
+    }
   },
   "per_prompt": {
     "per_prompt_spearman_composite_vs_g": {
@@ -164,7 +251,36 @@
     "11.0": 0.2909,
     "15.0": 0.4377
   },
-  "verdict": "confirm (per-model): negative LMM slope survives quality control at adequate kappa",
+  "n_by_guidance": {
+    "1.0": 60,
+    "2.0": 60,
+    "3.0": 60,
+    "5.0": 59,
+    "7.0": 59,
+    "11.0": 60,
+    "15.0": 60
+  },
+  "judge_only_lmm": {
+    "claude": {
+      "slope_standardized": -0.3207021779943168,
+      "ci95": [
+        -0.37434251790775563,
+        -0.2670618380808779
+      ],
+      "converged": true,
+      "optimizer": "lbfgs"
+    },
+    "qwen": {
+      "slope_standardized": -0.29474252368725895,
+      "ci95": [
+        -0.359019407711559,
+        -0.2304656396629589
+      ],
+      "converged": true,
+      "optimizer": "lbfgs"
+    }
+  },
+  "verdict": "confirm (per-model): negative LMM slope survives adjustment for quality proxies at adequate kappa",
   "human_reliability": {
     "available": true,
     "n_subset": 28,

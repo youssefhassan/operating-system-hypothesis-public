@@ -14,12 +14,27 @@
       ],
       "P1_veridicality_lmm": {
         "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+        "optimizer": "lbfgs",
+        "converged": true,
+        "optimizer_attempts": [
+          {
+            "optimizer": "lbfgs",
+            "converged": true,
+            "warnings": []
+          }
+        ],
+        "variance_components": [
+          0.06794346336992785,
+          0.029141647923677634
+        ],
         "slope_standardized": 0.462834930687382,
         "ci95": [
           0.3822004676803463,
           0.5434693936944177
         ],
-        "p": 2.3152414418109467e-29
+        "p": 2.3152414418109467e-29,
+        "bh_q": 4.6304828836218935e-29,
+        "bh_family_n": 2
       },
       "P2_dissociation": {
         "raw_spearman_veridicality_vs_g": 0.5762,
@@ -39,22 +54,88 @@
       },
       "secondary": {
         "spontaneity": {
+          "lmm": {
+            "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+            "optimizer": "lbfgs",
+            "converged": true,
+            "optimizer_attempts": [
+              {
+                "optimizer": "lbfgs",
+                "converged": true,
+                "warnings": []
+              }
+            ],
+            "variance_components": [
+              0.5760359304880861,
+              0.05802163360028949
+            ],
+            "slope_standardized": -0.26110283326042927,
+            "ci95": [
+              -0.32180677837329325,
+              -0.2003988881475653
+            ],
+            "p": 3.4479565941676747e-17,
+            "bh_q": 2.0687739565006048e-16,
+            "bh_family_n": 6
+          },
           "spearman_vs_g": -0.2745,
-          "perm_p": 0.0002,
-          "n": 418,
-          "bh_q": 0.0003
+          "n": 418
         },
         "complexity": {
+          "lmm": {
+            "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+            "optimizer": "lbfgs",
+            "converged": true,
+            "optimizer_attempts": [
+              {
+                "optimizer": "lbfgs",
+                "converged": true,
+                "warnings": []
+              }
+            ],
+            "variance_components": [
+              0.22769575801131853,
+              0.18789738600082165
+            ],
+            "slope_standardized": -0.11331905876731126,
+            "ci95": [
+              -0.18942135349503447,
+              -0.03721676403958803
+            ],
+            "p": 0.003517683998609118,
+            "bh_q": 0.004221220798330942,
+            "bh_family_n": 6
+          },
           "spearman_vs_g": -0.1657,
-          "perm_p": 0.0004,
-          "n": 418,
-          "bh_q": 0.0004
+          "n": 418
         },
         "coherent_scene": {
+          "lmm": {
+            "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+            "optimizer": "lbfgs",
+            "converged": true,
+            "optimizer_attempts": [
+              {
+                "optimizer": "lbfgs",
+                "converged": true,
+                "warnings": []
+              }
+            ],
+            "variance_components": [
+              0.10040179931553986,
+              0.02944797644477541
+            ],
+            "slope_standardized": 0.29061000479085053,
+            "ci95": [
+              0.20456854528335777,
+              0.3766514642983433
+            ],
+            "p": 3.594621441095786e-11,
+            "bh_q": 1.0783864323287357e-10,
+            "bh_family_n": 6
+          },
           "spearman_vs_g": 0.3599,
-          "perm_p": 0.0002,
-          "n": 418,
-          "bh_q": 0.0003
+          "n": 418
         }
       },
       "per_prompt_veridicality_spearman": {
@@ -65,6 +146,7 @@
         "p5_livingroom": 0.4031,
         "p6_forest": 0.5268
       },
+      "n_prompts_positive": 6,
       "exploratory": {
         "E1_overshoot": {
           "veridicality_by_guidance": {
@@ -92,8 +174,8 @@
             -0.0753
           ],
           "shrinkage": 0.3108,
-          "share_of_association_explained": 0.6391,
-          "pattern": "confounding: veridicality accounts for part of the distortion signal, i.e. the field was partly tracking rendering style"
+          "proportional_attenuation_in_absolute_association": 0.6391,
+          "pattern": "attenuation: distortion and veridicality share rank association with guidance; this is not a causal decomposition"
         },
         "E4_shape": {
           "excluding_g1_spearman_veridicality_vs_g": 0.3388,
@@ -115,12 +197,41 @@
       ],
       "P1_veridicality_lmm": {
         "method": "statsmodels MixedLM (crossed prompt+seed RE)",
-        "slope_standardized": -0.26074651163051527,
-        "ci95": [
-          -0.34710739326768825,
-          -0.17438562999334228
+        "optimizer": "powell",
+        "converged": true,
+        "optimizer_attempts": [
+          {
+            "optimizer": "lbfgs",
+            "converged": false,
+            "warnings": [
+              "Maximum Likelihood optimization failed to converge. Check mle_retvals",
+              "MixedLM optimization failed, trying a different optimizer may help.",
+              "Gradient optimization failed, |grad| = 7.826137",
+              "The MLE may be on the boundary of the parameter space.",
+              "The Hessian matrix at the estimated parameter values is not positive definite."
+            ]
+          },
+          {
+            "optimizer": "powell",
+            "converged": true,
+            "warnings": [
+              "The MLE may be on the boundary of the parameter space.",
+              "The Hessian matrix at the estimated parameter values is not positive definite."
+            ]
+          }
         ],
-        "p": 3.26567074511911e-09
+        "variance_components": [
+          0.14751676411461573,
+          8.144744766731608e-11
+        ],
+        "slope_standardized": -0.26074145186731534,
+        "ci95": [
+          -0.3472400730819861,
+          -0.17424283065264454
+        ],
+        "p": 3.4604312987184567e-09,
+        "bh_q": 3.4604312987184567e-09,
+        "bh_family_n": 2
       },
       "P2_dissociation": {
         "raw_spearman_veridicality_vs_g": -0.0708,
@@ -140,22 +251,104 @@
       },
       "secondary": {
         "spontaneity": {
+          "lmm": {
+            "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+            "optimizer": "lbfgs",
+            "converged": true,
+            "optimizer_attempts": [
+              {
+                "optimizer": "lbfgs",
+                "converged": true,
+                "warnings": [
+                  "The MLE may be on the boundary of the parameter space."
+                ]
+              }
+            ],
+            "variance_components": [
+              0.28357224924014424,
+              5.37390892562785e-09
+            ],
+            "slope_standardized": -0.2230643885668281,
+            "ci95": [
+              -0.30429744177136153,
+              -0.1418313353622946
+            ],
+            "p": 7.365331517406242e-08,
+            "bh_q": 1.1047997276109363e-07,
+            "bh_family_n": 6
+          },
           "spearman_vs_g": -0.2237,
-          "perm_p": 0.0002,
-          "n": 417,
-          "bh_q": 0.0002
+          "n": 417
         },
         "complexity": {
+          "lmm": {
+            "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+            "optimizer": "lbfgs",
+            "converged": true,
+            "optimizer_attempts": [
+              {
+                "optimizer": "lbfgs",
+                "converged": true,
+                "warnings": []
+              }
+            ],
+            "variance_components": [
+              0.3573927624098979,
+              0.03214249274810927
+            ],
+            "slope_standardized": -0.21478778914028923,
+            "ci95": [
+              -0.29089670887064156,
+              -0.1386788694099369
+            ],
+            "p": 3.179837281055346e-08,
+            "bh_q": 6.359674562110692e-08,
+            "bh_family_n": 6
+          },
           "spearman_vs_g": -0.2357,
-          "perm_p": 0.0002,
-          "n": 417,
-          "bh_q": 0.0002
+          "n": 417
         },
         "coherent_scene": {
+          "lmm": {
+            "method": "statsmodels MixedLM (crossed prompt+seed RE)",
+            "optimizer": "powell",
+            "converged": true,
+            "optimizer_attempts": [
+              {
+                "optimizer": "lbfgs",
+                "converged": false,
+                "warnings": [
+                  "Maximum Likelihood optimization failed to converge. Check mle_retvals",
+                  "MixedLM optimization failed, trying a different optimizer may help.",
+                  "Gradient optimization failed, |grad| = 12.777077",
+                  "The MLE may be on the boundary of the parameter space.",
+                  "The Hessian matrix at the estimated parameter values is not positive definite."
+                ]
+              },
+              {
+                "optimizer": "powell",
+                "converged": true,
+                "warnings": [
+                  "The MLE may be on the boundary of the parameter space.",
+                  "The Hessian matrix at the estimated parameter values is not positive definite."
+                ]
+              }
+            ],
+            "variance_components": [
+              0.029147609950592783,
+              9.899763017909565e-11
+            ],
+            "slope_standardized": 0.11355195103460702,
+            "ci95": [
+              0.019128006770243983,
+              0.20797589529897006
+            ],
+            "p": 0.01842298532140042,
+            "bh_q": 0.01842298532140042,
+            "bh_family_n": 6
+          },
           "spearman_vs_g": 0.195,
-          "perm_p": 0.0002,
-          "n": 417,
-          "bh_q": 0.0002
+          "n": 417
         }
       },
       "per_prompt_veridicality_spearman": {
@@ -166,6 +359,7 @@
         "p5_livingroom": -0.2665,
         "p6_forest": -0.0113
       },
+      "n_prompts_positive": 1,
       "exploratory": {
         "E1_overshoot": {
           "veridicality_by_guidance": {
@@ -193,8 +387,8 @@
             -0.0784
           ],
           "shrinkage": -0.0651,
-          "share_of_association_explained": null,
-          "pattern": "suppression: the association is LARGER once veridicality is held fixed, so veridicality was masking it rather than causing it"
+          "proportional_attenuation_in_absolute_association": null,
+          "pattern": "suppression: the conditional association is larger after adjustment for veridicality; this is not a causal decomposition"
         },
         "E4_shape": {
           "excluding_g1_spearman_veridicality_vs_g": -0.3866,

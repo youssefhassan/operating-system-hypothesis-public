@@ -1,0 +1,1105 @@
+---
+title: "Understanding through Perturbation: lowering classifier-free guidance as a dose-response assay for two text-to-image latent models"
+author:
+  - name: Youssef Hassan
+    affiliation: YWSF Lab (independent researcher)
+    email: youssefhassan13@gmail.com
+date: October 2026
+abstract: |
+  I probe a generative model by lowering one control, pre-registered, and scoring what
+  breaks with a rubric borrowed from Klüver. I generated 860 images on two latent
+  text-to-image checkpoints, SDXL and SD 3.5: 6 prompts, 7 guidance values, 10 seeds,
+  scored blind by two vision-language judges on criteria I committed to git before the
+  run; two humans rated a subset. Lower classifier-free guidance was associated with
+  greater rubric-scored visual breakdown, and the association remained after adjustment
+  for two no-reference quality proxies, robustly to prompt resampling on SDXL but not on
+  SD 3.5. SDXL met every pre-registered gate under the post-data amended judge panel. SD
+  3.5 missed the slope gate: its slope of -0.182 sits above the -0.20 line, and its
+  interval straddles that line, so an effect of the registered size is neither shown nor
+  ruled out. Looking afterwards, almost all of SD 3.5's drop happens between g = 1 and g
+  = 2. A second pre-registered rubric, adapted from Suzuki's axes, replicated on SDXL
+  and failed on SD 3.5, where veridicality moved opposite to the registered direction.
+  Qwen2.5-VL-7B, the original second judge, failed silently, returning well-formed zeros
+  on visibly broken images, and was caught only by a human subset after the run;
+  Qwen3-VL-8B failed the same way in screening. Replacing the 7B with Qwen3-VL-32B, a
+  post-data amendment, raised composite kappa from 0.290 to 0.562 (SDXL) and 0.158 to
+  0.440 (SD 3.5; 0.394 without the empty-prompt baselines); the two humans agreed at
+  0.567, and with the best judge at 0.337 and 0.426. An earlier experiment found no
+  Klüver form constants, but its judge also flagged them on 45% of ordinary images,
+  above a registered ceiling of 20%, so that null is uninterpretable under its own rule.
+  The psychedelic analogy supplies the rubric and is not tested; code,
+  pre-registrations, images and every judge reply are public.
+---
+
+<!-- Build: make. Check: make check. Slots marked [YOU: ...] are the author's. -->
+
+# Introduction
+
+I set out to understand a generative system by breaking it in a controlled way. Klüver
+catalogued what human vision does when it breaks under mescaline, reducing the first
+stages of the intoxication to a small set of form constants [@kluver1966]. The four
+fields I score, each 0 to 3, are reduplication (too many copies), fragmentation (broken
+pieces), condensation (fused objects) and distortion (warped shapes); they are borrowed
+from that inventory; the second rubric is adapted from Suzuki's axes [@suzuki2024]. The
+adaptation is not cosmetic: spontaneity here means content the prompt did not ask for,
+where Suzuki's means independence from sensory input, and veridicality here combines
+realism and coherence. The knob I turn is classifier-free guidance, g: how hard the sampler is pushed toward the
+prompt, where at g = 1 the prompt is used but not amplified. It is a control most text-to-image pipelines expose (guidance-distilled models do not), and
+turning it down is cheap, reversible and
+pre-registrable. The original question was whether diffusion output breaks down into
+Klüver's shapes, the lattices, tunnels and spirals that neural-field theory links to the
+organisation of early visual cortex [@bressloff2001]. Exp 01 returned an apparent null.
+A later registered check (Exp 02) showed that its judge did find form constants that were
+really there, but also reported them in almost half of ordinary images, so its silence on
+diffusion output cannot be read as their absence. This paper is about
+the judge-scored object-level breakdown that appeared instead, and the instrument needed
+to see it.
+
+Classifier-free guidance combines a conditional and an unconditional model prediction at
+each step, weighted so that more guidance buys fidelity and costs diversity [@ho2022cfg].
+SDXL predicts noise and SD 3.5 predicts a velocity, so "prediction" and not "score" is the
+term that covers both.
+Ho and Salimans write the tempered distribution $p(x \mid c)\,p(c \mid x)^{w}$ for classifier guidance, and present classifier-free guidance as inspired by an implicit classifier rather than equal to it [@ho2022cfg]; more bluntly, it sharpens sampling
+toward high-likelihood regions of the conditional [@kynkaanniemi2024interval;
+@karras2024autoguidance]. Lowering g toward 1 removes the amplification of the prompt and
+approaches the unguided conditional model, which in the diffusers convention used here is
+g = 1; only below 1 does the sampler move toward the unconditional model. Which side of the psychedelic-neuroscience analogy
+that corresponds to is a modelling choice; both readings are defensible. Read the
+prompt as the high-level prior and the diffusion model as the perceptual substrate, and
+lowering g weakens a top-down prior, the direction REBUS assigns to psychedelics
+[@carhartharris2019rebus]. Read the diffusion prior as the prior, and lowering g is prior
+dominance, closer to sensory-deprivation and Charles Bonnet accounts. The data bear on
+that choice in one way only: the empty-conditioning baseline is the extreme of
+breakdown on both checkpoints, and on SDXL an empty prompt is still an embedding, not the
+zero-conditioning branch. The neuroscience is the source of the rubric and the
+framing. Nothing below tests the analogy.
+
+The assay is five lines. I generated a fixed grid, 6 prompts by 7 guidance values by 10
+seeds on two checkpoints, 860 images with empty-prompt baselines. Two judges from
+different model families scored every image blind on the Klüver-derived rubric, guidance
+value hidden and order shuffled. Two automatic "does this look like a good image" scores per image were pre-registered as
+quality proxies, so that the breakdown association could be re-estimated after adjustment
+for those scores. Metric,
+direction, disconfirming outcome and four gates were committed to git before any analysed
+run; the whole tree is public. Under a two-judge panel amended after the first run,
+lower classifier-free guidance was associated with greater
+rubric-scored visual breakdown, and the association remained after adjustment for
+two no-reference quality proxies.
+SDXL met every pre-registered gate. SD 3.5 missed the slope gate: its slope of -0.182
+sits above the -0.20 line, and its interval straddles that line, so an effect of the
+registered size is neither shown nor ruled out. SDXL's slope is steeper, and the
+difference was tested. Looking afterwards, almost all of SD 3.5's drop happens between
+g = 1 and g = 2.
+
+Four contributions.
+
+1. **The assay and its pre-registration record.** One knob, a fixed grid, a blind
+   cross-family judge panel, a pre-specified quality adjustment, and confirming and
+   disconfirming criteria in git before the run, with one dated pre-data amendment and one
+   post-data instrument amendment. A git log verifies the order.
+2. **The dose-response, and what separates the two checkpoints tested.** The
+   slope, whether the four scores fall in a straight line as guidance rises, in standardised
+   units, is -0.340 on SDXL and -0.182 on SD 3.5,
+   against a registered gate of -0.20. The slope difference was tested with a model by
+   guidance interaction, not read off the pair. On the exploratory veridicality
+   contrast, 64% of the distortion field's absolute correlation with guidance attenuated
+   after adjustment for veridicality; that is construct overlap, not a causal split.
+3. **Silent judge failure, and the screen that catches it.** Two vision-language judges
+   returned zero on every field of every probe image while emitting well-formed JSON and
+   fluent, confident captions. The panel change that followed is a post-data amendment,
+   not a pre-specified drop-in. Refilling one seat with no rubric change raised composite
+   inter-judge kappa, agreement between two judges beyond chance where 0 is chance and 1 is
+   identical scoring, on SDXL from 0.290 to 0.562; Section 3.4 reports both checkpoints.
+4. **The form-constant result.** The registered validation of the Exp 01 judge failed on
+   specificity: its class flags fire on 45% of ordinary generated images, above the
+   ceiling of 20% fixed in advance. Under the rule written into that pre-registration,
+   the Exp 01 null is uninterpretable, and I say so. The sensitivity reading is
+   exploratory, and so is the separation between the rendered stimuli and ordinary scenes
+   on the geometric-intensity metric Exp 01 used.
+
+## Related work
+
+Ho and Salimans introduced classifier-free guidance and its trade-off: more guidance
+raises sample fidelity and reduces diversity [@ho2022cfg]. Saharia et al. traced
+oversaturated, unnatural images at high guidance weights to a train-test mismatch, and
+introduced dynamic thresholding to keep large weights usable [@saharia2022imagen]. Kynkäänniemi et al. showed that the effect of guidance depends on
+the noise level, harmful at high noise and largely unnecessary at low noise, and
+described low guidance as yielding diverse but fuzzy images that lack detail
+[@kynkaanniemi2024interval]. Karras et al. described guidance as pulling samples toward
+well-learned, high-probability regions, and guided a model with an inferior version of
+itself instead [@karras2024autoguidance]. Suzuki et al. built the Hallucination Machine,
+applying DeepDream to panoramic video and comparing participants' ratings against
+psilocybin questionnaire data [@suzuki2017]. Suzuki set out computational
+neurophenomenology and three axes, veridicality, spontaneity and complexity, as
+phenomenology first, not a direct map to pathological mechanism [@suzuki2024]. Chen et
+al. found that multimodal judges track human preference on pair comparison while
+diverging from it on scoring evaluation, that the other models they evaluate
+(LLaVA, CogVLM, Qwen-VL-Max) align worse with human judgement than GPT-4V, and that judge
+outputs carry biases and hallucinated justifications [@chen2024mllmjudge]. Xie et al. showed that common human-preference evaluators are biased
+toward large guidance scales, so raising the guidance scale improves preference scores
+even where image quality is damaged, and proposed a guidance-aware evaluation in response
+[@xie2026guidancematters].
+
+Lowering guidance is not the new thing here. Kynkäänniemi et al. study low and zero
+guidance already. What is new is the rubric that names failure phenomena rather than
+rating preference or quality, the pre-registration of the metric and the gates, the
+comparison across two checkpoints, and the judge audit. Xie et al. score preference and
+repair the evaluator for its guidance bias; I score named phenomena instead of preference,
+so that work is a complement here and not a competitor.
+
+# The assay
+
+<!-- Merged from docs/PREPRINT_I_methods_skeleton.md on 2026-09-16. Numbering: pandoc/LaTeX numbers sections; the skeleton's 2.x labels were dropped. -->
+
+## Overview: two guidance instantiations and a calibration arm
+
+The contribution is a **measurement procedure**: take a generative system that works,
+loosen one control parameter, classifier-free guidance, hold everything else fixed, and measure what breaks. The guidance assay is
+instantiated twice, in Exp 01 on a single prompt and in Exp 03 on six prompts. Exp 02 is
+not a guidance sweep at all: it is a calibration arm, instrument validation on a neural
+field, and what it validates is the judge that scored Exp 01.
+
+Four steps, identical across the two guidance instantiations:
+
+1. **Generate** a full grid (guidance x prompt x seed) with all else pinned, plus an
+   empty-prompt baseline at the same seeds.
+2. **Score blind.** A judge sees pixels and a fixed rubric naming the intended scene.
+   The guidance value is never shown, order is shuffled, decoding is deterministic, and
+   un-blinding happens only at analysis.
+3. **Analyse against a plan committed before the run**: metric, direction, confirming
+   and disconfirming outcomes, and test.
+4. **Publish the whole tree**: pre-registration, judgements, raw judge replies, reports,
+   images.
+
+## Pre-registration as git history
+
+Each experiment's hypothesis, sweep, held-fixed variables, metric and direction, the
+disconfirming null, sample size and test are committed **before any run on the
+configuration to be analyzed**. A later change is a dated commit reclassifying the
+experiment as exploratory:
+
+```
+git log -- experiments/03_l23_hardening/preregistration.json
+```
+
+Exp 03 carries two dated amendments. The first (2026-07-21) is pre-data: Judge A moved to
+the Batches API, a further judge family was added, and reliability was generalized to the
+mean of pairwise weighted kappas, leaving rubric, prompts, grid, endpoint and thresholds
+untouched. Being pre-data is its whole defence: when it was committed only a two-image
+smoke test had been run, so no image entering any analysis below existed. The second
+(2026-08-08) is post-data, and it is an instrument amendment: after the full run of
+2026-07-22 had been scored, the judge B seat was refilled, under the pre-registration
+clause listing judge models as swappable without reclassifying the experiment. It leaves
+rubric text, prompts, grid, endpoint and thresholds untouched, the trigger condition the
+pre-registration had named was met, and the model that took the seat is a deviation from
+the fallback named there. Section 3.4 reports what forced it and what it changed.
+
+## Models and generation
+
+Table: Generation design of the two guidance instantiations. Everything not listed is the pipeline default and is pinned in each experiment's metadata.
+
+| | Exp 01 | Exp 03 |
+|---|---|---|
+| Architectures | SDXL base 1.0 (UNet) [@podell2023sdxl], SD 3.5 medium (MMDiT) [@esser2024sd3] | same two |
+| Guidance grid | 9 values: 1.0, 1.5, 2.0, 3.0, 4.5, 6.0, 8.0, 11.0, 15.0 | 7 values: 1.0, 2.0, 3.0, 5.0, 7.0, 11.0, 15.0 |
+| Prompts | **1** (the still life; becomes `p1_stilllife` in Exp 03) | 6, including a designed control |
+| Seeds | 10 (42-51) | 10 (42-51), held fixed across guidance and model |
+| Baseline | empty prompt, same seeds | empty prompt, same seeds |
+| Steps / size | 25 / 1024x1024 | 25 / 1024x1024 |
+| Total images | 100 per model, 200 total | 430 per model, 860 total |
+
+A note on wording used throughout: I write *checkpoint*, not *architecture*. A checkpoint
+is one trained model, a single file of learned weights. SDXL and SD 3.5 do use different
+architectures (UNet and MMDiT), but each architecture appears here as exactly one
+checkpoint, and that checkpoint also differs from the other in training data, training
+objective, text encoder and sampler. Any difference between the two therefore belongs to
+these two trained models; it cannot be credited to the architecture without at least a
+second checkpoint of each.
+
+Held fixed on Apple Silicon: the model-default scheduler, `force_upcast` at the SDXL VAE
+decode, and float32 for SDXL, which in float16 on MPS gives all-NaN latents above
+g = 1.
+
+Conventions differ by one, and the difference matters for reading the grid. These
+experiments use the diffusers convention, where the sampler forms
+`pred = uncond + g (cond - uncond)`, so g = 1 is the unguided conditional model; Ho and
+Salimans write the same combination with a weight w for which w = 0 is unguided
+[@ho2022cfg]. Every guidance value here is g.
+
+Exp 01 is a **single-prompt** design, so a guidance effect and a property of that scene
+are inseparable; Exp 03's six prompts are what make the per-prompt breakdown possible.
+They are fixed in the pre-registration, with their ids as used throughout:
+
+- `p1_stilllife`, a watermelon, a glass half-filled with water, and a set of keys on a
+  wooden table (the Exp 01 prompt verbatim, kept for continuity)
+- `p2_portrait`, a close-up portrait photograph of an elderly man's face
+- `p3_bicycle`, a red bicycle leaning against a brick wall
+- `p4_oranges`, a bowl of oranges on a kitchen counter
+- `p5_livingroom`, an empty living room with a sofa, a lamp, and a window
+- `p6_forest`, a forest of pine trees on a misty mountainside
+
+The forest prompt is the designed control, pre-registered as the low-objecthood arm: a
+scene with no small fixed inventory of distinct foreground objects, where reduplication
+has little to multiply and tiling
+was the predicted stress. Its pre-registered role reads "low-objecthood control; should
+show tiling but LOW reduplication/condensation if the effect is object-bound", so it is
+the prompt on which an object-bound account of the breakdown can come apart.
+
+## The two rubrics
+
+Four phenomena from Klüver's inventory of hallucinatory constants
+[@kluver1966, pp. 175-207] are scored per image on a 0-3 ordinal scale: **reduplication**
+(his polyopia, one form multiplied), **distortion** (his dysmorphopsia, a form melted or
+made impossible), and **fragmentation** and **condensation**, two of his spatio-temporal
+transformations. A binary **tiling** flag
+records dissolution into a repeating field. Dysmegalopsia, the size change completing his
+triad, is dropped. The rubric names the intended scene and never the guidance value.
+
+The Klüver fields describe what happens to objects locally: copies, pieces, fusions,
+warps. A second rubric describes the image as a whole. Suzuki, Schwartzman and Seth
+[@suzuki2024] compared visual hallucinations with different causes (neurodegenerative,
+visual loss, psychedelic) and found they differ along three continuous axes:
+**veridicality**, how real and coherent the hallucinated content looks; **spontaneity**, how
+independent it is of what is actually in front of the eyes; and **complexity**, from simple
+geometry to elaborate scenes. They reproduced those differences in deep networks by
+varying which network layer drives the image and whether a learned image prior constrains
+it, a manipulation close in spirit to turning guidance. Exp 03b scores the same images on those three axes, 0 to 3 each, with a
+binary coherent-scene flag, carried over from Exp 01. It asks whether a global reading
+moves with guidance the way the local one does, and whether it carries signal the Klüver
+fields do not. Both judge prompts are given verbatim in the appendix. The adaptation changes two of the three:
+spontaneity here is content the prompt did not ask for rather than independence from
+sensory input, and veridicality here combines realism and coherence rather than realism
+alone. Its standing is weaker: the Klüver scores
+were known when it was committed, so its predictions are pre-data with respect to the
+axes scores only.
+
+## Judges
+
+The panel reported throughout is two model judges from different families, plus two human
+raters on a blind subset, the author and a second rater who does not know the hypothesis. It is not the panel that ran first. The full run of 2026-07-22
+used Claude Sonnet 5, Qwen2.5-VL-7B in the judge B seat and Llama-3.2-11B-Vision in a
+judge C seat. The human subset and the screening probes described below were run after
+that run, on 2026-08-08, and exposed two inert raters; the judge B seat was then refilled
+with Qwen3-VL-32B and judge C archived. The pre-registration had named Qwen2.5-VL-32B as
+the fallback if the 7B's human-subset kappa were poor. That trigger condition was met, but
+the model actually used is Qwen3-VL-32B, one generation newer, because it was the
+candidate that cleared the screen and the named model was not usable; the amendment
+records the substitution as a deviation from the named fallback. Which candidates survived
+the screen is a result, reported in Section 3.4.
+
+Table: Judge panel as reported, the pre-registered original panel, and the candidates screened.
+
+| | judge |
+|---|---|
+| Judge A | Claude Sonnet 5, via the Message Batches API |
+| Judge B | Qwen3-VL-32B local (MLX), which replaced the pre-registered Qwen2.5-VL-7B on 2026-08-08; a deviation from the named Qwen2.5-VL-32B fallback |
+| screened, not used | Qwen2.5-VL-7B, Qwen3-VL-8B, Llama-3.2-11B-Vision, Gemma-3-27B |
+| Human | two raters (author; naive second rater), 28 images |
+
+All judges receive the identical rubric from one module under identical blinding,
+shuffling and decoding; raw replies are retained beside the parsed record.
+
+**Judge screening (`RESEARCH_METHODOLOGY.md` section 5.3, in the repository).** The rule is that a judge is screened per
+rubric *before* the full run, on a stratified subset of 28 images spanning architecture,
+guidance bin and prompt, under the blinding and decoding of the full pass. The rule is
+what this experiment produced rather than what it followed: it was added to the
+methodology on 2026-08-09, and in Exp 03 itself the Klüver-rubric screen was run
+post-data, on 2026-08-08, after the full pass of 2026-07-22 had been scored. The probe
+reports gradedness, the share of scores landing on an interior point of the scale rather
+than an endpoint, and flags any graded field whose score never varies; a judge flat on a
+graded field is disqualified for that rubric. The screen runs on the four 0-3 fields only;
+the binary tiling flag is excluded from it. The panel was probed before the axes pass, which is the rule
+applied as written. Selection is on gradedness alone; human agreement is reported
+afterwards, not used to choose.
+
+## Instrument validation (Exp 02)
+
+Exp 02 answers an objection to Exp 01: *could the judge detect a form constant at all?*
+A minimal scalar neural field in the Ermentrout-Cowan family [@ermentrout1979], rendered
+through the inverse log-polar map, is
+driven through the Turing bifurcation with its kernel and that map held fixed and
+the critical point derived by linear stability analysis rather than tuned. Bressloff's
+orientation-field extension [@bressloff2001] was not run. Its renderings
+go through the detector, rubric text and decoding used on the generated images, mixed
+with blank fields and ordinary scenes, so only the image changes between control and
+experiment. It was
+pre-registered as confirmed only if all four judge class labels are realized, blanks stay
+below baseline, and the confusion matrix is diagonal-dominant. The same registration
+fixed the test of the judge itself: it had to flag at least 80% of the rendered form
+constants and at most 20% of ordinary generated images and of blank fields, and if it
+failed, the Exp 01 null was to be reported as uninterpretable.
+
+<!-- Decision 2026-09-16 (spine section 7): the Exp 02 contact sheet goes to the supplement / dataset card, not the main PDF. -->
+
+## Endpoints and statistics
+
+**Primary endpoint (Exp 03).** The endpoint is the outcome measure the hypothesis is tested
+on. Per image and field, the judge-mean 0-3 score, z-scored
+across all conditioned images *within a model*; the composite is the per-image mean of
+the four z-scored fields. The endpoint is therefore judge-scored breakdown on the
+Klüver-derived rubric, not human-perceived breakdown: its evidence of human validity is two
+raters on 28 images, who agree with each other at composite kappa 0.567 and with the
+better judge at 0.337 and 0.426 (Section 3.4).
+
+**Primary model.** The 420 images per checkpoint (SDXL or SD 3.5) are not independent: seventy share each
+prompt, and a busy forest scene scores more breakdown than a portrait at every guidance
+value. A plain regression would let those prompt differences leak into the guidance
+effect. A linear mixed model separates them. It fits one slope for guidance, shared by
+all images, and lets each prompt and each seed have its own baseline level of breakdown:
+
+```
+composite ~ guidance_std + (1 | prompt) + (1 | seed)
+```
+
+The slope therefore measures how breakdown changes with guidance within the same prompt
+and seed, not between them. Technically, guidance is z-scored and treated as interval, the
+slope is the fixed effect, and the per-prompt and per-seed baselines are random
+intercepts.
+
+**Quality adjustment.** Breakdown at low guidance could be low-quality artifact rather
+than objecthood dissolution, so a no-reference quality score is computed per image: CLIP-IQA
+[@wang2023clipiqa] and a LAION aesthetic predictor are each z-scored across the model's
+conditioned images and averaged into one score, Q, on the same standardised ruler as the
+composite. The guidance association is then re-estimated as a partial correlation
+adjusting for Q. The pre-registration named a quality-matched two-arm contrast; the
+implementation trims both arms to the overlapping quality band rather than matching
+images pair by pair or equalising mean quality. That is an implementation deviation,
+labelled as common-support trimming wherever it is reported. Quality is measured on the
+same images after guidance has acted, so the partial correlation is a sensitivity
+analysis, not a causal de-confound. An adjustment chosen afterwards cannot be told
+from a defence; this one was pre-registered.
+
+**Multiplicity.** The primary family is two tests, one per architecture; the secondary
+family (4 fields x 2 architectures) is Benjamini-Hochberg corrected [@benjamini1995fdr],
+which controls the expected share of false positives among the tests that pass, and is
+reported as q-values, the corrected p-values, with effect sizes.
+
+**Reliability.** Quadratic-weighted Cohen's kappa [@cohen1968kappa], percent agreement,
+and Gwet's AC2 [@gwet2008ac2], an agreement coefficient that stays stable when most scores
+sit at zero, where kappa is pulled down; each is averaged over judge pairs. The composite kappa that the
+gate is written on is the mean of the four per-field quadratic-weighted kappas, over the
+four intensity fields with tiling excluded; it is called the composite (mean per-field)
+kappa below. The pre-registration does not let kappa be read alone, so AC2 and percent
+agreement are reported beside it.
+
+**Confirmation, stated in advance.** Every gate below had to clear *on both
+architectures*; the design can miss at any one. In words, the four gates are four
+different questions.
+
+The first, the slope, is whether there is an effect at all: does breakdown fall as guidance rises,
+by at least the registered amount, with an interval that does not touch zero.
+
+The second, the partial correlation, is the quality adjustment. The worry is this: when guidance is low, the images
+are also lower quality in a general sense, blurrier, less polished. A judge looking at a
+blurry image might call it fragmented or distorted just because it is blurry, not because
+objects actually broke apart. If that were the whole story, the paper would have measured
+nothing but "low guidance makes worse pictures", which everyone already knew. So every
+image also gets a quality score from two separate automatic raters that know nothing
+about the rubric; they only answer "does this look like a good image". The second gate
+then asks: after adjustment for those two proxies, does breakdown still go down as
+guidance goes up? The number that answers it is the partial correlation. If breakdown
+were nothing more than what those two proxies measure, that number would drop to zero. The
+proxies are not a matched quality design: they do not hold image quality fixed, and they
+cannot rule out kinds of degradation they do not measure.
+
+The third, prompt generality, is whether it is more than one prompt: at least five of the six prompts have
+to show the effect on their own.
+
+The fourth, kappa, is not about guidance at all. It only asks whether the two judges gave
+similar scores to the same images. If one judge says distortion 3 and the other says
+distortion 0 on the same picture, the score is noise and nothing built on it means
+anything. Kappa is agreement between the two judges beyond what chance would give. It is
+a check on the instrument, done before anything the instrument reads is trusted.
+
+So the four gates are: is there an effect, is it more than those two quality proxies, is it more than
+one prompt, and can the measuring device be trusted at all.
+
+Table: Confirmation criteria committed before the analysed run. All four had to clear on both checkpoints.
+
+| gate | pre-registered threshold |
+|---|---|
+| standardised composite slope on guidance | <= -0.20, CI excluding zero |
+| partial rho adjusting for two quality proxies | <= -0.20, CI excluding zero |
+| prompts with a negative per-prompt slope | >= 5 of 6 |
+| inter-judge composite weighted kappa | >= 0.4 |
+| architectures required to clear all four | both |
+
+Three rules, dated in `RESEARCH_METHODOLOGY.md`, constrain the analyses:
+shape-agnostic endpoints, no pooled correlation without its per-prompt breakdown, and a
+judge screened per rubric. What they cost is revisited in Section 4.
+
+## Reproducibility
+
+Code, pre-registrations, analyses, judge outputs and images are public, and every figure
+and number below regenerates from them with one command per experiment. Section 6 gives
+the repository, the datasets and the commands.
+
+---
+
+# Results
+
+## Dose-response on the composite
+
+![The phenomenon, without choosing the best case. The living-room prompt on SDXL (top) and SD 3.5 (bottom). Left: guidance g = 1, the sixth of the ten seeds ranked by judge-scored composite, one of the two middle ranks since ten seeds have no single median (SDXL seed 42, SD 3.5 seed 48). Middle: g = 1, the seed the judges score highest (SDXL seed 44, SD 3.5 seed 50), the clearest case rather than a typical one. Right: g = 11, the sixth-ranked seed at that level (SDXL seed 50, SD 3.5 seed 51). Within a row the prompt and the steps are identical. On SDXL the middle-ranked low-guidance image is already a sketch with fractured furniture; on SD 3.5 it is a plausible room with melted objects and a style shift, which is less than the SDXL row shows and is why the two checkpoints are compared by slope and not by eye.](figures/fig1_livingroom_pair.png){#fig:phenomenon width=92%}
+
+Of the 860 images generated, 418 (SDXL) and 417 (SD 3.5) conditioned images entered the
+primary analysis, after listwise removal of every image with a failed judge reply, 2 and 3
+Claude parse failures respectively, together with 10 empty-prompt baselines per model.
+
+Table 4 reports the four pre-registered gates. SDXL clears all four, its six per-prompt
+Spearman correlations of composite against guidance all negative, from -0.74 (bicycle) to
+-0.28 (portrait). SD 3.5 misses the slope gate: per-prompt correlations from -0.49 (living room)
+to +0.30 (portrait), and a slope whose point estimate misses the registered gate of -0.20
+while its interval includes it. Its kappa of 0.440 is computed on the registered full
+complete-case set, including ten empty-prompt baselines (n = 427); on conditioned images
+only it is 0.394, below the 0.4 gate. I treat the registered full-set number as the gate
+and report the conditioned-only value as a sensitivity. The joint claim,
+requiring every gate on both architectures, is not confirmed. The forest prompt, the
+pre-registered low-objecthood control, is counted inside both of those tallies; it is
+read as a control below rather than as a sixth ordinary prompt.
+
+<!-- T1_gates.md pasted verbatim; regenerate with build_tables.py, do not hand-edit the cells -->
+
+Table: Pre-registered gates, amended panel (Claude Sonnet 5 and Qwen3-VL-32B). Slope is the guidance-standardised fixed effect of guidance on the four-field composite from a linear mixed model with random prompt and seed intercepts, 95% CI. Partial rho adjusts for the two-proxy no-reference quality score. Prompts is the count with a negative per-prompt Spearman. Kappa is the quadratic-weighted composite between judges on all complete images, including ten empty-prompt baselines per checkpoint.
+
+|  | slope (95% CI) | partial rho (95% CI) | prompts negative | kappa |
+|---|---|---|---|---|
+| pre-registered threshold | $\le$ -0.20 | $\le$ -0.20 | $\ge$ 5/6 | $\ge$ 0.4 |
+| SDXL | -0.340 [-0.400, -0.279] | -0.433 [-0.508, -0.347] | 6/6 | 0.562 |
+| SD 3.5 | -0.182 [-0.248, -0.115] | -0.245 [-0.338, -0.146] | 5/6 | 0.440 |
+
+The pre-registered secondary family, four fields by two architectures with
+Benjamini-Hochberg correction, moves the same way: on SDXL every field falls with
+guidance, fragmentation -0.618, distortion -0.486, condensation -0.442 and reduplication
+-0.116, all at q <= 0.018, and on SD 3.5 every field falls as well, from fragmentation
+-0.453 to distortion -0.114, all four clearing q <= 0.05.
+
+Kappa is not read alone. Across the same four fields on the amended panel, Gwet's AC2 runs
+from 0.710 to 0.924 on SDXL and from 0.803 to 0.953 on SD 3.5, and exact percent agreement
+from 38% to 72% and from 38% to 82%. Fragmentation is the top of every one of
+those ranges, and distortion the bottom of three of the four.
+
+After adjustment for the two quality proxies the association remains on both checkpoints
+(Table 4). On SDXL it also holds when the analysis is repeated on resampled sets of
+prompts (a prompt-level bootstrap, Section 5); on SD 3.5 it does not. Without the adjustment the correlations are -0.463 on SDXL and -0.216 on
+SD 3.5, so it barely moves either: had breakdown been nothing more than what the two
+proxies measure, the partial correlation would have fallen toward zero. Outside the mixed
+model, on the common-support-trimmed
+arms, Cliff's delta is 0.49 [0.362, 0.606] on SDXL and 0.188 [0.050, 0.320] on SD 3.5.
+Trimming to the overlapping quality band does not equalise the arms: the standardised mean
+difference in quality between the high- and low-guidance arms that survives the trim is
+0.740 on SDXL and 0.284 on SD 3.5, so these are common-support arms and not matched ones,
+a deviation from the registered matching language. A prompt-cluster bootstrap of the
+quality-adjusted partial correlation, reported in Section 5, is the sharper test of how far the adjustment carries.
+
+Refit on each judge separately, both slopes stay negative: Claude -0.321 and Qwen -0.295
+on SDXL, Claude -0.174 and Qwen -0.141 on SD 3.5.
+
+A note on fitting. The mixed model has five numbers to estimate: the guidance slope, an
+overall baseline, how much baselines vary between prompts, how much they vary between
+seeds, and the remaining noise. They are found by numerical search, here with the
+`MixedLM` routine of the Python statsmodels library, which reports whether the search
+converged, that is, confirmed it had reached the best values. On SD 3.5 the default search
+(L-BFGS) stopped without converging; the best value for the seed-to-seed variation is
+zero, the edge of what a variance can be, a common difficulty for that method. A second
+method (Powell) converged and gives the same slope to three decimals, -0.182
+[-0.248, -0.115]; that converged fit is the one reported. On SDXL the default search
+converged.
+
+The designed control is read post-hoc and at the field level (Exp 03 `analysis.md` section 9.2, in the repository),
+because the pre-registration gated on the composite only. On SDXL the forest composite
+still tracks guidance, rho -0.62, so the control did not stay flat and the object-bound
+reading of the breakdown is not established by it. What did behave as pre-registered is
+the pair of fields the control was built to dissociate: reduplication is flat at +0.05,
+and tiling at the lowest guidance value reaches 40%, the highest rate of any prompt.
+On SD 3.5 the forest composite is flat at -0.02, and that flatness is cancellation
+between fields rather than absence of movement: reduplication runs +0.52 against
+fragmentation -0.38. The control therefore separates the fields it was designed to
+separate without vindicating the composite-level prediction.
+
+Two features precede any modelling of shape (Figure 2). The empty-prompt
+baseline is the extreme of the composite on both architectures, above even g = 1: 1.51
+standardised units on SDXL and 2.17 on SD 3.5. And the composite is not the quality score
+renamed: the quality curves differ in shape between the two checkpoints while both composites
+fall.
+
+![Dose-response. The four-field judge-scored rubric breakdown composite (circles) and the no-reference quality score (squares), in standardised units within each checkpoint, against guidance on a log axis. The shaded band is a bootstrap 95% interval of the mean over images at each guidance value; the thin lines are the six per-prompt means, which is the spread every pooled number in the text travels with. The empty-prompt arm, having no guidance value, is detached at the right. Each point is a mean over complete cases at that guidance value, 58 to 60 images after parser failures.](figures/fig2_dose_response.png){#fig:dose}
+
+## Shape across the two checkpoints
+
+Table 4 splits the two checkpoints: SDXL clears the slope gate and SD 3.5 misses it
+narrowly. This section asks whether that split is real and, if so, what it consists of.
+Figure 2 shows both curves; Figure 3 puts the same averages on a plain guidance axis and
+draws the registered straight-line slope through them.
+
+![Why a straight line understates SD 3.5. Mean breakdown composite at each guidance value (points, about 60 images each) on a linear guidance axis, with the registered straight-line slope (solid) and the slope refitted on log2 guidance (dashed; a sensitivity analysis pre-specified with no gate). Both lines are drawn from the fitted slopes through the overall mean. On SDXL the straight line is a fair summary; on SD 3.5 almost all of the fall is between g = 1 and g = 2, which a straight line cannot follow.](figures/fig3_slopes.png){#fig:slopes width=92%}
+
+On SDXL the straight line is a fair summary: breakdown keeps falling as guidance rises.
+On SD 3.5 it is not: almost all of the fall happens between g = 1 and g = 2, and the curve
+is flat after that. A straight line drawn through a cliff tilts less than the cliff, so the
+registered linear slope understates an effect packed into one step. Refitted against
+log2 of guidance, which follows a cliff more closely, the SD 3.5 slope is -0.301 instead
+of -0.182 (Table 5). That refit is a sensitivity analysis, pre-specified with no gate after
+the verdict was fixed, and it does not change the verdict. In hindsight a linear endpoint
+on this grid was the wrong pre-registration: it treats the step from g = 1 to g = 2, where
+most of the change happens, as one fourteenth of the range.
+
+So SD 3.5's miss is narrow, and partly a matter of shape. Its slope is -0.182
+[-0.248, -0.115]. The interval excludes zero, so the effect is real; the point estimate
+misses the -0.20 gate and the interval includes it, so an effect of the registered size is
+neither shown nor ruled out. That is not a null: the word is reserved here for the Exp 01
+form-constant result of Section 3.5, which sits inside its pre-registered null region.
+
+Is the split real, or did two noisy estimates of the same effect simply land on either
+side of a line? Comparing -0.340 and -0.182 by eye ignores the uncertainty in each, so the
+difference was tested directly: one mixed model fitted on both checkpoints together, with a
+term that lets the guidance slope differ between them (a model by guidance interaction,
+pre-specified on 2026-09-17 and exploratory). SDXL's slope is steeper by -0.158
+[-0.248, -0.067] on the pre-registered z-composite and by -0.164 [-0.222, -0.105] on the
+raw judge-mean scores, so the z-scoring did not create the difference. The two checkpoints
+respond differently to guidance. Each architecture is represented by one checkpoint, which
+also differs in training data, objective, text encoder and sampler, so the difference
+belongs to the two checkpoints tested and is not shown to be architectural.
+
+<!-- T2_sensitivity.md pasted verbatim; regenerate with build_tables.py, do not hand-edit the cells -->
+
+Table: Sensitivity and post-hoc analyses of the guidance effect. Row 1 is the pre-registered primary slope. Rows 2 to 5 are mixed-model sensitivities pre-specified on 2026-09-03 with no gate. The last two rows are post-hoc shape descriptors from posthoc.py.
+
+|  | SDXL | SD 3.5 |
+|---|---|---|
+| linear g (pre-registered) | -0.340 [-0.400, -0.279] | -0.182 [-0.248, -0.115] |
+| log2 g | -0.440 [-0.494, -0.386] | -0.301 [-0.362, -0.239] |
+| rank of g | -0.415 [-0.471, -0.359] | -0.265 [-0.328, -0.202] |
+| three fields, no distortion, linear g | -0.308 [-0.365, -0.251] | -0.206 [-0.269, -0.144] |
+| three fields, no distortion, log2 g | -0.395 [-0.447, -0.344] | -0.307 [-0.365, -0.248] |
+| drop g = 1, Spearman composite vs g (post-hoc) | rho -0.244, p < 0.001 | rho 0.048, p = 0.3757 |
+| share of the g = 1-to-curve-minimum drop occurring from g = 1 to 2 (post-hoc) | 60% | 91% |
+
+Two post-hoc numbers in Table 5 put the shape difference in figures. The first drops
+g = 1: the correlation is recomputed without the g = 1 images, which asks whether any
+effect remains above the bottom step of the dial. On SDXL it does; on SD 3.5 it does not. And of each curve's drop from
+g = 1 to its lowest point, 60% happens in the first step on SDXL against 91% on SD 3.5.
+Both are post-hoc, and g = 1 is the dose level hardest to separate from under-conditioning
+artifact. The other sensitivity rows agree in direction; under them SD 3.5 is negative on
+six of six prompts, its portrait prompt at -0.42 against +0.30 on the registered slope.
+None changes the registered verdict.
+
+Two exploratory checks, pre-specified the same day as the interaction test, ask how
+precise the SD 3.5 interval is. Letting each prompt have its own slope leaves the estimates
+unchanged, -0.340 and -0.182, and widens the intervals, SD 3.5's to [-0.337, -0.027] and
+SDXL's to [-0.448, -0.231], with random-slope SDs of 0.112 (SDXL) and 0.177 (SD 3.5).
+Resampling prompts rather than images widens the SD 3.5 slope interval to
+[-0.322, -0.050] and its Spearman interval to [-0.407, -0.001], while resampling seeds
+changes little (slope [-0.238, -0.125]); with only six prompts these bootstrap intervals
+are themselves imprecise.
+
+## The distortion field and VLM-rated veridicality
+
+Exp 03b scores the identical images on axes adapted from Suzuki [@suzuki2024],
+pre-registered before any of those scores existed. The registered claim required both
+checkpoints to pass three gates: a veridicality slope of at least +0.20 with interval
+above zero, a partial correlation of veridicality with guidance after adjustment for the
+Klüver composite of at least +0.20, and kappa of at least 0.40. SDXL passes all three.
+SD 3.5 fails the first two in the opposite direction: its veridicality slope is
+-0.261 [-0.347, -0.174] and its partial is -0.161 [-0.262, -0.053]. Kappa on SD 3.5 is
+0.485 and passes. The joint Exp 03b claim is not confirmed (Table 6). The SD 3.5
+veridicality mixed model, like the primary composite model, did not converge under
+L-BFGS; Powell did, at the variance boundary, with an estimate unchanged to three
+decimals.
+
+<!-- T3_axes.md pasted verbatim; regenerate with build_tables.py, do not hand-edit the cells -->
+
+Table: Pre-registered Exp 03b replication and dissociation gates on the Suzuki-adapted axes. P1 is the guidance-standardised veridicality LMM slope (registered pass >= +0.20, BH-adjusted p <= 0.05, CI above zero); P2 is partial Spearman of veridicality and guidance adjusted for the Klüver composite (pass >= +0.20, CI above zero); P3 is mean field-level quadratic-weighted kappa (pass >= 0.40). Result is the registered verdict.
+
+|  | P1 slope (95% CI) | P2 partial rho (95% CI) | P3 kappa | result |
+|---|---|---|---|---|
+| SDXL | 0.463 [0.382, 0.543] | 0.417 [0.322, 0.506] | 0.529 | all pass |
+| SD 3.5 | -0.261 [-0.347, -0.174] | -0.161 [-0.262, -0.053] | 0.485 | P3 only |
+
+The exploratory contrast, labelled as such, then asks how much of the distortion field's
+movement survives adjustment for VLM-rated veridicality.
+
+On SDXL, little of it. The correlation between the distortion field and guidance falls
+from
+-0.486 raw to -0.175 [-0.27, -0.08] after adjustment for VLM-rated veridicality, and per prompt
+from
+oranges, -0.70 to -0.08, through living room, -0.53 to -0.385, to portrait, -0.23 to
++0.24, where it changes sign (Figure 4). On this exploratory measure the absolute
+correlation attenuated by 64% after adjustment for veridicality, itself rated by the same
+judges. That is construct overlap, not a causal split of sketchiness from warped objects.
+The residual excludes zero, so the
+field is not empty. The judge screen gave one concrete case of what the field bundles (Figure 5): on
+a painterly still life at low guidance I scored condensation and distortion at 3 and
+Qwen3-VL-32B scored both near 0. Neither was careless. The image was a loose painting of
+the intended objects; I read the looseness as objects melting and the judge read it as a
+style. That disagreement is the construct problem in one image, and it is why the
+adjustment for veridicality was pre-registered for the second pass. Exp 01's primary endpoint was the form-constant metric, not this one;
+distortion was its strongest exploratory field, and on SDXL most of that field's association attenuated
+under the veridicality adjustment.
+
+On SD 3.5 the same adjustment suppresses rather than attenuates: the raw -0.114 becomes
+-0.179 [-0.28, -0.08], so the realism axis was masking the signal rather than producing
+it, and a share-explained figure is undefined in that direction.
+
+Both patterns are possible on one field because distortion is bidirectional: one ordinal
+absorbs under-conditioned melt at the bottom of the dial and over-conditioned waxiness at
+the top. That construct problem is why the composite without distortion is a sensitivity
+analysis in Table 5, not a repaired primary endpoint.
+
+The realism axis overshoots, exploratory: veridicality peaks at g = 7 on SD 3.5,
+falling 1.07 rubric points by g = 15, and at g = 11 on SDXL, falling 0.16. The top of the
+dial is not the most veridical setting.
+
+![The distortion field against VLM-rated veridicality, on SDXL. Per-prompt Spearman correlation between judge-mean distortion and guidance, raw (circles) against the partial correlation adjusting for veridicality (squares), sorted by the raw value. About 70 images per prompt; exploratory, uncorrected for multiple comparisons.](figures/fig3_style_confound.png){#fig:style width=85%}
+
+![One image, two readings. SDXL, the still-life prompt, g = 1, seed 50, from the blind human subset. Scores on reduplication, fragmentation, condensation and distortion (0 to 3): the author 1, 2, 3, 3; Qwen3-VL-32B 0, 0, 0, 1; Claude Sonnet 5 2, 1, 1, 2. The intended watermelon, glass and keys are present but painted loosely, and the keys have dissolved into brushstrokes. Read as objects melting, it is high distortion and condensation; read as a painting style, it is close to none.](figures/fig5_painterly_stilllife.png){#fig:painterly width=55%}
+
+## Judge screening and silent failure
+
+Every candidate judge scored the same stratified subset of 28 images, on the rubric it
+would use, under the blinding and decoding of the run. On the Klüver rubric that screen
+was run on 2026-08-08, after the full pass of 2026-07-22 and not before it; on the axes
+rubric it ran before the pass, as the rule the programme adopted a day later requires. The screen asks one question: does the judge use the scale. Two models did not use
+it at all. Qwen2.5-VL-7B and Qwen3-VL-8B returned zero on every field of every one of the
+28 images, so their fraction of images scored above zero is flat at the floor for
+reduplication, fragmentation, condensation and distortion alike (Figure 6).
+Llama-3.2-11B-Vision scored above zero on reduplication for 18% of the subset and was
+flat at zero on the other three fields. Gemma-3-27B used two of the four, reduplication
+on 36% of the subset and distortion on 29%, and was flat on fragmentation and
+condensation. Qwen3-VL-32B and Claude Sonnet 5 were the two that used the scale, and
+they used it differently. On the probe the 32B moved on reduplication and distortion, at
+25% of the subset each, on condensation for 11%, and on fragmentation for one image in
+28, 4%. It passes the screen, which asks only for non-zero variance on every graded
+field, tiling excluded; its own tiling column is flat and the screen does not read it. Its
+profile is not Claude's.
+
+Nothing about the two silent-zero runs looked wrong. For Qwen2.5-VL-7B and Qwen3-VL-8B
+there were no refusals, no decoding errors and no schema violations: every reply was
+well-formed JSON, and each carried a fluent, confident free-text note about the image.
+Llama-3.2-11B-Vision failed in the way a pipeline does catch, and is not part of this
+claim: roughly 90 of its replies were truncated JSON at a max_tokens of 400, and the
+completed ones were flat at zero on three of the four fields. On a low-guidance SDXL living
+room the 7B judge wrote "The image depicts a coherent living room with one sofa, one
+lamp, and one window, without any reduplication, fragmentation, condensation, or
+distortion" and scored the row zero throughout. A pipeline that monitors parse rates,
+refusal rates and schema validity would have passed the two Qwen judges and reported their
+constant columns as a fact about the images.
+
+The repair was a post-data instrument amendment, dated 2026-08-08 and taken under the
+pre-registration clause that lists judge models as swappable without reclassifying the
+experiment, on the trigger condition the pre-registration had named, a poor human-subset
+kappa for the 7B, which turned out to be zero. It was not specified in advance as a swap
+to this model. The
+pre-registration named Qwen2.5-VL-32B as the fallback; the model that cleared the screen
+and took the seat is Qwen3-VL-32B, one generation newer, at the same quantisation, and the
+amendment records that substitution as a deviation. Nothing else moved: the same rubric,
+the same prompt, the same decoding settings and the same images. Composite (mean per-field)
+quadratic-weighted kappa between the two remaining
+judges rose from 0.290 to 0.562 on SDXL and from 0.158 to 0.440 on SD 3.5 (Table 7). The
+panel as first run, which added Llama-3.2-11B-Vision, was lower still at 0.126 and
+0.135, because a rater whose column never varies pulls a weighted kappa toward zero by
+arithmetic rather than by disagreement. The original run is retained in the repository
+beside the amended one; it is not replaced.
+
+Table: Composite (mean per-field) quadratic-weighted kappa across judge panels on the same generated corpus and rubric. Row-specific n is the complete-case image count and differs because Llama had missing replies. The first two rows are the panels as run on 2026-07-22; the third is the amended panel, after the Qwen2.5-VL-7B seat was refilled with Qwen3-VL-32B on 2026-08-08, with no rubric change. Human rows use a 28-image blind subset drawn from both checkpoints, too few to split, so each row has one pooled value, shown under SDXL; bootstrap 95% CI. The second-rater rows are exploratory, with no gate.
+
+| panel | SDXL | SD 3.5 |
+|---|---|---|
+| Claude + Qwen2.5-VL-7B (original judge B) | 0.290 (n = 428) | 0.158 (n = 427) |
+| Claude + Qwen2.5-VL-7B + Llama-3.2-11B (original three-judge panel) | 0.126 (n = 380) | 0.135 (n = 387) |
+| Claude + Qwen3-VL-32B (amended panel) | 0.562 (n = 428) | 0.440 (n = 427) |
+| human (author, n = 28) vs Claude Sonnet 5 | 0.337 [0.106, 0.495] | (pooled) |
+| human (author, n = 28) vs Qwen3-VL-32B | 0.124 [-0.059, 0.313] | (pooled) |
+| second rater (naive, n = 28) vs Claude Sonnet 5 | 0.426 [0.208, 0.575] | (pooled) |
+| second rater (naive, n = 28) vs Qwen3-VL-32B | 0.169 [-0.029, 0.391] | (pooled) |
+| author vs second rater (human vs human, n = 28) | 0.567 [0.330, 0.721] | (pooled) |
+
+Agreement between models is not validity. The first rater, the author, scored a blind subset of
+28 images with guidance and architecture hidden and the order shuffled. Against that
+rater, Claude Sonnet 5 reaches a composite (mean per-field) kappa of 0.337 [0.106, 0.495] and
+Qwen3-VL-32B reaches 0.124 [-0.059, 0.313], an interval that spans zero. On those same 28
+images the two judges agree with each other at a mean per-field kappa of
+0.271 [0.056, 0.448], below human against Claude at 0.337 [0.106, 0.495] and above human
+against Qwen at 0.124. The full-corpus panel kappa of 0.562 and 0.440 uses n = 428 and
+n = 427 images, including the ten empty-prompt baselines per checkpoint;
+these subset values are computed on different image sets and are not compared
+directly. Per field on the 28, the judges agree least on distortion, at 0.069, the field
+where human against Claude agreement is also weakest. The weakest field
+for the better of them is distortion, at 0.212 human against Claude. Exp 01's primary
+endpoint was the form-constant metric; distortion was its strongest exploratory field.
+
+A second rater, who does not know the hypothesis, later scored the same 28 images in the
+same order, from a plain-language version of the rubric (exploratory, no gate; the wording
+is in the repository). The two humans agree at a composite kappa of 0.567 [0.330, 0.721],
+about as well as the two judges agree with each other on the full SDXL corpus. Against
+the second rater, Claude Sonnet 5 reaches 0.426 [0.208, 0.575], higher than against me,
+so the author's knowledge of the hypothesis did not inflate the judge's human agreement;
+Qwen3-VL-32B reaches 0.169 [-0.029, 0.391], an interval that again spans zero. With 28
+images every one of these intervals is wide.
+
+I read this as three tiers of qualification for a judge on a breakdown rubric: it uses
+the scale on a stratified probe; it agrees with a judge from another model family, which
+on the full corpus this panel does at 0.562 and 0.440, although on the 28-image human
+subset the two judges agree with each other less than Claude agrees with the rater; and it
+agrees with a human rater. The panel reported here clears the first two and clears the
+third only partly. A judge can pass the rubric screen and still lack human validity.
+
+The size reading of this result is narrow. Five open-weight judges were screened, and the
+two that returned no variance at all belong to a single Qwen lineage across two
+generations, so parameter count is not separable here from model family or release date.
+"Below about 30B" describes this panel and not a law, and Gemma-3-27B's partial result,
+graded on two fields and flat on two, already blurs any threshold. The direction is
+consistent with Chen et al., who report that MLLM judges track human preference on pair
+comparison while diverging from it on scoring evaluation, that the open-weight models
+they evaluate (LLaVA, CogVLM, Qwen-VL-Max) align worse with human judgement than GPT-4V,
+and that judge outputs carry biases and hallucinated justifications
+[@chen2024mllmjudge]. What I observe is more extreme than divergence: no variance to
+diverge with.
+
+The scored images (835 conditioned and 20 empty-prompt images with two complete judge
+replies, out of 860 generated), the raw replies behind them and the 28-image human subset
+are public, and can be reused as a screening set for other judges.
+
+![Judge screen. Per cell, the percentage of the 28 blind-subset images each rater scored above zero (upper number) and the mean score on the 0 to 3 scale (lower number), per field, on the shared rubric; parse failures are excluded from the denominator. Qwen2.5-VL-7B and Qwen3-VL-8B sit at zero on every field, Llama-3.2-11B-Vision moves on reduplication only, Gemma-3-27B on reduplication and distortion only, and Qwen3-VL-32B and Claude Sonnet 5 score above zero on all four, at rates that differ between them. The screen reads the four graded fields only; the binary tiling flag is excluded, so Qwen3-VL-32B passes although its tiling column is flat. The human row is the single rater, the author, on the same images.](figures/fig4_judge_screen.png){#fig:judges width=85%}
+
+## Form constants: the registered validation failed on specificity
+
+Exp 01 asked the form-constant question directly. One judge, Claude Sonnet 4.6, flagged
+Klüver's lattice, cobweb, tunnel and spiral [@kluver1966] and scored a geometric
+intensity, the pre-registered metric M (0 to 1). M sat near the floor at every guidance
+value on both checkpoints, with per-guidance means between 0.033 and 0.167. The
+registered Spearman of those nine means against guidance is -0.044 on SDXL and +0.234 on
+SD 3.5 (+0.01 and +0.10 across the 90 images). Both readings sit inside the
+pre-registered null region of |rho| < 0.3; confirmation required rho at or below -0.6. What that null is worth depends
+entirely on whether the judge could see a form constant at all, and after Section 3.4 a
+flat reading from an unchecked judge is worth little.
+
+Exp 02 Stage A is that check, pre-registered before any image was scored. The test images
+come from a simplified model proposed to generate form-constant patterns, run as code: a
+minimal Ermentrout-Cowan field on a periodic cortical sheet, pushed through its Turing
+bifurcation and rendered to the visual field through the inverse log-polar map
+[@ermentrout1979]. Three of its four gates pass: M is 1.00 at every gain above threshold
+and 0.00 on the blank renders below it, all four classes appear, and M rises with gain
+(Spearman 0.87 hexagon, 0.91 stripe). The fourth, which required the cortical pattern to
+predict the judged class, fails on the tunnel and lattice rows and passes on the spiral.
+
+<!-- T4_exp02_control.md pasted verbatim; regenerate with build_tables.py, do not hand-edit the cells -->
+
+Table: Exp 02 positive control for the Exp 01 form-constant judge (archived rubric, single blind call per image). A set counts as flagged when any of the four binary class flags fires. Pre-specified pass required the ordinary-image rate at or below 20%.
+
+| image set | flagged | rate (95% CI) |
+|---|---|---|
+| rendered form constants (mu >= 1.05 mu_c) | 80/80 | 100% [95%, 100%] |
+| blank renders (mu <= 0.9 mu_c) | 0/40 | 0% [0%, 9%] |
+| ordinary Exp 03 images (g in {7, 11}) | 18/40 | 45% [31%, 60%] |
+
+Table 8 gives the judge test. Sensitivity is perfect: all 80 rendered form constants are
+flagged and no blank is. Specificity is not: the flags also fire on 18 of 40 ordinary
+generated images from the Exp 03 grid at g in {7, 11}, 45% against a registered ceiling
+of 20%. The false positives are not invented geometry; every one names a literal grid in
+its note, a brick wall, window mullions, tiles, and the portrait prompt, which contains no
+grid, was flagged 0 of 8. The pre-registration fixed what that means: the instrument is
+not validated, and the Exp 01 null is reclassified as uninterpretable. It is not a finding
+about diffusion output.
+
+Three limits attach. The judge is not class-specific: under the log-polar map the
+hexagonal lattice renders with a global spiral arrangement, so lattice renders draw the
+spiral and tunnel flags too. The registered criterion used any flag rather than M, the
+wrong summary statistic; exploratory, stated after the table was seen, on M itself every
+rendered form constant reaches the top score and no ordinary image does. And the simulated
+curve is threshold-shaped, flat below the bifurcation and saturated just above it; no test
+of correspondence with the guidance curves was pre-registered, so none is claimed.
+
+# Discussion
+
+## What this paper does not claim
+
+This paper does not claim that lowering classifier-free guidance models psychedelic
+prior relaxation, that form constants appear in diffusion output, that any operation
+shown here transfers to a brain, or that the effect is specific to guidance rather
+than to image degradation in general; and it does not call SD 3.5 a null, because its
+linear effect is reliably non-zero and its interval includes the registered gate of -0.20
+rather than excluding an effect of that size.
+
+The mapping between the guidance dial and the psychedelic-neuroscience literature is a
+modelling choice, and both readings set out in Section 1 remain open: lowering guidance
+weakens a top-down prior if the prompt is read as the prior, and increases prior
+dominance if the model's unconditional distribution is. Nothing in my design
+discriminates between them. The neuroscience supplies the rubric and the perturbation
+framing; it is not tested here.
+
+I perturbed one knob. No alternative degradation, such as fewer sampling steps,
+injected noise, or prompt ablation, was scored on the same rubric, so I cannot claim
+that the profile reported above is specific to guidance rather than a generic signature
+of image degradation. The quality adjustment uses two no-reference quality
+proxies; it is not a second perturbation.
+
+The registered validation of the form-constant instrument failed on specificity, so under
+the rule fixed in advance the Exp 01 null is reclassified as uninterpretable: the archived
+judge scores every rendered form constant at the top of its scale and every blank at the
+bottom, but its binary class flags also fire on ordinary generated scenes that contain a
+literal grid, above the ceiling registered for that rate. The sensitivity reading is
+therefore exploratory, and the Exp 01 null is neither a finding about geometric structure
+nor an established absence of one.
+
+No biological comparison arm exists in this program. I collected no human hallucinatory or
+neurobiological comparison data and computed no reference curve, so nothing here compares
+diffusion breakdown against a biological measurement.
+
+On SD 3.5 the pre-registered linear slope excludes zero, and its interval includes the
+registered gate of -0.20 on the pre-registered scale, so the criterion is not met and an
+effect of the registered size is not excluded either; the effect is carried by the g = 1
+condition. I report a reliable effect that misses the registered bar, not an absence of
+one.
+
+The contrast between a graded profile on one checkpoint and a change concentrated at the
+bottom of the dial on the other is post-hoc, and is labelled as such wherever it appears. The exploratory
+sweep below the lowest registered guidance value is not part of this paper.
+
+## What the assay is for
+
+The assay is a package another group can pick up and run. It is a doseable perturbation
+on a knob that most text-to-image models already expose, a rubric whose fields name
+phenomena rather than rate quality, a screen that disqualifies a judge before a run is
+spent on it, and a public set of scored images, with the raw judge replies and the blind
+human subset beside them, usable as a screening set for any other judge on either rubric.
+The same rubric and images can serve the other way round, as a benchmark for generative
+models: a new checkpoint run on the six prompts at the seven guidance values can be scored
+by the amended panel and placed against these two curves. That is a use of the assay, not a
+result of it.
+None of that depends on the neuroscience that supplied the rubric.
+
+
+## Future work
+
+These are the follow-ups I would run next, in order, and that anyone can run on the public
+images and code.
+
+1. **Specificity of the perturbation.** No alternative perturbation was scored on the same
+   rubric: not fewer sampling steps, not injected noise, not timestep-restricted guidance,
+   not prompt ablation. Until one is, I cannot say the profile reported here belongs to
+   guidance rather than to image degradation in general. It is also the explicit reason I
+   do not claim the analogy, and the next pre-registration is that comparison.
+2. **A human rater panel.** One naive second rater on 28 images (Section 3.4) shows the
+   rubric is visible to people; several raters on a larger subset, with the judges' exact
+   rubric wording, are what would turn the endpoint into a measure of human-perceived
+   breakdown.
+3. **A second checkpoint per architecture.** Without it the difference between the two
+   checkpoints cannot be attributed to the architecture.
+4. **Prompt adherence as a covariate.** Guidance is the prompt-following dial, so a
+   prompt-image alignment score, measured and adjusted for next to the quality proxies,
+   would test whether breakdown is prompt-following under another name.
+5. **A shape-agnostic endpoint.** The registered straight-line slope understated an effect
+   concentrated in one step (Section 3.2); the next registration should not assume a shape.
+
+Two other readings of the same knob, a therapeutic reading of a guidance schedule and an
+annealing reading of the sampler, appear in the public notebook. They are framing, not
+results here.
+
+## What I learned about doing this
+
+Three rules entered the methodology halfway through the programme, and each was paid for
+by a failure inside it.
+
+Do not let the endpoint assume the shape of the response. A standardised linear slope on
+a grid that is close to geometric could not tell a gradient from a change concentrated at
+the bottom of the dial, and reported the two checkpoints as one effect at two sizes. A
+monotone trend test or an explicit segmented fit was the right registration and is what I
+would register now.
+
+Never quote a single pooled correlation. The per-prompt range is the finding. On SDXL the
+per-prompt correlations of composite against guidance run from -0.74 to -0.28, and the
+attenuation of the distortion association after the veridicality adjustment runs from almost
+all of it on one prompt to under a third on another. A single number averages over that spread and is
+not the effect.
+
+Screen the judge on the rubric it will actually score, before the full run. Two of my
+judges failed silently, and I only found out from the human subset after the run was
+scored. In Exp 03 the screen came after the run, and the panel change is therefore a
+post-data amendment. The rule is what this experiment produced, not what it followed.
+
+# Limitations
+
+The first human rater is me, and I know the hypothesis. Guidance and architecture were
+hidden from the rater and the order was shuffled, but a g = 1 SDXL image is visually
+identifiable as low-guidance, so the rater can infer the condition from the stimulus.
+"Blind to guidance" is weaker than it sounds. Human against Qwen3-VL-32B composite kappa
+is 0.124 with an interval spanning zero, so the second judge has no demonstrated human
+validity at all. The panel's 0.562 and 0.440 are model-model agreement on the full
+corpus; on the same 28 images the two judges agree at 0.271, below my own 0.337 with
+Claude. A second rater who does not know the hypothesis agrees with me at 0.567 and with
+Claude at 0.426, which shows the rubric describes something two people can see; but two
+raters on 28 images, one working from a plain-language version of the rubric, are not a
+validated measure of human-perceived breakdown.
+
+The panel carries fewer judge lineages than the design budgeted: two model families in
+the final panel, five open judges screened, and one Qwen lineage across two generations,
+so parameter count is not separable here from family or release.
+
+The distortion field mixes two opposite failure modes, under-conditioned melt and
+over-conditioned waxiness, on one ordinal. And 64% of its absolute correlation with
+guidance on SDXL attenuated after adjustment for veridicality rated by the same judges.
+That 64% is construct overlap, not a causal decomposition.
+The three-field composite is a sensitivity analysis, not a repaired endpoint.
+
+SD 3.5's effect rests on g = 1, the single most under-conditioned and therefore most
+confound-prone level of the dial, and its interval includes the registered gate of -0.20.
+A prompt-cluster bootstrap of the quality-adjusted partial correlation, pre-specified on
+2026-09-25 as sensitivity, gives [-0.570, -0.251] on SDXL and [-0.410, 0.024] on SD 3.5
+around points of -0.433 and -0.245. It does not change the registered verdict, and it
+shows that on SD 3.5 the quality-adjusted association is not robust to which prompts were
+run. The two quality components, CLIP-IQA and the aesthetic predictor, agree poorly with
+each other, Spearman -0.155 on SDXL and +0.170 on SD 3.5; adjusting for either component
+separately still leaves a negative partial correlation.
+
+The registered SD 3.5 kappa of 0.440 includes the ten empty-prompt baselines. On
+conditioned images only it is 0.394, which misses the 0.4 gate. The SD 3.5 mixed model
+and the Exp 03b veridicality mixed model both failed to converge under L-BFGS and were
+refit with Powell at the variance boundary; the slopes did not change at the reported
+precision.
+
+The registered Exp 03b claim fails: SDXL passes P1, P2 and P3, and SD 3.5 fails P1 and
+P2 in the opposite direction. The exploratory veridicality-adjusted distortion contrast
+does not replace that registered result.
+
+The pre-registered linear endpoint on a near-geometric grid could not distinguish a
+gradient from a change concentrated at g = 1. That contrast is post-hoc.
+
+The forest control's composite tracked guidance on SDXL, so the object-bound reading of
+the breakdown is not established.
+
+The grids differ between Exp 01 and Exp 03, so the two are not pooled. Exp 02 is
+single-judge and single-call with no human check, and its registered control failed on
+specificity. Both are latent text-to-image checkpoints from one vendor family, one a UNet denoiser and
+one a rectified-flow transformer,
+one checkpoint each, so architecture here is confounded with training data, training
+objective, text encoder and sampler.
+
+The judge swap of 2026-08-08 was post-data. The pre-registered fallback was
+Qwen2.5-VL-32B, and Qwen3-VL-32B was used in its place as a recorded deviation.
+
+The calibration of Sonnet 5 against Exp 01's Sonnet 4.6 was pre-registered and not run.
+
+Image-text similarity was not measured. Prompt adherence rises with guidance in general,
+so a reader may ask whether the breakdown score is prompt-following under another name. The
+quality adjustment used two no-reference scores and set CLIP similarity aside because it
+measures obedience rather than image quality; that leaves prompt adherence as an unmeasured
+competing explanation of the composite, and the next pre-registration should score it.
+
+# Reproducibility
+
+Code, pre-registrations, analyses and all judge outputs are at
+<https://github.com/youssefhassan/operating-system-hypothesis-public>. Generated images
+and judgements are published as datasets under `youssefhassan13/` on Hugging Face:
+`exp01-guidance-sweep`, `exp02-form-constant-generator`, `exp03-l23-hardening`.
+
+```
+# Exp 01
+cd experiments/01_image_test
+python analyze.py --model sdxl --plots && python analyze.py --model sd35 --plots
+
+# Exp 02
+cd experiments/02_form_constant_generator && python analyze.py
+
+# Exp 03, primary (amended two-judge panel)
+cd experiments/03_l23_hardening
+python analyze.py --both --plot --judges claude,qwen
+
+# Exp 03, post-hoc and both sensitivity rounds
+python posthoc.py --judges claude,qwen
+python posthoc_sensitivity.py --judges claude,qwen
+python posthoc_sensitivity2.py --judges claude,qwen
+python posthoc_quality_paths.py --judges claude,qwen
+
+# Exp 03b, Suzuki axes
+python analyze_axes.py --judges claude,qwen
+```
+
+Each command regenerates its report JSON from the public repository and the published
+datasets. Byte-for-byte regeneration was verified on 2026-09-16 and 2026-09-17; the
+analysis code was corrected on 2026-09-29 (dated notes in each experiment's analysis.md),
+and the corrected reports have not yet been re-verified from a clean public checkout. The pre-registration dates
+quoted throughout are the git commit dates of the pre-registration files on that public
+repository.
+
+# Appendix: Figure 2 as numbers
+
+The fourteen means behind each line of Figure 2, so the figure can be re-plotted without
+the repository. Both columns per checkpoint are on that checkpoint's own standardised
+ruler and are not compared across checkpoints.
+
+Table: The two lines of Figure 2 as numbers: complete-case n, mean breakdown composite and mean quality score Q at each guidance value, in standardised units within each checkpoint. Conditioned cells contain 58 to 60 images after parser failures; the empty-prompt row has no quality score in the pre-registered analysis.
+
+| g | SDXL n | SDXL composite | SDXL Q | SD 3.5 n | SD 3.5 composite | SD 3.5 Q |
+|---|---|---|---|---|---|---|
+| 1 | 60 | 1.108 | -0.691 | 60 | 1.094 | -0.591 |
+| 2 | 60 | 0.224 | -0.127 | 58 | -0.151 | -0.153 |
+| 3 | 60 | -0.051 | -0.112 | 60 | -0.166 | -0.008 |
+| 5 | 59 | -0.242 | 0.049 | 60 | -0.260 | 0.118 |
+| 7 | 59 | -0.360 | 0.156 | 59 | -0.280 | 0.312 |
+| 11 | 60 | -0.340 | 0.291 | 60 | -0.165 | 0.364 |
+| 15 | 60 | -0.350 | 0.438 | 60 | -0.082 | -0.043 |
+| empty prompt | 10 | 1.510 | n/a | 10 | 2.172 | n/a |
+
+# Appendix: the judge prompts
+
+Each judge receives the image and one of the two prompts below, verbatim. The first
+sentence of each names the intended scene; it is shown here for the still-life prompt
+("a watermelon, a glass half-filled with water, and a set of keys on a wooden table").
+The guidance value never appears. Source: `rubric.py` and `rubric_axes.py` in the
+Exp 03 directory of the repository.
+
+**Klüver rubric (Exp 03).**
+
+```
+Score these phenomena from Heinrich Klüver's Level-2 and Level-3
+hallucinatory
+constants. This image was meant to depict: "a watermelon, a glass
+half-filled with
+water, and a set of keys on a wooden table". Intended content: one
+watermelon, one
+glass, one set of keys on a tabletop. Judge only what is VISIBLY
+present; do not guess
+what it was supposed to look like. Reduplication means repetition
+BEYOND that intended
+content.
+
+Score:
+- reduplication: objects or motifs repeated far beyond the
+  intended content
+  (e.g. many copies where one was intended, rows/fields of an
+  object). 0 none,
+  3 dominant.
+- fragmentation: objects broken into disconnected or shattered
+  pieces. 0 none,
+  3 dominant.
+- condensation: distinct objects fused/merged into hybrid forms
+  (chimeras, one
+  object melting into another). 0 none, 3 dominant.
+- distortion: melted, warped, or anatomically/physically
+  impossible shapes
+  (dysmorphopsia). 0 none, 3 dominant.
+- tiling: 1 if the whole image has dissolved into a repeating
+  texture / pattern
+  field rather than a single readable scene, else 0.
+
+Return STRICT JSON only, no prose, with exactly these keys:
+{"reduplication": 0..3, "fragmentation": 0..3, "condensation":
+0..3,
+ "distortion": 0..3, "tiling": 0 or 1, "notes": "one short
+ phrase"}
+```
+
+**Suzuki-adapted axes (Exp 03b).** The field definitions, verbatim from Exp 01:
+
+```
+- veridicality: 0 abstract/unreal, 3 photoreal coherent scene.
+- spontaneity: 0 fully prompt-driven, 3 content the prompt didn't ask for.
+- complexity: 0 simple, 3 highly elaborate.
+- coherent_scene: 1 if the objects hang together as one believable scene, else 0.
+```
+
+Line breaks inside the prompts are added here for the page width; the text is unchanged.
+The "Level" numbering in the prompt's first line is this project's shorthand, not Klüver's.
+
+# References

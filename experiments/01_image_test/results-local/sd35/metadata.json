@@ -1,0 +1,307 @@
+{
+  "experiment": "01_image_test (local)",
+  "model_key": "sd35",
+  "model_id": "stabilityai/stable-diffusion-3.5-medium",
+  "arch": "MMDiT",
+  "cfg_type": "true CFG",
+  "device": "mps",
+  "dtype": "torch.float16",
+  "scheduler": "keep",
+  "finished_at": "2026-06-24T02:01:53.931943+00:00",
+  "prompt": "a watermelon, a glass half-filled with water, and a set of keys on a wooden table",
+  "fixed": {
+    "steps": 40,
+    "width": 1024,
+    "height": 1024
+  },
+  "sweep": {
+    "guidance": [
+      1.0,
+      1.5,
+      2.0,
+      3.0,
+      4.5,
+      6.0,
+      8.0,
+      11.0,
+      15.0
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "unconditional": true
+  },
+  "shard": {
+    "index": 0,
+    "num_shards": 1
+  },
+  "runs": [
+    {
+      "kind": "conditioned",
+      "guidance": 6.0,
+      "seed": 49,
+      "filename": "g6.0_s49.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 6.0,
+      "seed": 50,
+      "filename": "g6.0_s50.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 6.0,
+      "seed": 51,
+      "filename": "g6.0_s51.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 42,
+      "filename": "g8.0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 43,
+      "filename": "g8.0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 44,
+      "filename": "g8.0_s44.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 45,
+      "filename": "g8.0_s45.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 46,
+      "filename": "g8.0_s46.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 47,
+      "filename": "g8.0_s47.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 48,
+      "filename": "g8.0_s48.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 49,
+      "filename": "g8.0_s49.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 50,
+      "filename": "g8.0_s50.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 8.0,
+      "seed": 51,
+      "filename": "g8.0_s51.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 42,
+      "filename": "g11.0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 43,
+      "filename": "g11.0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 44,
+      "filename": "g11.0_s44.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 45,
+      "filename": "g11.0_s45.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 46,
+      "filename": "g11.0_s46.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 47,
+      "filename": "g11.0_s47.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 48,
+      "filename": "g11.0_s48.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 49,
+      "filename": "g11.0_s49.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 50,
+      "filename": "g11.0_s50.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 11.0,
+      "seed": 51,
+      "filename": "g11.0_s51.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 42,
+      "filename": "g15.0_s42.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 43,
+      "filename": "g15.0_s43.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 44,
+      "filename": "g15.0_s44.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 45,
+      "filename": "g15.0_s45.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 46,
+      "filename": "g15.0_s46.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 47,
+      "filename": "g15.0_s47.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 48,
+      "filename": "g15.0_s48.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 49,
+      "filename": "g15.0_s49.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 50,
+      "filename": "g15.0_s50.png"
+    },
+    {
+      "kind": "conditioned",
+      "guidance": 15.0,
+      "seed": 51,
+      "filename": "g15.0_s51.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 42,
+      "filename": "uncond_s42.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 43,
+      "filename": "uncond_s43.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 44,
+      "filename": "uncond_s44.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 45,
+      "filename": "uncond_s45.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 46,
+      "filename": "uncond_s46.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 47,
+      "filename": "uncond_s47.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 48,
+      "filename": "uncond_s48.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 49,
+      "filename": "uncond_s49.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 50,
+      "filename": "uncond_s50.png"
+    },
+    {
+      "kind": "unconditional",
+      "guidance": 1.0,
+      "seed": 51,
+      "filename": "uncond_s51.png"
+    }
+  ]
+}

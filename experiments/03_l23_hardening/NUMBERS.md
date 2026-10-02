@@ -57,6 +57,13 @@ Composite κ before → after swapping the 7B for the 32B, **no rubric change**:
 Same family, same release, same quantisation. The failure was silent: no errors,
 no refusals, well-formed JSON, fluent confident captions.
 
+> **Correction 2026-09-17.** "Same release" is wrong for the 7B to 32B swap: Qwen2.5-VL-7B
+> and Qwen3-VL-32B are different releases. The phrase holds only for the Qwen3-VL-8B vs
+> Qwen3-VL-32B probe pair (analysis.md section 6). "No errors, well-formed JSON" describes
+> the two Qwen silent-zero runs; Llama-3.2-11B returned about 90 truncated-JSON replies
+> (analysis.md section 4). The swap itself was a post-data amendment on 2026-08-08
+> (analysis.md section 7), deviating from the pre-registered Qwen2.5-VL-32B fallback.
+
 ## Human validation
 
 28-image blind subset, guidance and model hidden, order shuffled. One rater.

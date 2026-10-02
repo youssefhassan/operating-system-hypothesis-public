@@ -1,0 +1,15 @@
+Table: The two lines of Figure 2 as numbers: complete-case n, mean breakdown composite and mean quality score Q at each guidance value, in standardised units within each checkpoint. Conditioned cells contain 58 to 60 images after parser failures; the empty-prompt row has no quality score in the pre-registered analysis.
+
+| g | SDXL n | SDXL composite | SDXL Q | SD 3.5 n | SD 3.5 composite | SD 3.5 Q |
+|---|---|---|---|---|---|---|
+| 1 | 60 | 1.108 | -0.691 | 60 | 1.094 | -0.591 |
+| 2 | 60 | 0.224 | -0.127 | 58 | -0.151 | -0.153 |
+| 3 | 60 | -0.051 | -0.112 | 60 | -0.166 | -0.008 |
+| 5 | 59 | -0.242 | 0.049 | 60 | -0.260 | 0.118 |
+| 7 | 59 | -0.360 | 0.156 | 59 | -0.280 | 0.312 |
+| 11 | 60 | -0.340 | 0.291 | 60 | -0.165 | 0.364 |
+| 15 | 60 | -0.350 | 0.438 | 60 | -0.082 | -0.043 |
+| empty prompt | 10 | 1.510 | n/a | 10 | 2.172 | n/a |
+
+<!-- note (not pasted): Figure 2 as a table, so it can be re-plotted without the repository. -->
+<!-- keys: exp03.sd35.report.baseline_composite_uncond; exp03.sd35.report.composite_mean_by_guidance.1.0; exp03.sd35.report.composite_mean_by_guidance.11.0; exp03.sd35.report.composite_mean_by_guidance.15.0; exp03.sd35.report.composite_mean_by_guidance.2.0; exp03.sd35.report.composite_mean_by_guidance.3.0; exp03.sd35.report.composite_mean_by_guidance.5.0; exp03.sd35.report.composite_mean_by_guidance.7.0; exp03.sd35.report.n_by_guidance.1.0; exp03.sd35.report.n_by_guidance.11.0; exp03.sd35.report.n_by_guidance.15.0; exp03.sd35.report.n_by_guidance.2.0; exp03.sd35.report.n_by_guidance.3.0; exp03.sd35.report.n_by_guidance.5.0; exp03.sd35.report.n_by_guidance.7.0; exp03.sd35.report.notes.n_uncond; exp03.sd35.report.quality_mean_by_guidance.1.0; exp03.sd35.report.quality_mean_by_guidance.11.0; exp03.sd35.report.quality_mean_by_guidance.15.0; exp03.sd35.report.quality_mean_by_guidance.2.0; exp03.sd35.report.quality_mean_by_guidance.3.0; exp03.sd35.report.quality_mean_by_guidance.5.0; exp03.sd35.report.quality_mean_by_guidance.7.0; exp03.sdxl.report.baseline_composite_uncond; exp03.sdxl.report.composite_mean_by_guidance.1.0; exp03.sdxl.report.composite_mean_by_guidance.11.0; exp03.sdxl.report.composite_mean_by_guidance.15.0; exp03.sdxl.report.composite_mean_by_guidance.2.0; exp03.sdxl.report.composite_mean_by_guidance.3.0; exp03.sdxl.report.composite_mean_by_guidance.5.0; exp03.sdxl.report.composite_mean_by_guidance.7.0; exp03.sdxl.report.n_by_guidance.1.0; exp03.sdxl.report.n_by_guidance.11.0; exp03.sdxl.report.n_by_guidance.15.0; exp03.sdxl.report.n_by_guidance.2.0; exp03.sdxl.report.n_by_guidance.3.0; exp03.sdxl.report.n_by_guidance.5.0; exp03.sdxl.report.n_by_guidance.7.0; exp03.sdxl.report.notes.n_uncond; exp03.sdxl.report.quality_mean_by_guidance.1.0; exp03.sdxl.report.quality_mean_by_guidance.11.0; exp03.sdxl.report.quality_mean_by_guidance.15.0; exp03.sdxl.report.quality_mean_by_guidance.2.0; exp03.sdxl.report.quality_mean_by_guidance.3.0; exp03.sdxl.report.quality_mean_by_guidance.5.0; exp03.sdxl.report.quality_mean_by_guidance.7.0 -->

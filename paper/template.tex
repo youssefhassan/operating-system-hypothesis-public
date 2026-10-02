@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\fi
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{etoolbox}
+\AtBeginEnvironment{longtable}{\small}
+\AtBeginEnvironment{figure}{\small}
+% figure captions: small, bold label, inset from the margins, with clear space before the body text
+\makeatletter
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  {\small\leftskip=1.5em\rightskip=1.5em
+   \sbox\@tempboxa{\textbf{#1.}\ #2}%
+   \ifdim\wd\@tempboxa>\dimexpr\hsize-3em\relax
+     \noindent\textbf{#1.}\ #2\par
+   \else
+     \global\@minipagefalse\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+   \fi}%
+  \vskip\belowcaptionskip}
+\makeatother
+\setlength{\textfloatsep}{18pt plus 4pt minus 2pt}
+\setlength{\intextsep}{16pt plus 4pt minus 2pt}
+\usepackage{array}
+\usepackage{calc}
+% caption package removed 2026-09-16: it breaks pandoc 3 uncaptioned longtables (\LTcaptype{none})
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\graphicspath{{figures/}}
+\title{$title$}
+\author{$for(author)$$author.name$$if(author.affiliation)$\\ \small $author.affiliation$$endif$$if(author.email)$\\ \small \texttt{$author.email$}$endif$$sep$ \and $endfor$}
+\date{$date$}
+\begin{document}
+\maketitle
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+$body$
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+\end{document}

@@ -48,3 +48,23 @@ FFT periodicity looked architecture-specific; VLM cross-check refuted it as a ti
 - Phase 3: architecture breadth (SD 1.5 / VQ / GAN)
 
 Each needs new preregistration before generation.
+
+## Correction, 2026-09-29
+
+An outside audit found that `loop.py` computed the registered Spearman test on 90 image rows,
+while the pre-registration defines the endpoint as M(g), one seed-mean per guidance value.
+`loop.py` now runs the test on the nine M(g) values and rebuilds each image's score from the
+integer rubric ratings (the archived per-image scores were rounded to four decimals, which
+could split ties). The image-level values are kept in the report as a labelled descriptive
+check.
+
+| Model | registered ρ (nine M(g)) | p | image-level ρ (descriptive, the table above) | p |
+|---|---|---|---|---|
+| SDXL | −0.044 | 0.92 | +0.006 | 0.94 |
+| SD 3.5 | +0.234 | 0.54 | +0.100 | 0.37 |
+
+Both registered values sit inside the null region (|ρ| < 0.3), so the verdict is unchanged:
+null-eligible on both models. With nine points near the floor the exact ρ is unstable (an
+intermediate recomputation gave about −0.17 on SDXL), so it should not be read beyond "flat".
+M is near the floor (0.033 to 0.167), not at it. The Exp 02 result still governs how far this
+null can be interpreted.

@@ -25,12 +25,39 @@
   },
   "primary_lmm": {
     "method": "statsmodels MixedLM (crossed prompt+seed RE)",
-    "slope_standardized": -0.18156087634152,
-    "ci95": [
-      -0.24752079840833832,
-      -0.11560095427470166
+    "optimizer": "powell",
+    "converged": true,
+    "optimizer_attempts": [
+      {
+        "optimizer": "lbfgs",
+        "converged": false,
+        "warnings": [
+          "Maximum Likelihood optimization failed to converge. Check mle_retvals",
+          "MixedLM optimization failed, trying a different optimizer may help.",
+          "Gradient optimization failed, |grad| = 8.710412",
+          "The MLE may be on the boundary of the parameter space."
+        ]
+      },
+      {
+        "optimizer": "powell",
+        "converged": true,
+        "warnings": [
+          "The MLE may be on the boundary of the parameter space."
+        ]
+      }
     ],
-    "p": 6.852934390794349e-08
+    "variance_components": [
+      0.08468930694033615,
+      4.943443625604736e-11
+    ],
+    "slope_standardized": -0.18153718715819664,
+    "ci95": [
+      -0.24760487039349988,
+      -0.11546950392289342
+    ],
+    "p": 7.225058426871239e-08,
+    "bh_q": 7.225058426871239e-08,
+    "bh_family_n": 2
   },
   "deconfound": {
     "computable": true,
@@ -55,7 +82,7 @@
       0.0496,
       0.3199
     ],
-    "interpretation": "positive = more L2/3 at the low-g arm at matched quality (effect specific to under-conditioning, not generic quality loss)"
+    "interpretation": "positive = more L2/3 in the common-support-trimmed low-g arm; the arms are not quality-matched, so this is descriptive"
   },
   "reliability": {
     "n_images": 427,
@@ -109,7 +136,79 @@
         "percent_agreement": 0.9836
       }
     },
-    "composite_weighted_kappa": 0.4402
+    "composite_weighted_kappa": 0.4402,
+    "composite_bootstrap": {
+      "point": 0.4402,
+      "ci95": [
+        0.3746,
+        0.4967
+      ],
+      "n_valid": 4000,
+      "n_bootstrap": 4000
+    }
+  },
+  "reliability_conditioned_only": {
+    "n_images": 417,
+    "n_judges": 2,
+    "judges": [
+      "claude",
+      "qwen"
+    ],
+    "pairs": [
+      "claude+qwen"
+    ],
+    "per_field": {
+      "reduplication": {
+        "weighted_kappa": 0.4061,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.4061
+        },
+        "gwet_ac2": 0.8684,
+        "percent_agreement": 0.5875
+      },
+      "fragmentation": {
+        "weighted_kappa": 0.4633,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.4633
+        },
+        "gwet_ac2": 0.9556,
+        "percent_agreement": 0.8297
+      },
+      "condensation": {
+        "weighted_kappa": 0.3423,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.3423
+        },
+        "gwet_ac2": 0.9276,
+        "percent_agreement": 0.6954
+      },
+      "distortion": {
+        "weighted_kappa": 0.3647,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.3647
+        },
+        "gwet_ac2": 0.8088,
+        "percent_agreement": 0.3789
+      },
+      "tiling": {
+        "weighted_kappa": 0.2189,
+        "pairwise_weighted_kappa": {
+          "claude+qwen": 0.2189
+        },
+        "gwet_ac2": 0.9828,
+        "percent_agreement": 0.9832
+      }
+    },
+    "composite_weighted_kappa": 0.3941,
+    "composite_bootstrap": {
+      "point": 0.3941,
+      "ci95": [
+        0.3276,
+        0.4492
+      ],
+      "n_valid": 4000,
+      "n_bootstrap": 4000
+    }
   },
   "per_prompt": {
     "per_prompt_spearman_composite_vs_g": {
@@ -163,6 +262,35 @@
     "7.0": 0.3125,
     "11.0": 0.364,
     "15.0": -0.043
+  },
+  "n_by_guidance": {
+    "1.0": 60,
+    "2.0": 58,
+    "3.0": 60,
+    "5.0": 60,
+    "7.0": 59,
+    "11.0": 60,
+    "15.0": 60
+  },
+  "judge_only_lmm": {
+    "claude": {
+      "slope_standardized": -0.17404527512649529,
+      "ci95": [
+        -0.2342428083698272,
+        -0.11384774188316338
+      ],
+      "converged": true,
+      "optimizer": "lbfgs"
+    },
+    "qwen": {
+      "slope_standardized": -0.141473383432803,
+      "ci95": [
+        -0.20836741778054851,
+        -0.07457934908505749
+      ],
+      "converged": true,
+      "optimizer": "powell"
+    }
   },
   "verdict": "null (LMM composite slope not sufficiently negative)",
   "human_reliability": {

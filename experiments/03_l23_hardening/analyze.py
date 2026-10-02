@@ -2,7 +2,7 @@
 Experiment 03 — analysis (executes analysis_plan.md end to end).
 
 Builds the pre-registered composite metric, fits the primary LMM dose-response,
-runs the guidance-matching de-confound (partial correlation + matched-quality
+runs the registered quality adjustment (partial correlation + common-support
 two-arm contrast), computes inter-rater reliability (mean pairwise weighted κ
 across all present judges — Claude / Qwen / Llama; human vs
 each), applies Benjamini-Hochberg to the secondary per-field family, and emits a
@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import warnings
 from collections import defaultdict
 from pathlib import Path
 
@@ -56,6 +57,9 @@ JUDGES = [
     ("b", "judgements_qwen.json", "qwen"),
     ("c", "judgements_llama.json", "llama"),
     ("d", "judgements_gemma.json", "gemma"),
+    # archived Qwen2.5-VL-7B judgements (the original judge B), copied from archive/ so the
+    # pre-swap Claude+Qwen7B panel can be regenerated with --judges claude,qwen7b
+    ("e", "judgements_qwen7b.json", "qwen7b"),
 ]
 
 
@@ -185,9 +189,35 @@ def _lmm_slope(cond: list[dict]) -> dict:
         vcf = {"prompt": "0 + C(prompt)", "seed": "0 + C(seed)"}
         md = smf.mixedlm("composite ~ guidance_std", df, groups="grp",
                          vc_formula=vcf, re_formula="0")
-        mdf = md.fit(reml=True, method="lbfgs", maxiter=200)
+        attempts = []
+        mdf = None
+        for optimizer in ("lbfgs", "powell"):
+            try:
+                with warnings.catch_warnings(record=True) as caught:
+                    warnings.simplefilter("always")
+                    fit = md.fit(reml=True, method=optimizer, maxiter=1000, disp=False)
+                attempts.append({
+                    "optimizer": optimizer,
+                    "converged": bool(fit.converged),
+                    "warnings": [str(w.message) for w in caught],
+                })
+                mdf = fit
+                if fit.converged:
+                    break
+            except Exception as fit_error:  # noqa: BLE001
+                attempts.append({
+                    "optimizer": optimizer,
+                    "converged": False,
+                    "error": f"{type(fit_error).__name__}: {fit_error}",
+                })
+        if mdf is None:
+            raise RuntimeError(f"every MixedLM optimizer failed: {attempts}")
         ci = mdf.conf_int().loc["guidance_std"]
         return {"method": "statsmodels MixedLM (crossed prompt+seed RE)",
+                "optimizer": attempts[-1]["optimizer"],
+                "converged": bool(mdf.converged),
+                "optimizer_attempts": attempts,
+                "variance_components": [float(v) for v in mdf.vcomp],
                 "slope_standardized": float(mdf.fe_params["guidance_std"]),
                 "ci95": [float(ci[0]), float(ci[1])],
                 "p": float(mdf.pvalues["guidance_std"])}
@@ -204,6 +234,7 @@ def _lmm_slope(cond: list[dict]) -> dict:
         x = g_std - g_std.mean()
         slope = float((x * centered).sum() / (x**2).sum()) if (x**2).sum() else 0.0
         return {"method": f"fallback within-prompt OLS ({type(e).__name__}: {e})",
+                "optimizer": None, "converged": False,
                 "slope_standardized": slope, "ci95": None,
                 "p": float(S.spearman_perm_p(g, centered))}
 
@@ -249,8 +280,8 @@ def _matched_quality_arms(cond: list[dict], notes: dict) -> dict:
             "n_low": len(lo_c), "n_high": len(hi_c),
             "cliffs_delta_low_vs_high": round(delta, 4),
             "ci95": [round(ci[0], 4), round(ci[1], 4)],
-            "interpretation": "positive = more L2/3 at the low-g arm at matched quality "
-                              "(effect specific to under-conditioning, not generic quality loss)"}
+            "interpretation": "positive = more L2/3 in the common-support-trimmed low-g "
+                              "arm; the arms are not quality-matched, so this is descriptive"}
 
 
 # ------------------------------ inter-rater ------------------------------------
@@ -292,6 +323,14 @@ def _reliability(cond: list[dict], uncond: list[dict], judges: list[tuple[str, s
         if f in INT:
             field_kappas.append(mean_k)
     out["composite_weighted_kappa"] = round(float(np.nanmean(field_kappas)), 4)
+    pair_fields = []
+    for f in INT:
+        for s1, s2 in pairs:
+            pair_fields.append((
+                [int(round(r[f + "_" + s1])) for r in imgs],
+                [int(round(r[f + "_" + s2])) for r in imgs],
+            ))
+    out["composite_bootstrap"] = S.composite_kappa_ci(pair_fields, 4)
     return out
 
 
@@ -401,18 +440,46 @@ def _verdict(model_out: dict, prereg: dict) -> str:
 
     if kappa < cf["inter_judge_composite_weighted_kappa_min"]:
         return "inconclusive-null (judges disagree: composite weighted kappa < 0.4)"
+    if not lmm.get("converged", False):
+        return "inconclusive (primary mixed model did not converge)"
     if ci is not None and ci[0] <= 0 <= ci[1]:
         return "null (LMM composite slope CI includes 0)"
+    if lmm.get("bh_q", 1.0) > cf["lmm_composite_slope_bh_p_max"]:
+        return "null (LMM composite slope fails the registered BH-adjusted p threshold)"
     if slope > cf["lmm_composite_slope_standardized_max"]:
         return "null (LMM composite slope not sufficiently negative)"
     if dec.get("computable"):
         if abs(dec["partial_spearman_controlling_Q"]) < prereg["null"]["quality_controlled_partial_abs_rho_below"]:
-            return "null (effect vanishes controlling for quality — it was under-conditioning)"
+            return "null (association vanishes after adjustment for the registered quality proxies)"
         if dec["partial_spearman_controlling_Q"] > cf["quality_controlled_partial_rho_max"] or not dec["ci_excludes_zero"]:
             return "null (quality-controlled partial correlation fails confirm threshold)"
     else:
-        return "provisional-confirm-pending-quality (LMM ok; run quality.py for the de-confound gate)"
-    return "confirm (per-model): negative LMM slope survives quality control at adequate kappa"
+        return "provisional-confirm-pending-quality (LMM ok; run quality.py for the quality-adjustment gate)"
+    pp = model_out["per_prompt"]
+    if pp["n_negative"] < 5 or pp["n_prompts"] < 6:
+        return "null (fewer than 5 of 6 prompts have the registered negative sign)"
+    return "confirm (per-model): negative LMM slope survives adjustment for quality proxies at adequate kappa"
+
+
+def _judge_only_slopes(cond: list[dict], judges: list[tuple[str, str]]) -> dict:
+    """Robustness: rebuild the composite from each judge's scores and refit the LMM."""
+    out = {}
+    for sfx, name in judges:
+        rows = []
+        for r in cond:
+            rec = dict(r)
+            for f in INT:
+                rec[f] = r[f + "_" + sfx]
+            rows.append(rec)
+        _build_metric(rows, [], {})
+        fit = _lmm_slope(rows)
+        out[name] = {
+            "slope_standardized": fit["slope_standardized"],
+            "ci95": fit.get("ci95"),
+            "converged": fit.get("converged"),
+            "optimizer": fit.get("optimizer"),
+        }
+    return out
 
 
 # ----------------------------------- run ---------------------------------------
@@ -431,6 +498,7 @@ def analyze_model(model: str, prereg: dict, only: list[str] | None = None) -> di
         "deconfound": _deconfound(cond, notes),
         "matched_quality_arms": _matched_quality_arms(cond, notes),
         "reliability": _reliability(cond, uncond, notes["judges"]),
+        "reliability_conditioned_only": _reliability(cond, [], notes["judges"]),
         "per_prompt": _per_prompt_slopes(cond),
         "per_field_dose_response": fields,
         "_field_pvals": pvals,
@@ -441,12 +509,24 @@ def analyze_model(model: str, prereg: dict, only: list[str] | None = None) -> di
         "quality_mean_by_guidance": ({
             str(g): round(float(np.mean([r["Q"] for r in cond if r["guidance"] == g])), 4)
             for g in sorted({r["guidance"] for r in cond})} if notes.get("quality_available") else None),
+        "n_by_guidance": {
+            str(g): len([r for r in cond if r["guidance"] == g])
+            for g in sorted({r["guidance"] for r in cond})},
+        "judge_only_lmm": _judge_only_slopes(cond, notes["judges"]),
     }
     out["_records"] = cond  # kept in-memory for plotting; stripped before JSON write
     return out
 
 
 def _apply_bh_and_verdict(outs: dict[str, dict], prereg: dict) -> None:
+    # BH across the registered primary family: one LMM slope per model.
+    primary_models = list(outs)
+    primary_q = S.benjamini_hochberg(
+        [outs[m]["primary_lmm"]["p"] for m in primary_models])
+    for m, qv in zip(primary_models, primary_q):
+        outs[m]["primary_lmm"]["bh_q"] = float(qv)
+        outs[m]["primary_lmm"]["bh_family_n"] = len(primary_models)
+
     # BH across the secondary family: 4 fields x len(models)
     pvals, keys = [], []
     for m, o in outs.items():

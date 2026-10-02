@@ -1,0 +1,15 @@
+Table: Composite (mean per-field) quadratic-weighted kappa across judge panels on the same generated corpus and rubric. Row-specific n is the complete-case image count and differs because Llama had missing replies. The first two rows are the panels as run on 2026-07-22; the third is the amended panel, after the Qwen2.5-VL-7B seat was refilled with Qwen3-VL-32B on 2026-08-08, with no rubric change. Human rows use a 28-image blind subset drawn from both checkpoints, too few to split, so each row has one pooled value, shown under SDXL; bootstrap 95% CI. The second-rater rows are exploratory, with no gate.
+
+| panel | SDXL | SD 3.5 |
+|---|---|---|
+| Claude + Qwen2.5-VL-7B (original judge B) | 0.290 (n = 428) | 0.158 (n = 427) |
+| Claude + Qwen2.5-VL-7B + Llama-3.2-11B (original three-judge panel) | 0.126 (n = 380) | 0.135 (n = 387) |
+| Claude + Qwen3-VL-32B (amended panel) | 0.562 (n = 428) | 0.440 (n = 427) |
+| human (author, n = 28) vs Claude Sonnet 5 | 0.337 [0.106, 0.495] | (pooled) |
+| human (author, n = 28) vs Qwen3-VL-32B | 0.124 [-0.059, 0.313] | (pooled) |
+| second rater (naive, n = 28) vs Claude Sonnet 5 | 0.426 [0.208, 0.575] | (pooled) |
+| second rater (naive, n = 28) vs Qwen3-VL-32B | 0.169 [-0.029, 0.391] | (pooled) |
+| author vs second rater (human vs human, n = 28) | 0.567 [0.330, 0.721] | (pooled) |
+
+<!-- note (not pasted): Same family, same release, same quantisation; the kappa change is the judge, not the rubric. -->
+<!-- keys: exp03.humanhuman.composite_bootstrap.ci95[0]; exp03.humanhuman.composite_bootstrap.ci95[1]; exp03.humanhuman.composite_weighted_kappa; exp03.rater2judges.rater2.human_vs_claude.composite_bootstrap.ci95[0]; exp03.rater2judges.rater2.human_vs_claude.composite_bootstrap.ci95[1]; exp03.rater2judges.rater2.human_vs_claude.composite_weighted_kappa; exp03.rater2judges.rater2.human_vs_qwen.composite_bootstrap.ci95[0]; exp03.rater2judges.rater2.human_vs_qwen.composite_bootstrap.ci95[1]; exp03.rater2judges.rater2.human_vs_qwen.composite_weighted_kappa; exp03.sd35.report.reliability.composite_weighted_kappa; exp03.sd35.report.reliability.n_images; exp03.sd35.report3judge.reliability.composite_weighted_kappa; exp03.sd35.report3judge.reliability.n_images; exp03.sd35.report7b.reliability.composite_weighted_kappa; exp03.sd35.report7b.reliability.n_images; exp03.sdxl.report.human_reliability.human_vs_claude.composite_bootstrap.ci95[0]; exp03.sdxl.report.human_reliability.human_vs_claude.composite_bootstrap.ci95[1]; exp03.sdxl.report.human_reliability.human_vs_claude.composite_weighted_kappa; exp03.sdxl.report.human_reliability.human_vs_qwen.composite_bootstrap.ci95[0]; exp03.sdxl.report.human_reliability.human_vs_qwen.composite_bootstrap.ci95[1]; exp03.sdxl.report.human_reliability.human_vs_qwen.composite_weighted_kappa; exp03.sdxl.report.reliability.composite_weighted_kappa; exp03.sdxl.report.reliability.n_images; exp03.sdxl.report3judge.reliability.composite_weighted_kappa; exp03.sdxl.report3judge.reliability.n_images; exp03.sdxl.report7b.reliability.composite_weighted_kappa; exp03.sdxl.report7b.reliability.n_images -->

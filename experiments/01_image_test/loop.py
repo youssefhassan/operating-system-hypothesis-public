@@ -105,11 +105,20 @@ def scan(model: str) -> dict:
     d = RESULTS_ROOT / model
     jpath = d / "judgements.json"
     judged = json.loads(jpath.read_text())["images"] if jpath.exists() else {}
+    judge_names = json.loads(PREREG.read_text()).get("judges", []) if PREREG.exists() else []
     cond: dict[float, dict[int, float]] = {}
     uncond: dict[int, float] = {}
     for p in d.glob("*.png"):
         rec = judged.get(p.name, {})
-        m = rec.get("m_img")
+        # Reconstruct the registered per-image metric from the integer rubric
+        # scores. Archived m_img values were rounded to four decimals, which can
+        # create artificial rank differences between mathematically tied M(g)s.
+        intensities = [
+            float(rec[j]["geometric_intensity"])
+            for j in judge_names
+            if isinstance(rec.get(j), dict) and "geometric_intensity" in rec[j]
+        ]
+        m = float(np.mean(intensities) / 3.0) if intensities else rec.get("m_img")
         mc = FNAME_RE.match(p.name)
         if mc:
             g, s = float(mc["g"]), int(mc["s"])
@@ -137,8 +146,14 @@ def aggregate(model: str, prereg: dict) -> dict:
         return {"model": model, "ready": False, "guidance": gs, "means": means, "n": ns}
 
     ag, am = np.array(all_g), np.array(all_m)
-    rho = spearman(ag, am)
-    p = spearman_perm_p(ag, am)
+    # The registered endpoint is M(g), the seed-mean at each guidance value,
+    # so the trend test has one row per guidance setting. Keep the former
+    # image-level calculation as a labelled descriptive check.
+    gg, mm = np.array(gs), np.array(means)
+    rho = spearman(gg, mm)
+    p = spearman_perm_p(gg, mm)
+    image_rho = spearman(ag, am)
+    image_p = spearman_perm_p(ag, am)
     low = am[ag <= prereg["bins"]["low_bin_guidance_max"]]
     high = am[ag >= prereg["bins"]["high_bin_guidance_min"]]
     delta = cliffs_delta(low, high)
@@ -151,6 +166,9 @@ def aggregate(model: str, prereg: dict) -> dict:
         "n": ns,
         "spearman_rho": round(rho, 4),
         "spearman_p": round(p, 4),
+        "spearman_unit": "registered M(g): one seed-mean per guidance value",
+        "image_level_spearman_rho_descriptive": round(image_rho, 4),
+        "image_level_spearman_p_descriptive": round(image_p, 4),
         "low_vs_high_cliffs_delta": round(delta, 4),
         "delta_ci95": [round(ci[0], 4), round(ci[1], 4)],
     }

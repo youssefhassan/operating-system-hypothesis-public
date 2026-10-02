@@ -1,0 +1,203 @@
+{
+  "label": "EXPLORATORY (posthoc_sensitivity2_prespec.md, 2026-09-17)",
+  "S3_model_by_guidance_interaction": {
+    "z_composite_prereg": {
+      "interaction_term": "guidance_std:model[T.sdxl]",
+      "slope_sd35": -0.1819464455613786,
+      "interaction_sdxl_minus_sd35": -0.15779097065794226,
+      "ci95": [
+        -0.2482479165227639,
+        -0.0673340247931206
+      ],
+      "p": 0.0006287133621720758,
+      "n": 835
+    },
+    "raw_composite": {
+      "interaction_term": "guidance_std:model[T.sdxl]",
+      "slope_sd35": -0.09142323313251656,
+      "interaction_sdxl_minus_sd35": -0.16389136908530158,
+      "ci95": [
+        -0.2223206824319231,
+        -0.10546205573868007
+      ],
+      "p": 3.849879859557765e-08,
+      "n": 835
+    }
+  },
+  "models": {
+    "sdxl": {
+      "n_conditioned": 418,
+      "S4_random_slopes_by_prompt": {
+        "method": "statsmodels MixedLM, groups=prompt, random intercept + slope; seed RE dropped",
+        "slope_standardized": -0.339763454301315,
+        "ci95": [
+          -0.44822802657149374,
+          -0.23129888203113627
+        ],
+        "p": 8.275332140742076e-10,
+        "random_slope_sd": 0.11182802872914006,
+        "random_intercept_sd": 0.3152067498468639,
+        "converged": true
+      },
+      "S5_cluster_bootstrap": {
+        "by_seed": {
+          "n_clusters": 10,
+          "n_resamples_spearman": 500,
+          "n_resamples_lmm": 200,
+          "spearman_ci95": [
+            -0.5274363163066575,
+            -0.40186308965309653
+          ],
+          "lmm_slope_ci95": [
+            -0.4223444528722364,
+            -0.2605624213861324
+          ]
+        },
+        "by_prompt": {
+          "n_clusters": 6,
+          "n_resamples_spearman": 500,
+          "n_resamples_lmm": 200,
+          "spearman_ci95": [
+            -0.591708427187062,
+            -0.3698419671721901
+          ],
+          "lmm_slope_ci95": [
+            -0.4346085968111803,
+            -0.2623763592124397
+          ]
+        },
+        "point": {
+          "spearman": -0.46300816627719577,
+          "lmm_slope": -0.3397278547881432
+        }
+      },
+      "S7_trimmed_arm_balance": {
+        "n_low": 126,
+        "n_high": 120,
+        "band": [
+          -0.6326831602680889,
+          1.3529937521336632
+        ],
+        "mean_Q_low": 0.039505104682574316,
+        "mean_Q_high": 0.36430425981519526,
+        "residual_Q_smd_high_minus_low": 0.7404934743666051,
+        "note": "arms are common-support trimmed, not balanced; a positive SMD means the high-guidance arm is still of higher quality"
+      },
+      "S8_partial_rho_prompt_bootstrap": {
+        "point": -0.4327766165359335,
+        "n_resamples": 1000,
+        "n_clusters": 6,
+        "ci95_prompt_cluster": [
+          -0.5698849477805834,
+          -0.2506488083393165
+        ]
+      }
+    },
+    "sd35": {
+      "n_conditioned": 417,
+      "S4_random_slopes_by_prompt": {
+        "method": "statsmodels MixedLM, groups=prompt, random intercept + slope; seed RE dropped",
+        "slope_standardized": -0.1818958099380501,
+        "ci95": [
+          -0.3371937444693768,
+          -0.026597875406723426
+        ],
+        "p": 0.02169607352665753,
+        "random_slope_sd": 0.17672886004642996,
+        "random_intercept_sd": 0.29193396654751635,
+        "converged": true
+      },
+      "S5_cluster_bootstrap": {
+        "by_seed": {
+          "n_clusters": 10,
+          "n_resamples_spearman": 500,
+          "n_resamples_lmm": 200,
+          "spearman_ci95": [
+            -0.2903158667392208,
+            -0.14224348797240458
+          ],
+          "lmm_slope_ci95": [
+            -0.2384426156256765,
+            -0.12472214047359782
+          ]
+        },
+        "by_prompt": {
+          "n_clusters": 6,
+          "n_resamples_spearman": 500,
+          "n_resamples_lmm": 200,
+          "spearman_ci95": [
+            -0.4066324344290124,
+            -0.0012975662924564295
+          ],
+          "lmm_slope_ci95": [
+            -0.3219926879041149,
+            -0.04988831337045958
+          ]
+        },
+        "point": {
+          "spearman": -0.215951973631975,
+          "lmm_slope": -0.18156087634152
+        }
+      },
+      "S7_trimmed_arm_balance": {
+        "n_low": 178,
+        "n_high": 94,
+        "band": [
+          -2.4409508281806884,
+          0.9135219191965392
+        ],
+        "mean_Q_low": -0.25153849584686694,
+        "mean_Q_high": -0.03889301693700134,
+        "residual_Q_smd_high_minus_low": 0.2836019859588667,
+        "note": "arms are common-support trimmed, not balanced; a positive SMD means the high-guidance arm is still of higher quality"
+      },
+      "S8_partial_rho_prompt_bootstrap": {
+        "point": -0.2454607196646307,
+        "n_resamples": 1000,
+        "n_clusters": 6,
+        "ci95_prompt_cluster": [
+          -0.40993450343051335,
+          0.02443780055088759
+        ]
+      }
+    }
+  },
+  "S6_model_vs_model_on_human_subset": {
+    "n_images": 28,
+    "judges": [
+      "claude",
+      "qwen"
+    ],
+    "weighted_kappa": {
+      "reduplication": 0.3867,
+      "fragmentation": 0.4615,
+      "condensation": 0.1667,
+      "distortion": 0.0691,
+      "tiling": NaN
+    },
+    "mean_per_field_kappa": 0.271,
+    "composite_bootstrap": {
+      "point": 0.271,
+      "ci95": [
+        0.0562,
+        0.4481
+      ],
+      "n_valid": 4000,
+      "n_bootstrap": 4000
+    },
+    "gwet_ac2": {
+      "reduplication": 0.7532,
+      "fragmentation": 0.9811,
+      "condensation": 0.9018,
+      "distortion": 0.7684,
+      "tiling": 1.0
+    },
+    "percent_agreement": {
+      "reduplication": 0.5,
+      "fragmentation": 0.8571,
+      "condensation": 0.6786,
+      "distortion": 0.2857,
+      "tiling": 1.0
+    }
+  }
+}

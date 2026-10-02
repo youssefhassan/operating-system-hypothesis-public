@@ -1,0 +1,3454 @@
+{
+  "judge": "qwen",
+  "model": "mlx-community/Qwen2.5-VL-7B-Instruct-4bit",
+  "rubric_version": "exp03-kluver-l2l3-v1",
+  "fields": [
+    "reduplication",
+    "fragmentation",
+    "condensation",
+    "distortion",
+    "tiling"
+  ],
+  "images": {
+    "p2_portrait_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "An abstract, distorted close-up of a face"
+    },
+    "p4_oranges_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "uncond_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Abstract floral pattern with no discernible scene"
+    },
+    "p4_oranges_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There is no redupli"
+    },
+    "p4_oranges_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p3_bicycle_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with a pink beverage, and a set of keys on a wooden table. There are"
+    },
+    "p3_bicycle_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g1_s47.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Repetitive, blurred forest pattern"
+    },
+    "p4_oranges_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p5_livingroom_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p6_forest_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image depicts a forest of pine trees on a misty mountainside, with the mist creating a repeating texture across the "
+    },
+    "p1_stilllife_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are fragmented and distorted"
+    },
+    "p3_bicycle_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and correctly placed"
+    },
+    "p2_portrait_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait of an elderly man's face"
+    },
+    "p3_bicycle_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p3_bicycle_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "The image depicts a fragmented and distorted bicycle against a brick wall, with no clear reduplication or tiling."
+    },
+    "p6_forest_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p2_portrait_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g1_s44.png": {
+      "reduplication": 3,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and books repeated and fragmented, forming a pattern"
+    },
+    "p6_forest_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "No visible reduplication, fragmentation, condensation, or distortion. The image depicts a natural scene without a repeat"
+    },
+    "p3_bicycle_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p2_portrait_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+    },
+    "p3_bicycle_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter"
+    },
+    "p5_livingroom_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p6_forest_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "uncond_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Fragmented, distorted, and condensed forms create a surreal, abstract composition."
+    },
+    "p5_livingroom_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p2_portrait_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p1_stilllife_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+    },
+    "p6_forest_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p1_stilllife_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table. There is no reduplicat"
+    },
+    "p3_bicycle_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p1_stilllife_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p3_bicycle_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "face obscured by fur-like texture"
+    },
+    "p5_livingroom_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+    },
+    "p4_oranges_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+    },
+    "p3_bicycle_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "uncond_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A serene, abstract depiction of a mountainous landscape with soft, blended colors and textures."
+    },
+    "p6_forest_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no hallucinatory effects"
+    },
+    "p2_portrait_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one red bicycle against a brick wall"
+    },
+    "p5_livingroom_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with a sofa, a lamp, and a window, without any visible reduplication, fragmentation, c"
+    },
+    "uncond_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Fragmented, distorted bird in a textured, abstract background"
+    },
+    "p6_forest_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p4_oranges_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter"
+    },
+    "p5_livingroom_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g1_s50.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "High reduplication of trees and misty texture"
+    },
+    "p2_portrait_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present but not repeated or fragmented; they appear as intended."
+    },
+    "p5_livingroom_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There are no reduplications, fragmenta"
+    },
+    "p4_oranges_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p4_oranges_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p4_oranges_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter"
+    },
+    "p6_forest_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image shows a patterned texture of trees, suggesting a tiled or repeated pattern rather than a single scene."
+    },
+    "p6_forest_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p6_forest_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p2_portrait_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, matching the intended "
+    },
+    "p5_livingroom_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p6_forest_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p2_portrait_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window as intended."
+    },
+    "p1_stilllife_g1_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Objects appear fragmented and distorted, with a repeating texture pattern"
+    },
+    "p1_stilllife_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of water, and a set of keys on a wooden table, with no additional objects or dis"
+    },
+    "p6_forest_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "High reduplication and tiling, no fragmentation or condensation"
+    },
+    "p6_forest_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p2_portrait_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p2_portrait_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p6_forest_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no reduplication or distortion"
+    },
+    "p6_forest_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no reduplication or distortion"
+    },
+    "p6_forest_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p6_forest_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p3_bicycle_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window, all in a coherent room. There is no reduplication, "
+    },
+    "p4_oranges_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Hybrid forms and distorted objects dominate, merging into a single, fragmented scene."
+    },
+    "p5_livingroom_g1_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a living room with a sofa, a lamp, and a window, but the objects appear fragmented and shattered."
+    },
+    "p1_stilllife_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+    },
+    "p2_portrait_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p6_forest_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p4_oranges_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+    },
+    "p6_forest_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image depicts a forest of pine trees on a misty mountainside, with a repeating pattern of trees and mist creating a "
+    },
+    "p3_bicycle_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p1_stilllife_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p6_forest_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p5_livingroom_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p4_oranges_g1_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and flowers repeated in a patterned, abstract style"
+    },
+    "p2_portrait_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+    },
+    "p4_oranges_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p4_oranges_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There are no redupl"
+    },
+    "p3_bicycle_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a forest of pine trees on a misty mountainside"
+    },
+    "p2_portrait_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+    },
+    "p2_portrait_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p6_forest_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p4_oranges_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p6_forest_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p5_livingroom_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p2_portrait_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and in their intended quantities"
+    },
+    "p3_bicycle_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p3_bicycle_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Fragmented and distorted bicycle against a textured wall"
+    },
+    "p3_bicycle_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "The image depicts a fragmented and distorted bicycle against a brick wall, with no clear reduplication or tiling."
+    },
+    "p3_bicycle_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p3_bicycle_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with a pink beverage, and a set of keys on a wooden table. There are"
+    },
+    "p5_livingroom_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p6_forest_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p3_bicycle_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p2_portrait_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present but not repeated, fragmented, condensed, or distorted. The image depicts a watermelon, a glass of wa"
+    },
+    "p4_oranges_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges appear outside the bowl, fragmented and tiled across the frame."
+    },
+    "uncond_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Fragmented and repetitive architectural forms"
+    },
+    "p5_livingroom_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+    },
+    "p5_livingroom_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Fragmented and distorted bicycle against a textured wall"
+    },
+    "p5_livingroom_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "uncond_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Abstract, fragmented forms merge into a surreal, distorted scene."
+    },
+    "p5_livingroom_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+    },
+    "p6_forest_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p5_livingroom_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p4_oranges_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p2_portrait_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p6_forest_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p6_forest_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p4_oranges_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p5_livingroom_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and a window, without any reduplication, fragmentation, conde"
+    },
+    "p2_portrait_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p6_forest_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p1_stilllife_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass, and a set of keys on a wooden table, with no additional objects or distortions."
+    },
+    "p3_bicycle_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p4_oranges_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with a red beverage, and a set of keys on a wooden table. There is n"
+    },
+    "p4_oranges_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p6_forest_g1_s46.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 1,
+      "tiling": 1,
+      "notes": "High reduplication and distortion, tiling pattern"
+    },
+    "p3_bicycle_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p6_forest_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated pattern of trees"
+    },
+    "p6_forest_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no reduplication or distortion"
+    },
+    "p1_stilllife_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p6_forest_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p5_livingroom_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p3_bicycle_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p4_oranges_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a still life with a bowl of fruit and a vase of flowers"
+    },
+    "p2_portrait_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p5_livingroom_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+    },
+    "p1_stilllife_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p6_forest_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p2_portrait_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p6_forest_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p3_bicycle_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "uncond_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Fragmented, distorted, and tiled abstract forms"
+    },
+    "p4_oranges_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p3_bicycle_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p3_bicycle_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There are no redupl"
+    },
+    "p6_forest_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest and mist, no visible reduplication or distortion"
+    },
+    "p3_bicycle_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "The image depicts a red bicycle with a fragmented and distorted appearance, breaking down into disconnected pieces."
+    },
+    "p5_livingroom_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p4_oranges_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p5_livingroom_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+    },
+    "p2_portrait_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g2_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and leaves repeated in a tiled pattern"
+    },
+    "p5_livingroom_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p3_bicycle_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural misty forest scene"
+    },
+    "p1_stilllife_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p1_stilllife_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p5_livingroom_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p4_oranges_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p4_oranges_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass, and a set of keys on a wooden table, with no visible reduplication, fragmentati"
+    },
+    "p1_stilllife_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and correctly placed"
+    },
+    "p2_portrait_g7_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+    },
+    "p5_livingroom_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+    },
+    "p4_oranges_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p1_stilllife_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass, and a set of keys on a wooden table, with no additional objects or motifs."
+    },
+    "p3_bicycle_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p3_bicycle_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p3_bicycle_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p3_bicycle_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p3_bicycle_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p3_bicycle_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p5_livingroom_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+    },
+    "p6_forest_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p5_livingroom_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a still life painting of a kitchen counter with a plate of oranges"
+    },
+    "p2_portrait_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait of an elderly man's face"
+    },
+    "p5_livingroom_g3_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There are no reduplications, fragmenta"
+    },
+    "p4_oranges_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, with some oranges outside the bowl."
+    },
+    "p2_portrait_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no visible red"
+    },
+    "p3_bicycle_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p4_oranges_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a bowl of oranges on a kitchen counter, with no reduplication, fragmentation, condensation, or distort"
+    },
+    "p5_livingroom_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+    },
+    "p2_portrait_g1_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Fragmented, distorted, and repetitive texture"
+    },
+    "p4_oranges_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p3_bicycle_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g11_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p1_stilllife_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There is no redupli"
+    },
+    "p6_forest_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p5_livingroom_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p5_livingroom_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+    },
+    "p5_livingroom_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+    },
+    "p4_oranges_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p4_oranges_g7_s46.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges appear outside the bowl, multiplying beyond the intended content."
+    },
+    "p6_forest_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p2_portrait_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g2_s47.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges appear outside the bowl, multiplying across the frame."
+    },
+    "p6_forest_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p5_livingroom_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window, without any reduplication, fragmentati"
+    },
+    "p2_portrait_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Hybrid forms and distorted anatomy"
+    },
+    "p1_stilllife_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+    },
+    "p1_stilllife_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+    },
+    "p5_livingroom_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window."
+    },
+    "p3_bicycle_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+    },
+    "p5_livingroom_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window. There is no reduplication, fragmentation, con"
+    },
+    "p1_stilllife_g7_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of water, and a set of keys on a wooden table, with no additional objects or dis"
+    },
+    "p5_livingroom_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p6_forest_g3_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural misty forest scene, no visible reduplication or distortion"
+    },
+    "p1_stilllife_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and clear"
+    },
+    "p6_forest_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no artificial repetition or distortion"
+    },
+    "p4_oranges_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of water, and a set of keys, but the keys are not present."
+    },
+    "p5_livingroom_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p2_portrait_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p6_forest_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "No visible reduplication, fragmentation, condensation, or distortion. The image depicts a forest of pine trees on a mist"
+    },
+    "p6_forest_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "No visible reduplication, fragmentation, condensation, or distortion. The image depicts a forest of pine trees on a mist"
+    },
+    "p4_oranges_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p5_livingroom_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent living room with one sofa, one lamp, and one window. There is no reduplication, fragmentati"
+    },
+    "p2_portrait_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "objects appear fragmented and distorted, with no clear coherent room"
+    },
+    "p2_portrait_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and in their intended quantities"
+    },
+    "p6_forest_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "High reduplication and distortion, tiling pattern"
+    },
+    "p6_forest_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p3_bicycle_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The bicycle is fragmented into disconnected pieces."
+    },
+    "p5_livingroom_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p4_oranges_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p1_stilllife_g5_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image contains a watermelon, a glass of water, and a set of keys, all on a wooden table. There are no additional obj"
+    },
+    "p6_forest_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p1_stilllife_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present but not repeated, fragmented, condensed, or distorted. The image depicts a watermelon, a glass, and "
+    },
+    "p3_bicycle_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g1_s44.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated forest pattern"
+    },
+    "p4_oranges_g1_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Oranges and leaves repeated in a tiled pattern"
+    },
+    "p3_bicycle_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, lamp, and window as intended, with no additional objects or distortions."
+    },
+    "p4_oranges_g11_s46.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges appear outside the bowl, filling the frame."
+    },
+    "p5_livingroom_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p2_portrait_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p3_bicycle_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p3_bicycle_g7_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window, all in a coherent room."
+    },
+    "p6_forest_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p1_stilllife_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of water, and a set of keys on a wooden table, with no additional objects or dis"
+    },
+    "p2_portrait_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "all objects present and clear"
+    },
+    "p1_stilllife_g3_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p1_stilllife_g2_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Keys appear fragmented and distorted"
+    },
+    "p4_oranges_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p6_forest_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "uncond_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Floral and butterfly motifs are fragmented and condensed, creating a surreal, dreamlike scene."
+    },
+    "p1_stilllife_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p2_portrait_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "An abstract, distorted close-up of a face"
+    },
+    "p2_portrait_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 0,
+      "notes": "Facial features appear fragmented and distorted, with no clear repetition of objects."
+    },
+    "p2_portrait_g1_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Facial features and hands appear distorted and fragmented, with a painterly texture overlay"
+    },
+    "p3_bicycle_g11_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g5_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g1_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Bicycle appears fragmented and distorted, with a repeating brick wall pattern"
+    },
+    "uncond_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A serene pastoral scene with horses and a rustic setting"
+    },
+    "p5_livingroom_g1_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p6_forest_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p4_oranges_g15_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p3_bicycle_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p5_livingroom_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p5_livingroom_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p6_forest_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no reduplication or distortion"
+    },
+    "p6_forest_g2_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural misty forest scene"
+    },
+    "p4_oranges_g7_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p6_forest_g1_s43.png": {
+      "reduplication": 1,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated forest pattern"
+    },
+    "p6_forest_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "repeated pattern of trees"
+    },
+    "p1_stilllife_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Objects are present as intended, no additional or fragmented forms"
+    },
+    "p3_bicycle_g11_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "uncond_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image appears to be a repeating pattern of interior scenes, possibly due to tiling."
+    },
+    "p3_bicycle_g15_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g5_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with a red beverage, and a set of keys on a wooden table. There are "
+    },
+    "p4_oranges_g3_s42.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges appear in multiple bowls and scattered on the counter, exceeding the intended content."
+    },
+    "p4_oranges_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A simple arrangement of oranges in bowls on a kitchen counter."
+    },
+    "p3_bicycle_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p1_stilllife_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p1_stilllife_g3_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p4_oranges_g15_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p4_oranges_g7_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g5_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p2_portrait_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p2_portrait_g1_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A watermelon, a glass, and a set of keys are present, but the glass appears fragmented."
+    },
+    "p6_forest_g15_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p3_bicycle_g1_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "The image depicts a red bicycle against a brick wall, but the visual elements are fragmented and distorted, creating a s"
+    },
+    "p2_portrait_g5_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p3_bicycle_g2_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g3_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p5_livingroom_g2_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p1_stilllife_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p5_livingroom_g3_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any visible repetition, fragmentation"
+    },
+    "p5_livingroom_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p6_forest_g15_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p3_bicycle_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p1_stilllife_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p1_stilllife_g11_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p5_livingroom_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p1_stilllife_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p2_portrait_g7_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g5_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p4_oranges_g15_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p6_forest_g7_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p5_livingroom_g11_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p2_portrait_g2_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g3_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room, without any reduplication, fragm"
+    },
+    "p5_livingroom_g2_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g1_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a red bicycle leaning against a brick wall"
+    },
+    "p4_oranges_g15_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p3_bicycle_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The bicycle is fragmented into disconnected pieces."
+    },
+    "p1_stilllife_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, accurately representin"
+    },
+    "p5_livingroom_g11_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, lamp, and window as intended, with no additional objects or distortions."
+    },
+    "p4_oranges_g2_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p3_bicycle_g1_s51.png": {
+      "reduplication": 0,
+      "fragmentation": 1,
+      "condensation": 1,
+      "distortion": 1,
+      "tiling": 0,
+      "notes": "Bicycle and wall partially obscured by trees and grass"
+    },
+    "p6_forest_g11_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p1_stilllife_g2_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table, with no additional "
+    },
+    "p6_forest_g1_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image shows a patterned texture rather than a single scene."
+    },
+    "p1_stilllife_g5_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass half-filled with water, and a set of keys on a wooden table. There is no redupli"
+    },
+    "p3_bicycle_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g1_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p6_forest_g15_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p4_oranges_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g5_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a single sofa, a single lamp, and a single window in a coherent room."
+    },
+    "p1_stilllife_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a watermelon, a glass of watermelon juice, and a set of keys on a wooden table, with no additional obj"
+    },
+    "p6_forest_g2_s48.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 1,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "Fog obscures and merges tree forms"
+    },
+    "p6_forest_g7_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural forest scene with no visible reduplication, fragmentation, condensation, or distortion"
+    },
+    "p3_bicycle_g11_s46.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p2_portrait_g11_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p4_oranges_g3_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p2_portrait_g3_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p5_livingroom_g15_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "The image depicts a coherent room with one sofa, one lamp, and one window, without any reduplication, fragmentation, con"
+    },
+    "p3_bicycle_g3_s45.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g2_s46.png": {
+      "reduplication": 3,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Oranges appear in multiple locations, including outside the bowl and on the counter."
+    },
+    "p3_bicycle_g15_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p6_forest_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "Natural mist and trees, no visible reduplication or distortion"
+    },
+    "p3_bicycle_g7_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    },
+    "p4_oranges_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a bowl of oranges on a kitchen counter"
+    },
+    "p4_oranges_g5_s43.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p2_portrait_g7_s44.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "a close-up portrait photograph of an elderly man's face"
+    },
+    "p1_stilllife_g1_s42.png": {
+      "reduplication": 0,
+      "fragmentation": 3,
+      "condensation": 3,
+      "distortion": 3,
+      "tiling": 1,
+      "notes": "Abstract, fragmented forms with distorted shapes and repeated patterns"
+    },
+    "p4_oranges_g11_s47.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "A bowl of oranges on a kitchen counter, no reduplication or distortion"
+    },
+    "p6_forest_g2_s50.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 1,
+      "notes": "The image shows a patterned, tiled texture of trees and mist, not a single scene."
+    },
+    "p3_bicycle_g5_s49.png": {
+      "reduplication": 0,
+      "fragmentation": 0,
+      "condensation": 0,
+      "distortion": 0,
+      "tiling": 0,
+      "notes": "one bicycle against a wall"
+    }
+  }
+}

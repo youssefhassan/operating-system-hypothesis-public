@@ -1,0 +1,47 @@
+# Numbers allowed in paper.md that do not come from a results JSON. One per line, with a reason.
+0        # generic
+1        # generic
+2        # generic
+3        # rubric max / generic
+4        # four fields
+6        # six prompts
+7        # seven guidance values (also in prereg)
+9        # nine guidance values (Exp 01)
+10       # ten seeds
+25       # steps (also in prereg)
+28       # human subset rated (also in report)
+30       # judge size threshold ~30B (review A / analysis.md)
+32       # Qwen3-VL-32B
+7B       # judge size
+11       # Llama-3.2-11B
+1024     # resolution
+0.4      # kappa gate (also in prereg)
+0.20     # SESOI (also in prereg)
++0.20    # Exp 03b P1/P2 pass floor
+0.05     # alpha
+95       # CI level
+3.5      # model name, SD 3.5
+3.2      # model name, Llama-3.2
+100      # Exp 01 images per model (design; exp01.prereg)
+430      # Exp 03 images per model (design; exp03.prereg)
+60       # share of drop in the g=1 to 2 step, SDXL, as a percent (exp03.posthoc ... share_of_drop_in_first_step)
+91       # share of drop in the g=1 to 2 step, SD 3.5, as a percent (exp03.posthoc ... share_of_drop_in_first_step)
+64       # share of the SDXL distortion association explained by veridicality, as a percent (exp03b.axes ... share_of_association_explained)
+4.6      # model name, Claude Sonnet 4.6 (the archived Exp 01 judge)
+400      # harness max_tokens before the 2026-08-08 repair; Llama replies truncated at it (analysis.md section 4)
+855      # 835 conditioned images with complete replies (exp03.posthoc n_conditioned, both models) + 20 empty-prompt baselines
+5000   # design: bootstrap and permutation resamples (statlib.spearman_perm_p default; posthoc_quality_paths.py)
+58       # complete-case n at some guidance cells after parser failures
+59       # complete-case n at some guidance cells after parser failures
+380      # three-judge complete-case n, SDXL
+387      # three-judge complete-case n, SD 3.5
+0.80     # Exp 02 positive-control sensitivity threshold, text in exp02 preregistration (thresholds.validated)
+45       # percent form of the Exp 02 ordinary-image flag rate 0.45 (exp02.report positive_control.photo_negatives.rate), abstract
+20       # percent form of the Exp 02 registered ordinary-image ceiling 0.20, abstract
+29       # percent form, Gemma-3-27B distortion non-zero share 0.29 (fig4.data)
+31       # percent form, Exp 02 ordinary-image rate CI lower 0.31
+36       # percent form, Gemma-3-27B reduplication non-zero share 0.36 (fig4.data)
+38       # percent form, percent agreement low end 0.376 / 0.377
+72       # percent form, SDXL percent agreement high end 0.724
+82       # percent form, SD 3.5 percent agreement high end 0.824
+420      # design: 6 prompts x 7 guidance values x 10 seeds conditioned images per checkpoint (exp03.prereg)

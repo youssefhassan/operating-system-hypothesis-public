@@ -35,7 +35,7 @@ import rubric as R
 HERE = Path(__file__).resolve().parent
 RESULTS = HERE / "results-local"
 SUBSET = HERE / "human_subset.json"
-RATINGS = HERE / "human_ratings.json"
+RATINGS = HERE / "human_ratings.json"  # rater 1 (the author); --rater NAME writes human_ratings_NAME.json
 MODELS = ("sdxl", "sd35")
 JUDGE_FILES = ("judgements_claude.json", "judgements_qwen.json", "judgements_llama.json")
 
@@ -168,7 +168,8 @@ def _ask_int(field: str, hi: int) -> int | None:
         print(f"    ! enter an integer 0-{hi}")
 
 
-def rate() -> None:
+def rate(ratings_path: Path = RATINGS) -> None:
+    RATINGS = ratings_path  # noqa: N806  (shadow the module default for this call)
     if not SUBSET.exists():
         raise SystemExit("no human_subset.json — run `python human_rate.py --sample` first")
     subset = json.loads(SUBSET.read_text())["items"]
@@ -228,6 +229,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--n", type=int, default=28, help="target subset size (25-30)")
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--show-progress", action="store_true")
+    p.add_argument("--rater", default=None,
+                   help="second rater: write human_ratings_<rater>.json instead of human_ratings.json")
     return p
 
 
@@ -238,4 +241,4 @@ if __name__ == "__main__":
     elif a.show_progress:
         show_progress()
     else:
-        rate()
+        rate(HERE / f"human_ratings_{a.rater}.json" if a.rater else RATINGS)

@@ -1,0 +1,1610 @@
+{
+  "rubric_version": "exp01-formconstant-v1",
+  "claude_model": "claude-sonnet-4-6",
+  "openai_model": null,
+  "judges": [
+    "claude"
+  ],
+  "images": {
+    "g11.0_s45.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "cut glass facets and wood grain form faint lattice patterns"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, glasses, keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s43.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood grain planks form faint lattice; otherwise ordinary still life"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "glass cylinder creates mild tunnel framing toward base"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, water glass, and keys on wooden surface"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal outdoor table scene, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "faint web-like filaments over food surface; cluttered table scene with keys and glasses"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "mannequin distorted through refractive plastic wrap, faint funnel framing"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "anime-style portrait with ice/crystal hair strands, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "concentric rings of overturned glass create faint tunnel form"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "mundane still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s43.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood grain planks form faint lattice pattern in background"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "realistic still life with watermelon, glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s44.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "wood grain and wall panel lines form faint lattice; glassy reflections add mild geometric layering"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life; keys are unexpected but no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal kitchen scene with watermelon, glass, and keys"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "overhead view of watermelon scraps in glass bowls, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, keys are unexpected addition"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, glass, and keys on wooden table"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal kitchen still life with watermelon, glass, and keys"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 1,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint spiral swirl visible in water glass surface"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "watermelon seed cavity forms faint radial/cobweb pattern"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s51.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood plank lines form faint lattice; keys are unrequested elements"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "watermelon flesh forms faint tunnel-like concentric framing toward center"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 1,
+        "coherent_scene": 1,
+        "geometric_intensity": 2,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "motion-blur plastic wrap creates radial web and swirling vortex patterns over figure in grass"
+      },
+      "m_img": 0.6667,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 1,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "faint spiral swirl visible in water glass reflection"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s45.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wooden plank lines form faint lattice; key appears unexpectedly beside watermelon"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "uncond_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "painterly rider on horseback across arid plains, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with unexpected keys as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal beach still life, keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s46.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood plank parallel lines form faint lattice; keys unexpected element"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with unexpected keys as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "surreal glass-watermelon fusion with keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal kitchen scene with watermelon, glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "still life with fruits and keys on weathered wood, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal watermelon still life with vintage keys, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "mundane still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s43.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "faint lattice from scored watermelon flesh grid pattern"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, drink, and keys on wood surface"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 2,
+        "complexity": 1,
+        "notes": "photoreal still life with anomalous keys embedded in watermelon flesh"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal kitchen still life with keys as unprompted element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "fluid abstract figures dissolving into botanical ink strokes, no geometric form constants"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 0,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "painterly abstraction of wreckage and birds over water, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon and drink glass, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, water glass, and keys"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "still life with watermelon, water glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "child crouching at water's edge, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "outdoor still life with watermelon, glasses, keys on stone surface"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 0,
+        "geometric_intensity": 1,
+        "veridicality": 1,
+        "spontaneity": 2,
+        "complexity": 3,
+        "notes": "surreal layered interior dissolving into flower field with faint concentric framing"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with watermelon, glass, and keys on wood surface"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal shelf with plant and glassware, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s48.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "faceted glass creates faint lattice pattern; keys are unexpected element"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 2,
+        "complexity": 1,
+        "notes": "photoreal watermelon scene with embedded nail and key \u2014 no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, keys add minor spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s43.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s42.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal kitchen scene with unexpected keys as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "photoreal kitchen scene with watermelon, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "watermelon seed arrangement forms faint radial/cobweb pattern"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "faint radial web pattern on watermelon rind surface"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 1,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "faint spiral/swirl distortion pattern visible on glass surface"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with keys as unexpected element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "photoreal still life with unexpected keys on cutting board"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g8.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s48.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with unexpected keys as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.5_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "ordinary still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g11.0_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal table scene with watermelon, glass, and keys; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g6.0_s46.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 2,
+        "complexity": 2,
+        "notes": "photoreal still life with unexpected keys among watermelon slices"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s43.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 0,
+        "complexity": 1,
+        "notes": "wood plank lines form faint lattice; otherwise mundane still life"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s50.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with unexpected keys as spontaneous element"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s43.png": {
+      "claude": {
+        "lattice": 1,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "wood plank lines form faint lattice; otherwise ordinary still life"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s44.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life; keys are unexpected but no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g4.5_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g15.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life with no form-constant geometry present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g1.0_s47.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 1,
+        "tunnel": 1,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 1,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "glass cylinder creates mild tunnel framing; dried husk fibers suggest faint cobweb radials"
+      },
+      "m_img": 0.3333,
+      "agree_any_formconstant": null
+    },
+    "g3.0_s45.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal still life, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "uncond_s49.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 2,
+        "spontaneity": 1,
+        "complexity": 2,
+        "notes": "motion-blurred double exposure of woman in white robe, no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    },
+    "g2.0_s51.png": {
+      "claude": {
+        "lattice": 0,
+        "cobweb": 0,
+        "tunnel": 0,
+        "spiral": 0,
+        "coherent_scene": 1,
+        "geometric_intensity": 0,
+        "veridicality": 3,
+        "spontaneity": 1,
+        "complexity": 1,
+        "notes": "photoreal kitchen scene with watermelon, keys, and glass; no form constants present"
+      },
+      "m_img": 0.0,
+      "agree_any_formconstant": null
+    }
+  }
+}
