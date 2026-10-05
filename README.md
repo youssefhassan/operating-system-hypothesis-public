@@ -20,9 +20,35 @@ brain share machinery.
 
 ---
 
+## Preprint
+
+The experiments are written up as a preprint:
+
+> Youssef Hassan (2026). *Understanding through Perturbation: lowering classifier-free
+> guidance as a dose-response assay for two text-to-image latent models.* Zenodo.
+> https://doi.org/10.5281/zenodo.23165987
+
+```bibtex
+@misc{hassan2026perturbation,
+  author    = {Hassan, Youssef},
+  title     = {Understanding through Perturbation: lowering classifier-free guidance as a
+               dose-response assay for two text-to-image latent models},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23165987},
+  url       = {https://doi.org/10.5281/zenodo.23165987}
+}
+```
+
+The paper source and the scripts that build and check it are in [`paper/`](paper/). Where
+this page and the paper differ, the paper is the reference: it includes the corrections
+from an outside audit (2026-09-29, dated in each experiment's `analysis.md`).
+
+---
+
 ## What's here
 
-### `experiments/01_image_test` — form constants (a clean null)
+### `experiments/01_image_test` — form constants (a null that cannot be read)
 
 Pre-registered prediction: lowering guidance would raise a score for Klüver's
 Level-1 geometric *form constants* (lattice, cobweb, tunnel, spiral).
@@ -34,14 +60,21 @@ A separate, explicitly post-hoc re-score against Klüver's Level-2/3 *transforms
 did move: objects fragmented, fused and multiplied as guidance fell. That weaker
 finding is what Exp 03 was built to attack.
 
+**Then the instrument failed its own test.** Exp 02
+([`experiments/02_form_constant_generator`](experiments/02_form_constant_generator)) rendered
+images that certainly contain form constants and gave them to the same judge. It flagged all
+80, but it also flagged 45% of ordinary images, above the 20% ceiling fixed in advance. Under
+that pre-registered rule the Exp 01 null is uninterpretable: the judge could not tell form
+constants from ordinary grids.
+
 Images and blind judgements: [Hugging Face](https://huggingface.co/datasets/youssefhassan13/exp01-guidance-sweep).
 
 ### `experiments/03_l23_hardening` — hardening that signal
 
 860 images. Six prompts spanning object count and objecthood, including a
 low-objecthood control designed to dissociate. Seven guidance values, ten seeds,
-two architectures, a no-reference image-quality de-confound, two independent
-judges from different model families, and a blind human-rated subset.
+two architectures, adjustment for two no-reference image-quality proxies, two independent
+judges from different model families, and a blind human-rated subset scored by two people.
 
 **The overall pre-registered claim did not confirm.** Confirmation required both
 models; SDXL cleared every gate and SD 3.5 missed the slope threshold
@@ -50,25 +83,27 @@ models; SDXL cleared every gate and SD 3.5 missed the slope threshold
 | | SDXL | SD 3.5 |
 |---|---|---|
 | Dose-response slope (needed ≤ −0.20) | **−0.340** | −0.182 |
-| Correlation with quality controlled | **−0.433** | **−0.246** |
+| Correlation after adjusting for two quality proxies | **−0.433** | **−0.245** |
 | Prompts with negative slope (needed ≥5/6) | **6/6** | **5/6** |
-| Inter-judge agreement (needed ≥0.40) | **0.562** | **0.440** |
+| Inter-judge agreement (needed ≥0.40) | **0.562** | **0.440**, 0.394 without the 10 empty-prompt baselines |
 
 Three things the scaffold produced that the gate table doesn't show, written up in
 [`analysis.md`](experiments/03_l23_hardening/analysis.md):
 
-**Open-weight VLM judges below roughly 30B fail silently.** Two of three judges
+**In this panel, the open-weight VLM judges below about 30B failed silently.** Two of three judges
 returned well-formed JSON, zero parse errors, and confident captions such as
 *"no signs of melting, warping, or impossibility"* for images that were visibly
 ghosted. Nothing in the output indicates failure. An 8B and a 32B from the same
 family, same release and quantisation, differ completely, which isolates capacity
 from model age. [`judge_probe.py`](experiments/03_l23_hardening/judge_probe.py)
 is the screening tool that catches it: it asks only whether a candidate judge ever
-uses the middle of the scale.
+uses the middle of the scale. "Below about 30B" describes this panel, not a law. A second
+human rater who did not know the hypothesis agrees with the author at composite κ 0.567, and
+the best judge agrees with that rater (0.426) better than with the author (0.337).
 
 **SDXL is a gradient; SD 3.5 is a cliff.** Post-hoc
 ([`posthoc.py`](experiments/03_l23_hardening/posthoc.py)): drop the bottom
-guidance value and SDXL's effect survives (ρ −0.244, quality-matched δ 0.355)
+guidance value and SDXL's effect survives (ρ −0.244)
 while SD 3.5's vanishes entirely (ρ +0.048, p = .38). The two models differ in
 *shape*, not magnitude, and a linear endpoint cannot express that. This makes the
 SD 3.5 evidence weaker, not stronger.
@@ -95,11 +130,13 @@ SD 3.5 fails the two monotonic ones. Two results matter more than the verdict.
 at only -0.62. What an image is *like* overall, and an inventory of what broke
 inside it, are separable measurements.
 
-**Two thirds of the distortion signal was rendering style.** Holding veridicality
-fixed drops distortion's association with guidance on SDXL from -0.486 to -0.175.
-That lands on Exp 01's headline field: much of "the knob dissolves objecthood" was
+**Distortion overlaps heavily with rendering style.** Adjusting for veridicality
+drops distortion's association with guidance on SDXL from -0.486 to -0.175, a 64%
+attenuation. Both scores come from the same judges, so this is overlap between two
+measurements, not a causal split.
+That lands on Exp 01's headline field: much of "the knob dissolves objecthood" may be
 the picture becoming painterly rather than the objects coming apart. Distortion
-survives at a third of its apparent size. The only way to find this was to run the
+survives at about a third of its apparent size. The only way to find this was to run the
 second scale against the first.
 
 SD 3.5's failure is uninformative rather than negative. Its veridicality is an

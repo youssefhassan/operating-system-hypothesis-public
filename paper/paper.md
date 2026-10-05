@@ -990,8 +990,8 @@ competing explanation of the composite, and the next pre-registration should sco
 
 Code, pre-registrations, analyses and all judge outputs are at
 <https://github.com/youssefhassan/operating-system-hypothesis-public>. Generated images
-and judgements are published as datasets under `youssefhassan13/` on Hugging Face:
-`exp01-guidance-sweep`, `exp02-form-constant-generator`, `exp03-l23-hardening`.
+and judgements are published as datasets under `youssefhassan13/` on Hugging Face, named
+exp01-guidance-sweep, exp02-form-constant-generator and exp03-l23-hardening.
 
 ```
 # Exp 01
@@ -1021,6 +1021,17 @@ analysis code was corrected on 2026-09-29 (dated notes in each experiment's anal
 and the corrected reports have not yet been re-verified from a clean public checkout. The pre-registration dates
 quoted throughout are the git commit dates of the pre-registration files on that public
 repository.
+
+# Use of AI tools
+
+Two vision-language models, Claude Sonnet 5 and Qwen3-VL-32B, are instruments of this
+study: they score the images, and their screening and failures are reported in
+Section 2.5 and Section 3.4. Separately, I used Claude (Anthropic) as a coding and writing
+assistant. Under my direction it wrote and ran analysis and figure code, ran the
+automated checks that trace every number in the text to an analysis output, verified
+every reference against its source, and drafted and edited passages of the text. I
+designed the study, made every methodological and interpretive decision, reviewed every
+claim against the data, and take full responsibility for the content.
 
 # Appendix: Figure 2 as numbers
 
