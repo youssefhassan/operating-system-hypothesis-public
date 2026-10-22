@@ -31,7 +31,7 @@ Youssef Hassan
 
 # Response B: xPeerd DAReview report (XSci 363923e4)
 
-Thank you for a careful read. I accept the report's central recommendation: the paper should be read, and will be written, as an assay-development study with a substantive signal under an amended instrument. Point by point:
+This is a careful read, and I accept its central recommendation: the paper should be read, and will be written, as an assay-development study with a substantive signal under an amended instrument. Point by point:
 
 **Amended panel and confirmatory status (1, 7).** I agree with the recommendation and will adopt the wording: the SDXL result is confirmatory under an amended instrument, and the paper is an assay-development study with a substantive signal, not a settled validation of a construct. The abstract and conclusion will say so directly rather than disclosing the amendment and letting the reader weigh it.
 
@@ -53,7 +53,7 @@ Youssef Hassan
 
 # Response C: XSci report (XSci 9bcf95ad)
 
-Thank you. I agree with the positioning: the durable contribution is the instrument (the judge audit, the gradedness screen and the public corpus), and the next version will lead with it rather than with the dose-response. I ran the checks this report asks for on the public images on 2026-10-22, pre-specified before running; the script and output are in the public repository. The first changes how the SDXL result should be read.
+I agree with the report's positioning: the durable contribution is the instrument (the judge audit, the gradedness screen and the public corpus), and the next version will lead with it rather than with the dose-response. I ran the checks this report asks for on the public images on 2026-10-22, pre-specified before running; the script and output are in the public repository. The first changes how the SDXL result should be read.
 
 Major 1, prompt adherence. Correct, and the most consequential point in any of the three reports. I computed CLIP ViT-L/14 image-text similarity against each registered prompt. It rises with guidance (Spearman +0.34 SDXL, +0.31 SD 3.5). The pooled partial correlation barely moves (-0.556 and -0.240 controlling similarity; -0.529 and -0.238 with both quality proxies added). Inside the mixed model, where the estimate is within prompt, it does move: the guidance slope is -0.248 [-0.312, -0.183] on SDXL and -0.082 [-0.148, -0.017] on SD 3.5 with similarity as a covariate, and -0.201 [-0.276, -0.127] and -0.082 [-0.150, -0.014] with similarity, CLIP-IQA and the aesthetic score together. So a within-prompt association survives on both checkpoints with intervals away from zero, but on SDXL it sits on the registered -0.2 bar rather than well past it, and on SD 3.5 more than half of it is shared with prompt adherence. One caveat: breakdown itself lowers image-text similarity, so this adjustment partly removes the outcome and is a lower bound, not a clean separation. The next version will report this in the main results and say that the composite is only partly separable from adherence.
 
