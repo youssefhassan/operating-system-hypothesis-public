@@ -481,3 +481,28 @@ xsci are in `paper/REVIEW_REPLY_xsci_2026-10-22.md`. SDXL / SD 3.5:
 - **Documentation gap.** The judges received a distinct rubric variant for the empty-prompt
   baselines (`rubric.py`, `_intended_clause`, "generated from an EMPTY prompt ... no
   intended scene"); the preprint's verbatim-prompt appendix omits it. For v2.
+
+## 16. Sensitivity round 3b, 2026-10-22 (third xsci report, XSci 9bcf95ad)
+
+Pre-specified as an addendum to `posthoc_review_xsci_prespec.md` before running; script
+`posthoc_review_xsci2.py`, output `posthoc_review_xsci2.json`, CLIP similarities cached in
+`clip_similarity.json`. Exploratory; no verdict changed, but X1 changes how the SDXL
+result should be read. SDXL / SD 3.5:
+
+- **X1, prompt adherence.** CLIP ViT-L/14 image-text cosine against the registered prompt.
+  It rises with guidance (rho +0.341 / +0.314). Pooled partial rho controlling it stays
+  large: −0.556 / −0.240, and −0.529 / −0.238 with both quality proxies added. Inside the
+  mixed model it does not: guidance slope with similarity −0.248 [−0.312, −0.183] /
+  −0.082 [−0.148, −0.017]; with similarity, CLIP-IQA and aesthetic together **−0.201
+  [−0.276, −0.127] / −0.082 [−0.150, −0.014]**. The within-prompt association survives on
+  both checkpoints with intervals away from zero, but on SDXL it sits on the registered
+  −0.2 bar and on SD 3.5 it falls to under half its unadjusted size. Caveat stated once:
+  breakdown itself lowers image-text similarity, so entering similarity partly adjusts
+  away the outcome; these are lower bounds, not a clean separation.
+- **X2, kappa within guidance.** Pooled conditioned 0.542 / 0.394. By bin: low (g 1-2)
+  0.550 / 0.419, mid (g 3-5) 0.396 / 0.172, high (g 7-15) 0.220 / 0.190. Agreement is at
+  the gate level where breakdown is common and weak where it is rare, so the pooled value
+  is carried by the low-guidance images, as the reviewer suspected. At high guidance the
+  judges disagree on the few non-zero scores (SDXL fragmentation −0.02, distortion 0.01).
+- **X3, seed random effect dropped.** SDXL −0.340 [−0.402, −0.278], SD 3.5 −0.182
+  [−0.248, −0.116]. No change.

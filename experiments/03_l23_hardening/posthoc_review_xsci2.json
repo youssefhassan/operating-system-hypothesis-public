@@ -1,0 +1,320 @@
+{
+  "label": "EXPLORATORY (posthoc_review_xsci_prespec.md addendum, 2026-10-22)",
+  "clip_model": "openai/clip-vit-large-patch14",
+  "models": {
+    "sdxl": {
+      "X1_prompt_adherence": {
+        "rho_sim_vs_g": 0.3412,
+        "rho_composite_vs_sim": 0.1556,
+        "partial_rho_controlling_sim": -0.5558,
+        "partial_rho_controlling_sim_ci95": [
+          -0.6213,
+          -0.4828
+        ],
+        "partial_rho_controlling_sim_iqa_aes": -0.5292,
+        "lmm_plus_sim": {
+          "formula": "composite ~ guidance_std + z_sim",
+          "vc": [
+            "prompt",
+            "seed"
+          ],
+          "optimizer": "lbfgs",
+          "converged": true,
+          "estimate": -0.24754724278160725,
+          "ci95": [
+            -0.3117343952868372,
+            -0.18336009027637726
+          ],
+          "p": 4.065208164663792e-14,
+          "n": 418
+        },
+        "lmm_plus_sim_iqa_aes": {
+          "formula": "composite ~ guidance_std + z_sim + z_iqa + z_aes",
+          "vc": [
+            "prompt",
+            "seed"
+          ],
+          "optimizer": "lbfgs",
+          "converged": true,
+          "estimate": -0.20137283562087854,
+          "ci95": [
+            -0.2761930164119694,
+            -0.12655265482978767
+          ],
+          "p": 1.3268787828832862e-07,
+          "n": 418
+        }
+      },
+      "X2_kappa_within_guidance": {
+        "pooled_conditioned": 0.5417,
+        "per_guidance": {
+          "1.0": {
+            "n": 60,
+            "kappa": 0.4884
+          },
+          "2.0": {
+            "n": 60,
+            "kappa": 0.5126
+          },
+          "3.0": {
+            "n": 60,
+            "kappa": 0.4602
+          },
+          "5.0": {
+            "n": 59,
+            "kappa": 0.269
+          },
+          "7.0": {
+            "n": 59,
+            "kappa": 0.2141
+          },
+          "11.0": {
+            "n": 60,
+            "kappa": 0.2389
+          },
+          "15.0": {
+            "n": 60,
+            "kappa": 0.2171
+          }
+        },
+        "per_bin": {
+          "low (g 1-2)": {
+            "n": 120,
+            "kappa": 0.5497,
+            "ci95": [
+              0.4773,
+              0.61
+            ],
+            "per_field": {
+              "reduplication": 0.5511,
+              "fragmentation": 0.6193,
+              "condensation": 0.4439,
+              "distortion": 0.5845,
+              "tiling": 0.6776
+            }
+          },
+          "mid (g 3-5)": {
+            "n": 119,
+            "kappa": 0.3958,
+            "ci95": [
+              0.259,
+              0.4873
+            ],
+            "per_field": {
+              "reduplication": 0.2444,
+              "fragmentation": 0.5115,
+              "condensation": 0.5611,
+              "distortion": 0.2661,
+              "tiling": 0.659
+            }
+          },
+          "high (g 7-15)": {
+            "n": 179,
+            "kappa": 0.22,
+            "ci95": [
+              0.1348,
+              0.2768
+            ],
+            "per_field": {
+              "reduplication": 0.3249,
+              "fragmentation": -0.0195,
+              "condensation": 0.5643,
+              "distortion": 0.0104,
+              "tiling": 0.0
+            }
+          }
+        }
+      },
+      "X3_seed_effect_dropped": {
+        "with_seed_as_registered": {
+          "formula": "composite ~ guidance_std",
+          "vc": [
+            "prompt",
+            "seed"
+          ],
+          "optimizer": "lbfgs",
+          "converged": true,
+          "estimate": -0.3397278547881432,
+          "ci95": [
+            -0.40019516451619336,
+            -0.27926054506009307
+          ],
+          "p": 3.352111333931719e-28,
+          "n": 418
+        },
+        "prompt_only": {
+          "formula": "composite ~ guidance_std",
+          "vc": [
+            "prompt"
+          ],
+          "optimizer": "lbfgs",
+          "converged": true,
+          "estimate": -0.339731361091149,
+          "ci95": [
+            -0.4018233586534181,
+            -0.27763936352887986
+          ],
+          "p": 7.871473854990725e-27,
+          "n": 418
+        }
+      }
+    },
+    "sd35": {
+      "X1_prompt_adherence": {
+        "rho_sim_vs_g": 0.3143,
+        "rho_composite_vs_sim": 0.0371,
+        "partial_rho_controlling_sim": -0.2399,
+        "partial_rho_controlling_sim_ci95": [
+          -0.3348,
+          -0.1383
+        ],
+        "partial_rho_controlling_sim_iqa_aes": -0.2381,
+        "lmm_plus_sim": {
+          "formula": "composite ~ guidance_std + z_sim",
+          "vc": [
+            "prompt",
+            "seed"
+          ],
+          "optimizer": "powell",
+          "converged": true,
+          "estimate": -0.08214707093690432,
+          "ci95": [
+            -0.14773935510885733,
+            -0.0165547867649513
+          ],
+          "p": 0.01410265997893615,
+          "n": 417
+        },
+        "lmm_plus_sim_iqa_aes": {
+          "formula": "composite ~ guidance_std + z_sim + z_iqa + z_aes",
+          "vc": [
+            "prompt",
+            "seed"
+          ],
+          "optimizer": "lbfgs",
+          "converged": true,
+          "estimate": -0.08210990214800329,
+          "ci95": [
+            -0.15028063677835313,
+            -0.013939167517653436
+          ],
+          "p": 0.018239182828904056,
+          "n": 417
+        }
+      },
+      "X2_kappa_within_guidance": {
+        "pooled_conditioned": 0.3941,
+        "per_guidance": {
+          "1.0": {
+            "n": 60,
+            "kappa": 0.4051
+          },
+          "2.0": {
+            "n": 58,
+            "kappa": 0.0744
+          },
+          "3.0": {
+            "n": 60,
+            "kappa": 0.2014
+          },
+          "5.0": {
+            "n": 60,
+            "kappa": 0.1064
+          },
+          "7.0": {
+            "n": 59,
+            "kappa": 0.0947
+          },
+          "11.0": {
+            "n": 60,
+            "kappa": 0.0956
+          },
+          "15.0": {
+            "n": 60,
+            "kappa": 0.3048
+          }
+        },
+        "per_bin": {
+          "low (g 1-2)": {
+            "n": 118,
+            "kappa": 0.4189,
+            "ci95": [
+              0.3291,
+              0.4879
+            ],
+            "per_field": {
+              "reduplication": 0.3398,
+              "fragmentation": 0.4218,
+              "condensation": 0.3878,
+              "distortion": 0.5263,
+              "tiling": 0.0
+            }
+          },
+          "mid (g 3-5)": {
+            "n": 120,
+            "kappa": 0.1719,
+            "ci95": [
+              0.0541,
+              0.2949
+            ],
+            "per_field": {
+              "reduplication": 0.3478,
+              "fragmentation": -0.0197,
+              "condensation": 0.3149,
+              "distortion": 0.0446,
+              "tiling": NaN
+            }
+          },
+          "high (g 7-15)": {
+            "n": 179,
+            "kappa": 0.1899,
+            "ci95": [
+              0.1199,
+              0.2571
+            ],
+            "per_field": {
+              "reduplication": 0.4904,
+              "fragmentation": 0.0,
+              "condensation": 0.1342,
+              "distortion": 0.1349,
+              "tiling": 0.3271
+            }
+          }
+        }
+      },
+      "X3_seed_effect_dropped": {
+        "with_seed_as_registered": {
+          "formula": "composite ~ guidance_std",
+          "vc": [
+            "prompt",
+            "seed"
+          ],
+          "optimizer": "powell",
+          "converged": true,
+          "estimate": -0.18153718715819664,
+          "ci95": [
+            -0.24760487039349988,
+            -0.11546950392289342
+          ],
+          "p": 7.225058426871239e-08,
+          "n": 417
+        },
+        "prompt_only": {
+          "formula": "composite ~ guidance_std",
+          "vc": [
+            "prompt"
+          ],
+          "optimizer": "lbfgs",
+          "converged": true,
+          "estimate": -0.18153718244807354,
+          "ci95": [
+            -0.24760448268975055,
+            -0.11546988220639653
+          ],
+          "p": 7.223809973667971e-08,
+          "n": 417
+        }
+      }
+    }
+  }
+}

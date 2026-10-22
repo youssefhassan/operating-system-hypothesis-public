@@ -59,3 +59,34 @@ Drop them and recompute the registered LMM slope, the partial correlation contro
 the per-prompt tally and the full-set inter-judge composite kappa.
 
 Expectation: no change to the second decimal.
+
+---
+
+# Addendum, 2026-10-22 (later the same day, before running): third report (XSci 9bcf95ad)
+
+Script: `posthoc_review_xsci2.py`. Output: `posthoc_review_xsci2.json`. Exploratory; no gate.
+
+## X1. Prompt adherence as a covariate (major concern 1)
+
+CLIP image-text similarity: cosine between CLIP ViT-L/14 (`openai/clip-vit-large-patch14`,
+the backbone the aesthetic predictor already uses) image and text embeddings, the text being
+the registered prompt verbatim. Per model: Spearman of S against guidance; partial Spearman
+of composite against guidance controlling S, and controlling S plus CLIP-IQA plus aesthetic;
+LMM guidance slope with z(S) as a covariate, and with z(S) + z(CLIP-IQA) + z(aesthetic).
+
+Expectation: S rises with guidance. If the composite is prompt adherence under another name,
+the guidance slope collapses toward zero once S is entered. If the SDXL LMM slope with all
+three covariates stays below -0.2 with the interval away from zero, the concern is answered
+for SDXL. I have no confident expectation for SD 3.5.
+
+## X2. Inter-judge kappa within guidance bins (major concern 2)
+
+Composite weighted kappa (Claude vs Qwen3-VL-32B), conditioned images only, computed inside
+each guidance value separately and inside three bins: low (g = 1, 2), mid (g = 3, 5),
+high (g = 7, 11, 15). Expectation, following the reviewer: within-bin kappa is well below
+the pooled 0.542 / 0.394, because between-level contrast inflates the pooled value.
+
+## X3. Seed random effect dropped (minor 7)
+
+Registered LMM refitted with `(1|prompt)` only, both models. Expectation: SD 3.5 slope and
+interval unchanged to the third decimal, since its seed variance is estimated at zero.
