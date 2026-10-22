@@ -448,3 +448,36 @@ code was corrected and the reports regenerated (`analyze.py`, `analyze_axes.py`,
 
 Added robustness numbers, not gates: judge-only LMM slopes (Claude / Qwen) −0.321 / −0.295
 on SDXL and −0.174 / −0.141 on SD 3.5.
+
+## 15. Sensitivity round 3, 2026-10-22 (xsci review)
+
+Two AI referee reports on the Zenodo v1 preprint (xsci: reviewer3.com, seven technical
+comments; xPeerd DAReview, framing). The seven comments are answered by
+`posthoc_review_xsci.py`, pre-specified in `posthoc_review_xsci_prespec.md` before running,
+output `posthoc_review_xsci.json`. Exploratory; no verdict changed. The replies posted on
+xsci are in `paper/REVIEW_REPLY_xsci_2026-10-22.md`. SDXL / SD 3.5:
+
+- **Within-judge z composite** (z per judge and field, then average): slope −0.308
+  [−0.361, −0.254] / −0.158 [−0.213, −0.102], between the two judge-only slopes. The
+  registered judge-mean composite leans toward Claude by about 0.03 of slope.
+- **Interaction model formula.** S3 used `(1|prompt) + (1|seed)` shared across checkpoints.
+  Adding `(1|prompt:model) + (1|seed:model)`: −0.158 [−0.248, −0.068] against the
+  published −0.158 [−0.248, −0.067].
+- **Both quality proxies as separate covariates** (partial Spearman): −0.501 [−0.569,
+  −0.425] / −0.234 [−0.329, −0.132]; CLIP-IQA alone −0.509 / −0.242, aesthetic alone
+  −0.465 / −0.213, registered averaged Q −0.433 / −0.246.
+- **Prompt tally on the five test prompts** (forest control removed): 5/5 / 4/5. The
+  registered 6-prompt tally is 6/6 / 5/6; on SD 3.5 the sixth negative sign is the control
+  at −0.02.
+- **Quality adjustment inside the LMM** (`composite ~ guidance_std + Q + (1|prompt) +
+  (1|seed)`): guidance slope −0.270 [−0.339, −0.201] / −0.157 [−0.225, −0.090]; with the
+  two proxies as separate covariates −0.237 [−0.313, −0.161] / −0.164 [−0.233, −0.094].
+  Within-prompt adjustment removes about a third of the SDXL slope, more than the pooled
+  partial correlation implied; the remainder clears the registered −0.2 bar.
+- **Screening images dropped.** The 28 screening images are the human subset (13 / 15
+  among complete cases). Without them: slope −0.349 [−0.411, −0.287] / −0.180 [−0.247,
+  −0.113]; partial rho (Q) −0.441 / −0.247; composite kappa 0.569 / 0.440 (conditioned
+  only 0.549 / 0.392); tallies unchanged.
+- **Documentation gap.** The judges received a distinct rubric variant for the empty-prompt
+  baselines (`rubric.py`, `_intended_clause`, "generated from an EMPTY prompt ... no
+  intended scene"); the preprint's verbatim-prompt appendix omits it. For v2.
